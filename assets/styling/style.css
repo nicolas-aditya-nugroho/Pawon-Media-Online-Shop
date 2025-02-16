@@ -1,0 +1,263 @@
+*html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'France', sans-serif;
+    background-color: #ffffffff;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: rgb(169, 94, 19);
+    color: #00000000;
+    font-weight: bold;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: rgb(255, 215, 0);
+}
+
+.pamed-category {
+    text-align: center;
+    box-shadow: 0 0 50px rgb(169, 94, 19);
+}
+
+.pamed-logo {
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+a, .pamed-brand {
+    text-decoration: none;
+}
+
+#pamed-brand {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+#pamed-brand:hover {
+    color: rgb(255, 215, 0);
+}
+
+#location-pamed {
+    font-size: large;
+    color: rgb(255, 215, 0);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.icon-media {
+    width: 17px;
+    height: 17px;
+    color: #000000;
+}
+
+.icon-media:hover {
+    color: rgb(255, 215, 0);
+}
+
+h1 {
+    font-family: "France", cursive;
+}
+
+#text-style {
+    color: rgb(169, 94, 19);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+    font-size: 80px;
+}
+
+.text-style2 {
+    font-size: 60px;
+    color: rgb(169, 94, 19);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+#promotion {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.btn-pamed {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-pamed:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.pamed-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#school-products {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#office-products {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#design {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#pulsa {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#biq {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#promotion {
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+.pamed-btn:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    padding: 1em;
+    text-align: center;
+    clear: both;
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+.footer-section {
+    background-color: rgb(169, 94, 19);
+    padding: 3% 1% 1% 1%;
+}
+
+#pamed-footer {
+    color: rgb(255, 215, 0);
+}
+
+.whatsapp-button {
+    position: fixed;
+    display: inline-block;
+    align-items: end;
+    background-color: green;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    bottom: 100px;
+    right: 50px;
+}
+
+.whatsapp-button:hover {
+    background-color: rgb(255, 215, 0);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 9999;
+}
+
+.back-to-top:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+/* Gaya untuk perangkat mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Gaya untuk tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Gaya untuk desktop */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+}

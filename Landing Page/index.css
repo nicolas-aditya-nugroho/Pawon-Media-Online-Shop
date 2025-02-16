@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Darumadrop One", serif;
+    background-size: cover;
+    background-image: url(/assets/robs-HOrhCnQsxnQ-unsplash.jpg);
+    background-position: center;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+}
+
+section main {
+    padding: 100px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+section main img {
+    width: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    box-shadow: 0 0 5px 1px blue;
+}
+
+section main h2 {
+    font-weight: 600;
+    color: whitesmoke;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0, 0, 0, 0.8);
+}
+
+section main a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid white;
+    padding: 10px;
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    gap: 20px;
+}
+
+section main a:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(0, 0, 0, 0.9);
+}
+
+section footer {
+    color: whitesmoke;
+    font-size: 1em;
+    padding: 20px;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0, 0, 0, 0.8);
+}
+
+section footer a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+}
