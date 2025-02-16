@@ -62,14 +62,29 @@ section main a:hover {
 }
 
 section footer {
-    color: whitesmoke;
-    font-size: 1em;
-    padding: 20px;
-    text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0, 0, 0, 0.8);
+    padding: 3rem;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    clear: both;
 }
 
-section footer a {
-    color: whitesmoke;
+section .footer a {
     text-decoration: none;
-    font-weight: 600;
+    color: rgb(255, 215, 0);
+    font-weight: bold;
+}
+
+section .footer a:hover {
+    color: white;
+}
+
+section .footer li {
+    list-style: none;
+    display: inline;
+    margin: 0.5rem;
+}
+
+section .footer li:hover {
+    transform: scaleX(1.5);
 }
