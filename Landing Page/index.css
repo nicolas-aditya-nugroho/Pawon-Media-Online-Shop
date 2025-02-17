@@ -58,12 +58,20 @@ section main a {
 
 section main a:hover {
     background-color: rgb(255, 215, 0);
-    color: rgb(0, 0, 0, 0.9);
+    color: rgb(169, 94, 19);
+}
+
+section main p {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    text-align: center;
+    gap: 5px;
 }
 
 section footer {
+    background-color: rgb(169, 94, 19);
     padding: 3rem;
-    color: white;
+    color: rgb(255, 215, 0);
     padding: 10px;
     text-align: center;
     clear: both;
