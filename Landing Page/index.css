@@ -96,3 +96,53 @@ section .footer li {
 section .footer li:hover {
     transform: scaleX(1.5);
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 9999;
+}
+
+.back-to-top:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+/* Gaya untuk perangkat mobile */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Gaya untuk tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Gaya untuk desktop */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+}
