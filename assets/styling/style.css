@@ -21,26 +21,63 @@ header {
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+.navbar {
+    overflow: hidden;
 }
 
-nav ul li {
-    margin-right: 20px;
-}
-
-.nav-link {
-    color: #000000;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.nav-link:hover {
+.navbar a {
+    float: left;
+    font-size: 16px;
     color: rgb(255, 215, 0);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgb(255, 215, 0);
+    padding: 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19)
+}
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgb(255, 215, 0);
+    width: 100%;
+    z-index: 1;
+}
+
+.subnav-content a {
+    float: left;
+    color: rgb(169, 94, 19);
+    text-decoration: none;
+}
+
+.subnav-content a:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+}
+
+.subnav:hover .subnav-content {
+    display: block;
 }
 
 .pamed-category {
@@ -58,7 +95,7 @@ a, .pamed-brand {
 }
 
 #pamed-brand {
-    color: #000000;
+    color: rgb(255, 215, 0);
     font-weight: bold;
     text-decoration: none;
     font-size: x-large;
@@ -66,7 +103,7 @@ a, .pamed-brand {
 }
 
 #pamed-brand:hover {
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19)
 }
 
 #location-pamed {
