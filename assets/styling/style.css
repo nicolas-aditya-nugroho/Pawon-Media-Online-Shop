@@ -15,7 +15,6 @@ body {
 header {
     background-color: rgb(169, 94, 19);
     color: #00000000;
-    font-weight: bold;
     padding: 1em;
     text-align: center;
     box-shadow: 0 0 50px rgb(255, 215, 0);
