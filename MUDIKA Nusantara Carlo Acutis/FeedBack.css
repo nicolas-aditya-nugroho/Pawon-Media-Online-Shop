@@ -6,6 +6,7 @@
 }
 
 body {
+    height: 100vh;
     font-family: 'Poppins', sans-serif, bold;
     background-color: #000000;
     height: 100vh;
@@ -20,25 +21,21 @@ header {
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
+.dropdown-submenu {
+    position: relative;
 }
 
-header nav ul li {
-    margin-right: 20px;
+.dropdown-submenu .dropdown-menu {
+    top: 10%;
+    left: 100%;
+    margin-top: -1px;
+    color: rgb(255, 215, 0);
 }
 
-header nav a {
-    color: rgb(1, 163, 9);
-    text-decoration: none;
-}
-
-header nav a:hover {
-    color: red;
+.navbar-nav li:hover>ul.dropdown-menu {
+    display: block;
+    background-color: rgb(255, 215, 0);
+    color: #000000;
 }
 
 main {
