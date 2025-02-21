@@ -35,7 +35,7 @@ section main img {
     width: 100px;
     border-radius: 50%;
     aspect-ratio: 1;
-    box-shadow: 0 0 5px 1px blue;
+    box-shadow: 0 0 5px 1px rgb(169, 94, 19);
 }
 
 section main h2 {
