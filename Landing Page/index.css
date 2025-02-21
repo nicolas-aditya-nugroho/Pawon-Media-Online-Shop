@@ -51,14 +51,14 @@ section main a {
     justify-content: center;
     border: 1.5px solid white;
     padding: 10px;
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
     text-decoration: none;
     gap: 20px;
 }
 
 section main a:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
 }
 
 section main p {
