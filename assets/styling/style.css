@@ -20,11 +20,11 @@ header {
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-.navbar {
+header .navbar {
     overflow: hidden;
 }
 
-.navbar a {
+header .navbar a {
     float: left;
     font-size: 16px;
     color: rgb(255, 215, 0);
@@ -33,12 +33,12 @@ header {
     text-decoration: none;
 }
 
-.subnav {
+header .navbar .subnav {
     float: left;
     overflow: hidden;
 }
 
-.subnav .subnavbtn {
+header .navbar .subnav .subnavbtn {
     font-size: 16px;
     border: none;
     outline: none;
@@ -49,12 +49,12 @@ header {
     margin: 0;
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
+header .navbar a:hover, .subnav:hover .subnavbtn {
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19)
 }
 
-.subnav-content {
+header .navbar .subnav-content {
     display: none;
     position: absolute;
     left: 0;
@@ -63,18 +63,18 @@ header {
     z-index: 1;
 }
 
-.subnav-content a {
+header .navbar .subnav-content a {
     float: left;
     color: rgb(169, 94, 19);
     text-decoration: none;
 }
 
-.subnav-content a:hover {
+header .navbar .subnav-content a:hover {
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
 }
 
-.subnav:hover .subnav-content {
+header .navbar .subnav:hover .subnav-content {
     display: block;
 }
 
@@ -84,8 +84,11 @@ header {
 }
 
 #pamed-logo {
-    width: 150px;
-    margin-top: 10px;
+    display: flexbox;
+    width: 100px;
+    height: 100px;
+    align-content: center;
+    justify-content: center;
 }
 
 a, .pamed-brand {
@@ -95,8 +98,7 @@ a, .pamed-brand {
 #pamed-brand {
     color: rgb(255, 215, 0);
     text-decoration: none;
-    font-size: x-large;
-    margin-bottom: 10px;
+    font-size: 55px;
 }
 
 #pamed-brand:hover {
