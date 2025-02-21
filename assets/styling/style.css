@@ -85,8 +85,8 @@ header .navbar .subnav:hover .subnav-content {
 
 #pamed-logo {
     display: flexbox;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     align-content: center;
     justify-content: center;
 }
@@ -98,7 +98,7 @@ a, .pamed-brand {
 #pamed-brand {
     color: rgb(255, 215, 0);
     text-decoration: none;
-    font-size: 55px;
+    font-size: 45px;
 }
 
 #pamed-brand:hover {
