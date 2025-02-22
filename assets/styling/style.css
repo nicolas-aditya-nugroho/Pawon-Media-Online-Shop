@@ -288,6 +288,10 @@ footer {
     font-size: 15px;
 }
 
+.fa-ul {
+    margin-left: 1.65em;
+}
+
 .footer-section ul li a {
     text-decoration: none;
     color: rgb(255, 215, 0);
@@ -307,6 +311,12 @@ footer {
 .payment-method h5 {
     padding: 5px;
     font-size: 35px;
+}
+
+iframe {
+    width: 300px;
+    height: 250px;
+    border: 0;
 }
 
 small .Copyright {
