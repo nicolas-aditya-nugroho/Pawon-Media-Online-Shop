@@ -98,8 +98,57 @@
         </header>
     </section>
 
-    <main id="registration">
-        <form action="login.html">
+    <main><!--Banner section-->
+        <section class="head-section">
+            <div class="pt-2 pb-5 container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6 px-3">
+                        <h1 id="text-style">Beli Alat Tulis</h1>
+                        <h1 class="text-style2">untuk Keperluan Sekolah & Kantor</h1>
+                        <p class="pamed-marketing">Mari beli kebutuhan sekolah anak dan kebutuhan kantor anda hanya di
+                            Pawon Media</p>
+                        <a type="button" class="btn btn-pamed" href="#school-products">
+                            <i class="fa-solid fa-pencil"></i> Produk Sekolah
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#office-products">
+                            <i class="fa-solid fa-pen"></i> Produk Kantor
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#design">
+                            <i class="fa-solid fa-palette"></i> Layanan Desain
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#pulsa">
+                            <i class="fa-solid fa-mobile"></i> Pulsa
+                        </a>
+                    </div>
+                    <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/Latar Belakang Nama Pawon Media.png" class="d-block w-100"
+                                    alt="Latar Belakang Pawon Media">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/Visi Pawon Media.png" class="d-block w-100" alt="Visi Pawon Media">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/Misi Pawon Media.png" class="d-block w-100" alt="Misi Pawon Media">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <form action="login.html" id="registration">
             <h2>Form Pendaftaran</h2>
             <div class="form-group fullname">
                 <label for="fullname">Full Name</label>
@@ -132,69 +181,317 @@
             <div class="form-group submit-btn">
                 <a href="mailto:pawonmedia.010924@gmail.com"><input type="submit" value="Submit"></a>
             </div>
-        </form>
 
-        <script>// Selecting form and input elements
-            const form = document.querySelector("form");
-            const passwordInput = document.getElementById("password");
-            const passToggleBtn = document.getElementById("pass-toggle-btn");
-            // Function to display error messages
-            const showError = (field, errorText) => {
-                field.classList.add("error");
-                const errorElement = document.createElement("small");
-                errorElement.classList.add("error-text");
-                errorElement.innerText = errorText;
-                field.closest(".form-group").appendChild(errorElement);
-            }
-            // Function to handle form submission
-            const handleFormData = (e) => {
-                e.preventDefault();
-                // Retrieving input elements
-                const fullnameInput = document.getElementById("fullname");
-                const emailInput = document.getElementById("email");
-                const dateInput = document.getElementById("date");
-                const genderInput = document.getElementById("gender");
-                // Getting trimmed values from input fields
-                const fullname = fullnameInput.value.trim();
-                const email = emailInput.value.trim();
-                const password = passwordInput.value.trim();
-                const date = dateInput.value;
-                const gender = genderInput.value;
-                // Regular expression pattern for email validation
-                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-                // Clearing previous error messages
-                document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
-                document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
-                // Performing validation checks
-                if (fullname === "") {
-                    showError(fullnameInput, "Masukkan nama lengkap Anda");
+            <script>// Selecting form and input elements
+                const form = document.querySelector("form");
+                const passwordInput = document.getElementById("password");
+                const passToggleBtn = document.getElementById("pass-toggle-btn");
+                // Function to display error messages
+                const showError = (field, errorText) => {
+                    field.classList.add("error");
+                    const errorElement = document.createElement("small");
+                    errorElement.classList.add("error-text");
+                    errorElement.innerText = errorText;
+                    field.closest(".form-group").appendChild(errorElement);
                 }
-                if (!emailPattern.test(email)) {
-                    showError(emailInput, "Masukkan Email Anda dengan tepat!");
+                // Function to handle form submission
+                const handleFormData = (e) => {
+                    e.preventDefault();
+                    // Retrieving input elements
+                    const fullnameInput = document.getElementById("fullname");
+                    const emailInput = document.getElementById("email");
+                    const dateInput = document.getElementById("date");
+                    const genderInput = document.getElementById("gender");
+                    // Getting trimmed values from input fields
+                    const fullname = fullnameInput.value.trim();
+                    const email = emailInput.value.trim();
+                    const password = passwordInput.value.trim();
+                    const date = dateInput.value;
+                    const gender = genderInput.value;
+                    // Regular expression pattern for email validation
+                    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                    // Clearing previous error messages
+                    document.querySelectorAll(".form-group .error").forEach(field => field.classList.remove("error"));
+                    document.querySelectorAll(".error-text").forEach(errorText => errorText.remove());
+                    // Performing validation checks
+                    if (fullname === "") {
+                        showError(fullnameInput, "Masukkan nama lengkap Anda");
+                    }
+                    if (!emailPattern.test(email)) {
+                        showError(emailInput, "Masukkan Email Anda dengan tepat!");
+                    }
+                    if (password === "") {
+                        showError(passwordInput, "Masukkan Kata Sandi Anda dengan memasukkan kombinasi huruf dan angka");
+                    }
+                    if (date === "") {
+                        showError(dateInput, "Pilih Tanggal Lahir Anda");
+                    }
+                    if (gender === "") {
+                        showError(genderInput, "Pilih Jenis Kelamin Anda");
+                    }
+                    // Checking for any remaining errors before form submission
+                    const errorInputs = document.querySelectorAll(".form-group .error");
+                    if (errorInputs.length > 0) return;
+                    // Submitting the form
+                    form.submit();
                 }
-                if (password === "") {
-                    showError(passwordInput, "Masukkan Kata Sandi Anda dengan memasukkan kombinasi huruf dan angka");
-                }
-                if (date === "") {
-                    showError(dateInput, "Pilih Tanggal Lahir Anda");
-                }
-                if (gender === "") {
-                    showError(genderInput, "Pilih Jenis Kelamin Anda");
-                }
-                // Checking for any remaining errors before form submission
-                const errorInputs = document.querySelectorAll(".form-group .error");
-                if (errorInputs.length > 0) return;
-                // Submitting the form
-                form.submit();
-            }
-            // Toggling password visibility
-            passToggleBtn.addEventListener('click', () => {
-                passToggleBtn.className = passwordInput.type === "password" ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
-                passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-            });
-            // Handling form submission event
-            form.addEventListener("submit", handleFormData);
-        </script>
+                // Toggling password visibility
+                passToggleBtn.addEventListener('click', () => {
+                    passToggleBtn.className = passwordInput.type === "password" ? "fa-solid fa-eye-slash" : "fa-solid fa-eye";
+                    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+                });
+                // Handling form submission event
+                form.addEventListener("submit", handleFormData);
+            </script>
+        </form><br><br>
+
+        <!-- Promotion Section -->
+        <h1 class="pamed-category">Promosi (Siapa Tau Ada Yang Butuh)</h1>
+        <section id="promotion" class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Jualan_Warung-Makan-Tenda_Kedai-Queen_Randublatung.jpg"
+                            class="card-img-top pamed-card-img w-100" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Sedang Lapar? Takis,
+                                langsung aja ke "Kedai Queen"
+                                Posisi warung dekat pintu masuk Kelurahan Randublatung.
+                                Jam buka warung makan: Senin-Minggu jam 9 pagi hingga 9 malam atau 10 malam.</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/6285781816884?text=Halo mbak Nona Putri, saya mau berkunjung ke warung mbak, bolehkah dikirim posisi pasti dari warung makannya?">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_3.jpg" alt=""
+                            class="card-img-top pamed-card-img">
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
+                            </h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Mas%20mau+kirim+CV%20kerja+tapi+saya+butuh+informasi+lebih+lengkap+mengenai+pekerjaan+ini.%20Terima+kasih&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_1.jpg" class="d-block w-100"
+                                        alt="Latar Belakang Pawon Media">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_2.jpg" class="d-block w-100"
+                                        alt="Visi Pawon Media">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_4.jpg" class="d-block w-100"
+                                        alt="Misi Pawon Media">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
+                            </h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6285801360803&text=Halo+mas+Girang%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Halo+mas+Nikolas+Aldo+Novelio%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promosi_Manulife_1.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Manulife_2.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Manulife_3.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Asuransi Jiwa &
+                                Kesehatan? Ya, Manulife JAWABAN ANDA Saat ini!</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/6281325929387?text=Halo mas Aldo, saya mau tanya-tanya seputar asuransi jiwa dan atau kesehatan yang masnya jual dan promosikan, dong">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Wuling.jpg" class="card-img-top pamed-card-img w-100" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Beli Mobil Wuling Anda
+                                Pada Dealer Wuling AJM Sudirman</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/62816659755?text=Halo mbak Tina, saya mau tanya-tanya seputar mobil Wuling yang mbak jual dan promosikan, dong!">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promois_Jualan_Monika_1.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_2.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_3.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_4.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_5.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_6.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_7.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_8.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_9.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Aksesoris HP?
+                                Ya, toko "Dua Putri Cellular" JAWABAN ANDA Saat ini!</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/62856404078567?text=Halo mbak Monika, saya mau beli salah satu produk mbaknya, bolehkah diberikan informasi pasti dari lokasi toko mbaknya? Terima Kasih!">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Starts -->
