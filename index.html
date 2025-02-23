@@ -88,8 +88,20 @@
                     </ul>
                     </ul>
                     <ul class="subnav">
-                        <button class="subnavbtn"><i class="fa-solid fa-user"></i> Nicolas Aditya Nugroho <i class="fa fa-caret-down"></i></button>
-                        <li class="nav-item subnav-content"><a href="login.html" class="pamed-navbar"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                        <button class="subnavbtn"><i class="fa-solid fa-user"></i>
+                            <div id="user-display">Selamat Datang, <span id="user-fullname"></span> <i
+                                    class="fa fa-caret-down"></div></i>
+                        </button>
+                        <script>
+                            function updateUsername(username) {
+                                document.getElementById('user-fullname').textContent = username;
+                            }
+
+                            // Contoh pemanggilan setelah login
+                            const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                            updateUsername(loggedInUsername);</script>
+                        <li class="nav-item subnav-content"><a href="login.html" class="pamed-navbar"><i
+                                    class="fa-solid fa-right-from-bracket"></i> Keluar</a>
                         </li>
                     </ul>
                 </div>
