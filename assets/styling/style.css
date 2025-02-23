@@ -90,6 +90,10 @@ nav #pamed-logo {
     height: 50px;
 }
 
+li a i:hover {
+    color: rgb(255, 215, 0);
+}
+
 #pamed-brand {
     color: rgb(255, 215, 0);
     text-decoration: none;
