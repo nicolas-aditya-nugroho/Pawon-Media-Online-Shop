@@ -157,8 +157,8 @@ main {
 }
 
 .btn-pamed:hover {
-    background-color: whitesmoke;
-    color: rgb(169, 94, 19);
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
     border: none;
     padding: 10px;
     margin-top: 20px;
@@ -271,26 +271,6 @@ main {
     text-align: center;
 }
 
-.login-form button {
-    border: none;
-    height: auto;
-    font-size: 16px;
-    padding: 13px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    text-align: center;
-    background-color: rgb(255, 215, 0);
-    transition: 0.2s ease;
-    color: rgb(169, 94, 19);
-}
-
-.login-form button:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-}
-
-
 form #email_error,
 form #pass_error {
     margin-top: 5px;
@@ -303,6 +283,23 @@ form #pass_error {
     border-radius: 3px;
     border: 1px solid #EF9A9A;
     display: none;
+}
+
+.submit-btn {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    align-items: center;
+    height: 40px;
+    width: 350px;
+    padding: 0 5px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid rgb(255, 215, 0);
+}
+
+.submit-btn:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
 }
 
 .whatsapp-button {
