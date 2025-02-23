@@ -22,7 +22,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>Login | Pawon Media</title>
-    <link rel="stylesheet" href="/assets/styling//login.css">
+    <link rel="stylesheet" href="/assets/styling/login.css">
 </head>
 
 <body>
@@ -98,49 +98,60 @@
         </header>
     </section>
 
-    <section>
-        <main>
-            <div class="container" id="login">
-                <form action="/action_page.php">
-                    <div class="row">
-                        <h2 style="text-align:center">Masuk dengan Media Sosial atau Secara Manual
-                        </h2>
+    <main id="login">
+        <form class="login-form" action="registration.html" method="post" name="form" onsubmit="return validated()">
+            <h1>Masuk Pengguna</h1></h1>
+            <div class="font">Email or Phone</div>
+            <input autocomplete="off" type="text" name="email">
+            <div id="email_error">Silahkan mendaftar apabila <strong>Belum Mendaftar</strong></div>
+            <div class="font font2">Password</div>
+            <input type="password" name="password">
+            <div id="pass_error">Silahkan masukkan <strong>Kata Sandi</strong>Anda dengan benar</div><br>
+            <p class="font font2">Belum Memiliki Akun? <a href="registration.html" class="font font2">Daftar di sini</a></p>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <script>//Validtion Code For Inputs
 
-                        <div class="col vl">
-                            <a href="https://www.facebook.com/login" target="_blank" class="fb pamed-btn vl-innertext">
-                                <i class="fa-brands fa-facebook"></i> Masuk dengan Facebook
-                            </a><br><br>
-                            <a href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D"
-                                target="_blank" class="twitter pamed-btn vl-innertext">
-                                <i class="fa-brands fa-x-twitter"></i> Masuk dengan X-Twitter
-                            </a><br><br>
-                            <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fwww.google.co.id%2F&ec=GAlAmgQ&hl=id&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-684654985%3A1740123739206546&ddm=1"
-                                target="_blank" class="google pamed-btn vl-innertext">
-                                <i class="fa-brands fa-google"></i> Masuk dengan Google
-                            </a>
-                        </div>
+            var email = document.forms['form']['email'];
+            var password = document.forms['form']['password'];
 
-                        <div class="col">
-                            <div class="hide-md-lg">
-                                <p>Atau masuk secara manual:</p>
-                            </div>
+            var email_error = document.getElementById('email_error');
+            var pass_error = document.getElementById('pass_error');
 
-                            <form action="submit" id="login" method="post">
-                                <label for="username">Nama Pengguna:</label>
-                                <input type="text" id="username" name="username">
-                                <br><br>
-                                <label for="password">Kata Sandi:</label>
-                                <input type="text" id="password" name="password"><br>
-                                <a href="#" class="forgot-password">Lupa Kata Sandi?</a>
-                                <a href="#" type="button" class="btn pamed-btn">Daftar</a>
-                                <a href="/index.html" class="btn btn-pamed">Masuk</a>
-                            </form>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </main>
-    </section>
+            email.addEventListener('textInput', email_Verify);
+            password.addEventListener('textInput', pass_Verify);
+
+            function validated() {
+                if (email.value.length < 9) {
+                    email.style.border = "1px solid red";
+                    email_error.style.display = "block";
+                    email.focus();
+                    return false;
+                }
+                if (password.value.length < 6) {
+                    password.style.border = "1px solid red";
+                    pass_error.style.display = "block";
+                    password.focus();
+                    return false;
+                }
+
+            }
+            function email_Verify() {
+                if (email.value.length >= 8) {
+                    email.style.border = "1px solid silver";
+                    email_error.style.display = "none";
+                    return true;
+                }
+            }
+            function pass_Verify() {
+                if (password.value.length >= 5) {
+                    password.style.border = "1px solid silver";
+                    pass_error.style.display = "none";
+                    return true;
+                }
+            }
+        </script>
+    </main>
 
     <!-- Footer Starts -->
     <footer class="container">
