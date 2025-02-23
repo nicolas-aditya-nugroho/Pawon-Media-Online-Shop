@@ -182,123 +182,164 @@ main {
     cursor: pointer;
 }
 
-.login-form {
-    padding: 25px;
+.wrapper {
+    width: 380px;
+    padding: 40px 30px 50px 30px;
     background: #fff;
-    max-width: 500px;
-    width: 100%;
-    border-radius: 7px;
-    box-shadow: 0 10px 15px rgb(255, 215, 0);
-}
-
-.login-form h1 {
-    font-weight: bold;
-    font-size: 27px;
+    border-radius: 5px;
     text-align: center;
-    margin: 0px 0 30px;
+    box-shadow: 10px 10px 20px rgb(255, 215, 0);
 }
 
-.login-form .form-group {
-    margin-bottom: 15px;
+.wrapper header {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.wrapper form {
+    margin: 40px 0;
+}
+
+form .field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form .field.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        margin-left: 0px;
+    }
+
+    20%, 80% {
+        margin-left: -12px;
+    }
+
+    40%, 60% {
+        margin-left: 12px;
+    }
+}
+
+form h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+form .field .input-area {
+    height: 50px;
+    width: 100%;
     position: relative;
 }
 
-.login-form label {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 7px;
-}
-
-.login-form .font {
-    font-size: 18px;
-    color: rgb(169, 94, 19);
-    margin: 5px 0;
-}
-
-.login-form .font2 {
-    margin-top: 30px;
-}
-
-.login-form a {
-    text-decoration: none;
-}
-
-.login-form a:hover {
-    color: rgb(169, 94, 19);
-    font-weight: bold;
-
-}
-
-.login-form input,
-.login-form select {
-    height: 45px;
-    padding: 10px;
+form input {
     width: 100%;
-    font-size: 15px;
+    height: 100%;
     outline: none;
-    background: #fff;
-    border-radius: 3px;
-    border: 1px solid rgb(169, 94, 19);
-}
-
-.login-form input:focus,
-.login-form select:focus {
-    border-color: #9a9a9a;
-}
-
-.login-form input.error,
-.login-form select.error {
-    border-color: #f91919;
-    background: #f9f0f1;
-}
-
-.login-form small {
-    font-size: 14px;
-    margin-top: 5px;
-    display: block;
-    color: #f91919;
-}
-
-.login-form .password i {
-    position: absolute;
-    right: 0px;
-    height: 45px;
-    top: 28px;
-    font-size: 13px;
-    line-height: 45px;
-    width: 45px;
-    cursor: pointer;
-    text-align: center;
-}
-
-form #email_error,
-form #pass_error {
-    margin-top: 5px;
-    width: 345px;
+    padding: 0 45px;
     font-size: 18px;
-    color: #C62828;
-    background: rgba(255, 0, 0, 0.1);
-    text-align: center;
-    padding: 5px 8px;
-    border-radius: 3px;
-    border: 1px solid #EF9A9A;
+    background: none;
+    caret-color: rgb(169, 94, 19);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 215, 0);
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+}
+
+form .field input:focus,
+form .field.valid input {
+    border-color: rgb(169, 94, 19);
+}
+
+form .field.shake input,
+form .field.error input {
+    border-color: #dc3545;
+}
+
+.field .input-area i {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.input-area .icon {
+    left: 15px;
+    color: #bfbfbf;
+    transition: color 0.2s ease;
+}
+
+.input-area .error-icon {
+    right: 15px;
+    color: #dc3545;
+}
+
+form input:focus~.icon,
+form .field.valid .icon {
+    color: rgb(169, 94, 19);
+}
+
+form .field.shake input:focus~.icon,
+form .field.error input:focus~.icon {
+    color: #bfbfbf;
+}
+
+form input::placeholder {
+    color: #bfbfbf;
+    font-size: 17px;
+}
+
+form .field .error-txt {
+    color: #dc3545;
+    text-align: left;
+    margin-top: 5px;
+}
+
+form .field .error {
     display: none;
 }
 
-.submit-btn {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-    align-items: center;
-    height: 40px;
-    width: 350px;
-    padding: 0 5px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid rgb(255, 215, 0);
+form .field.shake .error,
+form .field.error .error {
+    display: block;
 }
 
-.submit-btn:hover {
+form .pass-txt {
+    text-align: left;
+    margin-top: -10px;
+}
+
+.wrapper a {
     background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+}
+
+.wrapper a:hover {
+    text-decoration: none;
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+form input[type="submit"] {
+    height: 50px;
+    margin-top: 30px;
+    color: rgb(169, 94, 19);
+    padding: 0;
+    border: none;
+    background: rgb(255, 215, 0);
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
 }
 
@@ -319,6 +360,7 @@ form #pass_error {
 
 .whatsapp-button:hover {
     background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
 }
 
 .back-to-top {
