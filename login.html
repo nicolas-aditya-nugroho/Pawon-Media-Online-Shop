@@ -169,9 +169,10 @@
                     <div class="error error-txt">Kata Sandi <strong>Tidak Boleh Kosong</strong></div>
                 </div>
                 <div class="pass-txt"><a href="forgot password.html">Anda Lupa Kata Sandi?</a></div>
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" id="signin">
             </form>
-            <div class="sign-txt">Belum Punya Member? <a href="registration.html">Daftar <strong>di SINI</strong></a></div>
+            <div class="sign-txt">Belum Punya Member? <a href="registration.html">Daftar <strong>di SINI</strong></a>
+            </div>
             <script>const form = document.querySelector("form");
                 eField = form.querySelector(".email"),
                     eInput = eField.querySelector("input"),
@@ -214,7 +215,15 @@
                     if (!eField.classList.contains("error") && !pField.classList.contains("error")) {
                         window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
                     }
-                }</script>
+                    $(document).ready(function () {
+                        $("#signin").click(function () {
+
+                            //Script for login is here...
+
+                        });
+                    });
+                }
+            </script>
         </div><br><br>
 
         <!-- Promotion Section -->
