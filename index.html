@@ -100,8 +100,15 @@
                             // Contoh pemanggilan setelah login
                             const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
                             updateUsername(loggedInUsername);</script>
-                        <li class="nav-item subnav-content"><a href="login.html" class="pamed-navbar"><i
-                                    class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                        <li class="nav-item subnav-content"><a href="login.html" class="pamed-navbar"
+                                id="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                            <script> document.getElementById('logout-button').addEventListener('click', function () {
+                                    // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                                    localStorage.removeItem('username'); // Hapus username
+
+                                    // Arahkan pengguna ke halaman login atau homepage
+                                    window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                                });</script>
                         </li>
                     </ul>
                 </div>

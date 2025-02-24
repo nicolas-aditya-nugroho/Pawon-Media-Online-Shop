@@ -90,8 +90,19 @@ nav #pamed-logo {
     height: 50px;
 }
 
-li a i:hover {
+#logout-button {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logout-button:hover {
+    background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
+    cursor: pointer;
 }
 
 #pamed-brand {
