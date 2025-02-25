@@ -170,7 +170,7 @@
 
         <h1 class="pamed-category">Form Pembelian &amp; Pembayaran Tagihan</h1>
         <section class="container" id="form-payment">
-            <form id="orderForm">
+            <form id="orderForm" onsubmit="sendMeToWhatsApp()">
                 <label for="item">Pilih Item:</label>
                 <select id="item" required>
                     <option value="pulsa">Pulsa</option>
@@ -194,7 +194,8 @@
                     const messageDiv = document.getElementById('message');
                     messageDiv.style.display = 'block';
                     messageDiv.innerText = message;
-                });</script>
+                }); 
+            </script>
         </section>
 
 
