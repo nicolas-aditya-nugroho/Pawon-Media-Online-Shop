@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="page-type" content="home-desktop">
+
+    <meta data-rh="true" property="og:title"
+        content="Situs Jual Beli Daring Terlengkap, Mudah &amp; Aman | Pawon Media">
+    <meta data-rh="true" property="og:site_name" content="Pawon Media">
+    <meta data-rh="true" property="og:description"
+        content="Situs jual beli alat tulis sekolah dan kantor terlengkap dengan berbagai pilihan. Belanja daring mudah dan menyenangkan di Pawon Media. Pengiriman cepat.">
+    <meta data-rh="true" property="og:url" content="https://www.pawon-media.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=France&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Pawon Media | Alat Tulis 🟤 Desain Grafis 🟤 Toko Foto Kopi</title>
+    <link rel="stylesheet" href="/assets/styling/Form Pembelian Pulsa-Kuota Internet-Tagihan.css">
+    <script src="/assets/javascript/index.js"></script>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <section class="head-section">
+        <header class="container">
+            <div class="container-fluid items-center mx-auto me-auto mr-2">
+                <span style="color: rgb(255,215,0);">Ikuti</span>
+                <a href="https://www.instagram.com/pawonmedia.010924" target="_blank" class="icon-media mr-2 ml-2"
+                    style="margin-left: 5px; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@pawonmedia.010924" target="_blank" class="icon-media mr-2 ml-2"
+                    style="margin-left: 5px; text-decoration: none;"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <nav class="navbar">
+                <div class="container-fluid items-center mx-auto me-auto mr-2">
+                    <a class="navbar-brand" href="https://pawon-media.com/index.html" id="pamed-brand">
+                        <img src="/assets/LOGO-1.png" alt="PAWON MEDIA" class="card-img-top" id="pamed-logo"> Pawon
+                        Media
+                    </a>
+                    <div id="clock">
+                        <h1 id="date-time"></h1>
+                    </div>
+                </div>
+                <div class="container" id="navbarNav">
+                    <ul class="navbar">
+                        <li class="nav-item">
+                            <a href="#promotion" class="nav-link" aria-current="page" id="pamed-navbar">Promosi</a>
+                        </li>
+                    </ul>
+                    <ul class="subnav">
+                        <button class="subnavbtn">Kebutuhan Menulis <i class="fa fa-caret-down"></i></button>
+                        <li class="nav-item subnav-content">
+                            <a href="#school-products" id="pamed-navbar">Sekolah</a>
+                            <a href="#office-products" id="pamed-navbar">Kantor</a>
+                        </li>
+                    </ul>
+                    <ul class="subnav">
+                        <button class="subnavbtn">Mitra <i class="fa fa-caret-down"></i></button>
+                        <li class="nav-item subnav-content">
+                            <a href="/Landing Page/Nicolas Aditya Nugroho.html" target="_blank"
+                                id="pamed-navbar">Pemilik Toko</a>
+                            <a href="#MUDIKANusantaraCarloAcutis" id="pamed-navbar">MUDIKA Nusantara Carlo Acutis</a>
+                        </li>
+                    </ul>
+                    <ul class="subnav">
+                        <button class="subnavbtn">Kreativitas &amp; Kebutuhan HP <i
+                                class="fa fa-caret-down"></i></button>
+                        <li class="nav-item subnav-content">
+                            <a href="#design" id="pamed-navbar">Desain</a>
+                            <a href="#pulsa" id="pamed-navbar">Pulsa</a>
+                            <a href="#biq" id="pamed-navbar">Kuota Internet &amp; Tagihan</a>
+                        </li>
+                    </ul>
+                    <ul class="subnav">
+                        <button class="subnavbtn">KEPO <i class="fa fa-caret-down"></i></button>
+                        <li class="nav-item subnav-content">
+                            <a href="#about-us" id="pamed-navbar">Profil</a>
+                            <a href="#contact-us" id="pamed-navbar">Tetap Terhubung</a>
+                            <a href="#mapping-location" id="pamed-navbar">Lokasi
+                                <i class="fa-solid fa-location-dot"></i></a>
+                        </li>
+                    </ul>
+                    </ul>
+                    <ul class="subnav">
+                        <button class="subnavbtn"><i class="fa-solid fa-user"></i>
+                            <div id="user-display">Selamat Datang, <span id="user-fullname"></span> <i
+                                    class="fa fa-caret-down"></div></i>
+                        </button>
+                        <script>
+                            function updateUsername(username) {
+                                document.getElementById('user-fullname').textContent = username;
+                            }
+
+                            // Contoh pemanggilan setelah login
+                            const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                            updateUsername(loggedInUsername);</script>
+                        <li class="nav-item subnav-content"><a href="login.html" class="pamed-navbar"
+                                id="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                            <script> document.getElementById('logout-button').addEventListener('click', function () {
+                                    // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                                    localStorage.removeItem('username'); // Hapus username
+
+                                    // Arahkan pengguna ke halaman login atau homepage
+                                    window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                                });</script>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </section>
+
+    </section>
+    <main>
+        <!--Banner section-->
+        <section class="head-section">
+            <div class="pt-2 pb-5 container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6 px-3">
+                        <h1 id="text-style">Beli Alat Tulis</h1>
+                        <h1 class="text-style2">untuk Keperluan Sekolah & Kantor</h1>
+                        <p class="pamed-marketing">Mari beli kebutuhan sekolah anak dan kebutuhan kantor anda hanya di
+                            Pawon Media</p>
+                        <a type="button" class="btn btn-pamed" href="#school-products">
+                            <i class="fa-solid fa-pencil"></i> Produk Sekolah
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#office-products">
+                            <i class="fa-solid fa-pen"></i> Produk Kantor
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#design">
+                            <i class="fa-solid fa-palette"></i> Layanan Desain
+                        </a>
+                        <a type="button" class="btn btn-pamed" href="#pulsa">
+                            <i class="fa-solid fa-mobile"></i> Pulsa
+                        </a>
+                    </div>
+                    <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/assets/Latar Belakang Nama Pawon Media.png" class="d-block w-100"
+                                    alt="Latar Belakang Pawon Media">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/Visi Pawon Media.png" class="d-block w-100" alt="Visi Pawon Media">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/Misi Pawon Media.png" class="d-block w-100" alt="Misi Pawon Media">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="pamed-category">Form Pembelian &amp; Pembayaran Tagihan</h1>
+        <section class="container" id="form-payment">
+            <form id="orderForm">
+                <label for="item">Pilih Item:</label>
+                <select id="item" required>
+                    <option value="pulsa">Pulsa</option>
+                    <option value="kuota">Kuota Internet</option>
+                    <option value="tagihan">Pembayaran Tagihan</option>
+                </select>
+                <label for="price">Nominal Pulsa/Kuota Internet</label>
+                <input type="text" placeholder="Harap Diisi" required>
+                <input type="number" id="amount" min="1" required>
+                <button type="submit">Pesan</button>
+            </form>
+            <div id="message" style="display:none;"></div>
+            </div>
+            <script>document.getElementById('orderForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    const item = document.getElementById('item').value;
+                    const amount = document.getElementById('amount').value;
+                    const message = `Anda telah memesan ${amount} untuk item ${item}. Silahkan bukti pembelian ini dikirimkan ke WhatsApp +62895360074499. Terima kasih!`;
+
+                    const messageDiv = document.getElementById('message');
+                    messageDiv.style.display = 'block';
+                    messageDiv.innerText = message;
+                });</script>
+        </section>
+
+
+        <!-- Promotion Section -->
+        <h1 class="pamed-category">Promosi (Siapa Tau Ada Yang Butuh)</h1>
+        <section id="promotion" class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Jualan_Warung-Makan-Tenda_Kedai-Queen_Randublatung.jpg"
+                            class="card-img-top pamed-card-img w-100" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Sedang Lapar? Takis,
+                                langsung aja ke "Kedai Queen"
+                                Posisi warung dekat pintu masuk Kelurahan Randublatung.
+                                Jam buka warung makan: Senin-Minggu jam 9 pagi hingga 9 malam atau 10 malam.</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/6285781816884?text=Halo mbak Nona Putri, saya mau berkunjung ke warung mbak, bolehkah dikirim posisi pasti dari warung makannya?">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_3.jpg" alt=""
+                            class="card-img-top pamed-card-img">
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
+                            </h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Mas%20mau+kirim+CV%20kerja+tapi+saya+butuh+informasi+lebih+lengkap+mengenai+pekerjaan+ini.%20Terima+kasih&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_1.jpg" class="d-block w-100"
+                                        alt="Latar Belakang Pawon Media">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_2.jpg" class="d-block w-100"
+                                        alt="Visi Pawon Media">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_4.jpg" class="d-block w-100"
+                                        alt="Misi Pawon Media">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
+                            </h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6285801360803&text=Halo+mas+Girang%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Halo+mas+Nikolas+Aldo+Novelio%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promosi_Manulife_1.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Manulife_2.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Manulife_3.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Asuransi Jiwa &
+                                Kesehatan? Ya, Manulife JAWABAN ANDA Saat ini!</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/6281325929387?text=Halo mas Aldo, saya mau tanya-tanya seputar asuransi jiwa dan atau kesehatan yang masnya jual dan promosikan, dong">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <img src="/assets/Promosi_Wuling.jpg" class="card-img-top pamed-card-img w-100" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Beli Mobil Wuling Anda
+                                Pada Dealer Wuling AJM Sudirman</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/62816659755?text=Halo mbak Tina, saya mau tanya-tanya seputar mobil Wuling yang mbak jual dan promosikan, dong!">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 pamed-card-border shadow rounded">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/assets/Promois_Jualan_Monika_1.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_2.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_3.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_4.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_5.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_6.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_7.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_8.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/Promosi_Jualan_Monika_9.jpg" class="d-block w-100"
+                                        alt="Manulife Agent Nikolas Aldo">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-center justify-content-center">Butuh Aksesoris HP?
+                                Ya, toko "Dua Putri Cellular" JAWABAN ANDA Saat ini!</h5>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                            <div>
+                                <h3 class="price-text-style text-center justify-content-center">
+                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                </h3>
+                            </div>
+                            <div>
+                                <a type="button" class="btn btn-pamed" target="_blank"
+                                    href="https://wa.me/62856404078567?text=Halo mbak Monika, saya mau beli salah satu produk mbaknya, bolehkah diberikan informasi pasti dari lokasi toko mbaknya? Terima Kasih!">
+                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Starts -->
+    <footer class="container">
+        <!-- Grid container -->
+        <div class="footer-section p-4" id="pamed-card-footer">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0" id="about-us">
+                    <img src="/assets/LOGO-1.png" alt="" class="card-img-top" id="pamed-footer">
+                    <h5 class="fw-bold mb-4" style="color: rgb(255,215,0);">Tentang Kami:</h5>
+
+                    <p style="color: rgb(255,215,0);">
+                        <strong>"Pawon"</strong> dalam bahasa Jawa berarti <strong>"dapur"</strong>, yang simbolis
+                        untuk
+                        tempat
+                        di mana kehangatan dan
+                        kreativitas dimulai, sama halnya dengan proses belajar dan bekerja. <strong>"Media"</strong>
+                        menunjukkan
+                        bahwa
+                        toko ini merupakan sarana untuk mendukung aktivitas belajar dan komunikasi. Jadi,
+                        <strong>"Pawon
+                            Media"</strong>
+                        menggambarkan tempat di mana berbagai alat tulis dan perlengkapan disediakan untuk membantu
+                        memudahkan proses belajar dan bekerja, sekaligus menjadi ruang untuk berbagi ide dan
+                        kreativitas.
+                    </p>
+
+                    <p style="color: rgb(255,215,0);">
+                        <strong>VISI :</strong><br>
+                        Menjadi penyedia peralatan alat tulis sekolah dan kantor yang terpercaya, inovatif, dan
+                        berkualitas tinggi, mendukung setiap langkah belajar dan bekerja masyarakat.
+                        <br><br>
+
+                        <strong>MISI :</strong><br>
+                        1. Menyediakan berbagai macam peralatan alat tulis sekolah dan kantor yang berkualitas
+                        dengan
+                        harga
+                        yang terjangkau. <br><br>
+                        2. Menciptakan pengalaman berbelanja yang nyaman dan menyenangkan bagi pelanggan. <br><br>
+                        3. Berinovasi dalam produk dan layanan kami untuk memenuhi kebutuhan pelanggan yang terus
+                        berkembang. <br><br>
+                        4. Membangun komunitas yang peduli terhadap pendidikan dan pengembangan diri melalui
+                        berbagai
+                        program dan kegiatan.
+                    </p>
+                </div>
+                <hr>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0" id="contact-us">
+                    <h3>Ikuti &amp; Subscribe Akun Sosial Media Kami</h3>
+                    <hr>
+                    <a class="mt-3" href="https://www.instagram.com/pawonmedia.010924"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
+                    <hr>
+                    <h4 class="mb-4 pb-1">N.A.N YouTube</h4>
+                    <hr>
+                    <a href="https://www.instagram.com/nan.channel.id" class="me-auto mx-auto mr-2" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@NANChannelOfficial" class="me-auto mx-auto mr-2"
+                        target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <hr>
+                    <h4 class="text-uppercase mb-4 pb-1" id="MUDIKANusantaraCarloAcutis">MUDIKA Nusantara Carlo
+                        Acutis
+                    </h4>
+                    <hr><a
+                        href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html"
+                        class="me-auto mx-auto mr-2"><i class="fa-brands fa-chrome"></i></a>
+                    <a href="https://www.instagram.com/mudikanusantara.ca" class="me-auto mx-auto mr-2"
+                        target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@mudikanusantara.ca" class="me-auto mx-auto mr-2" target="_blank"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@mudikanusantara_ca" class="me-auto mx-auto mr-2"
+                        target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <hr>
+                    <h4 class="text-uppercase mb-4 pb-1">Nicolas Aditya Nugroho</h4>
+                    <hr>
+                    <a href="https://www.github.com/nicolas-aditya-nugroho" class="me-auto mx-auto mr-2"
+                        target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/nan96.04" class="me-auto mx-auto mr-2" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/nicolas-aditya-nugroho-347647150/" class="me-auto mx-auto mr-2"
+                        target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.tiktok.com/@nan96.04" class="me-auto mx-auto mr-2" target="_blank"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://x.com/Nicolas_Adty_29" class="me-auto mx-auto mr-2" target="_blank"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <hr>
+                    <ul class="fa-ul">
+                        <li class="mb-3">
+                            <a href="mailto:pawonmedia.010924@gmail.com" target="_blank"><i
+                                    class="fa-solid fa-paper-plane"></i>
+                                pawonmedia.010924@gmail.com</a></i>
+                        </li>
+                        <li class="mb-3" id="mapping-location">
+                            <a href="https://maps.app.goo.gl/BtjJoNsgPnDjuG5k6" target="_blank"><i
+                                    class="fa-solid fa-location-dot"></i> Jl. Kota
+                                Baru V No. 224, Blotongan - Sidorejo - Kota Salatiga</a><br><br>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!4v1740196636401!6m8!1m7!1sM9Atb4ssx-j34gzOHCLfxw!2m2!1d-7.305667984174104!2d110.4836377680286!3f89.41325021757685!4f-8.780332115523208!5f0.7820865974627469"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <hr>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://shorturl.at/6RjGP" target="_blank"><i class="fa-brands fa-whatsapp"></i>
+                                Kritik &amp;
+                                Saran</a></i>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <div class="payment-method">
+                        <h5>Bayar Dengan:</h5>
+                        <hr>
+                        <a href="https://www.tokopedia.com/pawon-media" target="_blank" class="icon-media"><img
+                                src="/assets/Tokopedia_Logo.svg" class="w-25 me-auto mx-auto mr-5" alt="Tokopedia"></a>
+                        <img src="/assets/QRIS-Toko_ATK_Nicolas.jpg" alt="QRIS" class="w-25 me-auto mx-auto mr-5">
+                    </div>
+                    <hr>
+
+                    <h4 class="mb-4">Jam Operasional</h4>
+                    <hr>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Senin - Jum'at:</td>
+                                <td>8 pagi - 8 malam</td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu:</td>
+                                <td>8 pagi - 3 sore</td>
+                            </tr>
+                            <tr>
+                                <td>Minggu:</td>
+                                <td>LIBUR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3">
+            <small class="block fw-bold">&copy; <span id="currentYear"></span>
+                <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
+                <a href="/forgot password.html" class="Copyright">Pawon Media ◯ Foto Kopi ◯ Alat-alat Tulis Kantor
+                    &amp;
+                    Sekolah
+                    <br> ◯ Desain ◯ Pulsa</a>
+            </small>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer Ends -->
+
+    <div class="whatsappbutton-popup">
+        <a href="https://api.whatsapp.com/send/?phone=62895360074499&text=Halo+mas%2C+saya+ingin+menyampaikan+kritik+dan+saran.+Apakah+boleh+saya+sampaikan+sekarang%3F&type=phone_number&app_absent=0"
+            class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i> Ngobrol Yuk!
+        </a>
+    </div>
+
+    <div class="back-to-home">
+        <button class="back-to-top" onclick="scrollToTop()">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("load", () => {
+        clock();
+        function clock() {
+            const today = new Date();
+
+            // get time components
+            const hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+
+            //add '0' to hour, minute & second when they are less 10
+            const hour = hours < 10 ? "0" + hours : hours;
+            const minute = minutes < 10 ? "0" + minutes : minutes;
+            const second = seconds < 10 ? "0" + seconds : seconds;
+
+            //make clock a 12-hour time clock
+            const hourTime = hour > 12 ? hour - 12 : hour;
+
+            // if (hour === 0) {
+            //   hour = 12;
+            // }
+            //assigning 'am' or 'pm' to indicate time of the day
+            const ampm = hour < 12 ? "AM" : "PM";
+
+            // get date components
+            const month = today.getMonth();
+            const year = today.getFullYear();
+            const day = today.getDate();
+
+            //declaring a list of all months in  a year
+            const monthList = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ];
+
+            //get current date and time
+            const date = monthList[month] + " " + day + ", " + year;
+            const time = hourTime + ":" + minute + ":" + second + ampm;
+
+            //combine current date and time
+            const dateTime = date + " - " + time;
+
+            //print current date and time to the DOM
+            document.getElementById("date-time").innerHTML = dateTime;
+            setTimeout(clock, 1000);
+        }
+    });
+
+
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display
+                = 'none';
+        }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior:
+                'smooth'
+        });
+    }
+</script>
