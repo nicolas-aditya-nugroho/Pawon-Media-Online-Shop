@@ -46,6 +46,17 @@ main {
     padding: 20px;
 }
 
+marquee {
+    color: rgb(255, 215, 0);
+    width: 500px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
 h1 {
     text-align: center;
     font-family: 'Arial', sans-serif;
@@ -77,6 +88,13 @@ h2 {
     color: #000000;
     text-align: center;
     font-weight: bolder;
+}
+
+#saweria {
+    width: 216px;
+    height: 216px;
+    margin-left: 60px;
+    margin-right: 40px;
 }
 
 .selayang-pandang {
