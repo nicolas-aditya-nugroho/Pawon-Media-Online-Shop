@@ -212,10 +212,26 @@ main {
 }
 
 #pulsa {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#token-listrik {
+    margin-top: 50px;
+    margin-bottom: 100px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
 #biq {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 50px rgb(255, 215, 0);
+}
+
+#biq-2 {
+    margin-top: 5px;
+    margin-bottom: 50px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
