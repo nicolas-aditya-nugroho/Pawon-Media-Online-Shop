@@ -13,44 +13,95 @@ body {
     align-items: center;
 }
 
-header {
-    background-color: #000000;
-    color: rgb(1, 163, 9);
-    padding: 20px;
-    text-align: center;
-}
-
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu .dropdown-menu {
-    top: 10%;
-    left: 100%;
-    margin-top: -1px;
+marquee {
     color: rgb(255, 215, 0);
-}
-
-.navbar {
-    width: 100%;
-    display: block;
-    justify-content: center;
-    align-content: center;
-    background-color: rgb(255, 215, 0);
-    padding: 10px 20px;
-}
-
-li:hover>ul.dropdown-menu {
-    display: block;
-    background-color: rgb(255, 215, 0);
-    color: #ffffff;
+    width: 1000px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
 #date-time {
-    font-size: 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
     color: rgb(255, 215, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin: 0 10px 25px;
+}
+
+#container {
+    margin: 0 auto;
+    background-color: #000000;
+}
+
+nav {
+    margin: 50px 0;
+    background-color: rgb(255, 215, 0);
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    background-color: red;
+}
+
+nav a {
+    display: block;
+    padding: 0 10px;
+    color: #FFF;
+    font-size: 15px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: green;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover>ul {
+    display: inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+/* Second, Third and more Tiers */
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+
+/* Change this in order to change the Dropdown symbol */
+li>a:after {
+    content: ' +';
+}
+
+li>a:only-child:after {
+    content: '';
 }
 
 main {
@@ -59,17 +110,6 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
-
-marquee {
-    color: rgb(255, 215, 0);
-    width: 500px;
-    height: 40px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
 }
 
 h1 {
