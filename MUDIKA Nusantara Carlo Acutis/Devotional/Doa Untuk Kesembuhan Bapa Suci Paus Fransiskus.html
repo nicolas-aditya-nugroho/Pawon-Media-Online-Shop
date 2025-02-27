@@ -35,7 +35,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-warning">
+        <nav class="navbar navbar-expand-sm navbar-light">
             <div class="d-flex items-center mx-auto me-auto mr-2">
                 <span style="color: #000000;">Ikuti</span>
                 <a href="#instagramPost" class="icon-media mr-2 ml-2"
@@ -77,22 +77,6 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" id="menu" data-bs-toggle="dropdown" class="nav-link dropdown-toggle"
-                            data-bs-display="static">Kalender</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu"><a href="#calendar" class="dropdown-item">Kalender Masehi</a>
-                            </li>
-                            <hr>
-                            <li class="dropdown-submenu"><a href="#liturgy" class="dropdown-item">Kalender
-                                    Liturgi</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#joinWithUs" class="nav-link">Gabung</a></li>
-                    <li class="nav-item"><a href="#joinGroup" class="nav-link">Diskusi</a></li>
-                    <li class="nav-item"><a href="/MUDIKA Nusantara Carlo Acutis/Feedback.html" class="nav-link">Kritik
-                            &amp; Saran</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" id="menu" data-bs-toggle="dropdown" class="nav-link dropdown-toggle"
                             data-bs-display="static">Devosi</a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-submenu">
@@ -130,7 +114,7 @@
                                     <hr>
                                     <li>
                                         <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html"
-                                            class="dropdown-item">Doa Perjalanan Apostolik Paus Fransiskus ke
+                                            class="dropdown-item">Doa Perjalanan Apostolik Paus Fransiskus <br> ke
                                             Indonesia</a>
                                     </li>
                                     <hr>
@@ -140,8 +124,13 @@
                                     </li>
                                     <hr>
                                     <li>
+                                        <a href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis"
+                                            class="dropdown-item">Doa Mohon Kelancaran Bisnis</a>
+                                    </li>
+                                    <hr>
+                                    <li>
                                         <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html"
-                                            class="dropdown-item">Doa Untuk Kesembuhan Bapa Suci Paus
+                                            class="dropdown-item">Doa Untuk Kesembuhan <br> Bapa Suci Paus
                                             Fransiskus</a>
                                     </li>
                                     <hr>
@@ -157,8 +146,8 @@
                                     <hr>
                                     <li>
                                         <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html"
-                                            class="dropdown-item">Rosario Santo Yosef: 3 Misteri Kehidupan (Gembira,
-                                            Sedih &amp; Mulia)</a>
+                                            class="dropdown-item">Rosario Santo Yosef: <br> 3 Misteri Kehidupan
+                                            (Gembira, Sedih &amp; Mulia)</a>
                                     </li>
                                     <hr>
                                     <li>
@@ -191,20 +180,49 @@
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="#KeuskupanAgungJakarta" class="dropdown-item">Panduan Tahun
-                                            Yubileum 2025 Umat Keuskupan Agung Jakarta</a>
+                                            Yubileum 2025: <br> Umat Keuskupan Agung Jakarta</a>
                                     </li>
                                     <hr>
                                     <li>
                                         <a href="#KeuskupanAgungSemarang" class="dropdown-item">Panduan Tahun
-                                            Yubileum 2025 Umat Keuskupan Agung Semarang</a>
+                                            Yubileum 2025: <br> Umat Keuskupan Agung Semarang</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" id="menu" data-bs-toggle="dropdown" class="nav-link dropdown-toggle"
+                            data-bs-display="static">Kalender</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a href="#calendar" class="dropdown-item">Kalender Masehi</a>
+                            </li>
+                            <hr>
+                            <li class="dropdown-submenu"><a href="#liturgy" class="dropdown-item">Kalender
+                                    Liturgi</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#joinWithUs" class="nav-link">Gabung</a></li>
+                    <li class="nav-item"><a href="#joinGroup" class="nav-link">Diskusi</a></li>
+                    <li class="nav-item"><a href="/MUDIKA Nusantara Carlo Acutis/Feedback.html" class="nav-link">Kritik
+                            &amp; Saran</a></li>
                 </ul>
             </div>
         </nav>
+        <div id="date-time">
+            <script>// Menampilkan hari, tanggal, dan jam
+                function updateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                    const dateString = now.toLocaleDateString('id-ID', options);
+                    document.getElementById('date-time').innerText = dateString;
+                }
+
+                // Panggil fungsi updateTime setiap detik
+                setInterval(updateTime, 1000);
+            </script>
+        </div>
     </header>
     <main>
         <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!

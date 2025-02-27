@@ -32,10 +32,26 @@ header {
     color: rgb(255, 215, 0);
 }
 
-.navbar-nav li:hover>ul.dropdown-menu {
+.navbar {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(255, 215, 0);
+    padding: 10px 20px;
+}
+
+li:hover>ul.dropdown-menu {
     display: block;
     background-color: rgb(255, 215, 0);
-    color: #000000;
+    color: #ffffff;
+}
+
+#date-time {
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    color: rgb(255, 215, 0);
 }
 
 main {
