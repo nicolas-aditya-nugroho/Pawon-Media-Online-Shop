@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -13,10 +12,9 @@ body {
     align-items: center;
 }
 
-
 marquee {
-    color: rgb(255, 215, 0);
-    width: 1000px;
+    color: red;
+    width: 1920px;
     height: 40px;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -26,84 +24,89 @@ marquee {
 }
 
 #date-time {
-    color: rgb(255, 215, 0);
+    color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
-    margin: 0 10px 25px;
+    margin-bottom: 15px;
 }
 
-#container {
-    margin: 0 auto;
-    background-color: #000000;
-}
-
-nav {
-    margin: 50px 0;
+header {
     background-color: rgb(255, 215, 0);
+    color: red;
+    padding: 1em;
+    text-align: center;
 }
 
-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+#social-media {
+    display: flex;
     position: relative;
+    background-color: green;
+    color: rgb(255, 215, 0);
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px red;
 }
 
-nav ul li {
-    display: inline-block;
-    background-color: red;
+#social-media i {
+    margin-left: 15px;
+    color: rgb(255, 215, 0);
 }
 
-nav a {
-    display: block;
-    padding: 0 10px;
-    color: #FFF;
-    font-size: 15px;
-    line-height: 60px;
+#social-media i:hover {
+    color: red;
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: red;
     text-decoration: none;
 }
 
-nav a:hover {
-    background-color: green;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hide Dropdowns by Default */
-nav ul ul {
+nav ul li {
+    position: relative;
+}
+
+nav ul li a img {
+    width: 65px;
+    height: 65px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: red;
+}
+
+nav ul li ul {
     display: none;
     position: absolute;
-    top: 60px;
-    /* the height of the main nav */
+    top: 25%;
+    left: 0;
+    background-color: rgb(255, 215, 0);
+    padding: 10px;
+    border: 1px solid green;
 }
 
-/* Display Dropdowns on Hover */
-nav ul li:hover>ul {
-    display: inherit;
+nav ul li:hover ul {
+    display: block;
 }
 
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-    width: 170px;
-    float: none;
-    display: list-item;
-    position: relative;
-}
-
-/* Second, Third and more Tiers */
-nav ul ul ul li {
-    position: relative;
-    top: -60px;
-    left: 170px;
-}
-
-
-/* Change this in order to change the Dropdown symbol */
-li>a:after {
-    content: ' +';
-}
-
-li>a:only-child:after {
-    content: '';
-}
 
 main {
     background-color: #000000;
@@ -112,6 +115,7 @@ main {
     align-items: center;
     padding: 20px;
 }
+
 
 h1 {
     text-align: center;
@@ -147,14 +151,25 @@ h2 {
 }
 
 #saweria {
-    width: 216px;
-    height: 216px;
-    margin-left: 60px;
-    margin-right: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: space-evenly;
 }
 
-.selayang-pandang {
-    section {
+#saweria #MNCA-saweria {
+    margin-top: 20px;
+    width: 25%;
+    height: auto;
+    margin-right: 20px;
+}
+
+#welcome {
+
+    .container {
+        height: 500px;
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -167,13 +182,30 @@ h2 {
         flex-direction: row;
         background: rgb(0, 0, 0);
         color: rgb(255, 215, 0);
-
+        overflow-y: auto;
         height: 30rem;
         border-radius: 2rem;
-        overflow: hidden;
 
         ::marker {
             content: '';
+        }
+
+        details::-webkit-scrollbar {
+            background-color: rgb(255, 215, 0);
+            width: 10px;
+        }
+
+        details::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+        }
+
+        details::-webkit-scrollbar-track {
+            color: red;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
         }
 
         summary {
@@ -193,6 +225,17 @@ h2 {
                 padding: 0;
             }
         }
+
+        .btn {
+            background-color: rgb(255, 215, 0);
+            color: red;
+        }
+
+        .btn:hover {
+            background-color: whitesmoke;
+            color: green;
+        }
+
 
         &:hover,
         &:has(summary:focus) {
@@ -223,10 +266,28 @@ h2 {
 
         height: 30rem;
         border-radius: 2rem;
-        overflow: hidden;
+        overflow-y: auto;
 
         ::marker {
             content: '';
+        }
+
+        details::-webkit-scrollbar {
+            background-color: rgb(255, 215, 0);
+            width: 10px;
+        }
+
+        details::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+        }
+
+        details::-webkit-scrollbar-track {
+            color: red;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
         }
 
         summary {
@@ -245,6 +306,16 @@ h2 {
                 background: rgba(255, 255, 255, 0.25);
                 padding: 0;
             }
+        }
+
+        .btn {
+            background-color: rgb(255, 215, 0);
+            color: red;
+        }
+
+        .btn:hover {
+            background-color: whitesmoke;
+            color: green;
         }
 
         &:hover,
@@ -276,11 +347,31 @@ h2 {
 
         height: 30rem;
         border-radius: 2rem;
-        overflow: hidden;
+        overflow-y: auto;
 
         ::marker {
             content: '';
         }
+
+        details::-webkit-scrollbar {
+            background-color: rgb(255, 215, 0);
+            width: 10px;
+        }
+
+        details::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+        }
+
+        details::-webkit-scrollbar-track {
+            color: red;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+
 
         summary {
             padding: 1rem;
@@ -298,6 +389,16 @@ h2 {
                 background: rgba(255, 255, 255, 0.25);
                 padding: 0;
             }
+        }
+
+        .btn {
+            background-color: rgb(255, 215, 0);
+            color: red;
+        }
+
+        .btn:hover {
+            background-color: whitesmoke;
+            color: green;
         }
 
         &:hover,
@@ -471,7 +572,7 @@ form .button {
 
 footer {
     padding: 3rem;
-    background-color: goldenrod;
+    background-color: rgb(255, 215, 0);
     color: black;
     padding: 10px;
     text-align: center;
@@ -539,6 +640,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .calendar {
@@ -593,35 +695,83 @@ footer {
     background-color: #f1f1f1;
 }
 
-/* Gaya untuk perangkat mobile */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
     }
 
-    .container {
-        padding: 10px;
+    section {
+        margin-bottom: 10px;
     }
+
+    marquee {
+        color: red;
+        width: 500px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    nav ul li ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
 }
 
-/* Gaya untuk tablet */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
+@media only screen and (max-width: 480px) {
+    marquee {
+        color: red;
+        width: 200px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
         font-size: 16px;
     }
 
-    .container {
-        padding: 20px;
-    }
-}
 
-/* Gaya untuk desktop */
-@media (min-width: 1025px) {
-    body {
-        font-size: 18px;
+    main {
+        padding: 1em;
     }
 
-    .container {
-        padding: 30px;
+    section {
+        padding: 0.5em;
     }
 }

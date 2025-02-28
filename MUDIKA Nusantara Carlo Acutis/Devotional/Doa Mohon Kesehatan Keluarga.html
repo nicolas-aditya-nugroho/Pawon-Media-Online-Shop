@@ -33,132 +33,154 @@
 </head>
 
 <body>
-    <header id="container">
-        <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
-            Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
-            sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
-        </marquee>
+    <header>
+        <nav class="navbar-nav">
+            <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
+                Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
+                sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
+            </marquee>
 
-        <div id="date-time">
-            <script>// Menampilkan hari, tanggal, dan jam
-                function updateTime() {
-                    const now = new Date();
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                    const dateString = now.toLocaleDateString('id-ID', options);
-                    document.getElementById('date-time').innerText = dateString;
-                }
+            <div id="date-time">
+                <script>// Menampilkan hari, tanggal, dan jam
+                    function updateTime() {
+                        const now = new Date();
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                        const dateString = now.toLocaleDateString('id-ID', options);
+                        document.getElementById('date-time').innerText = dateString;
+                    }
 
-                // Panggil fungsi updateTime setiap detik
-                setInterval(updateTime, 1000);</script>
-        </div>
+                    // Panggil fungsi updateTime setiap detik
+                    setInterval(updateTime, 1000);</script>
+            </div>
 
-        <nav>
+
+            <section class="d-flex me-auto mx-auto mr-2" id="social-media">
+                <h5>Ikuti Kami di</h5>
+                <ul>
+                    <li>
+                        <a href="#instagramPost"><i class="fa-brands fa-instagram"></i></a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i></a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#youtubePost"><i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </section>
             <ul>
-                <li><a href="MUDIKA Nusantara Carlo Acutis.html">Home</a></li>
-                <li><a href="#">SPK - SCAMP - KYEV</a>
-                    <!-- First Tier Drop Down -->
+                <li><a href="MUDIKA Nusantara Carlo Acutis.html"><img src="MUDIKA Nusantara Carlo Acutis.png"
+                            alt="MUDIKA Nusantara Carlo Acutis"></a></li>
+                <li>
+                    <a href="#">SPK - SCAMP - KYEV</a>
                     <ul>
                         <li><a href="#welcome">Selayang Pandang Komunitas</a></li>
-                        <li><a href="#advice">Saran CArlo Acutis Malaikat Pelindung</a></li>
-                        <li><a href="#amazed">Kekaguman Suster Yohana Evita Veron</a></li>
+                        <hr>
+                        <li><a href="#advice">Saran Carlo Acutis Malaikat Pelindung</a></li>
+                        <hr>
+                        <li><a href="#amazed">Kekaguman Suster Yohana Evita Veron, CAE</a></li>
                     </ul>
                 </li>
-                <li><a href="#ourActivity">Aktivitas</a></li>
-                <li><a href="#"><i class="fa-solid fa-hands-praying"></i></a>
-                    <!-- First Tier Drop Down -->
+                <li>
+                    <a href="#">Aktivitas &amp; Pendiri Komunitas</a>
+                    <ul>
+                        <li><a href="#ourActivity">Aktivitas Kami</a></li>
+                        <hr>
+                        <li><a href="#ourBelovedFounder">Pendiri Komunitas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Devosi</a>
+                    <ul>
+                        <li><a href="Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Doa Bagi Bangsa &amp; Negara
+                            </a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Mohon Jodoh.html">Doa Mohon Jodoh</a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Mohon Pekerjaan.html">Doa Mohon Pekerjaan</a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Doa Mohon Kelancaran
+                                Penjualan Rumah</a></li>
+                        <hr>
+                        <li><a
+                                href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
+                                Mohon Kelancaran Bisnis</a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Mohon Kesehatan Keluarga.html">Doa
+                                Mohon Kesehatan Keluarga</a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Mohon Kesembuhan Keluarga.html">Doa
+                                Mohon Kesembuhan Keluarga</a></li>
+                        <hr>
+                        <li><a href="Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa Untuk
+                                Kesembuhan Bapa Suci Paus Fransiskus</a></li>
+                        <hr>
+                        <li><a href="#Yubileum2025">Panduan Praktis Umat: <br> Keuskupan Agung Jakarta &amp; Keuskupan
+                                Agung Semarang</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Devosi Santa Perawan Maria Sang Bunda Kristus</a>
+                    <ul>
+                        <li><a href="Devotional/Peristiwa Gembira.html">Rosario: Peristiwa Gembira <br> (Senin &amp;
+                                Sabtu)</a></li>
+                        <hr>
+                        <li><a href="Devotional/Peristiwa Sedih.html">Rosario: Peristiwa Sedih <br> (Selasa &amp;
+                                Jum'at)</a></li>
+                        <hr>
+                        <li><a href="Devotional/Peristiwa Mulia.html">Rosario: Peristiwa Mulia <br> (Rabu &amp;
+                                Minggu)</a></li>
+                        <hr>
+                        <li><a href="Devotional/Peristiwa Terang.html">Rosario: Peristiwa Terang <br> (Kamis)</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Devosi Santo Yosef</a>
+                    <ul>
+                        <li><a href="Devotional/Doa Santo Yosef Tidur.html">Doa Santo Yosef Tidur</a></li>
+                        <hr>
+                        <li><a href="Devotional/Litani Santo Yosef.html">Litani Santo Yosef</a></li>
+                        <hr>
+                        <li><a href="Devotional/Rosario Santo Yosef.html">Rosario Santo Yosef: <br> 3 Misteri
+                                Kehidupan</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Kalender</a>
                     <ul>
                         <li><a href="#calendar">Kalender Masehi</a></li>
+                        <hr>
                         <li><a href="#liturgy">Kalender Liturgi</a></li>
-                        <li><a href="#">Devosi</a>
-                            <!-- Second Tier Drop Down -->
-                            <ul>
-                                <li><a href="Devotional/Doa Santo Yosef Tidur.html">Doa Santo Yosef Tidur</a></li>
-                                <li><a href="Devotional/Litani Santo Yosef.html">Doa Litani Santo Yosef</a></li>
-                                <li><a href="Devotional/Rosario Santo Yosef.html">Doa Rosario Santo Yosef: 3
-                                        Peristiwa/Misteri Kehidupan</a></li>
-                                <li><a href="Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Doa Bagi Bangsa -
-                                        Negara</a></li>
-                                <li><a href="Devotional/Doa Mohon Jodoh.html">Doa Mohon Jodoh</a></li>
-                                <li><a href="Devotional/Doa Mohon Pekerjaan.css">Doa Mohon Pekerjaan</a></li>
-                                <li><a href="Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Doa Mohon Kelancaran
-                                        Penjualan Rumah</a></li>
-                                <li><a href="Devotional/Doa Mohon Kesehatan Keluarga.html">Doa Mohon Kesehatan
-                                        Keluarga</a></li>
-                                <li><a href="Devotional/Doa Mohon Kesembuhan Keluarga.html">Doa Mohon Kesembuhan
-                                        Keluarga</a></li>
-                                <li><a
-                                        href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
-                                        Mohon Kelancaran Bisnis</a></li>
-                                <li><a href="Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa
-                                        Perjalanan Apostolik Bapa Suci Ke Indonesia</a></li>
-                                <li><a href="Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Doa Untuk
-                                        Kesembuhan Bapa Suci Paus Fransiskus</a></li>
-                                <li><a href="#">Rosario Santa Maria Sang Bunda Kristus</a>
-                                    <!-- Third Tier Drop Down -->
-                                    <ul>
-                                        <li><a href="Devotional/Peristiwa Gembira.html">Peristiwa Gembira (Senin &amp;
-                                                Sabtu)</a></li>
-                                        <li><a href="Devotional/Peristiwa Sedih.html">Peristiwa Sedih (Selasa &amp;
-                                                Jum'at)</a>
-                                        </li>
-                                        <li><a href="Devotional/Peristiwa Mulia.html">Peristiwa Mulia (Rabu &amp;
-                                                Minggu)</a>
-                                        </li>
-                                        <li><a href="Devotional/Peristiwa Mulia.html">Peristiwa Terang (Kamis)</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        <li><a href="#">Tahun Yubileum 2025 (Panduan Umat Praktis)</a>
-                            <!-- Fourth Tier Drop Down -->
-                            <ul>
-                                <li><a
-                                        href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KeuskupanAgungJakarta">Keuskupan
-                                        Agung Jakarta</a>
-                                </li>
-                                <li><a
-                                        href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KeuskupanAgungSemarang">Keuskupan
-                                        Agung Semarang</a>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
-                <li><a href="#ourBelovedFounder">Pendiri Komunitas</a></li>
-                <li><a href="#">Mitra</a>
-                    <!-- Fifth Tier Drop Down -->
-                    <ul>
-                        <li><a href="https://pawon-media.com/login.html">Pawon Media</a></li>
-                        <li><a href="#eShop">Produk UMKM</a></li>
-                    </ul>
-                </li>
-                <li><a href="#joinGroup">Diskusi</a></li>
-                <li><a href="#joinWithUs">Gabung Kepengurusan</a></li>
-                <li><a href="Feedback.html">Kritik &amp; Saran</a></li>
+                <li><a href="#keep-contact">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png"
-                class="card-img position-absolute-top-50 w-100" id="welcome">
-            <details name="Welcome to MUDIKA Nusantara Carlo Acutis Community">
-                <summary><span class="fw-bold">Mengenal kami secara singkat</span>
-                </summary>
-                <div class="details-content-wrapper">
-                    <p class="text-center">Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam <br> 1 (satu)
-                        wadah kreativitas atas sepengetahuan pendiri komunitas namun tidak terlepas daripada nilai-nilai
-                        ajaran Gereja Katolik</p>
-                </div>
-            </details>
+        <section id="welcome">
+            <div class="selayang-pandang container">
+                <details name="wpucourse" open>
+                    <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt=""
+                        class="card-img-top">
+                    <summary><span>SPK</span></summary>
+                    <div class="details-content-wrapper">
+                        <p>Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam
+                            1 (satu) wadah kreativitas atas sepengetahuan pendiri komunitas namun tidak terlepas
+                            daripada nilai-nilai ajaran Gereja Katolik</p>
+                        <a href="#profile" class="btn">Profil Lengkap</a>
+                    </div>
+                </details>
         </section>
 
-        <section class="container">
-            <h4 class="text-center fw-bold">Silahkan donasikan uang Anda untuk perkembangan komunitas MUDIKA Nusantara
-                Carlo Acutis</h4>
-            <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png" alt=""
-                class="card-img-top" id="saweria">
+        <section id="saweria">
+            <img src="MUDIKA_Nusantara_Carlo_Acutis-Saweria.png" alt="MUDIKA Nusantara Carlo Acutis Saweria"
+                id="MNCA-saweria">
+            <h3>Mari Bantu Kami Dengan Berdonasi</h3>
         </section>
 
         <!-- Gregorian calendar's Starts -->
@@ -502,15 +524,16 @@
         </section>
 
         <section id="advice">
-            <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="" class="card-img-top">
             <div class="adviceCarloAcutis container">
                 <details name="wpucourse" open>
+                    <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="" class="card-img-top">
                     <summary><span>SCAMP</span></summary>
                     <div class="details-content-wrapper">
                         <h4>Saran Carlo Acutis Malaikat Pelindung</h4>
                         <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu.
                             Karena, Malaikat Pelindung mu harus menjadi sahabat terbaik mu!</p>
-
+                        <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
+                            class="btn" target="_blank">Karya Website Carlo Acutis</a>
                     </div>
                 </details>
         </section>
@@ -693,10 +716,10 @@
         </section>
 
         <section id="amazed">
-            <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt=""
-                class="card-img-top">
             <div class="kekaguman container">
                 <details name="kagum" open>
+                    <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt=""
+                        class="card-img-top">
                     <summary><span>KYEV</span></summary>
                     <div class="details-content-wrapper">
                         <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
@@ -705,6 +728,7 @@
                             benar-benar luar biasa dan platform yang mereka sediakan sungguh sangat bermanfaat bagi para
                             muda-mudi di luar Gereja Katolik (secara luas) dan juga bermanfaat bagi seluruh muda-mudi
                             Katolik (secara khususnya)</p>
+                        <a href="https://www.instagram.com/yohanaevita" class="btn">Ikuti Akun Instagram Saya</a>
                     </div>
                 </details>
         </section>
@@ -725,8 +749,9 @@
             <!-- Join Group Ends -->
         </section>
     </main>
+
     <footer>
-        <div class="container">
+        <div class="container" id="keep-contact">
             <div class="row">
                 <div class="footer col text-center">
                     <small class="block fw-bolder">Didesain Oleh: <a href="https://pawon-media.com" target="_blank"><img
