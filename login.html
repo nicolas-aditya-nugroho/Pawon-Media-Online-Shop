@@ -22,7 +22,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>Akses Member | Pawon Media</title>
-    <link rel="stylesheet" href="/assets/styling/login.css">
+    <link rel="stylesheet" href="assets/styling/login.css">
 </head>
 
 <body>
@@ -82,10 +82,10 @@
                     <li><a href="forgot password.html" class="btn pamed-btn">Lupa Kata Sandi?</a></li>
                 </section>
                 <section class="registration">
-                    <li><a href="#registration" class="btn pamed-btn">Daftar Dulu Lur!</a></li>
+                    <li><a href="registration.html" class="btn pamed-btn">Daftar Dulu Lur!</a></li>
                 </section>
                 <section class="login">
-                    <li><a href="login.html" class="btn btn-pamed">Masuk Lur!</a></li>
+                    <li><a href="#login" class="btn btn-pamed">Masuk Lur!</a></li>
                 </section>
             </nav>
         </header>
@@ -142,82 +142,41 @@
             </div>
         </section>
 
-        <div class="wrapper" id="login">
-            <form action="index.html">
-                <h1>Akses Member</h1>
-                <div class="field email">
-                    <div class="input-area">
-                        <input type="text" placeholder="Alamat Surel">
-                        <i class="icon fas fa-envelope"></i>
-                        <i class="error error-icon fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="error error-txt">Surel <strong>Tidak Boleh Kosong</strong></div>
+        <section class="login-container">
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="username">Surel</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan Surel Anda dengan benar">
                 </div>
-                <div class="field password">
-                    <div class="input-area">
-                        <input type="password" placeholder="Kata Sandi">
-                        <i class="icon fas fa-lock"></i>
-                        <i class="error error-icon fas fa-exclamation-circle"></i>
-                    </div>
-                    <div class="error error-txt">Kata Sandi <strong>Tidak Boleh Kosong</strong></div>
+                <div class=" form-group">
+                    <label for="password">Kata Sandi</label>
+                    <input type="password" id="password" name="password"
+                        placeholder="Masukkan Kata Sandi Anda dengan benar">
                 </div>
-                <div class="pass-txt"><a href="forgot password.html">Anda Lupa Kata Sandi?</a></div>
-                <input type="submit" value="Login" id="signin">
-            </form>
-            <div class="sign-txt">Belum Punya Member? <a href="registration.html">Daftar <strong>di SINI</strong></a>
-            </div>
-            <script>const form = document.querySelector("form");
-                eField = form.querySelector(".email"),
-                    eInput = eField.querySelector("input"),
-                    pField = form.querySelector(".password"),
-                    pInput = pField.querySelector("input");
-                form.onsubmit = (e) => {
-                    e.preventDefault(); //preventing from form submitting
-                    //if email and password is blank then add shake class in it else call specified function
-                    (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
-                    (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass();
-                    setTimeout(() => { //remove shake class after 500ms
-                        eField.classList.remove("shake");
-                        pField.classList.remove("shake");
-                    }, 500);
-                    eInput.onkeyup = () => { checkEmail(); } //calling checkEmail function on email input keyup
-                    pInput.onkeyup = () => { checkPass(); } //calling checkPassword function on pass input keyup
-                    function checkEmail() { //checkEmail function
-                        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //pattern for validate email
-                        if (!eInput.value.match(pattern)) { //if pattern not matched then add error and remove valid class
-                            eField.classList.add("error");
-                            eField.classList.remove("valid");
-                            let errorTxt = eField.querySelector(".error-txt");
-                            //if email value is not empty then show please enter valid email else show Email can't be blank
-                            (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
-                        } else { //if pattern matched then remove error and add valid class
-                            eField.classList.remove("error");
-                            eField.classList.add("valid");
+                <span>Anda Lupa <a href="forgot password.html" class="forgot-password">Kata Sandi?</a></span>
+                <button type="submit">Login</button>
+                <span>Belum Memiliki Akun? <a href="registration.html" class="registration">Daftar Dulu Ya!</a></span>
+                <script>
+                    // Fungsi untuk memfungsikan form login
+                    document.getElementById('login-form').addEventListener('submit', function (event) {
+                        event.preventDefault();
+                        var username = document.getElementById('username').value;
+                        var password = document.getElementById('password').value;
+                        // Lakukan validasi username dan password
+                        if (username === 'admin' && password === 'password') {
+                            // Jika validasi berhasil, maka redirect ke halaman utama
+                            window.location.href = 'index.html';
+                        } else {
+                            // Jika validasi gagal, maka tampilkan pesan error
+                            alert('Surel atau Kata Sandi Anda salah!');
                         }
-                    }
-                    function checkPass() { //checkPass function
-                        if (pInput.value == "") { //if pass is empty then add error and remove valid class
-                            pField.classList.add("error");
-                            pField.classList.remove("valid");
-                        } else { //if pass is empty then remove error and add valid class
-                            pField.classList.remove("error");
-                            pField.classList.add("valid");
-                        }
-                    }
-                    //if eField and pField doesn't contains error class that mean user filled details properly
-                    if (!eField.classList.contains("error") && !pField.classList.contains("error")) {
-                        window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
-                    }
-                    $(document).ready(function () {
-                        $("#signin").click(function () {
-
-                            //Script for login is here...
-
-                        });
                     });
-                }
-            </script>
-        </div><br><br>
+                </script>
+            </form>
+        </section>
+
+        <br><br>
 
         <!-- Promotion Section -->
         <h1 class="pamed-category">Promosi (Siapa Tau Ada Yang Butuh)</h1>
@@ -650,64 +609,16 @@
 </body>
 
 <script>
-    window.addEventListener("load", () => {
-        clock();
-        function clock() {
-            const today = new Date();
+    // Menampilkan hari, tanggal, dan jam
+    function updateTime() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const dateString = now.toLocaleDateString('id-ID', options);
+        document.getElementById('date-time').innerText = dateString;
+    }
 
-            // get time components
-            const hours = today.getHours();
-            const minutes = today.getMinutes();
-            const seconds = today.getSeconds();
-
-            //add '0' to hour, minute & second when they are less 10
-            const hour = hours < 10 ? "0" + hours : hours;
-            const minute = minutes < 10 ? "0" + minutes : minutes;
-            const second = seconds < 10 ? "0" + seconds : seconds;
-
-            //make clock a 12-hour time clock
-            const hourTime = hour > 12 ? hour - 12 : hour;
-
-            // if (hour === 0) {
-            //   hour = 12;
-            // }
-            //assigning 'am' or 'pm' to indicate time of the day
-            const ampm = hour < 12 ? "AM" : "PM";
-
-            // get date components
-            const month = today.getMonth();
-            const year = today.getFullYear();
-            const day = today.getDate();
-
-            //declaring a list of all months in  a year
-            const monthList = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-            ];
-
-            //get current date and time
-            const date = monthList[month] + " " + day + ", " + year;
-            const time = hourTime + ":" + minute + ":" + second + ampm;
-
-            //combine current date and time
-            const dateTime = date + " - " + time;
-
-            //print current date and time to the DOM
-            document.getElementById("date-time").innerHTML = dateTime;
-            setTimeout(clock, 1000);
-        }
-    });
-
+    // Panggil fungsi updateTime setiap detik
+    setInterval(updateTime, 1000);
 
     const backToTopButton = document.querySelector('.back-to-top');
 
