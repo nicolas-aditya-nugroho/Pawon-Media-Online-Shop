@@ -20,67 +20,12 @@ header {
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-header .navbar {
-    overflow: hidden;
-}
-
-header .navbar a {
-    float: left;
-    font-size: 16px;
-    color: rgb(255, 215, 0);
+header #date-time {
     text-align: center;
-    padding: 10px;
-    text-decoration: none;
-}
-
-header .navbar .subnav {
-    float: left;
-    overflow: hidden;
-}
-
-header .navbar .subnav .subnavbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
     color: rgb(255, 215, 0);
-    padding: 10px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-header .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19)
-}
-
-header .navbar .subnav-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    background-color: rgb(255, 215, 0);
-    width: 100%;
-    z-index: 1;
-}
-
-header .navbar .subnav-content a {
-    float: left;
-    color: rgb(169, 94, 19);
-    text-decoration: none;
-}
-
-header .navbar .subnav-content a:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-}
-
-header .navbar .subnav:hover .subnav-content {
-    display: block;
-}
-
-.pamed-category {
-    text-align: center;
-    box-shadow: 0 0 50px rgb(169, 94, 19);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 
 nav #pamed-logo {
@@ -90,15 +35,152 @@ nav #pamed-logo {
     height: 50px;
 }
 
-#pamed-brand {
+nav #pamed-brand {
     color: rgb(255, 215, 0);
     text-decoration: none;
     font-size: 35px;
 }
 
-#pamed-brand:hover {
+nav #pamed-brand:hover {
     color: rgb(169, 94, 19)
 }
+
+/* Menu Dropdown */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.menu,
+.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu {
+    margin: 50px auto;
+    width: 800px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+.menu>li {
+    background: rgb(255, 215, 0);
+    float: left;
+    position: relative;
+    transform: skewX(25deg);
+}
+
+.menu a {
+    display: block;
+    color: rgb(169, 94, 19);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Arial, Helvetica;
+    font-size: 14px;
+}
+
+.menu li:hover {
+    background: rgb(255, 215, 0);
+}
+
+.menu>li>a {
+    transform: skewX(-25deg);
+    padding: 1em 2em;
+}
+
+/* Dropdown */
+.submenu {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    transform: skewX(-25deg);
+    transform-origin: left top;
+}
+
+.submenu li {
+    background-color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+}
+
+.submenu>li>a {
+    padding: 1em 2em;
+}
+
+.submenu>li::after {
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+.submenu>li:nth-child(odd) {
+    transform: skewX(-25deg) translateX(0);
+}
+
+.submenu>li:nth-child(odd)>a {
+    transform: skewX(25deg);
+}
+
+.submenu>li:nth-child(odd)::after {
+    right: -50%;
+    transform: skewX(-25deg) rotate(3deg);
+}
+
+.submenu>li:nth-child(even) {
+    transform: skewX(25deg) translateX(0);
+}
+
+.submenu>li:nth-child(even)>a {
+    transform: skewX(-25deg);
+}
+
+.submenu>li:nth-child(even)::after {
+    left: -50%;
+    transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu li {
+    transition: .2s ease transform;
+}
+
+.menu>li:hover .submenu,
+.menu>li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu>li:hover .submenu li:nth-child(even) {
+    transform: skewX(25deg) translateX(15px);
+}
+
+.menu>li:hover .submenu li:nth-child(odd) {
+    transform: skewX(-25deg) translateX(-15px);
+}
+
+.pamed-category {
+    text-align: center;
+    box-shadow: 0 0 50px rgb(169, 94, 19);
+}
+
 
 #location-pamed {
     font-size: large;
@@ -157,12 +239,13 @@ main {
 }
 
 .btn-pamed:hover {
-    background-color: whitesmoke;
-    color: rgb(169, 94, 19);
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
     border: none;
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
 .pamed-btn {

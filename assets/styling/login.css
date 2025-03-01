@@ -14,73 +14,17 @@ body {
 
 header {
     background-color: rgb(169, 94, 19);
-    color: #00000000;
     padding: 1em;
     text-align: center;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-header .navbar {
-    overflow: hidden;
-}
-
-header .navbar a {
-    float: left;
-    font-size: 16px;
-    color: rgb(255, 215, 0);
+header #date-time {
     text-align: center;
-    padding: 10px;
-    text-decoration: none;
-}
-
-header .navbar .subnav {
-    float: left;
-    overflow: hidden;
-}
-
-header .navbar .subnav .subnavbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
     color: rgb(255, 215, 0);
-    padding: 10px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-header .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19)
-}
-
-header .navbar .subnav-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    background-color: rgb(255, 215, 0);
-    width: 100%;
-    z-index: 1;
-}
-
-header .navbar .subnav-content a {
-    float: left;
-    color: rgb(169, 94, 19);
-    text-decoration: none;
-}
-
-header .navbar .subnav-content a:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-}
-
-header .navbar .subnav:hover .subnav-content {
-    display: block;
-}
-
-.pamed-category {
-    text-align: center;
-    box-shadow: 0 0 50px rgb(169, 94, 19);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 
 nav #pamed-logo {
@@ -88,17 +32,162 @@ nav #pamed-logo {
     align-items: center;
     width: 50px;
     height: 50px;
+    margin-right: 10px;
 }
 
-#pamed-brand {
+nav #pamed-brand {
     color: rgb(255, 215, 0);
     text-decoration: none;
-    font-size: 35px;
+    font-size: 30px;
 }
 
-#pamed-brand:hover {
-    color: rgb(169, 94, 19)
+nav #pamed-brand:hover {
+    color: red;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
 }
+
+/* Menu Dropdown */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.menu,
+.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu {
+    margin: 50px auto;
+    width: 800px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+.menu>li {
+    background: rgb(255, 215, 0);
+    float: left;
+    position: relative;
+    transform: skewX(25deg);
+}
+
+.menu a {
+    display: block;
+    color: rgb(169, 94, 19);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Arial, Helvetica;
+    font-size: 14px;
+}
+
+.menu li:hover {
+    background: rgb(255, 215, 0);
+}
+
+.menu>li>a {
+    transform: skewX(-25deg);
+    padding: 1em 2em;
+}
+
+/* Dropdown */
+.submenu {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    transform: skewX(-25deg);
+    transform-origin: left top;
+}
+
+.submenu li {
+    background-color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+}
+
+.submenu>li>a {
+    padding: 1em 2em;
+}
+
+.submenu>li::after {
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+.submenu>li:nth-child(odd) {
+    transform: skewX(-25deg) translateX(0);
+}
+
+.submenu>li:nth-child(odd)>a {
+    transform: skewX(25deg);
+}
+
+.submenu>li:nth-child(odd)::after {
+    right: -50%;
+    transform: skewX(-25deg) rotate(3deg);
+}
+
+.submenu>li:nth-child(even) {
+    transform: skewX(25deg) translateX(0);
+}
+
+.submenu>li:nth-child(even)>a {
+    transform: skewX(-25deg);
+}
+
+.submenu>li:nth-child(even)::after {
+    left: -50%;
+    transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.submenu,
+.submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu li {
+    transition: .2s ease transform;
+}
+
+.menu>li:hover .submenu,
+.menu>li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu>li:hover .submenu li:nth-child(even) {
+    transform: skewX(25deg) translateX(15px);
+}
+
+.menu>li:hover .submenu li:nth-child(odd) {
+    transform: skewX(-25deg) translateX(-15px);
+}
+
+nav .registration, .login, .forgot-password {
+    margin-right: 10px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.pamed-category {
+    text-align: center;
+    box-shadow: 0 0 50px rgb(169, 94, 19);
+}
+
 
 #location-pamed {
     font-size: large;
@@ -154,6 +243,7 @@ main {
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(169, 94, 19);
 }
 
 .btn-pamed:hover {
@@ -163,6 +253,7 @@ main {
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
 .pamed-btn {
@@ -172,6 +263,7 @@ main {
     padding: 10px;
     margin-top: 20px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(169, 94, 19);
 }
 
 .pamed-btn:hover {
@@ -180,167 +272,94 @@ main {
     border: none;
     padding: 10px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-.wrapper {
-    width: 380px;
-    padding: 40px 30px 50px 30px;
+.mainDiv {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    font-family: 'France', sans-serif;
+    box-shadow: 0 5px 10px rgb(255, 215, 0);
+}
+
+.cardStyle {
+    width: 500px;
+    border-color: white;
     background: #fff;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 10px 10px 20px rgb(255, 215, 0);
+    padding: 36px 0;
+    border-radius: 4px;
+    margin: 30px 0;
+    box-shadow: 0px 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.wrapper header {
-    font-size: 35px;
-    font-weight: 600;
+#forgotPasswordLogo {
+    max-height: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.wrapper form {
-    margin: 40px 0;
-}
-
-form .field {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-form .field.shake {
-    animation: shake 0.3s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% {
-        margin-left: 0px;
-    }
-
-    20%, 80% {
-        margin-left: -12px;
-    }
-
-    40%, 60% {
-        margin-left: 12px;
-    }
-}
-
-form h1 {
-    text-align: center;
+.formTitle {
     font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-form .field .input-area {
-    height: 50px;
-    width: 100%;
-    position: relative;
-}
-
-form input {
-    width: 100%;
-    height: 100%;
-    outline: none;
-    padding: 0 45px;
-    font-size: 18px;
-    background: none;
-    caret-color: rgb(169, 94, 19);
-    border-radius: 5px;
-    border: 1px solid rgb(255, 215, 0);
-    border-bottom-width: 2px;
-    transition: all 0.2s ease;
-}
-
-form .field input:focus,
-form .field.valid input {
-    border-color: rgb(169, 94, 19);
-}
-
-form .field.shake input,
-form .field.error input {
-    border-color: #dc3545;
-}
-
-.field .input-area i {
-    position: absolute;
-    top: 50%;
-    font-size: 18px;
-    pointer-events: none;
-    transform: translateY(-50%);
-}
-
-.input-area .icon {
-    left: 15px;
-    color: #bfbfbf;
-    transition: color 0.2s ease;
-}
-
-.input-area .error-icon {
-    right: 15px;
-    color: #dc3545;
-}
-
-form input:focus~.icon,
-form .field.valid .icon {
+    text-shadow: 0 5px rgb(255, 215, 0);
+    margin-top: 20px;
     color: rgb(169, 94, 19);
+    text-align: center;
 }
 
-form .field.shake input:focus~.icon,
-form .field.error input:focus~.icon {
-    color: #bfbfbf;
+.inputLabel {
+    font-size: 12px;
+    color: rgb(169, 94, 19);
+    margin-bottom: 6px;
+    margin-top: 24px;
 }
 
-form input::placeholder {
-    color: #bfbfbf;
-    font-size: 17px;
+.inputDiv {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
-form .field .error-txt {
-    color: #dc3545;
-    text-align: left;
-    margin-top: 5px;
+input {
+    height: 40px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    border: solid 1px rgb(255, 215, 0);
+    padding: 0 11px;
 }
 
-form .field .error {
-    display: none;
+input:disabled {
+    cursor: not-allowed;
+    border: solid 1px rgb(255, 215, 0);
 }
 
-form .field.shake .error,
-form .field.error .error {
+.buttonWrapper {
+    margin-top: 40px;
+}
+
+.submitButton {
+    width: 70%;
+    height: 40px;
+    margin: auto;
     display: block;
-}
-
-form .pass-txt {
-    text-align: left;
-    margin-top: -10px;
-}
-
-.wrapper a {
-    background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
-    text-decoration: none;
+    background-color: rgb(169, 94, 19);
+    border-color: rgb(255, 215, 0);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.wrapper a:hover {
-    text-decoration: none;
+.submitButton:hover {
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
-}
-
-form input[type="submit"] {
-    height: 50px;
-    margin-top: 30px;
-    color: rgb(169, 94, 19);
-    padding: 0;
-    border: none;
-    background: rgb(255, 215, 0);
-    cursor: pointer;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    background: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
 }
 
 #promotion {
