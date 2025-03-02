@@ -12,212 +12,102 @@ body {
     align-items: center;
 }
 
+marquee {
+    color: rgb(255, 215, 0);
+    width: 1920px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+#date-time {
+    color: rgb(169, 94, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
 header {
     background-color: rgb(169, 94, 19);
-    color: #00000000;
-    padding: 100em;
+    color: rgb(169, 94, 19);
+    padding: 1em;
     text-align: center;
-    box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-header #date-time {
-    text-align: center;
-    color: rgb(255, 215, 0);
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-}
-
-nav #pamed-logo {
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-}
-
-.icon-media {
-    width: 17px;
-    height: 17px;
-    color: #000000;
-}
-
-.icon-media:hover {
-    color: rgb(255, 215, 0);
-}
-
-nav .logout {
-    float: right;
-}
-
-nav #logout-button {
-    text-decoration: none;
+#social-media {
+    display: flex;
+    position: relative;
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav #logout-button:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    border-radius: 20px;
+    box-sizing: border-box;
     box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-
-/* Menu Dropdown */
-.cf:before,
-.cf:after {
-    content: " ";
-    display: table;
+#social-media i {
+    margin-left: 15px;
+    color: rgb(169, 94, 19);
 }
 
-.cf:after {
-    clear: both;
+#social-media i:hover {
+    color: rgb(174, 252, 245);
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-.menu,
-.submenu {
+header nav ul {
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
-.menu {
-    margin: 50px auto;
-    width: 800px;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-}
-
-.menu>li {
-    background: rgb(255, 215, 0);
-    float: left;
-    position: relative;
-    transform: skewX(25deg);
-}
-
-.menu a {
-    display: block;
-    color: rgb(169, 94, 19);
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: Arial, Helvetica;
-    font-size: 14px;
-}
-
-.menu li:hover {
-    background: rgb(255, 215, 0);
-}
-
-.menu>li>a {
-    transform: skewX(-25deg);
-    padding: 1em 2em;
-}
-
-/* Dropdown */
-.submenu {
-    position: absolute;
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
-    transform: skewX(-25deg);
-    transform-origin: left top;
-}
-
-.submenu li {
-    background-color: whitesmoke;
-    position: relative;
-    overflow: hidden;
-}
-
-.submenu>li>a {
-    padding: 1em 2em;
-}
-
-.submenu>li::after {
-    content: '';
-    position: absolute;
-    top: -125%;
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
-}
-
-.submenu>li:nth-child(odd) {
-    transform: skewX(-25deg) translateX(0);
-}
-
-.submenu>li:nth-child(odd)>a {
-    transform: skewX(25deg);
-}
-
-.submenu>li:nth-child(odd)::after {
-    right: -50%;
-    transform: skewX(-25deg) rotate(3deg);
-}
-
-.submenu>li:nth-child(even) {
-    transform: skewX(25deg) translateX(0);
-}
-
-.submenu>li:nth-child(even)>a {
-    transform: skewX(-25deg);
-}
-
-.submenu>li:nth-child(even)::after {
-    left: -50%;
-    transform: skewX(25deg) rotate(3deg);
-}
-
-/* Show dropdown */
-.submenu,
-.submenu li {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.submenu li {
-    transition: .2s ease transform;
-}
-
-.menu>li:hover .submenu,
-.menu>li:hover .submenu li {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu>li:hover .submenu li:nth-child(even) {
-    transform: skewX(25deg) translateX(15px);
-}
-
-.menu>li:hover .submenu li:nth-child(odd) {
-    transform: skewX(-25deg) translateX(-15px);
-}
-
-.pamed-category {
-    text-align: center;
-    box-shadow: 0 0 50px rgb(169, 94, 19);
-}
-
-nav #pamed-brand {
-    color: rgb(255, 215, 0);
-    text-decoration: none;
-    font-size: 35px;
-}
-
-nav #pamed-brand:hover {
-    color: red;
-    text-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-#location-pamed {
-    font-size: large;
-    color: rgb(255, 215, 0);
+nav ul li {
     margin-top: 20px;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul li a img {
+    width: 65px;
+    height: 65px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 215, 0);
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: rgb(169, 94, 19);
+    padding: 10px;
+    border: 1px solid rgb(255, 215, 0);
+}
+
+nav ul li:hover ul {
+    display: block;
 }
 
 h1 {
@@ -225,7 +115,7 @@ h1 {
 }
 
 #text-style {
-    color: rgb(169, 94, 19);
+    color: rgb(169, 94, 0);
     text-shadow: 0 0 25px rgb(255, 215, 0);
     font-size: 80px;
 }
@@ -240,9 +130,7 @@ h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     font-weight: bold;
-    box-shadow: 0 0 25px rgb(255, 215, 0);
-    margin-top: 50px;
-    margin-bottom: 50px;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
 main {
@@ -253,15 +141,6 @@ main {
 }
 
 .btn-pamed {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-    border: none;
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.btn-pamed:hover {
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
     border: none;
@@ -269,6 +148,15 @@ main {
     margin-top: 20px;
     cursor: pointer;
     box-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+.btn-pamed:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
 .pamed-btn {
@@ -281,11 +169,12 @@ main {
 }
 
 .pamed-btn:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
     border: none;
     padding: 10px;
     cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
 .login-container {
@@ -294,41 +183,33 @@ main {
     padding: 20px;
     background-color: rgb(169, 94, 19);
     border: 1px solid rgb(255, 215, 0);
-    box-shadow: 0 0 25px rgb(255, 215, 0);
+    box-shadow: 0 0 10px rgb(169, 94, 19);
 }
 
 .login-container h2 {
-    text-align: center;
-    color: rgb(255, 215, 0);
-    text-shadow: 0 0 25px rgb(255, 215, 0);
     margin-top: 0;
-}
-
-.login-container label {
     color: rgb(255, 215, 0);
-    margin-top: 15px;
+    text-align: center;
 }
 
-.login-container a {
-    text-decoration: none;
+.login-container p, a {
     color: rgb(255, 215, 0);
 }
 
 .login-container a:hover {
-    color: white;
+    color: whitesmoke;
     text-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-.login-container span {
-    color: rgb(255, 215, 0);
-}
-
 .form-group {
-    width: 100%;
+    text-align: center;
+    color: rgb(255, 215, 0);
     margin-bottom: 20px;
 }
 
 .form-group label {
+    text-align: center;
+    color: rgb(255, 215, 0);
     display: block;
     margin-bottom: 10px;
 }
@@ -337,38 +218,26 @@ main {
     width: 100%;
     height: 40px;
     padding: 10px;
-    border: 1px solid rgb(255, 215, 0);
+    border: 1px solid #ccc;
 }
 
 button[type="submit"] {
     width: 100%;
     height: 40px;
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
+    box-shadow: 0 0 25px;
     margin-bottom: 15px;
 }
 
 button[type="submit"]:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-    box-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-#promotion {
-    box-shadow: 0 0 50px rgb(255, 215, 0);
-}
-
-.pamed-btn:hover {
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
 .whatsapp-button {
@@ -388,6 +257,7 @@ button[type="submit"]:hover {
 
 .whatsapp-button:hover {
     background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
 }
 
 .back-to-top {
@@ -407,21 +277,13 @@ button[type="submit"]:hover {
     color: rgb(169, 94, 19);
 }
 
-#clock {
-    font-size: 30px;
-    font-family: 'France', sans-serif;
-    text-align: center;
-    margin-top: 10px;
-    color: rgb(255, 215, 0);
-}
-
 footer {
     background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
     padding: 1em;
     text-align: center;
     clear: both;
-    box-shadow: 0 0 50px rgb(255, 215, 0);
+    box-shadow: 0 0 50px rgb(169, 94, 19);
 }
 
 .footer-section {
@@ -451,17 +313,17 @@ footer {
 
 .footer-section ul li a {
     text-decoration: none;
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
 }
 
 .footer-section i {
     background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
     size: 60px;
 }
 
 .footer-section i:hover {
-    background-color: rgb(255, 215, 0);
+    background-color: rgb(169, 94, 19);
     color: rgb(169, 94, 19);
 }
 
@@ -480,43 +342,91 @@ small .Copyright {
     text-align: center;
     font-size: 15px;
     text-decoration: none;
-    color: rgb(255, 215, 0);
-}
-
-small .Copyright:hover {
-    background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
 }
 
-/* Gaya untuk perangkat mobile */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 10px;
-    }
+small .Copyright:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
 }
 
-/* Gaya untuk tablet */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 500px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    nav ul li ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 200px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
         font-size: 16px;
     }
 
-    .container {
-        padding: 20px;
-    }
-}
 
-/* Gaya untuk desktop */
-@media (min-width: 1025px) {
-    body {
-        font-size: 18px;
+    main {
+        padding: 1em;
     }
 
-    .container {
-        padding: 30px;
+    section {
+        padding: 0.5em;
     }
 }

@@ -12,189 +12,102 @@ body {
     align-items: center;
 }
 
+marquee {
+    color: rgb(255, 215, 0);
+    width: 1920px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+#date-time {
+    color: rgb(169, 94, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
 header {
     background-color: rgb(169, 94, 19);
-    color: #00000000;
-    padding: 100em;
+    color: rgb(169, 94, 19);
+    padding: 1em;
     text-align: center;
-    box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-header #date-time {
-    text-align: center;
-    color: rgb(255, 215, 0);
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-}
-
-nav #pamed-logo {
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-}
-
-.icon-media {
-    width: 17px;
-    height: 17px;
-    color: #000000;
-}
-
-.icon-media:hover {
-    color: rgb(255, 215, 0);
-}
-
-nav .logout {
-    float: right;
-}
-
-nav #logout-button {
-    text-decoration: none;
+#social-media {
+    display: flex;
+    position: relative;
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-nav #logout-button:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    border-radius: 20px;
+    box-sizing: border-box;
     box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-
-/* Menu Dropdown */
-.cf:before,
-.cf:after {
-    content: " ";
-    display: table;
+#social-media i {
+    margin-left: 15px;
+    color: rgb(169, 94, 19);
 }
 
-.cf:after {
-    clear: both;
+#social-media i:hover {
+    color: rgb(174, 252, 245);
+    box-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
-.menu,
-.submenu {
+header nav ul {
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
 }
 
-.menu {
-    margin: 50px auto;
-    width: 800px;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-}
-
-.menu>li {
-    background: rgb(255, 215, 0);
-    float: left;
+nav ul li {
+    margin-top: 20px;
+    justify-content: space-between;
     position: relative;
-    transform: skewX(25deg);
 }
 
-.menu a {
-    display: block;
-    color: rgb(169, 94, 19);
-    text-transform: uppercase;
+nav ul li a img {
+    width: 65px;
+    height: 65px;
+}
+
+nav ul li a {
     text-decoration: none;
-    font-family: Arial, Helvetica;
-    font-size: 14px;
+    color: rgb(255, 215, 0);
 }
 
-.menu li:hover {
-    background: rgb(255, 215, 0);
-}
-
-.menu>li>a {
-    transform: skewX(-25deg);
-    padding: 1em 2em;
-}
-
-/* Dropdown */
-.submenu {
+nav ul li ul {
+    display: none;
     position: absolute;
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
-    transform: skewX(-25deg);
-    transform-origin: left top;
+    top: 50%;
+    left: 0;
+    background-color: rgb(169, 94, 19);
+    padding: 10px;
+    border: 1px solid rgb(255, 215, 0);
 }
 
-.submenu li {
-    background-color: whitesmoke;
-    position: relative;
-    overflow: hidden;
-}
-
-.submenu>li>a {
-    padding: 1em 2em;
-}
-
-.submenu>li::after {
-    content: '';
-    position: absolute;
-    top: -125%;
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
-}
-
-.submenu>li:nth-child(odd) {
-    transform: skewX(-25deg) translateX(0);
-}
-
-.submenu>li:nth-child(odd)>a {
-    transform: skewX(25deg);
-}
-
-.submenu>li:nth-child(odd)::after {
-    right: -50%;
-    transform: skewX(-25deg) rotate(3deg);
-}
-
-.submenu>li:nth-child(even) {
-    transform: skewX(25deg) translateX(0);
-}
-
-.submenu>li:nth-child(even)>a {
-    transform: skewX(-25deg);
-}
-
-.submenu>li:nth-child(even)::after {
-    left: -50%;
-    transform: skewX(25deg) rotate(3deg);
-}
-
-/* Show dropdown */
-.submenu,
-.submenu li {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.submenu li {
-    transition: .2s ease transform;
-}
-
-.menu>li:hover .submenu,
-.menu>li:hover .submenu li {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu>li:hover .submenu li:nth-child(even) {
-    transform: skewX(25deg) translateX(15px);
-}
-
-.menu>li:hover .submenu li:nth-child(odd) {
-    transform: skewX(-25deg) translateX(-15px);
+nav ul li:hover ul {
+    display: block;
 }
 
 .pamed-category {
@@ -211,13 +124,6 @@ nav #pamed-brand {
 nav #pamed-brand:hover {
     color: red;
     text-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-#location-pamed {
-    font-size: large;
-    color: rgb(255, 215, 0);
-    margin-top: 20px;
-    margin-bottom: 30px;
 }
 
 h1 {
@@ -372,21 +278,50 @@ main {
     color: rgb(169, 94, 19);
 }
 
-#clock {
-    font-size: 30px;
-    font-family: 'France', sans-serif;
-    text-align: center;
-    margin-top: 10px;
+.whatsapp-button {
+    position: fixed;
+    display: inline-block;
+    align-items: end;
+    background-color: green;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    bottom: 100px;
+    right: 50px;
+}
+
+.whatsapp-button:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 9999;
+}
+
+.back-to-top:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
 }
 
 footer {
     background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
     padding: 1em;
     text-align: center;
     clear: both;
-    box-shadow: 0 0 50px rgb(255, 215, 0);
+    box-shadow: 0 0 50px rgb(169, 94, 19);
 }
 
 .footer-section {
@@ -416,17 +351,17 @@ footer {
 
 .footer-section ul li a {
     text-decoration: none;
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
 }
 
 .footer-section i {
     background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
     size: 60px;
 }
 
 .footer-section i:hover {
-    background-color: rgb(255, 215, 0);
+    background-color: rgb(169, 94, 19);
     color: rgb(169, 94, 19);
 }
 
@@ -445,43 +380,91 @@ small .Copyright {
     text-align: center;
     font-size: 15px;
     text-decoration: none;
-    color: rgb(255, 215, 0);
-}
-
-small .Copyright:hover {
-    background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
 }
 
-/* Gaya untuk perangkat mobile */
-@media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 10px;
-    }
+small .Copyright:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
 }
 
-/* Gaya untuk tablet */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 500px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    nav ul li ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 200px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
         font-size: 16px;
     }
 
-    .container {
-        padding: 20px;
-    }
-}
 
-/* Gaya untuk desktop */
-@media (min-width: 1025px) {
-    body {
-        font-size: 18px;
+    main {
+        padding: 1em;
     }
 
-    .container {
-        padding: 30px;
+    section {
+        padding: 0.5em;
     }
 }

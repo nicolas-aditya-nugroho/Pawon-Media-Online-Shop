@@ -27,85 +27,108 @@
 </head>
 
 <body>
-    <!--Nav bar-->
-    <section class="head-section">
-        <header class="container">
-            <div class="container items-center mx-auto me-auto mr-2">
-                <span style="color: rgb(255,215,0);">Ikuti</span>
-                <a href="https://www.instagram.com/pawonmedia.010924" target="_blank" class="icon-media mr-2 ml-2"
-                    style="margin-left: 5px; text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@pawonmedia.010924" target="_blank" class="icon-media mr-2 ml-2"
-                    style="margin-left: 5px; text-decoration: none;"><i class="fa-brands fa-tiktok"></i></a>
+    <header>
+        <nav class="navbar-nav">
+            <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, apakah Anda sudah
+                berbelanja hari ini? Jika, belum, silahkan berbelanja ke toko ataupun melalui website ini ya! 😊🙏
+            </marquee>
+
+            <div id="date-time">
+                <script>// Menampilkan hari, tanggal, dan jam
+                    function updateTime() {
+                        const now = new Date();
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                        const dateString = now.toLocaleDateString('id-ID', options);
+                        document.getElementById('date-time').innerText = dateString;
+                    }
+
+                    // Panggil fungsi updateTime setiap detik
+                    setInterval(updateTime, 1000);</script>
             </div>
 
-            <nav class="navbar">
-                <section class="container-fluid items-center mx-auto me-auto mr-2">
-                    <a class="navbar-brand" href="index.html" id="pamed-brand">
-                        <img src="/assets/LOGO-1.png" alt="PAWON MEDIA" class="card-img-top" id="pamed-logo"> Pawon
-                        Media
-                    </a>
-                    <div id="date-time"></div>
-                </section>
-                <ul class="menu cf">
-                    <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
-                    <li>
-                        <a href="#">KEPO</a>
-                        <ul class="submenu">
-                            <li><a href="#about-us">Profil</a>
-                            </li>
-                            <li><a href="#contact-us">Tetap Terhubung</a></li>
-                            <li><a href="#mapping-location">Lokasi <i class="fa-solid fa-location-dot"></i></a></li>
-                            <li><a href="#promotion">Promosi/a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Alat Menulis &amp; Kreativitas</a>
-                        <ul class="submenu">
-                            <li><a href="#school-products">Produk-Produk Sekolah</a>
-                            </li>
-                            <li><a href="#office-products">Produk-Produk Kantor</a></li>
-                            <li><a href="#design">Jasa Desain Apapun <i class="fa-solid fa-palette"></i></a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Kebutuhan HP &amp; Pribadi</a>
-                        <ul class="submenu">
-                            <li><a href="#pulsa">Pulsa Telepon Selular</a>
-                            </li>
-                            <li><a href="#biq-2">Kebutuhan <i class="fa-solid fa-bolt"></i> <br> Tagihan <i
-                                        class="fa-solid fa-money-bills"></i></a>
-                            </li>
-                            <li><a href="#biq">Kuota Internet <i class="fa-solid fa-signal"></i></a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+            <section class="d-flex me-auto mx-auto mr-2" id="social-media">
+                <h5>Ikuti Kami di</h5>
                 <ul>
-                    <li class="logout"><a href="#" id="logout-button">
-                            <i class="fa-solid fa-user"></i>
-                            <span id="user-fullname">Nicolas Aditya Nugroho</span>
-                            <script>
-                                function updateUsername(username) {
-                                    document.getElementById('user-fullname').textContent = username;
-                                }
-
-                                // Contoh pemanggilan setelah login
-                                const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
-                                updateUsername(loggedInUsername);
-
-                                document.getElementById('logout-button').addEventListener('click', function () {
-                                    // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
-                                    localStorage.removeItem('user-fullname'); // Hapus username
-
-                                    // Arahkan pengguna ke halaman login atau homepage
-                                    window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
-                                });
-                            </script>
+                    <li>
+                        <a href="https://www.instagram.com/pawon-media"><i class="fa-brands fa-instagram"></i></a>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
                         </a>
                     </li>
                 </ul>
-            </nav>
-        </header>
-    </section>
+            </section>
+            <ul>
+                <li><a href="index.html"><img src="assets/LOGO-1.png" alt="MUDIKA Nusantara Carlo Acutis"></a>
+                </li>
+                <li>
+                    <a href="#">KEPO</a>
+                    <ul>
+                        <li><a href="#about-us">Profil <i class="fa-solid fa-address-card"></i></a></li>
+                        <hr>
+                        <li><a href="#contact-us">Tetap Terhubung <i class="fa-solid fa-network-wired"></i></a></li>
+                        <hr>
+                        <li><a href="#mapping-location"><i class="fa-solid fa-location-dot"></i> Toko</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Kebutuhan Menulis &amp; Kreativitas</a>
+                    <ul>
+                        <li><a href="#school-products"><i class="fa-solid fa-file-pen"></i> Sekolah</a></li>
+                        <hr>
+                        <li><a href="#office-products"><i class="fa-solid fa-pen"></i> Kantor</a></li>
+                        <hr>
+                        <li><a href="#office-products"><i class="fa-solid fa-palette"></i> Jasa Desain Apapun</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Kebutuhan <i class="fa-solid fa-mobile"></i> &amp; Kebutuhan <i
+                            class="fa-solid fa-bolt"></i></a>
+                    <ul>
+                        <li><a href="#pulsa">Pulsa <i class="fa-solid fa-mobile"></i></a></li>
+                        <hr>
+                        <li><a href="#biq">Kuota <i class="fa-solid fa-wifi"></i></a></li>
+                        <hr>
+                        <li><a href="#token-listrik">Token <i class="fa-solid fa-bolt"></i></a></li>
+                        <hr>
+                        <li><a href="#biq-2">Bayar <i class="fa-solid fa-money-bills"></i></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Mitra</a>
+                    <ul>
+                        <li><a href="Landing Page/Nicolas Aditya Nugroho.html">Pemilik Toko</a></li>
+                        <hr>
+                        <li><a href="#MUDIKANusantaraCarloAcutis">MNCA</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" id="logout-button"><i class="fa-solid fa-user"></i> <span id="user-fullname">Nicolas
+                            Aditya Nugroho</span></a>
+                    <script>
+                        function updateUsername(username) {
+                            document.getElementById('user-fullname').textContent = username;
+                        }
+
+                        // Contoh pemanggilan setelah login
+                        const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                        updateUsername(loggedInUsername);
+
+                        document.getElementById('logout-button').addEventListener('click', function () {
+                            // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                            localStorage.removeItem('user-fullname'); // Hapus username
+
+                            // Arahkan pengguna ke halaman login atau homepage
+                            window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                        });
+                    </script>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     </section>
     <main>
