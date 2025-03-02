@@ -186,17 +186,24 @@
                     // Fungsi untuk memfungsikan form login
                     document.getElementById('login-form').addEventListener('submit', function (event) {
                         event.preventDefault();
-                        var username = document.getElementById('email').value;
-                        var password = document.getElementById('kata sandi').value;
-                        // Lakukan validasi username dan password
-                        if (username === 'email' && password === 'kata sandi') {
-                            // Jika validasi berhasil, maka tampilkan pesan sukses
-                            alert('Login berhasil! Selamat datang, member!');
+                        var email = document.getElementById('email').value;
+                        var kataSandi = document.getElementById('kata-sandi').value;
+                        // Lakukan validasi email dan kata sandi
+                        if (email === 'member@example.com' && kataSandi === 'password') {
+                            // Jika validasi berhasil, maka tampilkan pesan sukses dengan nama user-fullname
+                            var namaUser = 'John Doe'; // Ganti dengan nama user-fullname yang sesuai
+                            alert('Selamat datang, ' + namaUser + '!');
                             // Redirect ke halaman utama
                             window.location.href = 'index.html';
                         } else {
-                            // Jika validasi gagal, maka tampilkan pesan error
-                            alert('Email atau Kata Sandi belum dimasukkan!');
+                            // Jika validasi gagal, maka tampilkan pesan error yang lebih spesifik
+                            if (email !== 'member@example.com') {
+                                alert('Email yang Anda masukkan tidak cocok dengan yang diharapkan.');
+                            } else if (kataSandi !== 'password') {
+                                alert('Kata sandi yang Anda masukkan tidak cocok dengan yang diharapkan.');
+                            } else {
+                                alert('Terjadi kesalahan yang tidak terduga. Silakan coba lagi.');
+                            }
                         }
                     });
                 </script>
