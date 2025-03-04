@@ -110,6 +110,18 @@ nav ul li:hover ul {
     display: block;
 }
 
+nav #logout {
+    color: rgb(255, 215, 0);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+    cursor: pointer;
+    transition: ease-in 0.5s;
+}
+
+nav #logout:hover {
+    color: whitesmoke;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
 h1 {
     font-family: "France", cursive;
 }

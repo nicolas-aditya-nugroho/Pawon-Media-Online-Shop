@@ -23,7 +23,6 @@
 
     <title>Pawon Media | Alat Tulis 🟤 Desain Grafis 🟤 Toko Foto Kopi</title>
     <link rel="stylesheet" href="/assets/styling/Form Pembelian Pulsa-Kuota Internet-Tagihan.css">
-    <script src="/assets/javascript/index.js"></script>
 </head>
 
 <body>
@@ -103,6 +102,28 @@
                         <hr>
                         <li><a href="#MUDIKANusantaraCarloAcutis">MNCA</a>
                         </li>
+                    </ul>
+                </li>
+                <li class="navbar">
+                    <a href="#" class="dropdown"><i class="fa-solid fa-user"></i> <span id="userFullName"></span></a>
+                    <script>function updateUsername(username) {
+                            document.getElementById('userFullName').textContent = username;
+                        }
+
+                        // Contoh pemanggilan setelah login
+                        const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                        updateUsername(loggedInUsername);</script>
+                    <ul class="dropdown-content">
+                        <li class="nav-item"><a href="#" class="nav-link" id="logout">Keluar</a></li>
+                        <script>
+                            document.getElementById('logout').addEventListener('click', function () {
+                                // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                                localStorage.removeItem('userFullName'); // Hapus username
+
+                                // Arahkan pengguna ke halaman login atau homepage
+                                window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                            });
+                        </script>
                     </ul>
                 </li>
             </ul>
