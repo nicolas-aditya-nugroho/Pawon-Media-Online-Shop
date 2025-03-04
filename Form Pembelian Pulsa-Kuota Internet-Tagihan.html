@@ -105,27 +105,6 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#" id="logout-button"><i class="fa-solid fa-user"></i> <span id="user-fullname">Nicolas
-                            Aditya Nugroho</span></a>
-                    <script>
-                        function updateUsername(username) {
-                            document.getElementById('user-fullname').textContent = username;
-                        }
-
-                        // Contoh pemanggilan setelah login
-                        const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
-                        updateUsername(loggedInUsername);
-
-                        document.getElementById('logout-button').addEventListener('click', function () {
-                            // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
-                            localStorage.removeItem('user-fullname'); // Hapus username
-
-                            // Arahkan pengguna ke halaman login atau homepage
-                            window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
-                        });
-                    </script>
-                </li>
             </ul>
         </nav>
     </header>
