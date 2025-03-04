@@ -22,7 +22,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>Pawon Media | Alat Tulis 🟤 Desain Grafis 🟤 Toko Foto Kopi</title>
-    <link rel="stylesheet" href="/assets/styling/login.css">
+    <link rel="stylesheet" href="/assets/styling/registrationForm.css">
 </head>
 
 <body>
@@ -106,8 +106,8 @@
                 </li>
             </ul>
             <div class="navbar-auth" id="login-registration">
-                <a href="#login" class="login-button">Login</a>
-                <a href="/registration.html" class="register-button">Registrasi</a>
+                <a href="login.html" class="login-button">Login</a>
+                <a href="#registerForm" class="register-button">Registrasi</a>
             </div>
         </nav>
     </header>
@@ -164,43 +164,33 @@
             </div>
         </section>
 
-        <div class="container" id="login">
-            <h2>Login</h2>
-            <form id="loginForm">
+        <div class="container" id="registerForm">
+            <h2>Pendaftaran Anggota</h2>
+            <form id="registrationForm">
                 <div class="input-box">
-                    <input type="email" id="username">
-                    <label for="username">Nama Pengguna</label>
+                    <input type="text" id="nama">
+                    <label for="nama">Nama Lengkap</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="email">
+                    <label for="email">Email</label>
                 </div>
                 <div class="input-box">
                     <input type="password" id="password">
                     <label for="password">Kata Sandi</label>
                 </div>
-                <div class="forgotPassword">
-                    <label for="forgotPassword">Lupa Kata Sandi?</label>
-                    <span><a href="forgotPassword.html">Buat Ulang di SINI</a></span>
-                </div>
-                <button type="submit">Masuk</button>
-                <div class="registerForm">
-                    <label for="registerForm">Belum Memiliki Akun?</label>
-                    <span><a href="registrationForm.html">Buat di SINI</a></span>
-                </div>
+                <button type="submit">Daftar</button>
             </form>
             <script>
-                const loginForm = document.getElementById('loginForm');
+                const registrationForm = document.getElementById('registrationForm');
 
-                loginForm.addEventListener('submit', (e) => {
+                registrationForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const username = document.getElementById('username').value;
+                    const nama = document.getElementById('nama').value;
+                    const email = document.getElementById('email').value;
                     const password = document.getElementById('password').value;
-
-                    if (username === 'example@mail.com' && password === 'password') {
-                        alert(`Login berhasil untuk ${username}`);
-                        window.location.href = 'index.html';
-                        return; // Berhenti menjalankan fungsi setelah login berhasil
-                    }
-
-                    // Kode ini hanya akan dijalankan jika login gagal
-                    alert('Nama pengguna atau kata sandi salah');
+                    // Tambahkan logika pendaftaran di sini
+                    alert(`Pendaftaran berhasil untuk ${nama} dengan email ${email}`);
                 });
             </script>
         </div>

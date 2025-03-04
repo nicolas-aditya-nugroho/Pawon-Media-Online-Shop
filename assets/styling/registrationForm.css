@@ -220,7 +220,7 @@ main {
     cursor: pointer;
 }
 
-#login {
+#registerForm {
     width: 350px;
     padding: 30px;
     background-color: rgb(169, 94, 19);
@@ -229,7 +229,7 @@ main {
     margin-bottom: 50px;
 }
 
-#login h2 {
+#registerForm h2 {
     text-align: center;
     color: rgb(255, 215, 0);
     text-shadow: 0 5px 10px rgb(174, 252, 245);
@@ -265,24 +265,7 @@ main {
     color: #333;
 }
 
-.forgotPassword label {
-    margin-bottom: 15px;
-    color: rgb(255, 215, 0);
-}
-
-.forgotPassword a {
-    text-decoration: none;
-    color: rgb(255, 215, 0);
-    text-shadow: 0 0 15px rgb(174, 252, 245);
-    cursor: pointer;
-    transition: 0.5s step-start;
-}
-
-.forgotPassword a:hover {
-    color: white;
-}
-
-#login button {
+#registerForm button {
     width: 100%;
     padding: 10px;
     background-color: rgb(169, 94, 19);
@@ -294,27 +277,11 @@ main {
     transition: 0.35s ease-in-out;
 }
 
-#login button:hover {
+#registerForm button:hover {
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
 }
 
-.registerForm label {
-    margin-top: 15px;
-    color: rgb(255, 215, 0);
-}
-
-.registerForm a {
-    text-decoration: none;
-    color: rgb(255, 215, 0);
-    text-shadow: 0 0 20px rgb(174, 252, 245);
-    cursor: pointer;
-    transition: 0.55s step-end;
-}
-
-.registerForm a:hover {
-    color: whitesmoke;
-}
 
 #promotion {
     box-shadow: 0 0 50px rgb(255, 215, 0);
