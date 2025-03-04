@@ -126,6 +126,32 @@ nav #pamed-brand:hover {
     text-shadow: 0 0 25px rgb(255, 215, 0);
 }
 
+nav .login-button {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+    cursor: pointer;
+    transition: step-end 0.5s;
+}
+
+nav .login-button:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+nav .register-button {
+    background-color: #28a745;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: step-start 0.5s;
+}
+
+nav .register-button:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
 h1 {
     font-family: "France", cursive;
 }
@@ -201,7 +227,12 @@ main {
     border-radius: 8px;
     box-shadow: 0 0 25px rgb(255, 215, 0);
     width: 300px;
-    margin-bottom: 35px;
+    gap: 15px;
+    margin: 50px auto;
+}
+
+#login h2 {
+    text-align: center;
 }
 
 #login .form-group {
@@ -211,6 +242,17 @@ main {
 #login label {
     display: block;
     margin-bottom: 5px;
+}
+
+#login a {
+    text-decoration: none;
+    color: rgb(255, 215, 0);
+}
+
+#login a:hover {
+    color: #fff;
+    cursor: pointer;
+    transition: ease 0.35s;
 }
 
 #login input[type="email"],
@@ -223,6 +265,7 @@ input[type="password"] {
 }
 
 #login button {
+    margin-bottom: 15px;
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
     padding: 10px 15px;

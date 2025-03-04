@@ -50,7 +50,7 @@
                 <h5>Ikuti Kami di</h5>
                 <ul>
                     <li>
-                        <a href="https://www.instagram.com/pawon-media"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
                         </a>
                     </li>
                     <li>
@@ -60,7 +60,7 @@
                 </ul>
             </section>
             <ul>
-                <li><a href="index.html"><img src="assets/LOGO-1.png" alt="MUDIKA Nusantara Carlo Acutis"></a>
+                <li><a href="login.html"><img src="assets/LOGO-1.png" alt="MUDIKA Nusantara Carlo Acutis"></a>
                 </li>
                 <li>
                     <a href="#">KEPO</a>
@@ -105,6 +105,10 @@
                     </ul>
                 </li>
             </ul>
+            <div class="navbar-auth" id="login-registration">
+                <a href="#login" class="login-button">Login</a>
+                <a href="/registration.html" class="register-button">Registrasi</a>
+            </div>
         </nav>
     </header>
 
@@ -171,7 +175,17 @@
                     <label for="password">Kata Sandi:</label>
                     <input type="password" id="password" name="password">
                 </div>
+                <div class="form-group">
+                    <label for="forgotPassword">Lupa Kata Sandi?
+                        <span><a href="forgotPassword.html">Buat Ulang di SINI</a></span>
+                    </label>
+                </div>
                 <button type="submit">Masuk</button>
+                <div class="form-group">
+                    <label for="registration">Belum Punya Akun?
+                        <span><a href="registration.html">Daftar di SINI</a></span>
+                    </label>
+                </div>
             </form>
             <div id="message"></div>
             <script>
@@ -183,16 +197,19 @@
                     const messageDiv = document.getElementById('message');
 
                     // Validasi sederhana (sebaiknya diganti dengan validasi sisi server yang lebih kuat)
-                    if (username === 'example@gmail.com' && password === 'password') {
+                    if (username === 'example@mail.com' && password === 'password') {
+                        messageDiv.textContent = 'Email Pengguna atau Kata Sandi salah.';
+                        messageDiv.style.color = 'rgb(255, 215, 0)';
+                        // Di sini, Anda dapat mengarahkan pengguna ke halaman berikutnya jika belum memiliki akun
+                        window.location.href = '/registration.html'
+                    } else {
                         messageDiv.textContent = 'Login berhasil!';
                         messageDiv.style.color = 'green';
                         // Di sini, Anda dapat mengarahkan pengguna ke halaman berikutnya
-                        // window.location.href = '/halaman-berikutnya';
-                    } else {
-                        messageDiv.textContent = 'Email Pengguna atau Kata Sandi salah.';
-                        messageDiv.style.color = 'rgb(255, 215, 0)';
+                        window.location.href = '/index.html';
                     }
-                });</script>
+                });
+            </script>
         </div>
 
         <!-- Promotion Section -->
