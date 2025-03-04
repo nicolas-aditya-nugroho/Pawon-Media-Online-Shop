@@ -236,12 +236,9 @@ main {
     margin-bottom: 15px;
 }
 
-.input-box {
+#login input {
     position: relative;
     margin-bottom: 20px;
-}
-
-.input-box input {
     width: 100%;
     padding: 10px;
     border: 1px solid rgb(255, 215, 0);
@@ -249,37 +246,25 @@ main {
     outline: none;
 }
 
-.input-box label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: rgb(169, 94, 19);
-    pointer-events: none;
-    transition: 0.3s;
+.form-group label {
+    color: rgb(255, 215, 0);
 }
 
-.input-box input:focus+label,
-.input-box input:valid+label {
-    top: -10px;
-    font-size: 12px;
-    color: #333;
-}
-
-.forgotPassword label {
+#forgotPassword label {
+    color: rgb(255, 215, 0);
     margin-bottom: 15px;
-    color: rgb(255, 215, 0);
 }
 
-.forgotPassword a {
+#forgotPassword a {
     text-decoration: none;
-    color: rgb(255, 215, 0);
-    text-shadow: 0 0 15px rgb(174, 252, 245);
     cursor: pointer;
-    transition: 0.5s step-start;
+    transition: ease 0.35s;
+    color: rgb(255, 215, 0);
 }
 
-.forgotPassword a:hover {
-    color: white;
+#forgotPassword a:hover {
+    color: rgb(174, 252, 245);
+    text-shadow: 0 0 20px rgb(255, 215, 0);
 }
 
 #login button {
@@ -299,21 +284,14 @@ main {
     color: rgb(169, 94, 19);
 }
 
-.registerForm label {
-    margin-top: 15px;
+#registrationForm label {
     color: rgb(255, 215, 0);
+    margin-top: 25px;
 }
 
-.registerForm a {
+#registrationForm a {
     text-decoration: none;
     color: rgb(255, 215, 0);
-    text-shadow: 0 0 20px rgb(174, 252, 245);
-    cursor: pointer;
-    transition: 0.55s step-end;
-}
-
-.registerForm a:hover {
-    color: whitesmoke;
 }
 
 #promotion {
