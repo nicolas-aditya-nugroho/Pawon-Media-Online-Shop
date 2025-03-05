@@ -207,14 +207,17 @@ main {
 }
 
 #school-products {
+    margin-bottom: 25px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
 #office-products {
+    margin-bottom: 25px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
 #design {
+    margin-bottom: 25px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
@@ -237,7 +240,7 @@ main {
 }
 
 #biq-2 {
-    margin-top: 5px;
+    margin-top: 50px;
     margin-bottom: 50px;
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
