@@ -1,0 +1,450 @@
+*html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'France', sans-serif;
+    background-color: #ffffffff;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+marquee {
+    color: rgb(255, 215, 0);
+    width: 1920px;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+#date-time {
+    color: rgb(169, 94, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+header {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
+    padding: 1em;
+    text-align: center;
+}
+
+#social-media {
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+#social-media i {
+    margin-left: 15px;
+    color: rgb(169, 94, 19);
+}
+
+#social-media i:hover {
+    color: rgb(174, 252, 245);
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+header nav ul {
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-top: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul li a img {
+    width: 65px;
+    height: 65px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 215, 0);
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: rgb(169, 94, 19);
+    padding: 10px;
+    border: 1px solid rgb(255, 215, 0);
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav #logout {
+    color: rgb(255, 215, 0);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+    cursor: pointer;
+    transition: ease-in 0.5s;
+}
+
+nav #logout:hover {
+    color: whitesmoke;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+h1 {
+    font-family: "France", cursive;
+}
+
+#desainForm {
+    width: 400px;
+    padding: 20px;
+    background-color: rgb(169, 94, 19);
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#desainForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#desainForm input, select, textarea {
+    width: 100%;
+    grid-auto-rows: auto;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid rgb(255, 215, 0);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#desainForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+    transition: step-start 0.5s;
+}
+
+#desainForm button:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+#desainForm .pesan {
+    margin-top: 10px;
+    padding: 10px;
+    color: whitesmoke;
+    text-shadow: 0 0 25px #28a745;
+}
+
+#desainForm .pesan.gagal {
+    color: red;
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+.pamed-category {
+    text-align: center;
+    box-shadow: 0 0 50px rgb(169, 94, 19);
+}
+
+
+#text-style {
+    color: rgb(169, 94, 19);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+    font-size: 80px;
+}
+
+.text-style2 {
+    font-size: 60px;
+    color: rgb(169, 94, 19);
+    text-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+#promotion {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.btn-pamed {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-pamed:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgb(255, 215, 0);
+}
+
+.pamed-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.pamed-btn:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.pamed-btn:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.whatsapp-button {
+    position: fixed;
+    display: inline-block;
+    align-items: end;
+    background-color: green;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    bottom: 100px;
+    right: 50px;
+}
+
+.whatsapp-button:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 9999;
+}
+
+.back-to-top:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+footer {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
+    padding: 1em;
+    text-align: center;
+    clear: both;
+    box-shadow: 0 0 50px rgb(169, 94, 19);
+}
+
+.footer-section {
+    background-color: rgb(169, 94, 19);
+    padding: 3% 1% 1% 1%;
+}
+
+.footer-section #pamed-footer {
+    width: 95px;
+}
+
+.footer-section h4 {
+    margin-top: 10px;
+}
+
+.footer-section h5 {
+    font-size: 50px;
+}
+
+.footer-section p {
+    font-size: 15px;
+}
+
+.fa-ul {
+    margin-left: 1.65em;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: rgb(169, 94, 19);
+}
+
+.footer-section i {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
+    size: 60px;
+}
+
+.footer-section i:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
+}
+
+.payment-method h5 {
+    padding: 5px;
+    font-size: 35px;
+}
+
+iframe {
+    width: 300px;
+    height: 250px;
+    border: 0;
+}
+
+small .Copyright {
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgb(169, 94, 19);
+}
+
+small .Copyright:hover {
+    background-color: rgb(169, 94, 19);
+    color: rgb(169, 94, 19);
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        margin-bottom: 10px;
+    }
+
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 500px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    nav ul li ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    marquee {
+        color: rgb(255, 215, 0);
+        width: 200px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+
+    main {
+        padding: 1em;
+    }
+
+    section {
+        padding: 0.5em;
+    }
+}
