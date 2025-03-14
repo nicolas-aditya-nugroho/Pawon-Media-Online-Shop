@@ -12,130 +12,188 @@ body {
     align-items: center;
 }
 
+.navbar {
+    box-sizing: border-box;
+    width: auto;
+    background-color: rgb(169, 94, 19);
+    height: 400px;
+}
+
+.navbar img {
+    width: 50px;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.navbar .logo:hover {
+    color: red;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
+}
+
 marquee {
     color: rgb(255, 215, 0);
-    width: 1920px;
+    width: auto;
     height: 40px;
     margin-top: 25px;
     margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 #date-time {
+    text-align: center;
     color: rgb(255, 215, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     margin-bottom: 15px;
 }
 
-header {
-    background-color: rgb(169, 94, 19);
-    color: rgb(169, 94, 19);
-    padding: 1em;
-    text-align: center;
+nav {
+    max-width: 800px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    border: 2px solid rgb(255, 215, 0);
+    border-radius: 5px;
+    animation: slide-in 1s ease-out;
 }
 
-#social-media {
-    display: flex;
+ul {
     position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0 5px;
+    list-style-type: none;
+
+    li:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    li {
+        border: 2px solid transparent;
+        border-radius: 5px;
+        padding: 5px;
+        transition: background 0.2s;
+
+        a {
+            color: rgb(255, 215, 0);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            display: block;
+            margin: 12px -12px;
+            padding: 0;
+            background: rgb(169, 94, 19);
+            border: 2px solid rgb(255, 215, 0);
+            border-right: 2px solid rgb(255, 215, 0);
+            border-bottom: 2px solid rgb(255, 215, 0);
+            border-radius: 5px;
+            transition: opacity 0.2s, visibility 0.2s;
+
+            li {
+                margin: -2px 0 0 -2px;
+                width: calc(100% - 20px);
+                line-height: 1.7;
+
+                a {
+                    color: rgb(255, 215, 0);
+                }
+            }
+        }
+
+        &:hover {
+            background: red;
+            border: 2px solid rgb(174, 252, 245);
+            border-right: 2px solid rgb(174, 252, 245);
+            border-bottom: 2px solid rgb(174, 252, 245);
+
+            a {
+                color: rgb(255, 215, 0);
+            }
+
+            ul {
+                visibility: visible;
+                opacity: 1;
+                box-shadow: 0px 3px 5px 2px #EBECF1;
+
+                li {
+                    a {
+                        color: rgb(255, 215, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        bottom: -50px;
+    }
+
+    40% {
+        bottom: 20px;
+    }
+
+    70% {
+        bottom: 10px;
+    }
+
+    100% {
+        bottom: 15px;
+    }
+}
+
+.register-button, .login-button {
+    display: inline;
+    width: auto;
+    margin-right: 5px;
     background-color: rgb(255, 215, 0);
     color: rgb(169, 94, 19);
-    border-radius: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-#social-media i {
-    margin-left: 15px;
-    color: rgb(169, 94, 19);
-}
-
-#social-media i:hover {
-    color: rgb(174, 252, 245);
-    box-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-header nav ul {
-    list-style: none;
-    margin-top: 5px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-header nav ul li {
-    margin-right: 20px;
-}
-
-header nav a {
-    color: rgb(255, 215, 0);
     text-decoration: none;
+    box-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-top: 20px;
-    justify-content: space-between;
-    position: relative;
-}
-
-nav ul li a img {
-    width: 65px;
-    height: 65px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: rgb(255, 215, 0);
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 0;
+.register-button:hover, .login-button:hover {
     background-color: rgb(169, 94, 19);
-    padding: 10px;
-    border: 1px solid rgb(255, 215, 0);
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-.pamed-category {
-    text-align: center;
-    box-shadow: 0 0 50px rgb(169, 94, 19);
-}
-
-nav #pamed-brand {
     color: rgb(255, 215, 0);
+    transition: ease 0.5s;
+}
+
+.navbar #social-media p {
+    justify-content: center;
+    left: 50px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    color: rgb(255, 215, 0);
+}
+
+.navbar #social-media a, i {
+    margin-bottom: 5px;
     text-decoration: none;
-    font-size: 35px;
-}
-
-nav #pamed-brand:hover {
-    color: red;
-    text-shadow: 0 0 25px rgb(255, 215, 0);
-}
-
-nav #logout {
+    display: flex;
+    position: relative;
     color: rgb(255, 215, 0);
-    text-shadow: 0 0 25px rgb(255, 215, 0);
-    cursor: pointer;
-    transition: ease-in 0.5s;
+    border-radius: 20px;
 }
 
-nav #logout:hover {
-    color: whitesmoke;
-    text-shadow: 0 0 25px rgb(255, 215, 0);
+.navbar #social-media a, i:hover {
+    color: rgb(174, 252, 245);
 }
 
 h1 {

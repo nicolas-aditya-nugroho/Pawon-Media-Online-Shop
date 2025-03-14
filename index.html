@@ -26,85 +26,24 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar-nav">
-            <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, apakah Anda sudah
-                berbelanja hari ini? Jika, belum, silahkan berbelanja ke toko ataupun melalui website ini ya! 😊🙏
-            </marquee>
+    <div class="navbar">
+        <a href="index.html" class="logo"><img src="/assets/LOGO-1.png" alt=""> Pawon Media</a>
+        <div id="date-time">
+            <script>// Menampilkan hari, tanggal, dan jam
+                function updateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                    const dateString = now.toLocaleDateString('id-ID', options);
+                    document.getElementById('date-time').innerText = dateString;
+                }
 
-            <div id="date-time">
-                <script>// Menampilkan hari, tanggal, dan jam
-                    function updateTime() {
-                        const now = new Date();
-                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                        const dateString = now.toLocaleDateString('id-ID', options);
-                        document.getElementById('date-time').innerText = dateString;
-                    }
+                // Panggil fungsi updateTime setiap detik
+                setInterval(updateTime, 1000);</script>
+        </div>
 
-                    // Panggil fungsi updateTime setiap detik
-                    setInterval(updateTime, 1000);</script>
-            </div>
-
-
-            <section class="d-flex me-auto mx-auto mr-2" id="social-media">
-                <h5>Ikuti Kami di</h5>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/pawon-media"><i class="fa-brands fa-instagram"></i></a>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
-                        </a>
-                    </li>
-                </ul>
-            </section>
+        <section class="button">
             <ul>
-                <li><a href="index.html"><img src="assets/LOGO-1.png" alt="MUDIKA Nusantara Carlo Acutis"></a>
-                </li>
                 <li>
-                    <a href="#">KEPO</a>
-                    <ul>
-                        <li><a href="#about-us">Profil <i class="fa-solid fa-address-card"></i></a></li>
-                        <hr>
-                        <li><a href="#contact-us">Tetap Terhubung <i class="fa-solid fa-network-wired"></i></a></li>
-                        <hr>
-                        <li><a href="#mapping-location"><i class="fa-solid fa-location-dot"></i> Toko</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Kebutuhan Menulis &amp; Kreativitas</a>
-                    <ul>
-                        <li><a href="#school-products"><i class="fa-solid fa-file-pen"></i> Sekolah</a></li>
-                        <hr>
-                        <li><a href="#office-products"><i class="fa-solid fa-pen"></i> Kantor</a></li>
-                        <hr>
-                        <li><a href="#design"><i class="fa-solid fa-palette"></i> Jasa Desain Apapun</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Kebutuhan <i class="fa-solid fa-mobile"></i> &amp; Kebutuhan <i
-                            class="fa-solid fa-bolt"></i></a>
-                    <ul>
-                        <li><a href="#pulsa">Pulsa <i class="fa-solid fa-mobile"></i></a></li>
-                        <hr>
-                        <li><a href="#biq">Kuota <i class="fa-solid fa-wifi"></i></a></li>
-                        <hr>
-                        <li><a href="#token-listrik">Token <i class="fa-solid fa-bolt"></i></a></li>
-                        <hr>
-                        <li><a href="#biq-2">Bayar <i class="fa-solid fa-money-bills"></i></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Mitra</a>
-                    <ul>
-                        <li><a href="Landing Page/Nicolas Aditya Nugroho.html">Pemilik Toko</a></li>
-                        <hr>
-                        <li><a href="#MUDIKANusantaraCarloAcutis">MNCA</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="navbar">
                     <a href="#" class="dropdown"><i class="fa-solid fa-user"></i> <span id="userFullName"></span></a>
                     <script>function updateUsername(username) {
                             document.getElementById('userFullName').textContent = username;
@@ -127,8 +66,46 @@
                     </ul>
                 </li>
             </ul>
+        </section>
+
+        <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
+            berbelanja
+            hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
+        </marquee>
+
+        <section id="social-media">
+            <p>Ikuti Kami di Sosial Media
+                <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
+            </p>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li>
+                    <a href="#">KEPO</a>
+                    <ul>
+                        <li><a href="#about-us">Profil</a></li>
+                        <li><a href="#contact-us">Tetap <i class="fa-solid fa-mobile"></i></a></li>
+                        <li><a href="#mapping-location"><i class="fa-solid fa-location-dot"></i> Toko</a></li>
+                        <li><a href="/Landing Page/Nicolas Aditya Nugroho.html">Pemilik (<i
+                                    class="fa-solid fa-person"></i>) Toko</a></li>
+                        <li><a href="#MUDIKANusantaraCarloAcutis">MNCA <i class="fa-solid fa-cross"></i></a></li>
+                        <li><a href="#promotion">Bantu Promosi <i class="fa-solid fa-bullhorn"></i></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Produk &amp; Layanan</a>
+                    <ul>
+                        <li><a href="#pulsa">Pulsa <i class="fa-solid fa-mobile"></i></a></li>
+                        <li><a href="#biq">Kuota <i class="fa-solid fa-mobile"></i></a></li>
+                        <li><a href="#token-listrik">Token <i class="fa-solid fa-bolt"></i></a></li>
+                        <li><a href="#biq-2"><i class="fa-solid fa-money-bill"></i> Tagihan</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
-    </header>
+    </div>
 
     </section>
     <main>
