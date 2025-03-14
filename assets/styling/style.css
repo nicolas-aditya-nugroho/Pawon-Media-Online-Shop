@@ -13,27 +13,196 @@ body {
 }
 
 .navbar {
-    box-sizing: border-box;
-    width: auto;
+    width: 100%;
     background-color: rgb(169, 94, 19);
-    height: 400px;
+    color: rgb(255, 215, 0);
+    height: 300px;
 }
 
-.navbar img {
+.navbar .navbar-brand {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(255, 215, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+    color: red;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
+}
+
+.navbar .nav-logo {
     width: 50px;
 }
 
-.navbar .logo {
-    font-weight: bold;
-    font-size: 20px;
-    color: rgb(255, 215, 0);
-    text-decoration: none;
-    margin-left: 15px;
+.nav {
+    width: auto;
+    margin: 100px auto 0 auto;
+    text-align: center;
 }
 
-.navbar .logo:hover {
-    color: red;
-    text-shadow: 0 5px 20px rgb(255, 215, 0);
+/* Navigation */
+
+.nav {
+    font-family: Georgia, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.nav-items {
+    padding: 0;
+    list-style: none;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active,
+.submenu-link,
+.submenu-link:link,
+.submenu-link:visited,
+.submenu-link:active {
+    display: block;
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:active {
+    color: rgb(255, 215, 0);
+    font-weight: bold;
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    -webkit-transform: translate(0, 10px);
+    transform: translate(0, 10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::before {
+    opacity: 1;
+    -webkit-transform: translate(0, 5px);
+    transform: translate(0, 5px);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .nav-link {
+    padding-right: 15px;
+    height: 17px;
+    line-height: 17px;
+}
+
+.dropdown .nav-link::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 0;
+    border: 5px solid transparent;
+    border-top-color: rgb(255, 215, 0);
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 100;
+    width: 200px;
+    margin-left: -100px;
+    background: rgb(169, 94, 19);
+    border-radius: 3px;
+    line-height: 1.46667;
+    margin-top: -5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    opacity: 0;
+    -webkit-transform: translate(0, 0) scale(.85);
+    transform: translate(0, 0)scale(.85);
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    pointer-events: none;
+}
+
+.submenu::after,
+.submenu::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border: 10px solid transparent;
+    height: 0;
+}
+
+.submenu::after {
+    border-bottom-color: rgb(169, 94, 0);
+}
+
+.submenu::before {
+    margin-left: -13px;
+    border: 13px solid transparent;
+    border-bottom-color: rgb(169, 94, 0);
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.submenu-items {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.submenu-item {
+    display: block;
+    text-align: left;
+}
+
+.submenu-link,
+.submenu-link:link,
+.submenu-link:visited,
+.submenu-link:active {
+    color: rgb(255, 215, 0);
+    padding: 10px 20px;
+}
+
+.submenu-link:hover {
+    text-decoration: underline;
+}
+
+.submenu-seperator {
+    height: 0;
+    margin: 12px 10px;
+    border-top: 1px solid rgb(169, 94, 19);
+}
+
+.show-submenu .submenu {
+    opacity: 1;
+    -webkit-transform: translate(0, 25px) scale(1);
+    transform: translate(0, 25px) scale(1);
+    pointer-events: auto;
 }
 
 marquee {
@@ -48,115 +217,10 @@ marquee {
 }
 
 #date-time {
-    text-align: center;
     color: rgb(255, 215, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     margin-bottom: 15px;
-}
-
-nav {
-    max-width: 800px;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    border: 2px solid rgb(255, 215, 0);
-    border-radius: 5px;
-    animation: slide-in 1s ease-out;
-}
-
-ul {
-    position: relative;
-    display: flex;
-    flex: 1 1 auto;
-    margin: 0;
-    padding: 0 5px;
-    list-style-type: none;
-
-    li:not(:last-child) {
-        margin-right: 40px;
-    }
-
-    li {
-        border: 2px solid transparent;
-        border-radius: 5px;
-        padding: 5px;
-        transition: background 0.2s;
-
-        a {
-            color: rgb(255, 215, 0);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        ul {
-            visibility: hidden;
-            opacity: 0;
-            position: absolute;
-            display: block;
-            margin: 12px -12px;
-            padding: 0;
-            background: rgb(169, 94, 19);
-            border: 2px solid rgb(255, 215, 0);
-            border-right: 2px solid rgb(255, 215, 0);
-            border-bottom: 2px solid rgb(255, 215, 0);
-            border-radius: 5px;
-            transition: opacity 0.2s, visibility 0.2s;
-
-            li {
-                margin: -2px 0 0 -2px;
-                width: calc(100% - 20px);
-                line-height: 1.7;
-
-                a {
-                    color: rgb(255, 215, 0);
-                }
-            }
-        }
-
-        &:hover {
-            background: red;
-            border: 2px solid rgb(174, 252, 245);
-            border-right: 2px solid rgb(174, 252, 245);
-            border-bottom: 2px solid rgb(174, 252, 245);
-
-            a {
-                color: rgb(255, 215, 0);
-            }
-
-            ul {
-                visibility: visible;
-                opacity: 1;
-                box-shadow: 0px 3px 5px 2px #EBECF1;
-
-                li {
-                    a {
-                        color: rgb(255, 215, 0);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@keyframes slide-in {
-    0% {
-        bottom: -50px;
-    }
-
-    40% {
-        bottom: 20px;
-    }
-
-    70% {
-        bottom: 10px;
-    }
-
-    100% {
-        bottom: 15px;
-    }
 }
 
 .register-button, .login-button {
@@ -176,7 +240,6 @@ ul {
 }
 
 .navbar #social-media p {
-    justify-content: center;
     left: 50px;
     margin-bottom: 5px;
     margin-left: 15px;
@@ -188,12 +251,12 @@ ul {
     text-decoration: none;
     display: flex;
     position: relative;
-    color: rgb(255, 215, 0);
+    color: wheat;
     border-radius: 20px;
 }
 
 .navbar #social-media a, i:hover {
-    color: rgb(174, 252, 245);
+    color: red;
 }
 
 h1 {
@@ -462,26 +525,42 @@ small .Copyright:hover {
 }
 
 /* Responsive */
-@media only screen and (max-width: 768px) {
-    main {
-        flex-direction: column;
+@media only screen and (max-width: 800px) {
+    nav ul li ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
     }
 
-    section {
+    nav ul li ul li {
         margin-bottom: 10px;
     }
+}
 
-    marquee {
-        color: rgb(255, 215, 0);
-        width: 500px;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-    }
+main {
+    flex-direction: column;
+}
 
+section {
+    margin-bottom: 10px;
+}
+
+marquee {
+    color: rgb(255, 215, 0);
+    width: auto;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 370px) {
     nav ul li ul {
         position: relative;
         top: 0;
@@ -496,18 +575,9 @@ small .Copyright:hover {
         margin-bottom: 10px;
     }
 
-    nav ul li a img {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
-}
-
-@media only screen and (max-width: 480px) {
     marquee {
         color: rgb(255, 215, 0);
-        width: 200px;
+        width: auto;
         height: 40px;
         margin-top: 25px;
         margin-bottom: 25px;
@@ -515,23 +585,6 @@ small .Copyright:hover {
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
     }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin-right: 0;
-    }
-
-    nav ul li {
-        margin-bottom: 10px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
 
     main {
         padding: 1em;
