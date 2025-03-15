@@ -12,11 +12,17 @@ body {
     align-items: center;
 }
 
+/* Navbar styling */
 .navbar {
     width: 100%;
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
     height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(169, 94, 19);
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
 }
 
 .navbar .navbar-brand {
@@ -33,176 +39,98 @@ body {
 }
 
 .navbar .nav-logo {
-    width: 50px;
+    width: 35px;
+    height: 35px;
 }
 
-.nav {
+nav {
     width: auto;
     margin: 100px auto 0 auto;
     text-align: center;
 }
 
-/* Navigation */
-
-.nav {
-    font-family: Georgia, Arial, sans-serif;
-    font-size: 14px;
+#navbar-links {
+    background-color: rgb(169, 94, 19);
 }
 
-.nav-items {
+/* Navbar links - desktop view */
+.navbar-links ul {
+    margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-direction: row;
 }
 
-.nav-item {
-    display: inline-block;
-    margin-right: 25px;
-}
-
-.nav-item:last-child {
-    margin-right: 0;
-}
-
-.nav-link,
-.nav-link:link,
-.nav-link:visited,
-.nav-link:active,
-.submenu-link,
-.submenu-link:link,
-.submenu-link:visited,
-.submenu-link:active {
-    display: block;
+.navbar-links ul li {
+    padding: 0 15px;
     position: relative;
-    font-size: 14px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-decoration: none;
-    outline: none;
 }
 
-.nav-link,
-.nav-link:link,
-.nav-link:visited,
-.nav-link:active {
+/* Link styling */
+.navbar-links ul li a {
     color: rgb(255, 215, 0);
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    display: block;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
 }
 
-.nav-link::before {
-    content: "";
+/* Hover effect for links */
+.navbar-links ul li a:hover {
+    background-color: black;
+    border-radius: 4px;
+}
+
+/* Dropdown menu styling */
+.dropdown-content {
+    display: none;
     position: absolute;
+    background-color: rgb(169, 94, 19);
+    min-width: 160px;
     top: 100%;
     left: 0;
-    width: 100%;
-    height: 3px;
-    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
     opacity: 0;
-    -webkit-transform: translate(0, 10px);
-    transform: translate(0, 10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    /*Hiddenbydefault*/
+    transition: opacity 0.3s ease;
 }
 
-.nav-link:hover::before,
-.nav-link:hover::before {
-    opacity: 1;
-    -webkit-transform: translate(0, 5px);
-    transform: translate(0, 5px);
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown .nav-link {
-    padding-right: 15px;
-    height: 17px;
-    line-height: 17px;
-}
-
-.dropdown .nav-link::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    right: 0;
-    border: 5px solid transparent;
-    border-top-color: rgb(255, 215, 0);
-}
-
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    z-index: 100;
-    width: 200px;
-    margin-left: -100px;
-    background: rgb(169, 94, 19);
-    border-radius: 3px;
-    line-height: 1.46667;
-    margin-top: -5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-    opacity: 0;
-    -webkit-transform: translate(0, 0) scale(.85);
-    transform: translate(0, 0)scale(.85);
-    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
-    pointer-events: none;
-}
-
-.submenu::after,
-.submenu::before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -10px;
-    border: 10px solid transparent;
-    height: 0;
-}
-
-.submenu::after {
-    border-bottom-color: rgb(169, 94, 0);
-}
-
-.submenu::before {
-    margin-left: -13px;
-    border: 13px solid transparent;
-    border-bottom-color: rgb(169, 94, 0);
-    -webkit-filter: blur(1px);
-    filter: blur(1px);
-}
-
-.submenu-items {
-    list-style: none;
-    padding: 10px 0;
-}
-
-.submenu-item {
+.dropdown-content a {
+    color: rgb(169, 94, 19);
+    padding: 10px;
+    text-decoration: none;
     display: block;
-    text-align: left;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.submenu-link,
-.submenu-link:link,
-.submenu-link:visited,
-.submenu-link:active {
-    color: rgb(255, 215, 0);
-    padding: 10px 20px;
-}
-
-.submenu-link:hover {
-    text-decoration: underline;
-}
-
-.submenu-seperator {
-    height: 0;
-    margin: 12px 10px;
-    border-top: 1px solid rgb(169, 94, 19);
-}
-
-.show-submenu .submenu {
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
     opacity: 1;
-    -webkit-transform: translate(0, 25px) scale(1);
-    transform: translate(0, 25px) scale(1);
-    pointer-events: auto;
+    /* Make the dropdown visible */
+}
+
+/* Hamburger icon styling */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 15;
+    color: rgb(255, 215, 0);
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(255, 215, 0);
+    border-radius: 10px;
 }
 
 marquee {
@@ -213,7 +141,7 @@ marquee {
     margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 #date-time {
@@ -221,22 +149,6 @@ marquee {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     margin-bottom: 15px;
-}
-
-.register-button, .login-button {
-    display: inline;
-    width: auto;
-    margin-right: 5px;
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-    text-decoration: none;
-    box-shadow: 0 5px 20px rgb(255, 215, 0);
-}
-
-.register-button:hover, .login-button:hover {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-    transition: ease 0.5s;
 }
 
 .navbar #social-media p {
@@ -253,6 +165,7 @@ marquee {
     position: relative;
     color: wheat;
     border-radius: 20px;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
 .navbar #social-media a, i:hover {
@@ -339,6 +252,13 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 2em;
+}
+
+.pamed-category {
+    box-shadow: 0 5px 20px rgb(169, 94, 19);
+    padding: 16px;
+    text-align: center;
+    background-color: rgb(255, 215, 0);
 }
 
 .btn-pamed {
@@ -496,53 +416,81 @@ small .Copyright:hover {
 
 /* Responsive */
 @media only screen and (max-width: 800px) {
-    nav ul li ul {
-        position: relative;
+    .navbar-links {
+        display: none;
+        /* Hide by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: fixed;
+        /* Cover the entire screen */
         top: 0;
         left: 0;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        padding: 0;
+        height: 100vh;
+        /* Cover full screen height */
+        justify-content: center;
+        align-items: center;
     }
 
-    nav ul li ul li {
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-links ul li {
+        padding: 10px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        /* Align dropdown centrally */
+        background-color: transparent;
+        text-align: center;
+        padding: 0;
+        opacity: 1;
+        /* Make dropdown visible */
+    }
+
+    .toggle-button {
+        display: flex;
+        /* Show hamburger icon */
+    }
+
+    .navbar-links.active {
+        display: flex;
+        /* Show menu when hamburger is clicked */
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    section {
         margin-bottom: 10px;
     }
-}
 
-main {
-    flex-direction: column;
-}
-
-section {
-    margin-bottom: 10px;
-}
-
-marquee {
-    color: rgb(255, 215, 0);
-    width: auto;
-    height: 40px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    marquee {
+        color: rgb(255, 215, 0);
+        width: auto;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 370px) {
-    nav ul li ul {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        padding: 0;
+    .navbar-links {
+        display: flex;
+        /* Show navbar links on desktop */
     }
 
-    nav ul li ul li {
-        margin-bottom: 10px;
+    .toggle-button {
+        display: none;
+        /* Hide hamburger icon on desktop */
     }
 
     marquee {

@@ -27,109 +27,91 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <a href="registrationForm.html" class="navbar-brand"><img src="/assets/LOGO-1.png" alt="" class="nav-logo">
-            Pawon Media</a>
-
-        <div id="date-time">
-            <script>// Menampilkan hari, tanggal, dan jam
-                function updateTime() {
-                    const now = new Date();
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                    const dateString = now.toLocaleDateString('id-ID', options);
-                    document.getElementById('date-time').innerText = dateString;
-                }
-
-                // Panggil fungsi updateTime setiap detik
-                setInterval(updateTime, 1000);</script>
-        </div>
-
-        <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
-            berbelanja
-            hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
-        </marquee>
-
-        <section id="social-media">
-            <p>Ikuti Kami di Sosial Media
-                <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
-            </p>
-        </section>
-
-        <nav role="navigation" class="nav">
-            <ul class="nav-items">
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span><i class="fa-solid fa-house"></i></span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><span>Produk &amp; Layanan Jasa</span></a>
-                    <div class="submenu">
-                        <ul class="submenu-items">
-                            <li class="submenu-item"><a href="#school-products" class="submenu-link"><i
-                                        class="fa-solid fa-pencil"></i> Sekolah</a></li>
-                            <li class="submenu-item"><a href="#office-products" class="submenu-link"><i
-                                        class="fa-solid fa-pen"></i> Kantor</a></li>
-                            <li class="submenu-item"><a href="#pulsa" class="submenu-link">Pulsa <i
-                                        class="fa-solid fa-mobile"></i></a></li>
-                            <li class="submenu-item"><a href="#design" class="submenu-link">Desain <i
-                                        class="fa-solid fa-palette"></i> Apapun</a></li>
-                            <li class="submenu-item"><a href="#biq" class="submenu-link">Kuota <i
-                                        class="fa-solid fa-mobile"></i></a></li>
-                            <li class="submenu-item"><a href="#token-listrik" class="submenu-link">Token <i
-                                        class="fa-solid fa-bolt"></i></a></li>
-                            <li class="submenu-item"><a href="#biq-2" class="submenu-link"><i
-                                        class="fa-solid fa-money-bills"></i> Bayar Tagihan</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="" class="nav-link"><span>KEPO</span></a>
-                    <div class="submenu">
-                        <ul class="submenu-items">
-                            <li class="submenu-item"><a href="#about-us" class="submenu-link">Profil</a></li>
-                            <li class="submenu-item"><a href="#contact-us" class="submenu-link">Saling <i
-                                        class="fa-solid fa-mobile"></i> Mengikuti</a></li>
-                            <li class="submenu-item"><a href="#mapping-location" class="submenu-link"><i
-                                        class="fa-solid fa-location-dot"></i> Ayo ke Toko</a></li>
-                            <li class="submenu-item"><a href="#promotionD" class="submenu-link"><i
-                                        class="fa-solid fa-bullhorn"></i> Promosi Apapun</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <script>
-            [].slice.call(document.querySelectorAll('.dropdown .nav-link')).forEach(function (el) {
-                el.addEventListener('click', onClick, false);
-            });
-
-            function onClick(e) {
-                e.preventDefault();
-                var el = this.parentNode;
-                el.classList.contains('show-submenu') ? hideSubMenu(el) : showSubMenu(el);
-            }
-
-            function showSubMenu(el) {
-                el.classList.add('show-submenu');
-                document.addEventListener('click', function onDocClick(e) {
-                    e.preventDefault();
-                    if (el.contains(e.target)) {
-                        return;
+    <header class="navbar" id="nav-menu">
+        <div class="container">
+            <div class="nav-start"><a href="registrationForm.html" class="navbar-brand"><img src="/assets/LOGO-1.png"
+                        alt="" class="nav-logo">
+                    Pawon Media</a>
+            </div>
+            <div id="date-time">
+                <script>// Menampilkan hari, tanggal, dan jam
+                    function updateTime() {
+                        const now = new Date();
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                        const dateString = now.toLocaleDateString('id-ID', options);
+                        document.getElementById('date-time').innerText = dateString;
                     }
-                    document.removeEventListener('click', onDocClick);
-                    hideSubMenu(el);
-                });
-            }
 
-            function hideSubMenu(el) {
-                el.classList.remove('show-submenu');
-            }
-        </script>
+                    // Panggil fungsi updateTime setiap detik
+                    setInterval(updateTime, 1000);</script>
+            </div>
+            
+            <section class="button">
+                <a href="registrationForm.html" type="button" class="register-button">Daftar</a>
+                <a href="#login" type="button" class="login-button">Masuk</a>
+            </section>
 
-        <section class="button">
-            <a href="#registerForm" type="button" class="register-button">Daftar</a>
-            <a href="login.html" type="button" class="login-button">Masuk</a>
-        </section>
+            <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
+                berbelanja
+                hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
+            </marquee>
+
+            <section id="social-media">
+                <p>Ikuti Kami di Sosial Media
+                    <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
+                </p>
+            </section>
+
+            <nav>
+                <!-- Hamburger icon for mobile view -->
+                <a href="javascript:void(0);" class="toggle-button" id="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+
+                <!-- Navigation links -->
+                <div class="navbar-links" id="navbar-links">
+                    <ul>
+                        <li><a href="#">Beranda</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">KEPO <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#about-us">Profil</a>
+                                <a href="#contact-us">Saling <i class="fa-solid fa-mobile"></i> Mengikuti</a>
+                                <a href="#mapping-location">Ayo ke <i class="fa-solid fa-location-dot"></i> Toko</a>
+                                <a href="#MUDIKANusantaraCarloAcutis">MNCA <i class="fa-solid fa-cross"></i></a>
+                                <a href="/Landing Page/Nicolas Aditya Nugroho.html" target="_blank">Pemilik <i
+                                        class="fa-solid fa-person"></i> Toko</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">Produk &amp; Layanan <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#school-products"><i class="fa-solid fa-pencil"></i> Sekolah</a>
+                                <a href="#office-products"><i class="fa-solid fa-pen"></i> Kantor</a>
+                                <a href="#pulsa">Pulsa <i class="fa-solid fa-mobile"></i></a>
+                                <a href="#design">Desain <i class="fa-solid fa-palette"></i> Apapun</a>
+                                <a href="#biq">Kuota <i class="fa-solid fa-mobile"></i></a>
+                                <a href="#token-listrik">Token <i class="fa-solid fa-bolt"></i></a>
+                                <a href="#biq-2">Bayar <i class="fa-solid fa-money-bills"></i> Tagihan</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <script>
+                    const toggleButton = document.getElementById("toggle-button");
+                    const navbarLinks = document.getElementById("navbar-links");
+
+                    toggleButton.addEventListener("click", function () {
+                        navbarLinks.classList.toggle("active");
+                    });
+                </script>
+            </nav>
     </header>
 
     <main>

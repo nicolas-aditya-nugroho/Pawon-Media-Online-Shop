@@ -26,136 +26,101 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <a href="registrationForm.html" class="navbar-brand"><img src="/assets/LOGO-1.png" alt="" class="nav-logo">
-            Pawon Media</a>
-        <div id="date-time">
-            <script>// Menampilkan hari, tanggal, dan jam
-                function updateTime() {
-                    const now = new Date();
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                    const dateString = now.toLocaleDateString('id-ID', options);
-                    document.getElementById('date-time').innerText = dateString;
-                }
+    <header class="navbar" id="nav-menu">
+        <div class="container">
+            <div class="nav-start"><a href="registrationForm.html" class="navbar-brand"><img src="/assets/LOGO-1.png"
+                        alt="" class="nav-logo">
+                    Pawon Media</a>
+            </div>
+            <div id="date-time">
+                <script>// Menampilkan hari, tanggal, dan jam
+                    function updateTime() {
+                        const now = new Date();
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                        const dateString = now.toLocaleDateString('id-ID', options);
+                        document.getElementById('date-time').innerText = dateString;
+                    }
 
-                // Panggil fungsi updateTime setiap detik
-                setInterval(updateTime, 1000);</script>
-        </div>
+                    // Panggil fungsi updateTime setiap detik
+                    setInterval(updateTime, 1000);</script>
+            </div>
 
-        <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
-            berbelanja
-            hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
-        </marquee>
+            <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
+                berbelanja
+                hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
+            </marquee>
 
-        <section id="social-media">
-            <p>Ikuti Kami di Sosial Media
-                <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
-            </p>
-        </section>
+            <section id="social-media">
+                <p>Ikuti Kami di Sosial Media
+                    <a href="https://www.instagram.com/pawonmedia.010924"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@pawonmedia.010924"><i class="fa-brands fa-tiktok"></i></a>
+                </p>
+            </section>
 
-        <nav role="navigation" class="nav">
-            <ul class="nav-items">
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><span><i class="fa-solid fa-house"></i></span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><span>Produk &amp; Layanan Jasa</span></a>
-                    <div class="submenu">
-                        <ul class="submenu-items">
-                            <li class="submenu-item"><a href="#school-products" class="submenu-link"><i
-                                        class="fa-solid fa-pencil"></i> Sekolah</a></li>
-                            <li class="submenu-item"><a href="#office-products" class="submenu-link"><i
-                                        class="fa-solid fa-pen"></i> Kantor</a></li>
-                            <li class="submenu-item"><a href="#pulsa" class="submenu-link">Pulsa <i
-                                        class="fa-solid fa-mobile"></i></a></li>
-                            <li class="submenu-item"><a href="#design" class="submenu-link">Desain <i
-                                        class="fa-solid fa-palette"></i> Apapun</a></li>
-                            <li class="submenu-item"><a href="#biq" class="submenu-link">Kuota <i
-                                        class="fa-solid fa-mobile"></i></a></li>
-                            <li class="submenu-item"><a href="#token-listrik" class="submenu-link">Token <i
-                                        class="fa-solid fa-bolt"></i></a></li>
-                            <li class="submenu-item"><a href="#biq-2" class="submenu-link"><i
-                                        class="fa-solid fa-money-bills"></i> Bayar Tagihan</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><span>KEPO</span></a>
-                    <div class="submenu">
-                        <ul class="submenu-items">
-                            <li class="submenu-item"><a href="#about-us" class="submenu-link">Profil</a></li>
-                            <li class="submenu-item"><a href="#contact-us" class="submenu-link">Saling <i
-                                        class="fa-solid fa-mobile"></i> Mengikuti</a></li>
-                            <li class="submenu-item"><a href="#mapping-location" class="submenu-link"><i
-                                        class="fa-solid fa-location-dot"></i> Ayo ke Toko</a></li>
-                            <li class="submenu-item"><a href="#promotionD" class="submenu-link"><i
-                                        class="fa-solid fa-bullhorn"></i> Promosi Apapun</a></li>
-                        </ul>
-                    </div>
-                </li>
+            <nav>
+                <!-- Hamburger icon for mobile view -->
+                <a href="javascript:void(0);" class="toggle-button" id="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
 
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i> <span id="userFullName"></span>
-                    </a>
+                <!-- Navigation links -->
+                <div class="navbar-links" id="navbar-links">
+                    <ul>
+                        <li><a href="#">Beranda</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">KEPO <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#about-us">Profil</a>
+                                <a href="#contact-us">Saling <i class="fa-solid fa-mobile"></i> Mengikuti</a>
+                                <a href="#mapping-location">Ayo ke <i class="fa-solid fa-location-dot"></i> Toko</a>
+                                <a href="#MUDIKANusantaraCarloAcutis">MNCA <i class="fa-solid fa-cross"></i></a>
+                                <a href="/Landing Page/Nicolas Aditya Nugroho.html" target="_blank">Pemilik <i
+                                        class="fa-solid fa-person"></i> Toko</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn"><i class="fa-solid fa-user"></i> <span id="userFullName"></span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <script>
+                                    function updateUsername(username) {
+                                        document.getElementById('userFullName').textContent = username;
+                                    }
 
-                    <script>
-                        function updateUsername(username) {
-                            document.getElementById('userFullName').textContent = username;
-                        }
+                                    // Contoh pemanggilan setelah login
+                                    const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                                    updateUsername(loggedInUsername);
+                                </script>
 
-                        // Contoh pemanggilan setelah login
-                        const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
-                        updateUsername(loggedInUsername);
-                    </script>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="#" id="logout"><i class="fa-solid fa-door-open"></i> Keluar
+                                    <script>
+                                        document.getElementById('logout').addEventListener('click', function () {
+                                            // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                                            localStorage.removeItem('userFullName'); // Hapus username
 
-                    <div class="submenu">
-                        <ul class="submenu-items">
-                            <li class="submenu-item"><a href="#" type="button" class="submenu-link" id="logout"><i
-                                        class="fa-solid fa-door-open"></i> Keluar</a></li>
+                                            // Arahkan pengguna ke halaman login atau homepage
+                                            window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                                        });
+                                    </script>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-                            <script>
-                                document.getElementById('logout').addEventListener('click', function () {
-                                    // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
-                                    localStorage.removeItem('userFullName'); // Hapus username
+                <script>
+                    const toggleButton = document.getElementById("toggle-button");
+                    const navbarLinks = document.getElementById("navbar-links");
 
-                                    // Arahkan pengguna ke halaman login atau homepage
-                                    window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
-                                });
-                            </script>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-            <script>
-                [].slice.call(document.querySelectorAll('.dropdown .nav-link')).forEach(function (el) {
-                    el.addEventListener('click', onClick, false);
-                });
-
-                function onClick(e) {
-                    e.preventDefault();
-                    var el = this.parentNode;
-                    el.classList.contains('show-submenu') ? hideSubMenu(el) : showSubMenu(el);
-                }
-
-                function showSubMenu(el) {
-                    el.classList.add('show-submenu');
-                    document.addEventListener('click', function onDocClick(e) {
-                        e.preventDefault();
-                        if (el.contains(e.target)) {
-                            return;
-                        }
-                        document.removeEventListener('click', onDocClick);
-                        hideSubMenu(el);
+                    toggleButton.addEventListener("click", function () {
+                        navbarLinks.classList.toggle("active");
                     });
-                }
-
-                function hideSubMenu(el) {
-                    el.classList.remove('show-submenu');
-                }
-            </script>
-        </nav>
+                </script>
+            </nav>
     </header>
 
     <main>
@@ -210,1143 +175,1211 @@
         </section>
 
         <!-- Pembelian Pulsa -->
-        <h1 class="pamed-category">Beli Pulsa / Kuota</h1>
-        <section class="container" id="pulsa">
-            <h2 class="text-center fw-bold">Telkomsel</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 5rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 6.790
-                                </h3>
+        <h1 class="pamed-category" id="pulsa">Beli Pulsa / Kuota</h3>
+            <section class="container">
+                <h2 class="text-center fw-bold">Telkomsel</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 5rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 6.790
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 10rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 11.750
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 20rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 21.281
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 25rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 26.210
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 50rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 51.260
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
+                                class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Telkomsel 100rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 99.925
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 10rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 11.750
-                                </h3>
+                <br>
+                <h2 class="text-center fw-bold">Indosat</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    5rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 8.225
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    10rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 13.075
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    20rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 21.905
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    25rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 27.045
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    50rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 51.565
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Indosat
+                                    100rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 100.590
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 20rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 21.281
-                                </h3>
+                <br>
+                <h2 class="text-center fw-bold">XL</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    5rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 7.260
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    10rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 12.315
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    25rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 26.550
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    30rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 31.670
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    50rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 51.300
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL
+                                    100rb
+                                    <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 100.925
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 25rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 26.210
-                                </h3>
+                <br>
+                <h2 class="text-center fw-bold">Smartfren</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 5rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 6.430
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 10rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 11.260
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 20rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 21.105
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 25rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 25.865
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 50rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 49.800
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
+                                class="card-img-top pamed-card img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
+                                    Smartfren 100rb <br> Harga dapat berubah sewaktu-waktu!
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 97.660
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 50rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 51.260
-                                </h3>
+            </section>
+
+            <!-- Pembelian Token Listrik -->
+            <h1 class="pamed-category">Kebutuhan Pribadi &amp; Rumah Tangga</h1>
+            <section class="container">
+                <h2 class="text-center fw-bold" id="token-listrik">Token Listrik</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    20rb<br> Harga dapat berubah sewaktu-waktu!</h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 22.169
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    50rb <br> Harga dapat berubah sewaktu-waktu!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 52.169
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    100rb <br> Harga dapat berubah sewaktu-waktu!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 102.169
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    200rb <br> Harga dapat berubah sewaktu-waktu!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 202.175
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    500rb <br> Harga dapat berubah sewaktu-waktu!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 502.180
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Token
+                                    Listrik
+                                    1Jt <br> Harga dapat berubah sewaktu-waktu! <br> <strong>(Sedang Gangguan)</strong>
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Rp 1.001.617</h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" alt=""
-                            class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Telkomsel 100rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 99.925
-                                </h3>
+            </section>
+
+            <!-- Pembayaran Tagihan -->
+            <h1 class="pamed-category">Bayar Tagihan</h1>
+            <section class="container">
+                <h2 class="text-center fw-bold" id="biq-2">Tagihan Listrik - Air - Kendaraan - HP - WiFi</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="container">
+                <h2 class="text-center fw-bold" id="biq">Kuota Internet: <br> Telkomsel-by.U, Indosat-3, <br> XL-Axis,
+                    Smartfren</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembelian Kuota Internet/h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembelian Kuota Internet</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
+                                    Pembelian Kuota Internet</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center fw-bolder justify-content-center">
+                                        Monggo Diisi Ya Lur 👉
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed"
+                                        href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
+                                        <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <br>
-            <h2 class="text-center fw-bold">Indosat</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                5rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 8.225
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                10rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 13.075
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                20rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 21.905
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                25rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 27.045
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                50rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 51.565
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Indosat.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa Indosat
-                                100rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 100.590
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <h2 class="text-center fw-bold">XL</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 5rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 7.260
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 10rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 12.315
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 25rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 26.550
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 30rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 31.670
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 50rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 51.300
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_XL.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa XL 100rb
-                                <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 100.925
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <h2 class="text-center fw-bold">Smartfren</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 5rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 6.430
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 10rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 11.260
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 20rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 21.105
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 25rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 25.865
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 50rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 49.800
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer_Harga_Pulsa_Smartfren.png" alt=""
-                            class="card-img-top pamed-card img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Pulsa
-                                Smartfren 100rb <br> Harga dapat berubah sewaktu-waktu!
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 97.660
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Pembelian Token Listrik -->
-        <h1 class="pamed-category">Kebutuhan Pribadi &amp; Rumah Tangga</h1>
-        <section class="container" id="token-listrik">
-            <h2 class="text-center fw-bold">Token Listrik</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                20rb<br> Harga dapat berubah sewaktu-waktu!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 22.169
-                                </h3>
+            <!-- Promotion Section -->
+            <h1 class="pamed-category" id="promotion">Promosi (Siapa Tau Ada Yang Butuh)</h1>
+            <section class="container">
+                <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/Promosi_Jualan_Warung-Makan-Tenda_Kedai-Queen_Randublatung.jpg"
+                                class="card-img-top pamed-card-img w-100" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Sedang Lapar?
+                                    Takis,
+                                    langsung aja ke "Kedai Queen"
+                                    Posisi warung dekat pintu masuk Kelurahan Randublatung.
+                                    Jam buka warung makan: Senin-Minggu jam 9 pagi hingga 9 malam atau 10 malam.</h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                50rb <br> Harga dapat berubah sewaktu-waktu!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 52.169
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                100rb <br> Harga dapat berubah sewaktu-waktu!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 102.169
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                200rb <br> Harga dapat berubah sewaktu-waktu!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 202.175
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                500rb <br> Harga dapat berubah sewaktu-waktu!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 502.180
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Token Listrik
-                                1Jt <br> Harga dapat berubah sewaktu-waktu! <br> <strong>(Sedang Gangguan)</strong></h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Rp 1.001.617</h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pembayaran Tagihan -->
-        <h1 class="pamed-category">Bayar Tagihan</h1>
-        <section class="container" id="biq">
-            <h2 class="text-center fw-bold">Tagihan Listrik - Air - Kendaraan - HP - WiFi</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembayaran Tagihan: Listrik - Air - Telepon Selular - Internet WiFi - Kendaraan
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container" id="biq-2">
-            <h2 class="text-center fw-bold">Kuota Internet: <br> Telkomsel-by.U, Indosat-3, <br> XL-Axis, Smartfren</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembelian Kuota Internet/h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembelian Kuota Internet</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/New_Flyer.png" alt="" class="card-img-top pamed-card-img w-100">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center fw-bold justify-content-center">Untuk
-                                Pembelian Kuota Internet</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center fw-bolder justify-content-center">
-                                    Monggo Diisi Ya Lur 👉
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed"
-                                    href="Form Pembelian Pulsa-Kuota Internet-Tagihan.html">
-                                    <i class="fa-brands fa-whatsapp"></i> Dilarisi Lur!!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <br>
-
-        <!-- Promotion Section -->
-        <h1 class="pamed-category">Promosi (Siapa Tau Ada Yang Butuh)</h1>
-        <section id="promotion" class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/Promosi_Jualan_Warung-Makan-Tenda_Kedai-Queen_Randublatung.jpg"
-                            class="card-img-top pamed-card-img w-100" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Sedang Lapar? Takis,
-                                langsung aja ke "Kedai Queen"
-                                Posisi warung dekat pintu masuk Kelurahan Randublatung.
-                                Jam buka warung makan: Senin-Minggu jam 9 pagi hingga 9 malam atau 10 malam.</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://wa.me/6285781816884?text=Halo mbak Nona Putri, saya mau berkunjung ke warung mbak, bolehkah dikirim posisi pasti dari warung makannya?">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_3.jpg" alt=""
-                            class="card-img-top pamed-card-img">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
-                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Mas%20mau+kirim+CV%20kerja+tapi+saya+butuh+informasi+lebih+lengkap+mengenai+pekerjaan+ini.%20Terima+kasih&type=phone_number&app_absent=0">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_1.jpg" class="d-block w-100"
-                                        alt="Latar Belakang Pawon Media">
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_2.jpg" class="d-block w-100"
-                                        alt="Visi Pawon Media">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Lowongan Kerja_Semarang_4.jpg" class="d-block w-100"
-                                        alt="Misi Pawon Media">
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://wa.me/6285781816884?text=Halo mbak Nona Putri, saya mau berkunjung ke warung mbak, bolehkah dikirim posisi pasti dari warung makannya?">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
-                                Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih lengkap"
-                            </h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/Promosi_Lowongan Kerja_Semarang_3.jpg" alt=""
+                                class="card-img-top pamed-card-img">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                    Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih
+                                    lengkap"
+                                </h5>
                             </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://api.whatsapp.com/send/?phone=6285801360803&text=Halo+mas+Girang%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://api.whatsapp.com/send/?phone=6281325929387&text=Halo+mas+Nikolas+Aldo+Novelio%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://api.whatsapp.com/send/?phone=6281325929387&text=Mas%20mau+kirim+CV%20kerja+tapi+saya+butuh+informasi+lebih+lengkap+mengenai+pekerjaan+ini.%20Terima+kasih&type=phone_number&app_absent=0">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_1.jpg" class="d-block w-100"
+                                            alt="Latar Belakang Pawon Media">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_2.jpg" class="d-block w-100"
+                                            alt="Visi Pawon Media">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Lowongan Kerja_Semarang_4.jpg" class="d-block w-100"
+                                            alt="Misi Pawon Media">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Butuh Pekerjaan?
+                                    Silahkan klik tombol warna kuning di bawah yang ada tulisan "Informasi luwih
+                                    lengkap"
+                                </h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://api.whatsapp.com/send/?phone=6285801360803&text=Halo+mas+Girang%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://api.whatsapp.com/send/?phone=6281325929387&text=Halo+mas+Nikolas+Aldo+Novelio%2C+saya+mau+dong+informasi+lebih+lengkapnya+mengenai+lowongan+kerja+ini&type=phone_number&app_absent=0">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/assets/Promosi_Manulife_1.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Manulife_2.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Manulife_3.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Butuh Asuransi
+                                    Jiwa &
+                                    Kesehatan? Ya, Manulife JAWABAN ANDA Saat ini!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://wa.me/6281325929387?text=Halo mas Aldo, saya mau tanya-tanya seputar asuransi jiwa dan atau kesehatan yang masnya jual dan promosikan, dong">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <img src="/assets/Promosi_Wuling.jpg" class="card-img-top pamed-card-img w-100" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Beli Mobil Wuling
+                                    Anda
+                                    Pada Dealer Wuling AJM Sudirman</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://wa.me/62816659755?text=Halo mbak Tina, saya mau tanya-tanya seputar mobil Wuling yang mbak jual dan promosikan, dong!">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 pamed-card-border shadow rounded">
+                            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/assets/Promois_Jualan_Monika_1.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_2.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_3.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_4.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_5.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_6.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_7.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_8.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/assets/Promosi_Jualan_Monika_9.jpg" class="d-block w-100"
+                                            alt="Manulife Agent Nikolas Aldo">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-center justify-content-center">Butuh Aksesoris
+                                    HP?
+                                    Ya, toko "Dua Putri Cellular" JAWABAN ANDA Saat ini!</h5>
+                            </div>
+                            <div
+                                class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
+                                <div>
+                                    <h3 class="price-text-style text-center justify-content-center">
+                                        Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
+                                    </h3>
+                                </div>
+                                <div>
+                                    <a type="button" class="btn btn-pamed" target="_blank"
+                                        href="https://wa.me/62856404078567?text=Halo mbak Monika, saya mau beli salah satu produk mbaknya, bolehkah diberikan informasi pasti dari lokasi toko mbaknya? Terima Kasih!">
+                                        <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/assets/Promosi_Manulife_1.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Manulife_2.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Manulife_3.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Butuh Asuransi Jiwa &
-                                Kesehatan? Ya, Manulife JAWABAN ANDA Saat ini!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://wa.me/6281325929387?text=Halo mas Aldo, saya mau tanya-tanya seputar asuransi jiwa dan atau kesehatan yang masnya jual dan promosikan, dong">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/Promosi_Wuling.jpg" class="card-img-top pamed-card-img w-100" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Beli Mobil Wuling Anda
-                                Pada Dealer Wuling AJM Sudirman</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://wa.me/62816659755?text=Halo mbak Tina, saya mau tanya-tanya seputar mobil Wuling yang mbak jual dan promosikan, dong!">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 pamed-card-border shadow rounded">
-                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="/assets/Promois_Jualan_Monika_1.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_2.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_3.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_4.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_5.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_6.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_7.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_8.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/assets/Promosi_Jualan_Monika_9.jpg" class="d-block w-100"
-                                        alt="Manulife Agent Nikolas Aldo">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-center justify-content-center">Butuh Aksesoris HP?
-                                Ya, toko "Dua Putri Cellular" JAWABAN ANDA Saat ini!</h5>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
-                            <div>
-                                <h3 class="price-text-style text-center justify-content-center">
-                                    Informasi luwih lengkap silahkan klik ikon <i class="fa-brands fa-whatsapp"></i>
-                                </h3>
-                            </div>
-                            <div>
-                                <a type="button" class="btn btn-pamed" target="_blank"
-                                    href="https://wa.me/62856404078567?text=Halo mbak Monika, saya mau beli salah satu produk mbaknya, bolehkah diberikan informasi pasti dari lokasi toko mbaknya? Terima Kasih!">
-                                    <i class="fa-brands fa-whatsapp"></i> Informasi luwih lengkap!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
     </main>
 
     <!--Kebutuhan Sekolah section-->
-    <h1 class="pamed-category">Kebutuhan Sekolah</h1>
-    <section id="school-products" class="container mt-5">
+    <h1 class="pamed-category" id="school-products">Kebutuhan Sekolah</h1>
+    <section class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             <div class="col">
                 <div class="card h-100 pamed-card-border shadow rounded">
@@ -3239,8 +3272,8 @@
     <hr>
 
     <!--Kebutuhan Kantor section-->
-    <h1 class="pamed-category">Kebutuhan Kantor</h1>
-    <section class="container mt-5" id="office-products">
+    <h1 class="pamed-category" id="office-products">Kebutuhan Kantor</h1>
+    <section class="container mt-5">
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             <div class="col">
                 <div class="card h-100 pamed-card-border shadow rounded">
@@ -5079,8 +5112,8 @@
     <hr>
 
     <!--Layanan Desain section-->
-    <h1 class="pamed-category">Layanan Desain</h1>
-    <section id="design" class="container mt-5 pb-5">
+    <h1 class="pamed-category" id="design">Layanan Desain</h1>
+    <section class="container mt-5 pb-5">
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             <div class="col">
                 <div class="card h-100 pamed-card-border shadow rounded">
@@ -5238,17 +5271,20 @@
                         <h5 class="fw-bold mb-4" style="color: rgb(255,215,0);">Tentang Kami:</h5>
 
                         <p style="color: rgb(255,215,0);">
-                            <strong>"Pawon"</strong> dalam bahasa Jawa berarti <strong>"dapur"</strong>, yang simbolis
+                            <strong>"Pawon"</strong> dalam bahasa Jawa berarti <strong>"dapur"</strong>, yang
+                            simbolis
                             untuk
                             tempat
                             di mana kehangatan dan
-                            kreativitas dimulai, sama halnya dengan proses belajar dan bekerja. <strong>"Media"</strong>
+                            kreativitas dimulai, sama halnya dengan proses belajar dan bekerja.
+                            <strong>"Media"</strong>
                             menunjukkan
                             bahwa
                             toko ini merupakan sarana untuk mendukung aktivitas belajar dan komunikasi. Jadi,
                             <strong>"Pawon
                                 Media"</strong>
-                            menggambarkan tempat di mana berbagai alat tulis dan perlengkapan disediakan untuk membantu
+                            menggambarkan tempat di mana berbagai alat tulis dan perlengkapan disediakan untuk
+                            membantu
                             memudahkan proses belajar dan bekerja, sekaligus menjadi ruang untuk berbagi ide dan
                             kreativitas.
                         </p>
@@ -5264,8 +5300,10 @@
                             dengan
                             harga
                             yang terjangkau. <br><br>
-                            2. Menciptakan pengalaman berbelanja yang nyaman dan menyenangkan bagi pelanggan. <br><br>
-                            3. Berinovasi dalam produk dan layanan kami untuk memenuhi kebutuhan pelanggan yang terus
+                            2. Menciptakan pengalaman berbelanja yang nyaman dan menyenangkan bagi pelanggan.
+                            <br><br>
+                            3. Berinovasi dalam produk dan layanan kami untuk memenuhi kebutuhan pelanggan yang
+                            terus
                             berkembang. <br><br>
                             4. Membangun komunitas yang peduli terhadap pendidikan dan pengembangan diri melalui
                             berbagai
@@ -5301,7 +5339,8 @@
                     <a href="https://www.youtube.com/@NANChannelOfficial" class="me-auto mx-auto mr-2"
                         target="_blank"><i class="fa-brands fa-youtube"></i></a>
                     <hr>
-                    <h4 class="text-uppercase mb-4 pb-1" id="MUDIKANusantaraCarloAcutis">MUDIKA Nusantara Carlo Acutis
+                    <h4 class="text-uppercase mb-4 pb-1" id="MUDIKANusantaraCarloAcutis">MUDIKA Nusantara Carlo
+                        Acutis
                     </h4>
                     <hr><a
                         href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html"
@@ -5384,7 +5423,8 @@
         <div class="text-center p-3">
             <small class="block fw-bold">&copy; <span id="currentYear"></span>
                 <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-                <a href="/forgot password.html" class="Copyright">Pawon Media ◯ Foto Kopi ◯ Alat-alat Tulis Kantor &amp;
+                <a href="/forgot password.html" class="Copyright">Pawon Media ◯ Foto Kopi ◯ Alat-alat Tulis Kantor
+                    &amp;
                     Sekolah
                     <br> ◯ Desain ◯ Pulsa</a>
             </small>
