@@ -69,6 +69,8 @@
                                         class="fa-solid fa-pen"></i> Kantor</a></li>
                             <li class="submenu-item"><a href="#pulsa" class="submenu-link">Pulsa <i
                                         class="fa-solid fa-mobile"></i></a></li>
+                            <li class="submenu-item"><a href="#design" class="submenu-link">Desain <i
+                                        class="fa-solid fa-palette"></i> Apapun</a></li>
                             <li class="submenu-item"><a href="#biq" class="submenu-link">Kuota <i
                                         class="fa-solid fa-mobile"></i></a></li>
                             <li class="submenu-item"><a href="#token-listrik" class="submenu-link">Token <i
@@ -92,69 +94,68 @@
                         </ul>
                     </div>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i> <span id="userFullName"></span>
+                    </a>
+
+                    <script>
+                        function updateUsername(username) {
+                            document.getElementById('userFullName').textContent = username;
+                        }
+
+                        // Contoh pemanggilan setelah login
+                        const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
+                        updateUsername(loggedInUsername);
+                    </script>
+
+                    <div class="submenu">
+                        <ul class="submenu-items">
+                            <li class="submenu-item"><a href="#" type="button" class="submenu-link" id="logout"><i
+                                        class="fa-solid fa-door-open"></i> Keluar</a></li>
+
+                            <script>
+                                document.getElementById('logout').addEventListener('click', function () {
+                                    // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
+                                    localStorage.removeItem('userFullName'); // Hapus username
+
+                                    // Arahkan pengguna ke halaman login atau homepage
+                                    window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
+                                });
+                            </script>
+                        </ul>
+                    </div>
+                </li>
             </ul>
-        </nav>
-        <script>
-            [].slice.call(document.querySelectorAll('.dropdown .nav-link')).forEach(function (el) {
-                el.addEventListener('click', onClick, false);
-            });
 
-            function onClick(e) {
-                e.preventDefault();
-                var el = this.parentNode;
-                el.classList.contains('show-submenu') ? hideSubMenu(el) : showSubMenu(el);
-            }
-
-            function showSubMenu(el) {
-                el.classList.add('show-submenu');
-                document.addEventListener('click', function onDocClick(e) {
-                    e.preventDefault();
-                    if (el.contains(e.target)) {
-                        return;
-                    }
-                    document.removeEventListener('click', onDocClick);
-                    hideSubMenu(el);
+            <script>
+                [].slice.call(document.querySelectorAll('.dropdown .nav-link')).forEach(function (el) {
+                    el.addEventListener('click', onClick, false);
                 });
-            }
 
-            function hideSubMenu(el) {
-                el.classList.remove('show-submenu');
-            }
-        </script>
+                function onClick(e) {
+                    e.preventDefault();
+                    var el = this.parentNode;
+                    el.classList.contains('show-submenu') ? hideSubMenu(el) : showSubMenu(el);
+                }
 
-        <section class="button">
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link"><i class="fa-solid fa-user"></i> <span id="userFullName"></span>
-                </a>
+                function showSubMenu(el) {
+                    el.classList.add('show-submenu');
+                    document.addEventListener('click', function onDocClick(e) {
+                        e.preventDefault();
+                        if (el.contains(e.target)) {
+                            return;
+                        }
+                        document.removeEventListener('click', onDocClick);
+                        hideSubMenu(el);
+                    });
+                }
 
-                <script>
-                    function updateUsername(username) {
-                        document.getElementById('userFullName').textContent = username;
-                    }
-
-                    // Contoh pemanggilan setelah login
-                    const loggedInUsername = 'Nicolas Aditya Nugroho'; // Misalnya ini username yang didapat setelah login
-                    updateUsername(loggedInUsername);
-                </script>
-
-                <div class="submenu">
-                    <ul class="submenu-items">
-                        <li class="submenu-item"><a href="#" type="button" class="submenu-link" id="logout"><i
-                                    class="fa-solid fa-door-open"></i> Keluar</a></li>
-
-                        <script>
-                            document.getElementById('logout').addEventListener('click', function () {
-                                // Misalnya, hapus info pengguna dari localStorage atau sessionStorage
-                                localStorage.removeItem('userFullName'); // Hapus username
-
-                                // Arahkan pengguna ke halaman login atau homepage
-                                window.location.href = 'login.html'; // Ganti dengan halaman yang sesuai
-                            });
-                        </script>
-                    </ul>
-                </div>
-            </li>
-        </section>
+                function hideSubMenu(el) {
+                    el.classList.remove('show-submenu');
+                }
+            </script>
+        </nav>
     </header>
 
     </section>
@@ -658,12 +659,12 @@
     </footer>
     <!-- Footer Ends -->
 
-    <div class="whatsappbutton-popup">
-        <a href="https://api.whatsapp.com/send/?phone=62895360074499&text=Halo+mas%2C+saya+ingin+menyampaikan+kritik+dan+saran.+Apakah+boleh+saya+sampaikan+sekarang%3F&type=phone_number&app_absent=0"
-            class="whatsapp-button" target="_blank">
-            <i class="fab fa-whatsapp"></i> Ngobrol Yuk!
+    <section class="float">
+        <a href="https://api.whatsapp.com/send/?phone=62895360074499&text=Halo,%20adakah%20yang%20dapat%20saya%20bantu%3F&type=phone_number&app_absent=0"
+            target="_blank">
+            <i class="fa-brands fa-whatsapp my-float"></i>
         </a>
-    </div>
+    </section>
 
     <div class="back-to-home">
         <button class="back-to-top" onclick="scrollToTop()">

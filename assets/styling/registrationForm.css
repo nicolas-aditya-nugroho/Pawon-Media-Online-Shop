@@ -16,7 +16,7 @@ body {
     width: 100%;
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
-    height: 300px;
+    height: auto;
 }
 
 .navbar .navbar-brand {
@@ -213,7 +213,7 @@ marquee {
     margin-bottom: 25px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 #date-time {
@@ -253,10 +253,11 @@ marquee {
     position: relative;
     color: wheat;
     border-radius: 20px;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
 .navbar #social-media a, i:hover {
-    color: rgb(174, 252, 245);
+    color: red;
 }
 
 h1 {
@@ -402,60 +403,23 @@ main {
     cursor: pointer;
 }
 
-.whatsapp-button {
+.float {
     position: fixed;
-    display: inline-block;
-    align-items: end;
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    right: 50px;
     background-color: green;
     color: rgb(255, 215, 0);
-    padding: 15px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    bottom: 100px;
-    right: 50px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgb(255, 215, 0);
+    z-index: 100;
 }
 
-.whatsapp-button:hover {
-    background-color: rgb(255, 215, 0);
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-    border-radius: 50%;
-    padding: 15px;
-    z-index: 9999;
-}
-
-.back-to-top:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-}
-
-.whatsapp-button {
-    position: fixed;
-    display: inline-block;
-    align-items: end;
-    background-color: green;
-    color: rgb(255, 215, 0);
-    padding: 15px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    bottom: 100px;
-    right: 50px;
-}
-
-.whatsapp-button:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+.my-float {
+    margin-top: 16px;
 }
 
 .back-to-top {

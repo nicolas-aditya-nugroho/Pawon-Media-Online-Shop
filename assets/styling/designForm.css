@@ -16,7 +16,7 @@ body {
     width: 100%;
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
-    height: 300px;
+    height: auto;
 }
 
 .navbar .navbar-brand {
@@ -395,24 +395,23 @@ main {
     cursor: pointer;
 }
 
-.whatsapp-button {
+.float {
     position: fixed;
-    display: inline-block;
-    align-items: end;
-    background-color: green;
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    bottom: 100px;
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
     right: 50px;
+    background-color: green;
+    color: rgb(255, 215, 0);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgb(255, 215, 0);
+    z-index: 100;
 }
 
-.whatsapp-button:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+.my-float {
+    margin-top: 16px;
 }
 
 .back-to-top {
