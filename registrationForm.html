@@ -45,10 +45,10 @@
                     // Panggil fungsi updateTime setiap detik
                     setInterval(updateTime, 1000);</script>
             </div>
-            
+
             <section class="button">
-                <a href="registrationForm.html" type="button" class="register-button">Daftar</a>
-                <a href="#login" type="button" class="login-button">Masuk</a>
+                <a href="#registerForm" type="button" class="register-button">Daftar</a>
+                <a href="login.html" type="button" class="login-button">Masuk</a>
             </section>
 
             <marquee behavior="main" direction="left">Selamat Datang di website toko Pawon Media, sudahkah Anda
@@ -107,8 +107,18 @@
                     const toggleButton = document.getElementById("toggle-button");
                     const navbarLinks = document.getElementById("navbar-links");
 
-                    toggleButton.addEventListener("click", function () {
+                    // Menambahkan event listener pada tombol toggle
+                    toggleButton.addEventListener("click", function (event) {
+                        // Menghindari event bubbling saat tombol toggle diklik
+                        event.stopPropagation();
                         navbarLinks.classList.toggle("active");
+                    });
+
+                    // Menutup navbar jika klik di luar menu dan tombol toggle
+                    document.addEventListener("click", function (event) {
+                        if (!toggleButton.contains(event.target) && !navbarLinks.contains(event.target)) {
+                            navbarLinks.classList.remove("active");
+                        }
                     });
                 </script>
             </nav>

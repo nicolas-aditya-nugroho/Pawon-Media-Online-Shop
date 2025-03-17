@@ -106,8 +106,18 @@
                     const toggleButton = document.getElementById("toggle-button");
                     const navbarLinks = document.getElementById("navbar-links");
 
-                    toggleButton.addEventListener("click", function () {
+                    // Menambahkan event listener pada tombol toggle
+                    toggleButton.addEventListener("click", function (event) {
+                        // Menghindari event bubbling saat tombol toggle diklik
+                        event.stopPropagation();
                         navbarLinks.classList.toggle("active");
+                    });
+
+                    // Menutup navbar jika klik di luar menu dan tombol toggle
+                    document.addEventListener("click", function (event) {
+                        if (!toggleButton.contains(event.target) && !navbarLinks.contains(event.target)) {
+                            navbarLinks.classList.remove("active");
+                        }
                     });
                 </script>
             </nav>
