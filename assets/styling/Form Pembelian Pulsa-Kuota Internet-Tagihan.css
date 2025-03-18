@@ -205,6 +205,8 @@ main {
 }
 
 .pamed-category {
+    margin-bottom: 25px;
+    margin-top: 25px;
     box-shadow: 0 5px 20px rgb(169, 94, 19);
     padding: 16px;
     text-align: center;

@@ -231,8 +231,12 @@ h1 {
 }
 
 .pamed-category {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    box-shadow: 0 5px 20px rgb(169, 94, 19);
+    padding: 16px;
     text-align: center;
-    box-shadow: 0 0 50px rgb(169, 94, 19);
+    background-color: rgb(255, 215, 0);
 }
 
 
