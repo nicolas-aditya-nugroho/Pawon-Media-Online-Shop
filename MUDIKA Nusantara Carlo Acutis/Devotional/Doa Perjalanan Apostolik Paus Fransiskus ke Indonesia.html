@@ -96,21 +96,30 @@
                                     Mohon Kesehatan Keluarga</a>
                                 <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Doa
                                     Mohon Kesembuhan Keluarga</a>
-                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Doa Mohon
-                                    Pekerjaan</a>
-                                <a
-                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
-                                    Mohon Kelancaran Bisnis</a>
-                                <a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa
-                                    Perjalanan Apostolik Bapa Suci</a>
-                                <a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Doa
-                                    Bagi Kesembuhan Bapa Suci</a>
-                                <a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Doa
-                                    Permohonan Melalui Perantara Carlo Acutis</a>
-                                <a href="#Yubileum2025">Doa Tahun Yubileum 2025</a>
+                                <div class="submenu">
+                                    <a href="#">Lanjutan</a>
+                                    <ul class="submenu-list">
+
+                                        <li><a
+                                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Doa
+                                                Mohon
+                                                Pekerjaan</a></li>
+                                        <li><a
+                                                href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
+                                                Mohon Kelancaran Bisnis</a></li>
+                                        <li><a
+                                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa
+                                                Perjalanan Apostolik Bapa Suci</a></li>
+                                        <li><a
+                                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Doa
+                                                Bagi Kesembuhan Bapa Suci</a></li>
+                                        <li><a
+                                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Doa
+                                                Permohonan Melalui Perantara Carlo Acutis</a></li>
+                                        <li><a href="#Yubileum2025">Doa Tahun Yubileum 2025</a></li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </li>
                         <li><a href="#ourBelovedFounder">Pendiri</a></li>
@@ -155,6 +164,30 @@
                 <script>
                     const toggleButton = document.getElementById("toggle-button");
                     const navbarLinks = document.getElementById("navbar-links");
+
+                    // Menangkap semua elemen submenu
+                    const submenuItems = document.querySelectorAll('.submenu');
+
+                    // Menambahkan event listener untuk setiap submenu
+                    submenuItems.forEach(submenu => {
+                        submenu.addEventListener('click', function (e) {
+                            // Mencegah link default agar tidak berpindah halaman
+                            e.preventDefault();
+
+                            // Menutup submenu lainnya jika terbuka
+                            submenuItems.forEach(item => {
+                                if (item !== submenu) {
+                                    item.querySelector('.submenu-list').style.display = 'none';
+                                }
+                            });
+
+                            // Toggle visibility submenu yang diklik
+                            const submenuList = submenu.querySelector('.submenu-list');
+                            const isVisible = submenuList.style.display === 'block';
+                            submenuList.style.display = isVisible ? 'none' : 'block';
+                        });
+                    });
+
 
                     // Menambahkan event listener pada tombol toggle
                     toggleButton.addEventListener("click", function (event) {

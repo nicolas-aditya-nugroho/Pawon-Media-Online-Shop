@@ -114,6 +114,22 @@ nav {
     /* Make the dropdown visible */
 }
 
+/* Styling for the submenu */
+.submenu {
+    position: relative;
+}
+
+.submenu-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgb(255, 215, 0);
+    padding: 10px 0;
+    list-style-type: none;
+    min-width: auto;
+    border-radius: 5px;
+}
+
 /* Hamburger icon styling */
 .toggle-button {
     display: none;
@@ -170,10 +186,6 @@ marquee {
 
 .navbar #social-media a, i:hover {
     color: black;
-}
-
-nav ul li:hover ul {
-    display: block;
 }
 
 main {

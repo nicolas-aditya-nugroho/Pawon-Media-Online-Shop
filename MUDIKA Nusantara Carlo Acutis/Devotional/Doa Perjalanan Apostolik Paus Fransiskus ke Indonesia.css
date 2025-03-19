@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif, bold;
-    background-color: #000000;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Navbar styling */
 .navbar {
     width: 100%;
@@ -112,6 +104,22 @@ nav {
     display: block;
     opacity: 1;
     /* Make the dropdown visible */
+}
+
+/* Styling for the submenu */
+.submenu {
+    position: relative;
+}
+
+.submenu-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgb(255, 215, 0);
+    padding: 10px 0;
+    list-style-type: none;
+    min-width: auto;
+    border-radius: 5px;
 }
 
 /* Hamburger icon styling */
