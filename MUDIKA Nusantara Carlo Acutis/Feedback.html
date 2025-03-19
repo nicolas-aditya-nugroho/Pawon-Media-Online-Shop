@@ -33,13 +33,13 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar-nav">
-            <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
-                Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
-                sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
-            </marquee>
-
+    <header class="navbar" id="nav-menu">
+        <div class="container">
+            <div class="nav-start"><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"
+                    class="navbar-brand"><img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png"
+                        alt="" class="nav-logo">
+                    MUDIKA Nusantara Carlo Acutis</a>
+            </div>
             <div id="date-time">
                 <script>// Menampilkan hari, tanggal, dan jam
                     function updateTime() {
@@ -53,138 +53,123 @@
                     setInterval(updateTime, 1000);</script>
             </div>
 
+            <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
+                Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
+                sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
+            </marquee>
 
-            <section class="d-flex me-auto mx-auto mr-2" id="social-media">
-                <h5>Ikuti Kami di</h5>
-                <ul>
-                    <li>
-                        <a href="#instagramPost"><i class="fa-brands fa-instagram"></i></a>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i></a>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#youtubePost"><i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+            <section id="social-media">
+                <p>Ikuti Kami di Sosial Media
+                    <a href="#instagramPost"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#youtubePost"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#tiktokPost"><i class="fa-brands fa-youtube"></i></a>
+                </p>
             </section>
-            <ul>
-                <li><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"><img
-                            src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png"
-                            alt="MUDIKA Nusantara Carlo Acutis"></a></li>
-                <li>
-                    <a href="#">SPK - SCAMP - KYEV</a>
+
+            <nav>
+                <!-- Hamburger icon for mobile view -->
+                <a href="javascript:void(0);" class="toggle-button" id="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+
+                <!-- Navigation links -->
+                <div class="navbar-links" id="navbar-links">
                     <ul>
-                        <li><a href="#welcome">Selayang Pandang Komunitas</a></li>
-                        <hr>
-                        <li><a href="#advice">Saran Carlo Acutis Malaikat Pelindung</a></li>
-                        <hr>
-                        <li><a href="#amazed">Kekaguman Suster Yohana Evita Veron, CAE</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Aktivitas &amp; Pendiri Komunitas</a>
-                    <ul>
-                        <li><a href="#ourActivity">Aktivitas Kami</a></li>
-                        <hr>
-                        <li><a href="#ourBelovedFounder">Pendiri Komunitas</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Devosi</a>
-                    <ul>
-                        <li><a
-                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Doa
-                                Bagi Bangsa &amp; Negara
-                            </a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Doa Mohon Jodoh</a>
+                        <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                        <li><a href="#ourActivity">Aktivitas</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">Devosi <i class="fa-solid fa-church"></i> <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Doa
+                                    Bagi Bangsa dan Negara Indonesia</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Doa Mohon
+                                    Jodoh</a>
+                                <a
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Doa
+                                    Mohon Kelancaran Penjualan Rumah</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.html">Doa
+                                    Mohon Kesehatan Keluarga</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Doa
+                                    Mohon Kesembuhan Keluarga</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Doa Mohon
+                                    Pekerjaan</a>
+                                <a
+                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
+                                    Mohon Kelancaran Bisnis</a>
+                                <a
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa
+                                    Perjalanan Apostolik Bapa Suci</a>
+                                <a
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Doa
+                                    Bagi Kesembuhan Bapa Suci</a>
+                                <a
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Doa
+                                    Permohonan Melalui Perantara Carlo Acutis</a>
+                                <a href="#Yubileum2025">Doa Tahun Yubileum 2025</a>
+                            </div>
                         </li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Doa Mohon
-                                Pekerjaan</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Doa Mohon
-                                Kelancaran
-                                Penjualan Rumah</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Doa
-                                Permohonan Perantara Carlo Acutis</a></li>
-                        <hr>
-                        <li><a
-                                href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Doa
-                                Mohon Kelancaran Bisnis</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.html">Doa
-                                Mohon Kesehatan Keluarga</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Doa
-                                Mohon Kesembuhan Keluarga</a></li>
-                        <hr>
-                        <li><a
-                                href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Doa
-                                Untuk
-                                Kesembuhan Bapa Suci Paus Fransiskus</a></li>
-                        <hr>
-                        <li><a href="#Yubileum2025">Panduan Praktis Umat: <br> Keuskupan Agung Jakarta &amp; Keuskupan
-                                Agung Semarang</a></li>
+                        <li><a href="#ourBelovedFounder">Pendiri</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">Devosi Maria <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Rosario:
+                                    Peristiwa Gembira</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Rosario:
+                                    Peristiwa Mulia</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Rosario:
+                                    Peristiwa Sedih</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Rosario:
+                                    Peristiwa Terang</a>
+                            </div>
+                        </li>
+                        <li><a href="Feedback.html">Kritik &amp; Saran</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">Devosi Yosef <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef.html">Litani Santo
+                                    Yosef</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
+                                    Misteri Keutamaan Santo Yosef</a>
+                                <a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html">Doa Santo
+                                    Yosef Tidur</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropbtn">Mitra <i
+                                    class="fa-solid fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#eShop">Produk UMKM</a>
+                                <a href="/login.html">Pawon Media</a>
+                            </div>
+                        </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="#">Devosi Santa Perawan Maria Sang Bunda Kristus</a>
-                    <ul>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Rosario:
-                                Peristiwa Gembira <br> (Senin &amp;
-                                Sabtu)</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Rosario: Peristiwa
-                                Sedih <br> (Selasa &amp;
-                                Jum'at)</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Rosario: Peristiwa
-                                Mulia <br> (Rabu &amp;
-                                Minggu)</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Rosario: Peristiwa
-                                Terang <br> (Kamis)</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Devosi Santo Yosef</a>
-                    <ul>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html">Doa Santo
-                                Yosef Tidur</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef.html">Litani Santo
-                                Yosef</a></li>
-                        <hr>
-                        <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario Santo
-                                Yosef: <br> 3 Misteri
-                                Kehidupan</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Kalender</a>
-                    <ul>
-                        <li><a href="#calendar">Kalender Masehi</a></li>
-                        <hr>
-                        <li><a href="#liturgy">Kalender Liturgi</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Mitra</a>
-                    <ul>
-                        <li><a href="#eShop">Produk-Produk UMKM</a></li>
-                        <hr>
-                        <li><a href="/login.html">Pawon Media</a></li>
-                    </ul>
-                </li>
-                <li><a href="#keep-contact">Kontak</a></li>
-            </ul>
-        </nav>
+                </div>
+
+                <script>
+                    const toggleButton = document.getElementById("toggle-button");
+                    const navbarLinks = document.getElementById("navbar-links");
+
+                    // Menambahkan event listener pada tombol toggle
+                    toggleButton.addEventListener("click", function (event) {
+                        // Menghindari event bubbling saat tombol toggle diklik
+                        event.stopPropagation();
+                        navbarLinks.classList.toggle("active");
+                    });
+
+                    // Menutup navbar jika klik di luar menu dan tombol toggle
+                    document.addEventListener("click", function (event) {
+                        if (!toggleButton.contains(event.target) && !navbarLinks.contains(event.target)) {
+                            navbarLinks.classList.remove("active");
+                        }
+                    });
+                </script>
+            </nav>
     </header>
 
     <main>
@@ -204,34 +189,59 @@
         </section>
 
         <section id="saweria">
-            <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
-                alt="MUDIKA Nusantara Carlo Acutis Saweria" id="MNCA-saweria">
-            <h3>Mari Bantu Kami Dengan Berdonasi</h3>
+            <h1>Mari Bantu Kami Dengan Berdonasi</h1>
+            <div class="box">
+                <a class="button" href="#popup1">Donasi di SINI</a>
+            </div>
+
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <h2>Mari bantu kami</h2>
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
+                            id="saweria-img">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Gregorian calendar's Starts -->
         <section id="calendar">
-            <div class="calendar">
-                <div class="calendar-header">
-                    <button id="prev-month">‹</button>
-                    <div id="month-year"></div>
-                    <button id="next-month">›</button>
-                </div>
-                <div class="calendar-body">
-                    <div class="calendar-weekdays">
-                        <div style="color: red;">Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div>
-                    <div class="calendar-dates">
-                        <!-- Dates will be populated here -->
-                    </div>
-                </div>
-            </div>
+            <script>
+                var tanggal = new Date();
+
+                function buatKalender() {
+                    var hariIni = tanggal.getDate(),
+                        bulanIni = tanggal.getMonth(),
+                        tahunIni = tanggal.getFullYear(),
+                        hariPertama = new Date(tahunIni, bulanIni, 1),
+                        hariTerakhir = new Date(tahunIni, bulanIni + 1, 0),
+                        htmlKalender = '<table><tr>';
+
+                    for (var i = 0; i < hariPertama.getDay(); i++) {
+                        htmlKalender += '<td></td>';
+                    }
+
+                    for (var i = 1; i <= hariTerakhir.getDate(); i++) {
+                        if (i === hariIni) {
+                            htmlKalender += '<td class="hari-ini">' + i + '</td>';
+                        } else {
+                            htmlKalender += '<td>' + i + '</td>';
+                        }
+
+                        if ((i + hariPertama.getDay()) % 7 === 0) {
+                            htmlKalender += '</tr><tr>';
+                        }
+                    }
+
+                    htmlKalender += '</tr></table>';
+
+                    document.getElementById('calendar').innerHTML = htmlKalender;
+                }
+
+                buatKalender();
+            </script>
         </section>
         <!-- Gregorian calendar's Ends -->
 
@@ -766,52 +776,21 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container" id="keep-contact">
-            <div class="row">
-                <div class="footer col text-center">
-                    <small class="block fw-bolder">Didesain Oleh: <a href="/login.html" target="_blank"><img
-                                src="/assets/LOGO-1.png" alt="Pawon Media" width="30px" height="30px"> Pawon Media
-                        </a></small>
-                    <p class="block justify-center text-center mt-3 fw-bolder">Ikuti Sosial Media #PendiriPemilikMNCA
-                        <br> &amp;
-                        <br>
-                        #PendiriPemilikNANYC
-                    <ul>
-                        <li>
-                            <a href="https://www.instagram.com/nan.channel.id" target="_blank"><i
-                                    class="bi bi-instagram"></i> Saluran YouTube Resmi N.A.N </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/nan96.04" target="_blank"><i class="bi bi-instagram"></i>
-                                Nicolas Aditya Nugroho </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/nicolas-aditya-nugroho-347647150" target="_blank"><i
-                                    class="bi bi-linkedin"></i> Nicolas Aditya Nugroho </a>
-                        </li>
-                        <li>
-                            <a href="https://www.tiktok.com/@nan96.04" target="_blank"><i class="bi bi-tiktok"></i>
-                                Nicolas Aditya Nugroho
-                            </a>
-                        </li> <br>
-                        <li>
-                            <a href="https://x.com/Nicolas_Adty_29" target="_blank"><i class="bi bi-twitter-x"></i>
-                                Nicolas Nugroho
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@NANChannelOfficial" target="_blank"><i
-                                    class="bi bi-youtube"></i> Saluran YouTube Resmi N.A.N </a>
-                        </li>
-                    </ul>
-                    </p>
-                    <small class="block fw-bold">&copy; <span id="currentYear"></span>
-                        <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-                        <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara
-                            Carlo Acutis</a>
-                    </small>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <small class="block fw-bold">&copy; <span id="currentYear"></span>
+                <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
+                <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara
+                    Carlo Acutis <p><a href="/login.html">Mitra dari Pawon Media</a></p></a>
+            </small>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@mudikanusantara.ca" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" class="social-icon"><i
+                        class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </footer>
@@ -830,8 +809,9 @@
 
     <!-- Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+
     <script>
         const circles = document.querySelectorAll(".circle");
         circles.forEach(circle => {
@@ -840,9 +820,7 @@
                 document.body.style.backgroundColor = backgroundColor
             })
         })
-    </script>
 
-    <script>
         const backToTopButton = document.querySelector('.back-to-top');
 
         window.addEventListener('scroll', () => {
@@ -861,101 +839,6 @@
                     'smooth'
             });
         }
-    </script>
-
-    <script>
-        const calendarDates = document.querySelector('.calendar-dates');
-        const monthYear = document.getElementById('month-year');
-        const prevMonthBtn = document.getElementById('prev-month');
-        const nextMonthBtn = document.getElementById('next-month');
-
-        let currentDate = new Date();
-        let currentMonth = currentDate.getMonth();
-        let currentYear = currentDate.getFullYear();
-
-        const months = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-
-        function renderCalendar(month, year) {
-            calendarDates.innerHTML = '';
-            monthYear.textContent = `${months[month]} ${year}`;
-
-            // Get the first day of the month
-            const firstDay = new Date(year, month, 1).getDay();
-
-            // Get the number of days in the month
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            // Create blanks for days of the week before the first day
-            for (let i = 0; i < firstDay; i++) {
-                const blank = document.createElement('div');
-                calendarDates.appendChild(blank);
-            }
-
-            // Populate the days
-            for (let i = 1; i <= daysInMonth; i++) {
-                const day = document.createElement('div');
-                day.textContent = i;
-                calendarDates.appendChild(day);
-            }
-        }
-
-        renderCalendar(currentMonth, currentYear);
-
-        prevMonthBtn.addEventListener('click', () => {
-            currentMonth--;
-            if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-            renderCalendar(currentMonth, currentYear);
-        });
-
-        nextMonthBtn.addEventListener('click', () => {
-            currentMonth++;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            }
-            renderCalendar(currentMonth, currentYear);
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // make it as accordion for smaller screens
-            if (window.innerWidth < 992) {
-
-                // close all inner dropdowns when parent is closed
-                document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
-                    everydropdown.addEventListener('hidden.bs.dropdown', function () {
-                        // after dropdown is hidden, then find all submenus
-                        this.querySelectorAll('.submenu').forEach(function (everysubmenu) {
-                            // hide every submenu as well
-                            everysubmenu.style.display = 'none';
-                        });
-                    })
-                });
-
-                document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
-                    element.addEventListener('click', function (e) {
-                        let nextEl = this.nextElementSibling;
-                        if (nextEl && nextEl.classList.contains('submenu')) {
-                            // prevent opening link if link needs to open dropdown
-                            e.preventDefault();
-                            if (nextEl.style.display == 'block') {
-                                nextEl.style.display = 'none';
-                            } else {
-                                nextEl.style.display = 'block';
-                            }
-
-                        }
-                    });
-                })
-            }
-            // end if innerWidth
-        });
-        // DOMContentLoaded  end
     </script>
 </body>
 

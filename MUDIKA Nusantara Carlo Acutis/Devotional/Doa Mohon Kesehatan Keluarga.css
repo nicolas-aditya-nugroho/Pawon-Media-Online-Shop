@@ -12,9 +12,130 @@ body {
     align-items: center;
 }
 
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 215, 0);
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar .navbar-brand {
+    margin-left: 10px;
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .navbar-brand:hover {
+    color: green;
+    text-shadow: 0 5px 20px whitesmoke;
+}
+
+.navbar .nav-logo {
+    width: 35px;
+    height: 35px;
+}
+
+nav {
+    width: auto;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+
+#navbar-links {
+    background-color: rgb(255, 215, 0);
+}
+
+/* Navbar links - desktop view */
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-links ul li {
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Link styling */
+.navbar-links ul li a {
+    color: red;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    display: block;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+/* Hover effect for links */
+.navbar-links ul li a:hover {
+    background-color: green;
+    border-radius: 4px;
+}
+
+/* Dropdown menu styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 215, 0);
+    min-width: 160px;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    /*Hiddenbydefault*/
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    color: rgb(169, 94, 19);
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    /* Make the dropdown visible */
+}
+
+/* Hamburger icon styling */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 15;
+    color: rgb(255, 215, 0);
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: rgb(255, 215, 0);
+    border-radius: 10px;
+}
+
 marquee {
     color: red;
-    width: 1920px;
+    width: auto;
     height: 40px;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -30,83 +151,30 @@ marquee {
     margin-bottom: 15px;
 }
 
-header {
-    background-color: rgb(255, 215, 0);
-    color: red;
-    padding: 1em;
-    text-align: center;
-}
-
-#social-media {
-    display: flex;
-    position: relative;
-    background-color: green;
-    color: rgb(255, 215, 0);
-    border-radius: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 0 25px red;
-}
-
-#social-media i {
+.navbar #social-media p {
+    left: 50px;
+    margin-bottom: 5px;
     margin-left: 15px;
-    color: rgb(255, 215, 0);
-}
-
-#social-media i:hover {
     color: red;
 }
 
-header nav ul {
-    list-style: none;
-    margin-top: 10px;
-    padding: 0;
+.navbar #social-media a, i {
+    margin-bottom: 5px;
+    text-decoration: none;
     display: flex;
-    justify-content: center;
-}
-
-header nav ul li {
-    margin-right: 20px;
-}
-
-header nav a {
-    color: red;
-    text-decoration: none;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
     position: relative;
-}
-
-nav ul li a img {
-    width: 65px;
-    height: 65px;
-}
-
-nav ul li a {
-    text-decoration: none;
     color: red;
+    border-radius: 20px;
+    text-shadow: 0 5px 20px green;
 }
 
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 25%;
-    left: 0;
-    background-color: rgb(255, 215, 0);
-    padding: 10px;
-    border: 1px solid green;
+.navbar #social-media a, i:hover {
+    color: black;
 }
 
 nav ul li:hover ul {
     display: block;
 }
-
 
 main {
     background-color: #000000;
@@ -115,7 +183,6 @@ main {
     align-items: center;
     padding: 20px;
 }
-
 
 h1 {
     text-align: center;
@@ -143,6 +210,37 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.box {
+    width: auto;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 35px;
+    border-radius: 20px;
+    background-clip: padding-box;
+    text-align: center;
+}
+
+#saweria-img {
+    width: 200px;
+    height: 200px;
+}
+
+.button {
+    font-size: 1em;
+    padding: 10px;
+    color: rgb(255, 215, 0);
+    border: 2px solid #06D85F;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background: rgb(255, 215, 0);
+    color: whitesmoke;
+}
+
 h2 {
     font-family: 'Arial', sans-serif;
     color: #000000;
@@ -150,20 +248,57 @@ h2 {
     font-weight: bolder;
 }
 
-#saweria {
-    font-family: 'Poppins', sans-serif;
-    font-size: 30px;
-    display: flex;
-    position: relative;
-    text-align: center;
-    justify-content: space-evenly;
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
 }
 
-#saweria #MNCA-saweria {
-    margin-top: 20px;
-    width: 25%;
-    height: auto;
-    margin-right: 20px;
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(255, 215, 0);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
 }
 
 #welcome {
@@ -586,7 +721,7 @@ footer {
 }
 
 .footer a:hover {
-    color: white;
+    color: green;
 }
 
 .footer li {
@@ -736,6 +871,13 @@ footer {
         height: auto;
     }
 
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -773,5 +915,13 @@ footer {
 
     section {
         padding: 0.5em;
+    }
+
+    .box {
+        width: 70%;
+    }
+
+    .popup {
+        width: 70%;
     }
 }
