@@ -65,44 +65,6 @@
                     <a href="#tiktokPost"><i class="fa-brands fa-youtube"></i></a>
                 </p>
             </section>
-            
-            <div class="flag-counter">
-                <h5>Flag Counter</h5>
-                <div class="flags">
-                    <!-- Flag images will be dynamically inserted here -->
-                </div>
-                <script>
-                    // Array of flag image URLs (ganti dengan URL gambar yang valid jika diperlukan)
-                    const flagData = [
-                        "https://image.flaticon.com/icons/png/512/197/197484.png", // USA
-                        "https://image.flaticon.com/icons/png/512/197/197491.png", // Canada
-                        "https://image.flaticon.com/icons/png/512/197/197602.png", // UK
-                        "https://image.flaticon.com/icons/png/512/197/197571.png",// India
-                        "https://image.flaticon.com/icons/png/512/197/197599.png", // Japan
-                        "https://image.flaticon.com/icons/png/512/197/197637.png", // Germany
-                        "https://image.flaticon.com/icons/png/512/197/197571.png", // France
-                        "https://image.flaticon.com/icons/png/512/197/197590.png", // Australia
-                        "https://image.flaticon.com/icons/png/512/197/197567.png", // Italy
-                        "https://image.flaticon.com/icons/png/512/197/197560.png"  // Brazil
-                    ];
-
-                    // Function to generate flags dynamically
-                    function generateFlags() {
-                        const flagsContainer = document.querySelector(".flags");
-
-                        flagData.forEach(flagUrl => {
-                            const img = document.createElement("img");
-                            img.src = flagUrl;
-                            img.alt = "Flag";
-                            img.classList.add("flag");
-                            flagsContainer.appendChild(img);
-                        });
-                    }
-
-                    // Call the function to load flags
-                    generateFlags();
-                </script>
-            </div>
 
             <nav>
                 <ul>
@@ -808,6 +770,12 @@
                 <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" class="social-icon"><i
                         class="fa-brands fa-youtube"></i></a>
             </div>
+
+            <section id="flagCounter">
+                <a href="https://info.flagcounter.com/Xdjm>"><img
+                        src="https://s01.flagcounter.com/countxl/Xdjm/bg_FFD700/txt_FF0000/border_0BB321/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
+                        alt="Flag Counter" border="0"></a>
+            </section>
         </div>
     </footer>
 
