@@ -727,56 +727,26 @@ footer {
 
 }
 
-.calendar {
-    width: 350px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.calendar-header button {
-    background-color: transparent;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-#month-year {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-.calendar-weekdays, .calendar-dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
-
-.calendar-weekdays div, .calendar-dates div {
+#calendar {
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    background-color: green;
+    color: whitesmoke;
+}
+
+#calendar table {
+    margin: 0 auto;
+    width: 70%;
+}
+
+#calendar td {
     padding: 10px;
+    border: 1px solid rgb(255, 215, 0);
 }
 
-.calendar-weekdays {
-    background-color: #eaeef3;
-}
-
-.calendar-weekdays div {
-    font-weight: bold;
-}
-
-.calendar-dates div {
-    border-bottom: 1px solid #eaeef3;
-    cursor: pointer;
-}
-
-.calendar-dates div:hover {
-    background-color: #f1f1f1;
+#calendar .hari-ini {
+    background-color: red;
+    color: #ffffff;
 }
 
 /* Responsive */

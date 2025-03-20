@@ -185,31 +185,40 @@
 
         <!-- Gregorian calendar's Starts -->
         <section id="calendar">
-            <div class="calendar">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 col-lg col-xl">
-                        <div class="calendar-header">
-                            <button id="prev-month">‹</button>
-                            <div id="month-year"></div>
-                            <button id="next-month">›</button>
-                        </div>
-                        <div class="calendar-body">
-                            <div class="calendar-weekdays">
-                                <div style="color: red;">Sun</div>
-                                <div>Mon</div>
-                                <div>Tue</div>
-                                <div>Wed</div>
-                                <div>Thu</div>
-                                <div>Fri</div>
-                                <div>Sat</div>
-                            </div>
-                            <div class="calendar-dates">
-                                <!-- Dates will be populated here -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <script>
+                var tanggal = new Date();
+
+                function buatKalender() {
+                    var hariIni = tanggal.getDate(),
+                        bulanIni = tanggal.getMonth(),
+                        tahunIni = tanggal.getFullYear(),
+                        hariPertama = new Date(tahunIni, bulanIni, 1),
+                        hariTerakhir = new Date(tahunIni, bulanIni + 1, 0),
+                        htmlKalender = '<table><tr>';
+
+                    for (var i = 0; i < hariPertama.getDay(); i++) {
+                        htmlKalender += '<td></td>';
+                    }
+
+                    for (var i = 1; i <= hariTerakhir.getDate(); i++) {
+                        if (i === hariIni) {
+                            htmlKalender += '<td class="hari-ini">' + i + '</td>';
+                        } else {
+                            htmlKalender += '<td>' + i + '</td>';
+                        }
+
+                        if ((i + hariPertama.getDay()) % 7 === 0) {
+                            htmlKalender += '</tr><tr>';
+                        }
+                    }
+
+                    htmlKalender += '</tr></table>';
+
+                    document.getElementById('calendar').innerHTML = htmlKalender;
+                }
+
+                buatKalender();
+            </script>
         </section>
         <!-- Gregorian calendar's Ends -->
 
