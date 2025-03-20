@@ -66,6 +66,44 @@
                 </p>
             </section>
 
+            <div class="flag-counter">
+                <h5>Flag Counter</h5>
+                <div class="flags">
+                    <!-- Flag images will be dynamically inserted here -->
+                </div>
+                <script>
+                    // Array of flag image URLs (ganti dengan URL gambar yang valid jika diperlukan)
+                    const flagData = [
+                        "https://image.flaticon.com/icons/png/512/197/197484.png", // USA
+                        "https://image.flaticon.com/icons/png/512/197/197491.png", // Canada
+                        "https://image.flaticon.com/icons/png/512/197/197602.png", // UK
+                        "https://image.flaticon.com/icons/png/512/197/197571.png",// India
+                        "https://image.flaticon.com/icons/png/512/197/197599.png", // Japan
+                        "https://image.flaticon.com/icons/png/512/197/197637.png", // Germany
+                        "https://image.flaticon.com/icons/png/512/197/197571.png", // France
+                        "https://image.flaticon.com/icons/png/512/197/197590.png", // Australia
+                        "https://image.flaticon.com/icons/png/512/197/197567.png", // Italy
+                        "https://image.flaticon.com/icons/png/512/197/197560.png"  // Brazil
+                    ];
+
+                    // Function to generate flags dynamically
+                    function generateFlags() {
+                        const flagsContainer = document.querySelector(".flags");
+
+                        flagData.forEach(flagUrl => {
+                            const img = document.createElement("img");
+                            img.src = flagUrl;
+                            img.alt = "Flag";
+                            img.classList.add("flag");
+                            flagsContainer.appendChild(img);
+                        });
+                    }
+
+                    // Call the function to load flags
+                    generateFlags();
+                </script>
+            </div>
+
             <nav>
                 <ul>
                     <li><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"><i
@@ -83,7 +121,8 @@
                             <li><a
                                     href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Bagi
                                     Bangsa &amp; Negara</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon Jodoh</a>
+                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon
+                                    Jodoh</a>
                             </li>
                             <li><a
                                     href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Mohon
@@ -138,7 +177,8 @@
                                     Yosef Tidur</a></li>
                             <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef Tidur.html">Litani
                                     Santo Yosef</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
+                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario:
+                                    3
                                     Misteri Keutamaan Ayah Yosef</a></li>
                         </ul>
                     </li>
