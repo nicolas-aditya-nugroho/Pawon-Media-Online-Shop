@@ -12,141 +12,73 @@ body {
     align-items: center;
 }
 
-/* Navbar styling */
-.navbar {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(255, 215, 0);
-    padding: 10px 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.navbar .navbar-brand {
-    margin-left: 10px;
-    text-decoration: none;
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.navbar .navbar-brand:hover {
-    color: green;
-    text-shadow: 0 5px 20px whitesmoke;
-}
-
-.navbar .nav-logo {
-    width: 35px;
-    height: 35px;
-}
-
-nav {
-    width: auto;
-    margin: 100px auto 0 auto;
-    text-align: center;
-}
-
-#navbar-links {
-    background-color: rgb(255, 215, 0);
-}
-
-/* Navbar links - desktop view */
-.navbar-links ul {
+ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: row;
+    width: 150px;
 }
 
-.navbar-links ul li {
-    padding: 0 15px;
+ul li {
     position: relative;
 }
 
-/* Link styling */
-.navbar-links ul li a {
+li ul {
+    position: absolute;
+    left: 90px;
+    top: 0;
+    display: none;
+}
+
+ul li a {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    background: whitesmoke;
+    padding: 5px;
+    border: 1px solid green;
+}
+
+/* Fix IE. Hide from IE Mac */
+* html ul li {
+    float: left;
+}
+
+* html ul li a {
+    height: 1%;
+}
+
+/* End */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 150px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:hover ul {
+    display: block;
+}
+
+/* Styling for the navbar */
+.navbar {
+    background-color: rgb(255, 215, 0);
+    padding: 15px 0;
+}
+
+.navbar a {
     color: red;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
-    display: block;
-    transition: background-color 0.3s ease;
-    /* Smooth hover effect */
+    font-weight: bold;
 }
 
-/* Hover effect for links */
-.navbar-links ul li a:hover {
-    background-color: green;
-    border-radius: 4px;
+.navbar a:hover {
+    color: green;
 }
 
-/* Dropdown menu styling */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(255, 215, 0);
-    min-width: 160px;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-    /*Hiddenbydefault*/
-    transition: opacity 0.3s ease;
-}
-
-.dropdown-content a {
-    color: rgb(169, 94, 19);
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    /* Make the dropdown visible */
-}
-
-/* Styling for the submenu */
-.submenu {
-    position: relative;
-}
-
-.submenu-list {
-    display: none;
-    position: absolute;
-    left: 0;
-    background-color: rgb(255, 215, 0);
-    padding: 10px 0;
-    list-style-type: none;
-    min-width: auto;
-    border-radius: 5px;
-}
-
-/* Hamburger icon styling */
-.toggle-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 15;
-    color: rgb(255, 215, 0);
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: rgb(255, 215, 0);
-    border-radius: 10px;
+.navbar img {
+    width: 50px;
+    height: auto;
 }
 
 marquee {
@@ -167,15 +99,20 @@ marquee {
     margin-bottom: 15px;
 }
 
+.navbar #social-media {
+    background-color: whitesmoke;
+    margin-bottom: 25px;
+}
+
 .navbar #social-media p {
-    left: 50px;
+    font-weight: bold;
     margin-bottom: 5px;
     margin-left: 15px;
     color: red;
 }
 
 .navbar #social-media a, i {
-    margin-bottom: 5px;
+    margin-top: 5px;
     text-decoration: none;
     display: flex;
     position: relative;
@@ -184,7 +121,7 @@ marquee {
     text-shadow: 0 5px 20px green;
 }
 
-.navbar #social-media a, i:hover {
+.navbar #social-media a i:hover {
     color: black;
 }
 
@@ -814,6 +751,13 @@ footer {
 
 /* Responsive */
 @media only screen and (max-width: 768px) {
+    nav {
+        ul {
+            display: inline-table;
+            position: relative;
+        }
+    }
+
     main {
         flex-direction: column;
     }
@@ -833,26 +777,6 @@ footer {
         font-size: 15px;
     }
 
-    nav ul li ul {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-
-    nav ul li ul li {
-        margin-bottom: 10px;
-    }
-
-    nav ul li a img {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
     .box {
         width: 70%;
     }
@@ -862,10 +786,81 @@ footer {
     }
 }
 
-@media only screen and (max-width: 480px) {
+/* Responsive */
+@media only screen and (max-width: 1080px) {
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 150px;
+    }
+
+    ul li {
+        position: relative;
+    }
+
+    li ul {
+        position: absolute;
+        left: 90px;
+        top: 0;
+        display: none;
+    }
+
+    ul li a {
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        background: whitesmoke;
+        padding: 5px;
+        border: 1px solid green;
+    }
+
+    /* Fix IE. Hide from IE Mac */
+    * html ul li {
+        float: left;
+    }
+
+    * html ul li a {
+        height: 1%;
+    }
+
+    /* End */
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 150px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    li:hover ul {
+        display: block;
+    }
+
+    /* Styling for the navbar */
+    .navbar {
+        background-color: rgb(255, 215, 0);
+        padding: 15px 0;
+    }
+
+    .navbar a {
+        color: red;
+        font-weight: bold;
+    }
+
+    .navbar a:hover {
+        color: green;
+    }
+
+    .navbar img {
+        width: 50px;
+        height: auto;
+    }
+
     marquee {
         color: red;
-        width: 200px;
+        width: auto;
         height: 40px;
         margin-top: 25px;
         margin-bottom: 25px;
@@ -874,29 +869,56 @@ footer {
         font-size: 15px;
     }
 
-    header nav ul {
+    #date-time {
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .navbar #social-media {
+        background-color: whitesmoke;
+        margin-bottom: 25px;
+    }
+
+    .navbar #social-media p {
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-left: 15px;
+        color: red;
+    }
+
+    .navbar #social-media a, i {
+        margin-top: 5px;
+        text-decoration: none;
+        display: flex;
+        position: relative;
+        color: red;
+        border-radius: 20px;
+        text-shadow: 0 5px 20px green;
+    }
+
+    .navbar #social-media a i:hover {
+        color: black;
+    }
+
+    main {
         flex-direction: column;
     }
 
-    header nav ul li {
-        margin-right: 0;
-    }
-
-    nav ul li {
+    section {
         margin-bottom: 10px;
     }
 
-    nav ul li a {
-        font-size: 16px;
-    }
-
-
-    main {
-        padding: 1em;
-    }
-
-    section {
-        padding: 0.5em;
+    marquee {
+        color: red;
+        width: 500px;
+        height: 40px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
     }
 
     .box {
