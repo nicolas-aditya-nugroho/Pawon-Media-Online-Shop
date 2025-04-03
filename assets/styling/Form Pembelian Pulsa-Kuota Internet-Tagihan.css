@@ -417,13 +417,13 @@ small .Copyright:hover {
     color: rgb(169, 94, 19);
 }
 
-.ads-jagoanhosting {
+#ads-jagoanhosting {
     display: flex;
-    position: relative;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-.ads-jagoanhosting a {
+#ads-jagoanhosting a {
     padding: 15px;
 }
 
