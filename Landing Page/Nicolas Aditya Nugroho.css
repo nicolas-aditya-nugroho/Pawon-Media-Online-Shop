@@ -114,6 +114,16 @@ section .footer li:hover {
     color: rgb(169, 94, 19);
 }
 
+.ads-jagoanhosting {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.ads-jagoanhosting a {
+    padding: 15px;
+}
+
 /* Gaya untuk perangkat mobile */
 @media (max-width: 600px) {
     body {

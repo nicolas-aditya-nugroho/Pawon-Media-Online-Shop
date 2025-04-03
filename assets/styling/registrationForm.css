@@ -449,6 +449,16 @@ small .Copyright:hover {
     color: rgb(169, 94, 19);
 }
 
+.ads-jagoanhosting {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.ads-jagoanhosting a {
+    padding: 15px;
+}
+
 /* Responsive */
 @media only screen and (max-width: 800px) {
     .navbar-links {
