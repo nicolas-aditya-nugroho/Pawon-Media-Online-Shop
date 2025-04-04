@@ -158,7 +158,7 @@ marquee {
     color: rgb(255, 215, 0);
 }
 
-.navbar #social-media a, i {
+.navbar #social-media a i {
     margin-bottom: 5px;
     text-decoration: none;
     display: flex;
@@ -168,7 +168,7 @@ marquee {
     text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
-.navbar #social-media a, i:hover {
+.navbar #social-media a i:hover {
     color: red;
 }
 
@@ -301,18 +301,27 @@ main {
 }
 
 .float {
-    position: fixed;
+    position: absolute;
     width: 60px;
     height: 60px;
     bottom: 85px;
     right: 50px;
     background-color: green;
-    color: rgb(255, 215, 0);
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
     box-shadow: 2px 2px 3px rgb(255, 215, 0);
     z-index: 100;
+    cursor: pointer;
+}
+
+.float:hover {
+    background-color: rgb(169, 94, 19);
+}
+
+.float i {
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
 }
 
 .my-float {
