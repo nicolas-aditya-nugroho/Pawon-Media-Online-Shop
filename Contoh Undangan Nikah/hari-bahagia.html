@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="page-type" content="home-desktop">
+
+    <meta data-rh="true" property="og:title" content="Hari Bahagia dari Muhammad Fadhlan ❤ Aisyah Zahira">
+    <meta data-rh="true" property="og:site_name" content="Pawon Media">
+    <meta data-rh="true" property="og:description"
+        content="Situs jual beli alat tulis sekolah dan kantor terlengkap dengan berbagai pilihan. Belanja daring mudah dan menyenangkan di Pawon Media. Pengiriman cepat.">
+    <meta data-rh="true" property="og:url" content="https://www.pawon-media.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=France&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Muhammad Fadhlan 💘 Aisyah Zahira</title>
+    <link rel="stylesheet" href="/Contoh Undangan Nikah/hari-bahagia.css">
+</head>
+
+<body>
+    <!-- Splash / Cover Page -->
+    <div class="cover-page" id="cover">
+        <h1><strong>Undangan Pernikahan</strong></h1>
+        <p><strong>Muhammad Fadhlan <br> 💍 <br> Aisyah Zahira</strong></p>
+        <button id="open-button" onclick="openInvitation()">Buka Undangan</button>
+    </div>
+
+    <!-- Main Invitation -->
+    <div class="invitation hidden" id="invitation">
+        <audio id="bg-music" src="audio/background-music.mp3" preload="auto" loop></audio>
+
+        <section class="hero">
+            <img src="images/couple.jpg" alt="Foto Pasangan">
+            <h2>Pernikahan</h2>
+            <h1><strong>Fadhlan 💘 Aisyah</strong></h1>
+            <p><strong>📆Sabtu, 5 Juli 2025 <br> 🕌 Masjid Agung Darul Amal, Kota Salatiga</strong></p>
+        </section>
+
+        <section class="maps">
+            <h3>Lokasi Akad</h3>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2143363481887!2d110.49617667574441!3d-7.3298079720899905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a7848194ef4c7%3A0xb24c7e899110f914!2sMasjid%20Agung%20Darul%20Amal%20Kota%20Salatiga!5e0!3m2!1sid!2sid!4v1744082600095!5m2!1sid!2sid"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section class="reception">
+            <h3>Resepsi Pernikahan</h3>
+            <p>
+                Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara resepsi pernikahan kami yang akan
+                diselenggarakan pada:
+            </p>
+            <ul>
+                <li>📆 <strong>Sabtu, 5 Juli 2025</strong></li>
+                <li>⏲️ <strong>Pukul 11.00 WIB - selesai</strong></li>
+                <li>📍 <strong>Graha Korpri. Mangunsari, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50721</strong>
+                </li>
+            </ul>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63316.17185651714!2d110.43993103125!3d-7.324582799999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a7837f9b4d6fd%3A0x22da4b9a91c0ba6c!2sGraha%20Korpri%20Salatiga!5e0!3m2!1sid!2sid!4v1744087586102!5m2!1sid!2sid"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <p style="margin-top:10px;">
+                <a href="https://maps.app.goo.gl/FRE3ZaYVQijEQCbG9" target="_blank" class="map-button">Buka di Google
+                    Maps</a>
+            </p>
+        </section>
+
+        <section class="rsvp">
+            <h3>Konfirmasi Kehadiran</h3>
+            <form id="rsvp-form">
+                <input type="text" id="guestName" placeholder="Nama Lengkap" required>
+                <select id="guestStatus" required>
+                    <option value="">Pilih Kehadiran</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+                <button type="submit">Kirim</button>
+            </form>
+            <script>
+                // Revisi bagian RSVP alert agar tidak error
+                document.addEventListener("DOMContentLoaded", () => {
+                    const form = document.getElementById('rsvp-form');
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        const name = document.getElementById('guestName').value.trim();
+                        const status = document.getElementById('guestStatus').value;
+
+                        if (!name || !status) {
+                            alert("Mohon isi semua data terlebih dahulu.");
+                            return;
+                        }
+
+                        alert(`Terima kasih, (!name) kehadiran Anda:(!status).`);
+                        form.reset();
+                    });
+                });
+            </script>
+        </section>
+
+
+        <section class="gift">
+            <h3>Pemberian Hadiah</h3>
+            <p>Jika Bapak/Ibu/Saudara/i berkenan memberikan tanda kasih, dapat melalui QRIS berikut ini:</p>
+
+            <img src="images/qris-fadhlanaisyah.png" alt="QRIS Fadhlan & Aisyah" class="qris-image">
+
+            <p>Atas doa dan restunya, kami ucapkan terima kasih yang tulus. 🙏</p>
+
+            <!-- (Optional) Jika kamu punya link QRIS ke e-wallet langsung -->
+            <!-- <a href="https://link.qris.id/fadhlanaisyah" target="_blank" class="qris-link">Klik di sini untuk bayar via QRIS</a> -->
+        </section>
+
+        <footer class="footer">
+            <p>&copy; <span id="currentYear"></span>
+                <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script> Undangan
+                ini Dibuat Oleh:
+                <a href="/login.html" target="_blank">Pawon Media ◯ Foto Kopi <br> ◯ Alat-alat Tulis Kantor &amp;
+                    Sekolah ◯ Desain ◯ Pulsa</a>
+            </p>
+        </footer>
+    </div>
+    <script>
+        function openInvitation() {
+            document.getElementById('cover').style.display = 'none';
+            document.getElementById('invitation').classList.remove('hidden');
+
+            openBtn.addEventListener('click', function () {
+                bgMusic.play(); document.querySelector('.open-invite').style.display = 'none';
+                document.querySelector('.main-content').style.display = 'block';
+            });
+        }
+    </script>
+</body>

@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Great Vibes', cursive;
+    background: linear-gradient(to left, black, pink);
+    color: whitesmoke;
+    text-align: center;
+}
+
+.cover-page {
+    padding: 100px 20px;
+    background: linear-gradient(to right, black, pink);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#open-button {
+    background: linear-gradient(to left, black, pink);
+    color: whitesmoke;
+    box-shadow: 5px 0 20px whitesmoke;
+}
+
+.cover-page h1 {
+    font-size: 36px;
+    color: white;
+}
+
+.cover-page p {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.cover-page button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.invitation {
+    padding: 30px 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.reception {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: black;
+    color: pink;
+    border-radius: 10px;
+}
+
+.reception h3 {
+    color: pink;
+    margin-bottom: 10px;
+}
+
+.reception ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.reception li {
+    margin-bottom: 5px;
+}
+
+.map-button {
+    display: inline-block;
+    background-color: pink;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hero img {
+    width: 160px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.rsvp {
+    color: pink;
+    text-shadow: 5px 0 20px black;
+    margin-top: 30px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form select, form button {
+    width: 100%;
+    background: pink;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+
+.gift {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: black;
+    color: pink;
+    border-radius: 10px;
+}
+
+.qris-image {
+    width: 220px;
+    margin: 20px auto;
+    display: block;
+}
+
+.qris-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.footer a {
+    color: pink;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: whitesmoke;
+    text-shadow: 5px 0 20px pink;
+}
+
+.footer p {
+    color: pink;
+    font-family: 'France', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ============ Responsive Design ============ */
+
+/* Umum: Maksimal lebar 768px (tablet & HP) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .qris-image {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .map-button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    iframe {
+        height: 200px;
+    }
+
+    .footer {
+        font-size: 13px;
+        padding: 15px;
+    }
+}
+
+/* Untuk layar sangat kecil (maks. 480px - HP kecil) */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .map-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer p {
+        padding: 0 10px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+iframe {
+    width: 100%;
+}
