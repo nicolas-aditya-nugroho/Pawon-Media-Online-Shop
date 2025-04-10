@@ -67,6 +67,14 @@ body {
     padding: 30px 15px;
 }
 
+#map {
+    margin-top: 20px;
+    height: 200px;
+    background-color: #eaeaea;
+    border-radius: 10px;
+}
+
+
 .hidden {
     display: none;
 }
