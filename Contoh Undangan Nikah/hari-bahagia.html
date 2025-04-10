@@ -167,4 +167,29 @@
             });
         }
     </script>
+
+    <div class="back-to-home">
+        <button class="back-to-top" onclick="scrollToTop()">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+
+        <script>const backToTopButton = document.querySelector('.back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display
+                        = 'none';
+                }
+            });
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior:
+                        'smooth'
+                });
+            }</script>
+    </div>
 </body>
