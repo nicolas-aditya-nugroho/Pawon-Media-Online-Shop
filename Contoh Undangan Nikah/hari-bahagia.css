@@ -20,10 +20,26 @@ body {
     justify-content: center;
 }
 
-#open-button {
+.btn {
     background: linear-gradient(to left, black, pink);
     color: whitesmoke;
     box-shadow: 5px 0 20px whitesmoke;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.invitation-content {
+    display: none;
+    padding: 40px;
+    text-shadow: 5px 0 20px black;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+#background-music {
+    display: none;
+    /* Hide the audio element */
 }
 
 .cover-page h1 {
