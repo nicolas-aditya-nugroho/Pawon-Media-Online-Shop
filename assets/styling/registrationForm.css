@@ -174,7 +174,7 @@ marquee {
     color: rgb(255, 215, 0);
 }
 
-.navbar #social-media a i {
+.navbar #social-media a {
     margin-bottom: 5px;
     text-decoration: none;
     display: flex;
@@ -184,7 +184,7 @@ marquee {
     text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
-.navbar #social-media a i:hover {
+.navbar #social-media a:hover {
     color: red;
 }
 
