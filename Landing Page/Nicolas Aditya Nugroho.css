@@ -12,6 +12,80 @@ body {
     background-position: center;
 }
 
+marquee {
+    color: rgb(169, 94, 19);
+    width: auto;
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+#date-time {
+    color: rgb(169, 94, 19);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(169, 94, 19);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: red;
+    text-shadow: 0 5px 20px black;
+}
+
+nav {
+    width: auto;
+    margin: 100px auto 0 auto;
+    text-align: center;
+}
+
+#navbar-links {
+    background-color: rgb(169, 94, 19);
+}
+
+.navbar #social-media p {
+    left: 50px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    color: rgb(255, 215, 0);
+}
+
+.navbar #social-media a {
+    margin-bottom: 5px;
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    color: wheat;
+    border-radius: 20px;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
+}
+
+.navbar #social-media a:hover {
+    color: red;
+}
+
 section {
     display: grid;
     place-items: center;
@@ -68,91 +142,34 @@ section main p {
     gap: 5px;
 }
 
-section footer {
-    background-color: rgb(169, 94, 19);
-    padding: 3rem;
-    color: rgb(255, 215, 0);
-    padding: 10px;
-    text-align: center;
-    clear: both;
-}
-
-section .footer a {
-    text-decoration: none;
-    color: rgb(255, 215, 0);
-    font-weight: bold;
-}
-
-section .footer a:hover {
-    color: white;
-}
-
-section .footer li {
-    list-style: none;
-    display: inline;
-    margin: 0.5rem;
-}
-
-section .footer li:hover {
-    transform: scaleX(1.5);
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-    border-radius: 50%;
-    padding: 15px;
-    z-index: 9999;
-}
-
-.back-to-top:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
-}
-
-.ads-jagoanhosting {
+section .ads-jagoanhosting {
     display: flex;
     position: relative;
-    margin-bottom: 20px;
 }
 
 .ads-jagoanhosting a {
     padding: 15px;
 }
 
-footer {font-size: larger;
-    display: flex;
-    position: relative;
-    padding: 3rem;
+section footer {
+    width: 95%;
+    background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
-    text-shadow: 0 5px 20px rgb(0, 0, 0);
-    padding: 10px;
+    padding: 1em;
     text-align: center;
     clear: both;
 }
 
-.footer a {
+section footer a {
     text-decoration: none;
-    color: rgb(169, 94, 19);
-    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
 }
 
-.footer a:hover {
+section footer a:hover {
     color: rgb(255, 215, 0);
-}
-
-.footer li {
-    list-style: none;
-    display: inline;
-    margin: 0.5rem;
-}
-
-.footer li:hover {
-    transform: scaleX(1.5);
+    text-shadow: 5px 0 20px black;
 }
 
 /* Gaya untuk perangkat mobile */
@@ -164,6 +181,28 @@ footer {font-size: larger;
     .container {
         padding: 10px;
     }
+
+    section footer {
+        width: 95%;
+        background-color: rgb(169, 94, 19);
+        color: rgb(255, 215, 0);
+        padding: 1em;
+        text-align: center;
+        clear: both;
+        box-shadow: 20px 5px 25px rgb(255, 215, 0);
+    }
+
+    section footer a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        transition: ease-in-out 0.5s;
+    }
+
+    section footer a:hover {
+        color: rgb(255, 215, 0);
+        text-shadow: 5px 0 20px black;
+    }
 }
 
 /* Gaya untuk tablet */
@@ -174,6 +213,28 @@ footer {font-size: larger;
 
     .container {
         padding: 20px;
+    }
+
+    section footer {
+        width: 95%;
+        background-color: rgb(169, 94, 19);
+        color: rgb(255, 215, 0);
+        padding: 1em;
+        text-align: center;
+        clear: both;
+        box-shadow: 20px 5px 25px rgb(255, 215, 0);
+    }
+
+    section footer a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        transition: ease-in-out 0.5s;
+    }
+
+    section footer a:hover {
+        color: rgb(255, 215, 0);
+        text-shadow: 5px 0 20px black;
     }
 }
 
