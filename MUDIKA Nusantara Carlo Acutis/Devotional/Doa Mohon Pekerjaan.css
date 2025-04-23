@@ -712,18 +712,27 @@ footer {
 }
 
 .float {
-    position: fixed;
+    position: absolute;
     width: 60px;
     height: 60px;
-    bottom: 85px;
+    bottom: 25px;
     right: 50px;
     background-color: green;
-    color: rgb(255, 215, 0);
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
     box-shadow: 2px 2px 3px rgb(255, 215, 0);
     z-index: 100;
+    cursor: pointer;
+}
+
+.float:hover {
+    background-color: rgb(169, 94, 19);
+}
+
+.float i {
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
 }
 
 .my-float {
