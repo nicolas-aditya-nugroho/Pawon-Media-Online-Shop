@@ -12,6 +12,38 @@ body {
     align-items: center;
 }
 
+/* Dark Mode */
+.dark-mode {
+    background: #000000;
+}
+
+.dark-mode header {
+    background: linear-gradient(to left, rgb(255, 215, 0), rgb(169, 94, 0));
+}
+
+.dark-mode footer {
+    background: linear-gradient(to right, rgb(169, 94, 0), rgb(255, 215, 0));
+}
+
+.dark-mode .product-card {
+    background: #1f1f1f;
+    border: 1px solid #333;
+}
+
+.dark-mode .hero {
+    background: #1f1f1f;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 /* Navbar styling */
 .navbar {
     width: 100%;
@@ -124,6 +156,7 @@ nav {
     cursor: pointer;
     z-index: 15;
     color: rgb(255, 215, 0);
+    box-shadow: 5px 0 20px black;
 }
 
 .toggle-button .bar {
@@ -135,6 +168,7 @@ nav {
 
 marquee {
     color: rgb(255, 215, 0);
+    text-shadow: 5px 0 20px black;
     width: auto;
     height: 40px;
     margin-top: 25px;
@@ -146,6 +180,7 @@ marquee {
 
 #date-time {
     color: rgb(255, 215, 0);
+    text-shadow: 5px 0 20px black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     margin-bottom: 15px;
@@ -156,10 +191,11 @@ marquee {
     margin-bottom: 5px;
     margin-left: 15px;
     color: rgb(255, 215, 0);
+    text-shadow: 5px 0 20px black;
 }
 
 .navbar #social-media a {
-    margin-bottom: 5px;
+    margin-top: 15px;
     text-decoration: none;
     display: flex;
     position: relative;
@@ -174,6 +210,11 @@ marquee {
 
 h1 {
     font-family: "France", cursive;
+}
+
+.head-section p {
+    color: rgb(169, 94, 19);
+    text-shadow: 5px 0 20px rgb(255, 215, 0);
 }
 
 #desainForm {
