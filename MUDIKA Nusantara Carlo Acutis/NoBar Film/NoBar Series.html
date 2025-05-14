@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUDIKA Nusantara Carlo Acutis | NoBar</title>
+    <link rel="stylesheet" href="NoBar Series.css" />
+</head>
+
+<body>
+    <header>
+        <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt=""><a
+            href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/NoBar Film.html" class="navbar-brand">MUDIKA Nusantara Carlo
+            Acutis | Nonton Bareng (Serial TV)</a>
+        <form id="searchForm">
+            <input id="search" type="text" placeholder="Search" class="searchInput" />
+        </form>
+    </header>
+
+    <div id="serialtvElement"></div>
+    <div class="pagination">
+        <div id="prev">Prev</div>
+        <div id="currentPage"></div>
+        <div id="next">Next</div>
+    </div>
+    <script>
+        const API_KEY = "e367a05a54068826d171b6da6d13ae54"
+
+        let page = 1;
+
+        const API_URL = () => `https://api.themoviedb.org/3/tv/series_id?api_key=${API_KEY}&page=${page}`
+        const API_IMAGE_URL = "https://image.tmdb.org/t/p/w1920"
+        const API_SEARCH_URL = `https://api.themoviedb.org/3/search/tv/series_id?api_key=${API_KEY}&query=`
+
+        async function getSerialtv(url) {
+            const res = await fetch(url)
+            const data = await res.json()
+            showSerialtv(data.results)
+        }
+
+        function updatePage() {
+            getSerialtv(API_URL())
+            currentPage.innerHTML = page
+        }
+
+        function nextPage() {
+            if (page >= 1) {
+                page += 1;
+                updatePage()
+            }
+        }
+
+        function prevPage() {
+            if (page > 1) {
+                page -= 1;
+                updatePage()
+            }
+        }
+
+        next.addEventListener("click", () => {
+            nextPage()
+        })
+
+        prev.addEventListener("click", () => {
+            prevPage()
+        })
+
+        function showSerialtv(serialtv) {
+            serialtvElement.innerHTML = ''
+            serialtv.forEach(serialtv => {
+                const { title, poster_path, popularity, vote_average } = movie
+                console.log({ popularity, vote_average })
+                const serialCard = document.createElement("div")
+                serialtvCard.classList.add("movie")
+
+                serialtvCard.innerHTML = `
+                    <img src="${API_IMAGE_URL + poster_path}" alt="html the series images" />
+                    <div class="detail">
+                        <h3>${title}</h3>
+                    </div>`
+                serialtvElement.appendChild(serialtvCard)
+            })
+        }
+
+        searchForm.addEventListener("submit", (event) => {
+            event.preventDefault()
+            const searchQuery = search.value
+
+            if (searchQuery !== '') {
+                getMovies(API_SEARCH_URL + searchQuery)
+                search.value = ''
+            }
+        })
+
+        updatePage()
+
+        title.addEventListener("click", () => {
+            location.reload()
+        })
+    </script>
+</body>
+
+</html>
