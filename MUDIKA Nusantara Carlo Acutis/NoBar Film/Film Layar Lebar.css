@@ -1,0 +1,317 @@
+* html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+
+/* Styling for the navbar */
+.navbar {
+    background-color: rgb(255, 215, 0);
+    padding: 15px 0;
+}
+
+.navbar #date-time {
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.navbar #title {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar #title:hover {
+    color: green;
+}
+
+.navbar img {
+    margin-left: 5px;
+    width: 50px;
+    height: auto;
+}
+
+.navbar .searchInput {
+    margin-right: 5px;
+    background-color: transparent;
+    padding: 8px 16px;
+    border: 2.5px solid green;
+    border-radius: 8px;
+}
+
+body #moviesElement {
+    columns: 6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    gap: 16px;
+    background-color: #000000;
+    color: white;
+}
+
+body .movie {
+    width: 100%;
+    height: 350px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+body .movie img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+body .pagination {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 0;
+    background-color: green;
+}
+
+body .pagination #prev,
+#next {
+    background-color: rgb(255, 215, 0);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: larger;
+    font-weight: 600;
+}
+
+body #title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+body #title:hover {
+    color: red;
+}
+
+body #description {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+body .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    color: green;
+    border-radius: 50%;
+    padding: 15px;
+    z-index: 9999;
+}
+
+body .back-to-top:hover {
+    background-color: rgb(255, 215, 0);
+    color: red;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body #moviesElement {
+        columns: 2;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body .movie {
+        width: auto;
+        height: auto;
+    }
+
+    body .movie img {
+        width: 100%;
+        height: auto;
+    }
+
+    body .pagination {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    body .pagination #prev,
+    #next {
+        width: auto;
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    body #title {
+        font-size: 18px;
+    }
+
+    body #description {
+        font-size: 12px;
+    }
+
+    body .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 15px;
+        z-index: 9999;
+    }
+
+    body .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 1080px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body #moviesElement {
+        columns: 3;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body .movie {
+        width: auto;
+        height: auto;
+    }
+
+    body .movie img {
+        width: 100%;
+        height: auto;
+    }
+
+    body .pagination {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    body .pagination #prev,
+    #next {
+        width: auto;
+        padding: 8px 0;
+        text-align: center;
+    }
+
+    body #title {
+        font-size: 18px;
+    }
+
+    body #description {
+        font-size: 12px;
+    }
+
+    body .movie {
+        width: auto;
+        height: auto;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+    }
+
+    body .movie img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    body .pagination {
+        display: flex;
+        gap: 16px;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 32px 0;
+        background-color: green;
+    }
+
+    body .pagination #prev,
+    #next {
+        background-color: rgb(255, 215, 0);
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: larger;
+        font-weight: 600;
+    }
+
+    body #title {
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        margin-top: 8px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease;
+        cursor: pointer;
+    }
+
+    body #title:hover {
+        color: red;
+    }
+
+    body #description {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease;
+    }
+
+    body .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 15px;
+        z-index: 9999;
+    }
+
+    body .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
+    }
+}

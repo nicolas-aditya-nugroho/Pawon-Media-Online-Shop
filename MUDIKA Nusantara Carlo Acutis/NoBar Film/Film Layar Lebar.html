@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUDIKA Nusantara Carlo Acutis | NoBar (Film Layar Lebar)</title>
+    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis//NoBar Film/Film Layar Lebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="navbar" id="nav-menu">
+        <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="" class="navbar">
+        <h1 class="navbar" id="title">Film Layar Lebar</h1>
+        <div id="date-time">
+            <script>// Menampilkan hari, tanggal, dan jam
+                function updateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                    const dateString = now.toLocaleDateString('id-ID', options);
+                    document.getElementById('date-time').innerText = dateString;
+                }
+
+                // Panggil fungsi updateTime setiap detik
+                setInterval(updateTime, 1000);</script>
+        </div>
+
+        <form id="searchForm">
+            <input type="text" id="search" placeholder="Search Here" class="searchInput">
+        </form>
+    </header>
+
+    <div id="moviesElement"></div>
+    <div class="pagination">
+        <div id="prev">Prev</div>
+        <div id="currentPage"></div>
+        <div id="next">Next</div>
+    </div>
+    <script>
+        const API_KEY = "e367a05a54068826d171b6da6d13ae54"
+
+        let page = 1;
+
+        const API_URL = () => `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&page=${page}`
+        const API_IMAGE_URL = "https://image.tmdb.org/t/p/w1920"
+        const API_SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`
+
+        async function getMovies(url) {
+            const res = await fetch(url)
+            const data = await res.json()
+            showMovies(data.results)
+        }
+
+        function updatePage() {
+            getMovies(API_URL())
+            currentPage.innerHTML = page
+        }
+
+        function nextPage() {
+            if (page >= 1) {
+                page += 1;
+                updatePage()
+            }
+        }
+
+        function prevPage() {
+            if (page > 1) {
+                page -= 1;
+                updatePage()
+            }
+        }
+
+        next.addEventListener("click", () => {
+            nextPage()
+        })
+
+        prev.addEventListener("click", () => {
+            prevPage()
+        })
+
+        function showMovies(movies) {
+            moviesElement.innerHTML = ''
+            movies.forEach(movie => {
+                const { title, poster_path, popularity, vote_average } = movie
+                console.log({ popularity, vote_average })
+                const movieCard = document.createElement("div")
+                movieCard.classList.add("movie")
+
+                movieCard.innerHTML = `
+                    <img src="${API_IMAGE_URL + poster_path}" alt="html the movie images" />
+                    <div class="detail">
+                        <h3>${title}</h3>
+                    </div>`
+                moviesElement.appendChild(movieCard)
+            })
+        }
+
+        searchForm.addEventListener("submit", (event) => {
+            event.preventDefault()
+            const searchQuery = search.value
+
+            if (searchQuery !== '') {
+                getMovies(API_SEARCH_URL + searchQuery)
+                search.value = ''
+            }
+        })
+
+        updatePage()
+
+        title.addEventListener("click", () => {
+            location.reload()
+        })
+    </script>
+
+    <div class="back-to-home">
+        <button class="back-to-top" onclick="scrollToTop()">⬆️</button>
+        <script>
+            const backToTopButton = document.querySelector('.back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display
+                        = 'none';
+                }
+            });
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior:
+                        'smooth'
+                });
+            }
+        </script>
+    </div>
+</body>
+
+</html>
