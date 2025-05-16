@@ -7,79 +7,65 @@
 body {
     font-family: 'Poppins', sans-serif, bold;
     background-color: #000000;
-    height: 100vh;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.btn-MNCAbutton {
-    justify-content: center;
-    align-content: center;
+header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    background-color: rgb(255, 215, 0);
-    margin-top: 20px;
+    padding: 16px;
+}
+
+header #date-time {
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
     margin-bottom: 15px;
-    color: green;
-    border: none;
-    padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
 }
 
-.btn-MNCAbutton:hover {
-    background-color: green;
-    color: rgb(255, 215, 0);
+.mediaSosial {
+    margin-left: 5px;
+    background-color: transparent;
+    padding: 8px 16px;
+    border: 2.5px solid green;
+    color: red;
+    border-radius: 8px;
+    box-shadow: 25px 0 25px rgb(0, 0, 0.5);
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 150px;
-}
-
-ul li {
-    position: relative;
-}
-
-li ul {
-    position: absolute;
-    left: 90px;
-    top: 0;
-    display: none;
-}
-
-ul li a {
-    text-align: center;
-    display: block;
+.mediaSosial a {
+    color: red;
     text-decoration: none;
-    background: whitesmoke;
-    padding: 5px;
-    border: 1px solid green;
 }
 
-/* Fix IE. Hide from IE Mac */
-* html ul li {
-    float: left;
+.mediaSosial a:hover {
+    color: green;
 }
 
-* html ul li a {
-    height: 1%;
+.additional-info {
+    margin-left: 5px;
+    background-color: transparent;
+    padding: 8px 16px;
+    border: 2.5px solid green;
+    color: red;
+    border-radius: 8px;
+    box-shadow: 25px 0 25px rgb(0, 0, 0.5);
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
 
-/* End */
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 150px;
-    border-bottom: 1px solid #ccc;
+.additional-info a {
+    color: red;
+    text-decoration: none;
 }
 
-li:hover ul {
-    display: block;
+.additional-info a:hover {
+    color: green;
 }
 
 /* Styling for the navbar */
@@ -88,62 +74,70 @@ li:hover ul {
     padding: 15px 0;
 }
 
-.navbar a {
+.navbar #title {
     color: red;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
 }
 
-.navbar a:hover {
+.navbar #title:hover {
     color: green;
 }
 
 .navbar img {
+    margin-left: 5px;
     width: 50px;
     height: auto;
 }
 
-marquee {
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
     color: red;
-    width: auto;
-    height: 40px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    border: none;
+    cursor: pointer;
 }
 
-#date-time {
-    color: red;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.navbar #social-media {
-    background-color: whitesmoke;
-    margin-bottom: 25px;
-}
-
-.navbar #social-media p {
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin-left: 15px;
-    color: red;
-}
-
-.navbar #social-media a, i {
-    margin-top: 5px;
-    text-decoration: none;
+.navbar-menu {
+    list-style: none;
     display: flex;
-    position: relative;
-    color: red;
-    border-radius: 20px;
-    text-shadow: 0 5px 20px green;
+    gap: 20px;
 }
 
-.navbar #social-media a i:hover {
-    color: black;
+.navbar-menu li {
+    position: relative;
+}
+
+.navbar-menu a {
+    color: red;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    z-index: 1;
+    top: 100%;
+    list-style: none;
+    left: 0;
+    margin-right: 5px;
+}
+
+.dropdown-content li a {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 main {
@@ -752,7 +746,7 @@ footer {
     right: 20px;
     display: none;
     background-color: rgb(255, 255, 255);
-    color: black;
+    color: red;
     border-radius: 50%;
     padding: 15px;
     z-index: 9999;
@@ -760,15 +754,7 @@ footer {
 
 .back-to-top:hover {
     background-color: rgb(255, 215, 0);
-    color: rgb(255, 255, 255)
-}
-
-.visitor-counter {
-    display: absolute;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
+    color: green
 }
 
 #calendar {
@@ -793,183 +779,191 @@ footer {
     color: #ffffff;
 }
 
-/* Responsive */
-@media only screen and (max-width: 768px) {
-    nav {
-        ul {
-            display: inline-table;
-            position: relative;
-        }
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    section {
-        margin-bottom: 10px;
-    }
-
-    marquee {
-        color: red;
-        width: 500px;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-    }
-
-    .box {
-        width: 70%;
-    }
-
-    .popup {
-        width: 70%;
-    }
-}
-
-/* Responsive */
-@media only screen and (max-width: 1080px) {
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        width: 150px;
-    }
-
-    ul li {
-        position: relative;
-    }
-
-    li ul {
-        position: absolute;
-        left: 90px;
-        top: 0;
-        display: none;
-    }
-
-    ul li a {
-        text-align: center;
-        display: block;
-        text-decoration: none;
-        background: whitesmoke;
-        padding: 5px;
-        border: 1px solid green;
-    }
-
-    /* Fix IE. Hide from IE Mac */
-    * html ul li {
-        float: left;
-    }
-
-    * html ul li a {
-        height: 1%;
-    }
-
-    /* End */
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        width: 150px;
-        border-bottom: 1px solid #ccc;
-    }
-
-    li:hover ul {
+/* Responsive: agar dropdown tetap rapi di mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
         display: block;
     }
 
-    /* Styling for the navbar */
     .navbar {
+        width: 100%;
+        height: 100%;
+        padding: 0;
         background-color: rgb(255, 215, 0);
-        padding: 15px 0;
+        position: relative;
+        z-index: 1;
     }
 
-    .navbar a {
-        color: red;
-        font-weight: bold;
-    }
-
-    .navbar a:hover {
-        color: green;
+    .navbar #title {
+        margin-left: 5px;
+        font-size: 20px;
     }
 
     .navbar img {
+        margin-left: 5px;
         width: 50px;
         height: auto;
     }
 
-    marquee {
-        color: red;
-        width: auto;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
+    .navbar #date-time {
+        margin-left: 5px;
+        font-size: 20px;
     }
 
-    #date-time {
-        color: red;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 15px;
-        margin-bottom: 15px;
+    .mediaSosial {
+        margin-right: 25px;
     }
 
-    .navbar #social-media {
-        background-color: whitesmoke;
-        margin-bottom: 25px;
-    }
-
-    .navbar #social-media p {
-        font-weight: bold;
-        margin-bottom: 5px;
-        margin-left: 15px;
-        color: red;
-    }
-
-    .navbar #social-media a, i {
-        margin-top: 5px;
-        text-decoration: none;
-        display: flex;
-        position: relative;
-        color: red;
-        border-radius: 20px;
-        text-shadow: 0 5px 20px green;
-    }
-
-    .navbar #social-media a i:hover {
-        color: black;
-    }
-
-    main {
+    .navbar-menu {
         flex-direction: column;
+        width: 100%;
+        display: none;
+        background-color: white;
     }
 
-    section {
-        margin-bottom: 10px;
+    .navbar-menu li {
+        width: 100%;
     }
 
-    marquee {
-        color: red;
-        width: 500px;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
+    .navbar-menu.show {
+        display: flex;
     }
 
-    .box {
-        width: 70%;
+    .dropdown:hover .dropdown-content {
+        display: none;
     }
 
-    .popup {
-        width: 70%;
+    .dropdown-content {
+        position: static;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Tampilan untuk tablet (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background-color: rgb(255, 215, 0);
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar #title {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .navbar img {
+        margin-left: 5px;
+        width: 50px;
+        height: auto;
+    }
+
+    .navbar #date-time {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .mediaSocial {
+        margin-right: 25px;
+    }
+
+    .navbar-menu {
+        flex-direction: row;
+        display: flex !important;
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        background-color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: none;
+        /* Tidak perlu toggle di tablet */
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Tampilan untuk desktop (> 1024px) */
+@media screen and (min-width: 1025px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        background-color: rgb(255, 215, 0);
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar #title {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .navbar img {
+        margin-left: 5px;
+        width: 50px;
+        height: auto;
+    }
+
+    .navbar #date-time {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .mediaSosial {
+        margin-left: 25px;
+    }
+
+    .navbar-menu {
+        flex-direction: row;
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        background-color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    dropdown.open .dropdown-content {
+        display: none;
+        /* Tidak perlu toggle di desktop */
+    }
+
+    body {
+        width: 100%;
+        height: 100%;
     }
 }
