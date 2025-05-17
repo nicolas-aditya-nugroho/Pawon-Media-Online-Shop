@@ -212,16 +212,19 @@
         <div class="container my-3">
             <!-- Ads -->
             <div class="row mb-3">
-                <div class="col-md-6 mb-2">
-                    <a href="https://member.jagoanhosting.com/aff.php?aff=7420">
-                        <img src="https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg"
-                            class="img-fluid rounded w-100" alt="Jagoan Hosting 1">
-                    </a>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <a href="https://member.jagoanhosting.com/aff.php?aff=7420">
-                        <img src="https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg"
-                            class="img-fluid rounded w-100" alt="Jagoan Hosting 2">
+                <div class="col d-flex flex-column align-items-center justify-content-center gap-3">
+                    <div class="d-flex flex-row w-100 gap-3">
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 1"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 2"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
+                    </div>
                     </a>
                 </div>
             </div>
@@ -273,7 +276,7 @@
                         <div id="calendar-table"></div>
                         <div
                             class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
-                            <button class="btn btn-outline-primary px-4 py-2" id="prevMonth">
+                            <button class="btn btn-outline-warning px-4 py-2" id="prevMonth">
                                 <i class="bi bi-chevron-left"></i> Sebelumnya
                             </button>
                             <div id="calendar-month-picker" class="d-flex align-items-center gap-2">
@@ -298,7 +301,7 @@
                                     <i class="bi bi-calendar-event"></i>
                                 </button>
                             </div>
-                            <button class="btn btn-outline-primary px-4 py-2" id="nextMonth">
+                            <button class="btn btn-outline-warning px-4 py-2" id="nextMonth">
                                 Berikutnya <i class="bi bi-chevron-right"></i>
                             </button>
                         </div>
@@ -503,21 +506,12 @@
 
             <!-- Instagram Post -->
             <section id="instagramPost" class="mb-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4 class="section-title">Postingan Instagram #MUDIKANusantaraCarloAcutis</h4>
-                        <div class="ratio ratio-1x1" style="max-width: 400px; margin:auto;">
-                            <blockquote class="instagram-media"
-                                data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14"
-                                style="background:#FFF; border:0; margin:0 auto; max-width:400px; width:100%; min-width:200px;">
-                                <a href="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                    target="_blank" rel="noopener">
-                                    Lihat postingan di Instagram
-                                </a>
-                            </blockquote>
-                        </div>
-                        <script async src="https://www.instagram.com/embed.js"></script>
+                <div class="text-center mb-3">
+                    <h4>Instagram Post Terbaru</h4>
+                    <div class="d-flex justify-content-center">
+                        <blockquote class="instagram-media custom-instagram-embed"
+                            data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"></blockquote>
                     </div>
                 </div>
             </section>
@@ -530,8 +524,17 @@
                             <div class="card-body">
                                 <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
                                         Agung Jakarta</strong></h4>
-                                <iframe allowfullscreen scrolling="no" class="fp-iframe w-100 rounded"
-                                    src="https://heyzine.com/flip-book/b913ba8a9a.html" style="height: 350px;"></iframe>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/b913ba8a9a.html"
+                                        title="Panduan Yubileum 2025 KAJ"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/b913ba8a9a.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -540,8 +543,17 @@
                             <div class="card-body">
                                 <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
                                         Agung Semarang</strong></h4>
-                                <iframe allowfullscreen scrolling="no" class="fp-iframe w-100 rounded"
-                                    src="https://heyzine.com/flip-book/e74f5f33f9.html" style="height: 350px;"></iframe>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/e74f5f33f9.html"
+                                        title="Panduan Yubileum 2025 KAS"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/e74f5f33f9.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -676,7 +688,7 @@
                         <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu. Karena, Malaikat Pelindung mu harus
                             menjadi sahabat terbaik mu!</p>
                         <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
-                            class="btn btn-outline-success" target="_blank" rel="noopener">Karya Website Carlo
+                            class="btn btn-outline-warning" target="_blank" rel="noopener">Karya Website Carlo
                             Acutis</a>
                     </div>
                 </div>
@@ -796,7 +808,7 @@
                 <section>
                     <div class="container text-center">
                         <h3 class="fw-bolder">Doa Memohon Kelancaran Dalam Bisnis</h3>
-                        <p class="fw-bold mt-2">Ya Tuhan, aku sadar bahwa Engkau lebih tahu apa yang akan aku
+                        <p class="mt-2">Ya Tuhan, aku sadar bahwa Engkau lebih tahu apa yang akan aku
                             pergumulkan
                             dan
                             harapkan. Namun, dengan segala kerendahan hati, aku mohon kepada-Mu agar bisnis yang
@@ -817,7 +829,7 @@
                             juru selamat yang agung, jadilah kehendak-Mu, kami berdoa dan mengucap syukur. Amin.</p>
 
                         <h3 class="fw-bolder mt-2">Bapa Kami,</h3>
-                        <p class="fw-bold mt-2">yang ada di surga, dimuliakanlah namaMu. Datanglah KerajaanMu. Jadilah
+                        <p class="mt-2">yang ada di surga, dimuliakanlah namaMu. Datanglah KerajaanMu. Jadilah
                             kehendakMu di
                             atas bumi seperti di dalam surga. Berilah kami rejeki pada hari ini, dan ampunilah kesalahan
                             kami,
@@ -826,7 +838,7 @@
                             Tetapi bebaskanlah kami dari yang jahat. Amin.</p>
 
                         <h3 class="fw-bolder mt-2">Salam Maria,</h3>
-                        <p class="fw-bold mt-2">penuh rahmat, Tuhan sertamu. Terpujilah engkau di antara wanita, dan
+                        <p class="mt-2">penuh rahmat, Tuhan sertamu. Terpujilah engkau di antara wanita, dan
                             terpujilah buah
                             tubuhmu, Yesus. Santa Maria, bunda Allah, doakanlah kami yang berdosa ini, sekarang dan
                             waktu
@@ -835,7 +847,7 @@
                         <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
 
                         <h3 class="fw-bolder mt-2">Salam Yosef,</h3>
-                        <p class="fw-bold mt-2">pria yang tulus, mempelai murni Maria ayah Mesias keturunan Daud.
+                        <p class="mt-2">pria yang tulus, mempelai murni Maria ayah Mesias keturunan Daud.
                             Terpujilah
                             engkau
                             di antara semua pria, dan terpujilah Yesus yang telah dipercayakan kepada mu. Santo Yosef
@@ -848,11 +860,11 @@
                         <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
 
                         <h3 class="fw-bolder mt-2">Kemuliaan,</h3>
-                        <p class="fw-bold mt-2">kepada Allah Bapa, Allah Putra, dan Allah Roh Kudus, seperti pada
+                        <p class="mt-2">kepada Allah Bapa, Allah Putra, dan Allah Roh Kudus, seperti pada
                             permulaan-sekarang-selalu-dan sepanjang segala masa. Amin</p>
 
                         <h3 class="fw-bolder mt-2">Terpujilah,</h3>
-                        <p class="fw-bold mt-2">Keluarga Kudus: Tuhan Yesus, Bunda Maria, Bapak Yosef, sekarang
+                        <p class="mt-2">Keluarga Kudus: Tuhan Yesus, Bunda Maria, Bapak Yosef, sekarang
                             selama-lamanya. Amin
                         </p>
                     </div>
@@ -860,79 +872,89 @@
                 <!-- Doa Memohon Kelancaran Dalam Bisnis Ends -->
             </section>
 
-            <!-- Events -->
-            <blockquote class="tiktok-embed tiktok-custom-width"
-                cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
-                data-video-id="7501535064715480375">
-                <section>
-                    <a target="_blank" rel="noopener" title="@mudikanusantara.ca"
-                        href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
-                    <p></p>
-                    <a target="_blank" rel="noopener" title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
-                        href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
-                        suara asli - MUDIKA Nusantara Carlo Acutis</a>
-                </section>
-            </blockquote>
-            <p></p>
-            <a target="_blank" rel="noopener" title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
-                href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">
-                ♬ suara asli - MUDIKA Nusantara Carlo Acutis
-            </a>
-            </section>
-            </blockquote>
-        </div>
-        </div>
-        </div>
-        <div id="youtubePost" class="card mb-3 shadow-sm">
-            <div class="card-body">
-                <h4 class="text-center">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
-                        title="YouTube video player" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        </section>
-
-        <!-- Kekaguman -->
-        <section id="amazed" class="mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <details open>
-                        <summary><span>KYEV</span></summary>
-                        <div class="text-center">
-                            <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt=""
-                                class="card-img-top mb-3 img-max-120">
-                            <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
-                            <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam mengorganisir
-                                sebuah acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara
-                                dari mereka benar-benar luar biasa dan platform yang mereka sediakan sungguh sangat
-                                bermanfaat bagi para muda-mudi di luar Gereja Katolik (secara luas) dan juga
-                                bermanfaat bagi seluruh muda-mudi Katolik (secara khususnya)</p>
-                            <a href="https://www.instagram.com/yohanaevita" class="btn btn-outline-warning">Ikuti
-                                Akun Instagram Saya</a>
+            <!-- Social Media Latest Posts Section -->
+            <section id="latestSocialPosts" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h4 class="mb-3 text-center">TikTok Post Terbaru</h4>
+                                <blockquote class="tiktok-embed tiktok-custom-width"
+                                    cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
+                                    data-video-id="7501535064715480375">
+                                    <section>
+                                        <a target="_blank" rel="noopener" title="@mudikanusantara.ca"
+                                            href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
+                                        <p></p>
+                                        <a target="_blank" rel="noopener"
+                                            title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                            href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
+                                            suara asli - MUDIKA Nusantara Carlo Acutis</a>
+                                    </section>
+                                </blockquote>
+                                <div class="mt-2 text-center">
+                                    <a target="_blank" rel="noopener"
+                                        title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                        href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed"
+                                        class="tiktok-music-link"></a>
+                                    ♬ suara asli - MUDIKA Nusantara Carlo Acutis
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="text-center mb-3">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
+                                <div class="custom-video-embed">
+                                    <div class="ratio ratio-16x9 rounded shadow-sm border border-warning">
+                                        <iframe src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
+                                            title="Doa Rosario & Rekoleksi Singkat: Maria" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </details>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Join Group -->
-        <section id="joinGroup" class="mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-                    <h5>Gabung Grup Diskusi ➡️</h5>
-                    <a class="icon mx-2" href="https://t.me/MUDIKANusCA" target="_blank" rel="noopener"
-                        title="Gabung Grup Telegram">
-                        <i class="fa-brands fa-telegram fa-xl"></i>
-                    </a>
-                    <a class="icon mx-2" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC" target="_blank"
-                        rel="noopener" title="Gabung Grup WhatsApp">
-                        <i class="fa-brands fa-whatsapp fa-xl"></i>
-                    </a>
+            <!-- Kekaguman -->
+            <section id="amazed" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <details open>
+                            <summary><span>KYEV</span></summary>
+                            <div class="text-center">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt="Sr. Yohana Evita Veron, CAE"
+                                    class="card-img-top mb-3" style="max-width:180px; width:100%; height:auto;">
+                                <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
+                                <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam mengorganisir
+                                    sebuah acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara
+                                    dari mereka benar-benar luar biasa dan platform yang mereka sediakan sungguh sangat
+                                    bermanfaat bagi para muda-mudi di luar Gereja Katolik (secara luas) dan juga
+                                    bermanfaat bagi seluruh muda-mudi Katolik (secara khususnya)</p>
+                                <a href="https://www.instagram.com/yohanaevita" class="btn btn-outline-warning">Ikuti
+                                    Akun Instagram Saya</a>
+                            </div>
+                        </details>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Join Group -->
+            <section id="joinGroup" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5>Gabung Grup Diskusi ➡️</h5>
+                        <a class="icon mx-2" href="https://t.me/MUDIKANusCA" target="_blank" rel="noopener"
+                            title="Gabung Grup Telegram">
+                            <i class="fa-brands fa-telegram fa-xl"></i>
+                        </a>
+                        <a class="icon mx-2" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC" target="_blank"
+                            rel="noopener" title="Gabung Grup WhatsApp">
+                            <i class="fa-brands fa-whatsapp fa-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
