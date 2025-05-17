@@ -63,7 +63,8 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center"
+                href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">
                 <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="Logo">
                 MUDIKA Nusantara Carlo Acutis
             </a>
@@ -201,7 +202,7 @@
             <a href="#youtubePost"><i class="fa-brands fa-youtube"></i> YouTube</a>
         </section>
         <section class="additional-info">
-            Informasi Tambahan <i class="fa-solid fa-arrow-down"></i> yang Wajib Dilihat!
+            Informasi Tambahan yang Wajib Dilihat! <i class="fa-solid fa-arrow-down"></i>
             <a href="#welcome">Selayang Pandang Komunitas</a>
             <a href="#advice">Saran Carlo Acutis Malaikat Pelindung</a>
             <a href="#amazed">Kekaguman Suster Yohana Evita Veron Silaban, CAE</a>
@@ -572,86 +573,95 @@
             <section id="joinWithUs" class="mb-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <h2 class="section-title">Form Registrasi Calon Pengurus Komunitas</h2>
+                        <h2 class="section-title">Formulir Registrasi Calon Pengurus Komunitas</h2>
                         <div class="alert alert-warning">
-                            <strong>Syarat dan Ketentuan:</strong>
+                            <strong>Syarat &amp; Ketentuan:</strong>
                             <ul class="mb-0">
                                 <li>WNI Beragama Katolik</li>
-                                <li>Berusia 13-35 tahun</li>
-                                <li>BELUM MENIKAH</li>
-                                <li>Memiliki niat murni MELAYANI</li>
-                                <li>SEHAT JASMANI-ROHANI (NORMAL secara SEKSUALITAS)</li>
+                                <li>Usia 13-35 tahun</li>
+                                <li>Belum menikah</li>
+                                <li>Bersedia melayani dengan niat tulus</li>
+                                <li>Sehat jasmani &amp; rohani</li>
                             </ul>
                         </div>
-                        <form action="#" method="post" id="messageMeForm">
+                        <form action="https://formspree.io/f/xqkrqzqg" method="POST" id="registrationForm"
+                            autocomplete="on">
                             <div class="row g-2">
                                 <div class="col-md-6">
-                                    <label for="fullname" class="form-label">Nama Lengkap:</label>
-                                    <input type="text" id="fullname" name="fullname" class="form-control" required>
+                                    <label for="reg-fullname" class="form-label">Nama Lengkap <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-fullname" name="Nama Lengkap" class="form-control"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="nickname" class="form-label">Nama Panggilan:</label>
-                                    <input type="text" id="nickname" name="nickname" class="form-control" required>
+                                    <label for="reg-nickname" class="form-label">Nama Panggilan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-nickname" name="Nama Panggilan" class="form-control"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="email" class="form-label">Email:</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <label for="reg-email" class="form-label">Email <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" id="reg-email" name="Email" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Akun Sosial Media?</label>
-                                    <label for="mediasocial" class="form-label">Akun Sosial Media?</label>
-                                    <select class="form-select" id="mediasocial" name="mediasocial" required>
+                                    <label for="reg-whatsapp" class="form-label">Nomor WhatsApp <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" id="reg-whatsapp" name="WhatsApp" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-mediasocial" class="form-label">Akun Media Sosial <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-mediasocial" name="Akun Media Sosial" required>
+                                        <option value="">-- Pilih --</option>
                                         <option value="Memiliki">Memiliki</option>
                                         <option value="Tidak Memiliki">Tidak Memiliki</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Instagram / TikTok / YouTube</label>
-                                    <label for="mediasocialType" class="form-label">Pilih Jenis Media Sosial</label>
-                                    <select class="form-select" id="mediasocialType" name="mediasocialType" required>
+                                    <label for="reg-mediasocialType" class="form-label">Jenis Media Sosial</label>
+                                    <select class="form-select" id="reg-mediasocialType" name="Jenis Media Sosial">
+                                        <option value="">-- Pilih --</option>
                                         <option value="Instagram">Instagram</option>
                                         <option value="TikTok">TikTok</option>
                                         <option value="YouTube">YouTube</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="whatsapp" class="form-label">Nomor WhatsApp:</label>
-                                    <input type="tel" id="whatsapp" name="whatsapp" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Jenis Kelamin:</label>
+                                    <label class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
                                     <div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="gender-male" name="gender"
-                                                value="laki-laki" required>
-                                            <label class="form-check-label" for="gender-male">Laki-Laki</label>
+                                            <input class="form-check-input" type="radio" id="reg-gender-male"
+                                                name="Jenis Kelamin" value="Laki-Laki" required>
+                                            <label class="form-check-label" for="reg-gender-male">Laki-Laki</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="gender-female"
-                                                name="gender" value="perempuan" required>
-                                            <label class="form-check-label" for="gender-female">Perempuan</label>
+                                            <input class="form-check-input" type="radio" id="reg-gender-female"
+                                                name="Jenis Kelamin" value="Perempuan" required>
+                                            <label class="form-check-label" for="reg-gender-female">Perempuan</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="birthdate" class="form-label">Tanggal Lahir:</label>
-                                    <input type="date" id="birthdate" name="birthdate" class="form-control" required>
+                                    <label for="reg-birthdate" class="form-label">Tanggal Lahir <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" id="reg-birthdate" name="Tanggal Lahir" class="form-control"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="diocese" class="form-label">Keuskupan:</label>
-                                    <input type="text" id="diocese" name="diocese" class="form-control"
-                                        placeholder="Isi Keuskupan mu di sini" required>
+                                    <label for="reg-diocese" class="form-label">Keuskupan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-diocese" name="Keuskupan" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="parish" class="form-label">Paroki:</label>
-                                    <input type="text" id="parish" name="parish" class="form-control"
-                                        placeholder="Isi Paroki mu di sini" required>
+                                    <label for="reg-parish" class="form-label">Paroki <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-parish" name="Paroki" class="form-control" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Jabatan Kepengurusan Komunitas:</label>
-                                    <label for="division" class="form-label">Jabatan Kepengurusan Komunitas:</label>
-                                    <select class="form-select" id="division" name="division" required
-                                        title="Pilih Jabatan Kepengurusan Komunitas">
+                                    <label for="reg-division" class="form-label">Jabatan Kepengurusan <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-division" name="Jabatan Kepengurusan" required>
                                         <option value="">-- Pilih Jabatan --</option>
                                         <option value="Sekretaris">Sekretaris</option>
                                         <option value="Bendahara">Bendahara</option>
@@ -664,19 +674,48 @@
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label for="reason" class="form-label">Alasan Bergabung:</label>
-                                    <textarea name="reason" id="reason" class="form-control"
-                                        placeholder="Isi di sini alasan mu" required></textarea>
+                                    <label for="reg-reason" class="form-label">Alasan Bergabung <span
+                                            class="text-danger">*</span></label>
+                                    <textarea name="Alasan Bergabung" id="reg-reason" class="form-control" rows="3"
+                                        required></textarea>
                                 </div>
                             </div>
-                            <div class="mt-3">
-                                <a href="mailto:mudikanusantaraindonesia@gmail.com"
-                                    class="btn btn-outline-warning w-100">Kirim</a>
-                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold w-100 mt-3">Kirim</button>
+                            <div id="registrationStatus" class="mt-3"></div>
                         </form>
                     </div>
                 </div>
             </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('registrationForm');
+                    const status = document.getElementById('registrationStatus');
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        status.textContent = 'Mengirim...';
+                        status.className = 'text-secondary';
+                        try {
+                            const data = new FormData(form);
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                status.textContent = 'Terima kasih, data Anda telah terkirim. Kami akan menghubungi Anda melalui email atau WhatsApp.';
+                                status.className = 'alert alert-success mt-3';
+                                form.reset();
+                            } else {
+                                status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                                status.className = 'alert alert-danger mt-3';
+                            }
+                        } catch {
+                            status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                            status.className = 'alert alert-danger mt-3';
+                        }
+                    });
+                });
+            </script>
 
             <!-- Saran Carlo Acutis -->
             <section id="advice" class="mb-4">
@@ -923,8 +962,9 @@
                         <details open>
                             <summary><span>KYEV</span></summary>
                             <div class="text-center">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt="Sr. Yohana Evita Veron, CAE"
-                                    class="card-img-top mb-3" style="max-width:180px; width:100%; height:auto;">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png"
+                                    alt="Sr. Yohana Evita Veron, CAE" class="card-img-top mb-3"
+                                    style="max-width:180px; width:100%; height:auto;">
                                 <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
                                 <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam mengorganisir
                                     sebuah acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara
