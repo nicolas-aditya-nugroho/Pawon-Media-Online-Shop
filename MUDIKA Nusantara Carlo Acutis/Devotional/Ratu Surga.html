@@ -4,760 +4,1003 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta data-rh="true" name="page-type" content="home-desktop">
-
-    <meta data-rh="true" property="og:title"
-        content="Situs resmi dari komunitas Muda-Mudi Katolik Nusantara | MUDIKA Nusantara Carlo Acutis">
-    <meta data-rh="true" property="og:site_name" content="Pawon Media">
-    <meta data-rh="true" property="og:description"
-        content="Situs resmi dari komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
-    <meta data-rh="true" property="og:url"
-        content="httpa://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA Nusantara Carlo Acutis.html">
     <title>MUDIKA Nusantara Carlo Acutis</title>
-    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis/Devotional/Ratu Surga.css">
-
-    <!-- Bootstrap Elements Start -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap Elements Ends -->
-
-    <!-- Bootstrap Icons Starts -->
+    <meta name="description"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
+    <meta property="og:title"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara | MUDIKA Nusantara Carlo Acutis">
+    <meta property="og:site_name" content="Pawon Media">
+    <meta property="og:description"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
+    <meta property="og:url" content="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/index.html">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Bootstrap Icons Ends -->
-
-    <!-- Font Awesome Starts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome Ends -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis/FeedBack.css">
 </head>
 
 <body>
-    <header class="navbar" id="nav-menu">
+    <header class="py-2 shadow-sm">
+        <div class="container d-flex justify-content-end align-items-center">
+            <span id="currentDateTime" class="fw-bold current-date-time"></span>
+        </div>
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                // Convert to GMT+7
+                const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+                const gmt7 = new Date(utc + (7 * 3600000));
+                const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                const months = [
+                    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+                ];
+                const day = days[gmt7.getDay()];
+                const date = gmt7.getDate();
+                const month = months[gmt7.getMonth()];
+                const year = gmt7.getFullYear();
+                const hour = String(gmt7.getHours()).padStart(2, '0');
+                const minute = String(gmt7.getMinutes()).padStart(2, '0');
+                const second = String(gmt7.getSeconds()).padStart(2, '0');
+                document.getElementById('currentDateTime').textContent =
+                    `${day}, ${date} ${month} ${year} - ${hour}:${minute}:${second} WIB`;
+            }
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        </script>
+
+        <div class="mt-2">
+            <div class="scrolling-banner bg-warning fw-bold py-1">
+                <span class="px-3">
+                    <i class="fa-solid fa-bullhorn"></i> Selamat datang di website resmi MUDIKA Nusantara Carlo Acutis!
+                    <i class="fa-solid fa-bullhorn"></i>
+                    Dukung pengembangan website ini dengan berdonasi! Setiap donasi Anda sangat berarti untuk
+                    kelangsungan dan pengembangan karya komunitas ini. Terima kasih atas dukungannya.
+                </span>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+    <nav class="navbar">
         <div class="container">
-            <div class="nav-start"><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"
-                    class="navbar-brand"><img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png"
-                        alt="" class="nav-logo">
-                    MUDIKA Nusantara Carlo Acutis</a>
-            </div>
-            <div id="date-time">
-                <script>// Menampilkan hari, tanggal, dan jam
-                    function updateTime() {
-                        const now = new Date();
-                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                        const dateString = now.toLocaleDateString('id-ID', options);
-                        document.getElementById('date-time').innerText = dateString;
-                    }
-
-                    // Panggil fungsi updateTime setiap detik
-                    setInterval(updateTime, 1000);</script>
-            </div>
-
-            <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
-                Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
-                sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
-            </marquee>
-
-            <section id="social-media">
-                <p>Ikuti Kami di Sosial Media
-                    <a href="#instagramPost"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#youtubePost"><i class="fa-brands fa-youtube"></i></a>
-                </p>
-
-                <div class="col-md-6 px-3 mt-5">
-                    <a type="button" class="btn-MNCAbutton" href="#welcome">Selayang Pandang Komunitas</a>
-                    <a type="button" class="btn-MNCAbutton" href="#advice">Saran Carlo Acutis Malaikat Pelindung</a>
-                    <a type="button" class="btn-MNCAbutton" href="#amazed">Kekaguman Suster Yohana Evita Veron Silaban,
-                        CAE</a>
-                </div>
-            </section>
-
-            <nav>
-                <ul>
-                    <li><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"><i
-                                class="fa-solid fa-house"></i></a></li>
-                    <li><a href="#">Mitra <i class="fa-solid fa-handshake"></i></a>
-                        <ul>
-                            <li><a href="#eShop">Produk UMKM</a></li>
-                            <li><a href="/registrationForm.html" target="_blank"><img src="/assets/LOGO-1.png"
-                                        style="width: 25px; height: auto;"> Pawon Media</a></li>
+            <a class="navbar-brand d-flex align-items-center"
+                href="/MUDIKA Nusantara Carlo Acutis//MUDIKA Nusantara Carlo Acutis.html">
+                <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="Logo">
+                MUDIKA Nusantara Carlo Acutis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">Buka
+                Tutup
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Mitra <i
+                                class="fa-solid fa-handshake"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/login.html" target="_blank">Pawon Media</a></li>
+                            <li><a class="dropdown-item" href="#eShop">Produk UMKM</a></li>
                         </ul>
                     </li>
-                    <li><a href="#ourActivity">Aktivitas Rutin</a></li>
-                    <li><a href="#">Devosi <i class="fa-solid fa-church"></i> I</a>
-                        <ul>
-                            <li><a
+                    <li class="nav-item"><a class="nav-link" href="#ourActivity">Aktivitas Kami</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Devosi 1</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
                                     href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Bagi
                                     Bangsa &amp; Negara</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon Jodoh</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Mohon
-                                    Kelancaran Penjualan Rumah</a>
-                            </li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.html">Mohon
-                                    Kesehatan Keluarga</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Mohon
-                                    Kesembuhan Keluarga</a>
-                            </li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Tetap Baik.html">Lirik Lagu Tetap
-                                    Baik - GoodFriends</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#ourBelovedFounder">Pendiri Komunitas</a></li>
-                    <li><a href="#">Devosi <i class="fa-solid fa-church"></i> II</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Mohon
-                                    Pekerjaan</a></li>
-                            <li><a
-                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Mohon
-                                    Kelancaran Bisnis</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Perjalanan
-                                    Apostolik Paus Fransiskus ke Indonesia</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Untuk
-                                    Kesembuhan Bapa Suci Paus Fransiskus</a></li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Mohon
-                                    Perantara Carlo Acutis</a>
-                            </li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Konklaf Paus.html">Doa Konklaf
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Konklaf Paus.html">Konklaf
                                     Paus</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon
+                                    Jodoh</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Kelancaran
+                                    Penjualan Rumah</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.html">Mohon
+                                    Kesehatan Keluarga</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Mohon
+                                    Kesembuhan Keluarga</a></li>
+                            <li><a class="dropdown-item" href="#tetapBaik">Lirik Lagu Tetap
+                                    Baik</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Yubileum2025">Panduan Praktis Tahun Yubileum 2025</a></li>
-                    <li><a href="#">Devosi Ibunda Maria</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Rosario:
-                                    Peristiwa Gembira</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Rosario:
-                                    Peristiwa Mulia</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Rosario:
-                                    Peristiwa Sedih</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Rosario:
-                                    Peristiwa Terang</a></li>
-                            <li><a href="#RatuSurga">Ratu Surga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Yubileum2025">Tahun Yubileum 2025</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Devosi 2</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Mohon
+                                    Pekerjaan</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Perlindungan.html">Mohon
+                                    Perlindungan</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#SuccessfulBusiness">Mohon
+                                    Kelancaran Bisnis</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Perjalanan
+                                    Apostolik Paus Fransiskus ke Indonesia</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Kesembuhan
+                                    Bapa Suci Paus Fransiskus</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Permohonan
+                                    Perantara Carlo Acutis</a></li>
                         </ul>
                     </li>
-                    <li><a href="/MUDIKA Nusantara Carlo Acutis/Feedback.html"><i class="fa-solid fa-comment"></i>
-                            FeedBack</a>
-                    </li>
-                    <li><a href="#">Devosi Ayah Yosef</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html">Santo
-                                    Yosef Tidur</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef Tidur.html">Litani
-                                    Santo Yosef</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
-                                    Misteri Keutamaan Ayah Yosef</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#joinWithUs">Gabung Bersama Kami</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Doa Perantara Bunda
+                            Maria</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Peristiwa
+                                    Gembira</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Peristiwa
+                                    Mulia</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Peristiwa
+                                    Sedih</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Peristiwa
+                                    Terang</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Ratu Surga.html">Ratu Surga</a></li>
                         </ul>
                     </li>
-                    <li><a href="#joinWithUs">Bergabung Dalam Kepengurusan</a></li>
-                    <li><a href="#">Kalender</a>
-                        <ul>
-                            <li><a href="#calendar">Kalender Masehi</a></li>
-                            <li><a href="#liturgy">Kalender Liturgii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ourBelovedFounder">Pendiri Komunitas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Doa Perantara Ayah
+                            Yosef</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef.html">Litani Ayah
+                                    Yosef</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html.html">Doa
+                                    Ayah Yosef Tidur</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
+                                    Misteri Kehidupan Ayah Yosef</a></li>
                         </ul>
                     </li>
-                    <li><a href="#joinGroup">Bergabung Dalam Group Chat</a></li>
-                    <li><a href="#">Nonton Bareng</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/NoBar Film.html">NoBar Film</a></li>
-                            <!-- <li><a href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/NoBar Series.html">NoBar Series</a>
-                            </li> -->
+                    <li class="nav-item"><a class="nav-link" href="#joinGroup">Grup Komunitas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Kalender</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#calendar">Kalender Masehi</a></li>
+                            <li><a class="dropdown-item" href="#liturgy">Kalender Liturgi</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link" href="#feedBack"><i class="fa-solid fa-comment"></i>
+                            FeedBack</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NontonBareng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/Film Layar Lebar.html">Film Layar
+                                    Lebar</a></li>
+                            <li><a class="dropdown-item" href="#">Serial TV Favorit (Coming Soon)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#saweria">Donasi</a></li>
                 </ul>
-            </nav>
-    </header>
-
-    <main>
-        <div class="container-fluid" id="ads-jagoanhosting">
-            <a href="https://member.jagoanhosting.com/aff.php?aff=7420"><img
-                    src=https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg
-                    border="0"></a>
-            <a href="https://member.jagoanhosting.com/aff.php?aff=7420"><img
-                    src=https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg border="0"></a>
-        </div>
-
-        <section id="welcome">
-            <div class="selayang-pandang container">
-                <details name="wpucourse" open>
-                    <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt=""
-                        class="card-img-top">
-                    <summary><span>SPK</span></summary>
-                    <div class="details-content-wrapper">
-                        <p>Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam
-                            1 (satu) wadah kreativitas atas sepengetahuan pendiri komunitas namun tidak terlepas
-                            daripada nilai-nilai ajaran Gereja Katolik</p>
-                        <a href="#profile" class="btn">Profil Lengkap</a>
-                    </div>
-                </details>
-        </section>
-
-        <section id="saweria">
-            <h1>Mari Bantu Kami Dengan Berdonasi</h1>
-            <div class="box">
-                <a class="button" href="#popup1">Donasi di SINI</a>
             </div>
+        </div>
+    </nav>
 
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2>Mari bantu kami</h2>
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
-                            id="saweria-img">
+    <!-- Info Bar -->
+    <div class="container">
+        <section class="mediaSosial">
+            <span class="d-inline d-md-none">
+                Ikuti Kami di Media Sosial <i class="fa-solid fa-arrow-down"></i>
+            </span>
+            <span class="d-none d-md-inline">
+                Ikuti Kami di Media Sosial <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <a href="#instagramPost"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="#youtubePost"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        </section>
+        <section class="additional-info">
+            <span class="d-inline d-md-none">
+                Informasi Tambahan yang Wajib Dilihat! <i class="fa-solid fa-arrow-down"></i>
+            </span>
+            <span class="d-none d-md-inline">
+                Informasi Tambahan yang Wajib Dilihat! <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <a href="#welcome">Selayang Pandang Komunitas</a>
+            <a href="#advice">Saran Carlo Acutis Malaikat Pelindung</a>
+            <a href="#amazed">Kekaguman Suster Yohana Evita Veron Silaban, CAE</a>
+        </section>
+    </div>
+
+    <main class="flex-shrink-0">
+        <div class="container my-3">
+            <!-- Ads -->
+            <div class="row mb-3">
+                <div class="col d-flex flex-column align-items-center justify-content-center gap-3">
+                    <div class="d-flex flex-row w-100 gap-3">
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 1"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 2"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
                     </div>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Gregorian calendar's Starts -->
-        <section id="calendar">
+            <!-- Welcome -->
+            <section id="welcome" class="mb-4">
+                <div class="text-center">
+                    <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="Logo Komunitas"
+                        class="mb-3 rounded" style="max-width:120px;">
+                    <h2 class="section-title">Selayang Pandang Komunitas</h2>
+                    <p>Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam satu wadah kreativitas atas
+                        sepengetahuan pendiri komunitas namun tidak terlepas dari nilai-nilai ajaran Gereja Katolik.</p>
+                    <a href="#profile" class="btn btn-outline-warning">Profil Lengkap</a>
+                </div>
+            </section>
+
+            <!-- Donasi -->
+            <section id="saweria" class="mb-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Mari Bantu Kami Dengan Berdonasi</h2>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#donasiModal">Donasi di
+                            SINI</button>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="donasiModal" tabindex="-1" aria-labelledby="donasiModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="donasiModalLabel">Mari bantu kami</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
+                                    class="img-fluid rounded" alt="Saweria">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalender -->
+            <section id="calendar" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Kalender Masehi</h2>
+                        <div id="calendar-table"></div>
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
+                            <button class="btn btn-outline-warning px-4 py-2" id="prevMonth">
+                                <i class="bi bi-chevron-left"></i> Sebelumnya
+                            </button>
+                            <div id="calendar-month-picker" class="d-flex align-items-center gap-2">
+                                <label for="calendar-month" class="visually-hidden">Pilih Bulan</label>
+                                <select id="calendar-month" class="form-select form-select-sm" title="Pilih Bulan">
+                                    <option value="0">Januari</option>
+                                    <option value="1">Februari</option>
+                                    <option value="2">Maret</option>
+                                    <option value="3">April</option>
+                                    <option value="4">Mei</option>
+                                    <option value="5">Juni</option>
+                                    <option value="6">Juli</option>
+                                    <option value="7">Agustus</option>
+                                    <option value="8">September</option>
+                                    <option value="9">Oktober</option>
+                                    <option value="10">November</option>
+                                    <option value="11">Desember</option>
+                                </select>
+                                <input type="number" id="calendar-year" class="form-control form-control-sm" min="1900"
+                                    max="2100" title="Pilih Tahun" placeholder="Tahun">
+                                <button class="btn btn-outline-secondary btn-sm" id="calendar-today" title="Bulan Ini">
+                                    <i class="bi bi-calendar-event"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-warning px-4 py-2" id="nextMonth">
+                                Berikutnya <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <script>
-                var tanggal = new Date();
+                // Kalender Masehi Modern
+                const calendarTable = document.getElementById('calendar-table');
+                const prevBtn = document.getElementById('prevMonth');
+                const nextBtn = document.getElementById('nextMonth');
+                const monthSelect = document.getElementById('calendar-month');
+                const yearInput = document.getElementById('calendar-year');
+                const todayBtn = document.getElementById('calendar-today');
+                let today = new Date();
+                let currentMonth = today.getMonth();
+                let currentYear = today.getFullYear();
 
-                function buatKalender() {
-                    var hariIni = tanggal.getDate(),
-                        bulanIni = tanggal.getMonth(),
-                        tahunIni = tanggal.getFullYear(),
-                        hariPertama = new Date(tahunIni, bulanIni, 1),
-                        hariTerakhir = new Date(tahunIni, bulanIni + 1, 0),
-                        htmlKalender = '<table><tr>';
+                function renderCalendar(month, year) {
+                    const monthNames = [
+                        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                    ];
+                    const days = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+                    let firstDay = new Date(year, month, 1).getDay();
+                    let daysInMonth = new Date(year, month + 1, 0).getDate();
 
-                    for (var i = 0; i < hariPertama.getDay(); i++) {
-                        htmlKalender += '<td></td>';
+                    let html = `
+                                <div class="calendar-modern rounded-3 shadow-sm overflow-hidden">
+                                    <div class="bg-gradient bg-warning bg-opacity-75 py-2 px-3 d-flex align-items-center justify-content-between">
+                                        <span class="fw-bold fs-5 text-dark">${monthNames[month]} ${year}</span>
+                                        <span class="badge bg-success bg-gradient text-white">Digital Calendar</span>
+                                    </div>
+                                    <table class="table table-bordered table-hover text-center mb-0 align-middle" style="background:rgba(255,255,255,0.97);">
+                                        <thead>
+                                            <tr>`;
+                    days.forEach((d, i) => {
+                        html += `<th class="${i === 0 ? 'text-danger' : i === 6 ? 'text-primary' : 'text-dark'} bg-light">${d}</th>`;
+                    });
+                    html += `</tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>`;
+
+                    // Empty cells before first day
+                    for (let i = 0; i < firstDay; i++) {
+                        html += '<td></td>';
                     }
 
-                    for (var i = 1; i <= hariTerakhir.getDate(); i++) {
-                        if (i === hariIni) {
-                            htmlKalender += '<td class="hari-ini">' + i + '</td>';
-                        } else {
-                            htmlKalender += '<td>' + i + '</td>';
-                        }
-
-                        if ((i + hariPertama.getDay()) % 7 === 0) {
-                            htmlKalender += '</tr><tr>';
-                        }
+                    for (let date = 1; date <= daysInMonth; date++) {
+                        let isToday = (date === today.getDate() && month === today.getMonth() && year === today.getFullYear());
+                        let weekend = ((date + firstDay - 1) % 7 === 0) ? 'text-danger' : ((date + firstDay - 1) % 7 === 6) ? 'text-primary' : '';
+                        html += `<td class="position-relative ${weekend} ${isToday ? 'bg-success text-white fw-bold shadow-sm rounded-circle' : ''}" style="${isToday ? 'box-shadow:0 0 0 2px #198754;' : ''}">
+                                        <span class="d-inline-block" style="min-width:2em;">${date}</span>
+                                        ${isToday ? '<span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-warning text-dark" style="font-size:0.7em;">Hari ini</span>' : ''}
+                                    </td>`;
+                        if ((date + firstDay) % 7 === 0 && date !== daysInMonth) html += '</tr><tr>';
                     }
 
-                    htmlKalender += '</tr></table>';
-
-                    document.getElementById('calendar').innerHTML = htmlKalender;
+                    // Empty cells after last day
+                    let lastDay = (daysInMonth + firstDay) % 7;
+                    if (lastDay !== 0) {
+                        for (let i = lastDay; i < 7; i++) {
+                            html += '<td></td>';
+                        }
+                    }
+                    html += '</tr></tbody></table></div>';
+                    calendarTable.innerHTML = html;
+                    // Sync selector
+                    monthSelect.value = month;
+                    yearInput.value = year;
                 }
 
-                buatKalender();
+                prevBtn.onclick = function () {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                };
+                nextBtn.onclick = function () {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                };
+                monthSelect.onchange = function () {
+                    currentMonth = parseInt(this.value, 10);
+                    renderCalendar(currentMonth, currentYear);
+                };
+                yearInput.onchange = function () {
+                    let val = parseInt(this.value, 10);
+                    if (val >= 1900 && val <= 2100) {
+                        currentYear = val;
+                        renderCalendar(currentMonth, currentYear);
+                    }
+                };
+                todayBtn.onclick = function () {
+                    currentMonth = today.getMonth();
+                    currentYear = today.getFullYear();
+                    renderCalendar(currentMonth, currentYear);
+                };
+
+                // Init
+                renderCalendar(currentMonth, currentYear);
             </script>
-        </section>
-        <!-- Gregorian calendar's Ends -->
 
-        <!-- Liturgi Calendar Starts -->
-        <section>
-            <div id="liturgy" class="liturgy-calendar" style="background-color: #00000028; padding: 5px 10px;">
-                <h1 class="text-center" style="margin-top: 60px;">Kalender Liturgi</h1>
-            </div>
-            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-176cf0d"
-                data-id="176cf0d" data-element_type="column">
-                <div class="elementor-element elementor-element-7a1f087 elementor-widget elementor-widget-html"
-                    data-id="7a1f087" data-element_type="widget" data-widget_type="html.default">
-                    <div class="elementor-widget-container">
-                        <iframe align="center" height="208" id="topikFrame" scrolling="no"
-                            src="https://imankatolik.or.id/kalender_index.php"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Liturgy Calendar Ends -->
-
-        <section>
-            <!-- Activity Starts -->
-            <div id="ourActivity" class="activity" style="background-color: #00000028; padding: 5px 10px;">
-                <h1 class="text-center" style="margin-top: 60px;">Aktivitas Kami &amp; Pendiri Pemilik Komunitas</h1>
-            </div>
-            <section class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0 mt-3">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Doa Rosario Bersama.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/MNCA Berbagi.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Nonton Film Bersama.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Podcast~Hidup Panggilan.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
+            <!-- Kalender Liturgi Modern -->
+            <section id="liturgy" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title text-center mb-3">Kalender Liturgi Katolik</h2>
+                        <div class="d-flex justify-content-center mb-3">
+                            <iframe id="liturgy" title="Kalender Liturgi Katolik" frameborder="0" width="300"
+                                height="420" scrolling="no" src="https://www.imankatolik.or.id/kalender_share_kecil.php"
+                                class="liturgical-calendar-iframe">
+                            </iframe>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-6 mb-3 mb-sm-0 mt-3" id="ourBelovedFounder">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-1.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-2.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-3.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-4.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
+                        <div class="alert alert-info text-center mb-0">
+                            <i class="fa-solid fa-book-bible"></i>
+                            <strong>Bacaan &amp; Liturgi diambil langsung dari <a href="https://www.imankatolik.or.id/"
+                                    target="_blank" rel="noopener">Iman Katolik</a></strong>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </section>
-            <!-- Activity Ends -->
-        </section>
 
-        <section>
-            <!-- Instagram Post's Show Starts -->
-            <div id="instagramPost" class="communityActivity" style="background-color: #30303030; padding: 5px 10px;">
-                <h4 class="text-center" style="margin-top: 60px;">Postingan Instagram #MUDIKANusantaraCarloAcutis
-                </h4>
-            </div>
-            <div class="container col-sm-2 col-md-4 col-lg col-xl">
-                <blockquote class="instagram-media" data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;"> <a
-                            href="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                            style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                            target="_blank">
-                            <div style=" display: flex; flex-direction: row; align-items: center;">
-                                <div
-                                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
-                                </div>
-                                <div
-                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
-                                    </div>
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding: 19% 0;"></div>
-                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px"
-                                    height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
-                                    xmlns:xlink="https://www.w3.org/1999/xlink">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                                            <g>
-                                                <path
-                                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                            <div style="padding-top: 8px;">
-                                <div
-                                    style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
-                                    View this post on Instagram</div>
-                            </div>
-                            <div style="padding: 12.5% 0;"></div>
-                            <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
-                                <div>
-                                    <div
-                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
-                                    </div>
-                                    <div
-                                        style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
-                                    </div>
-                                    <div
-                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
-                                    </div>
-                                </div>
-                                <div style="margin-left: 8px;">
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
-                                    </div>
-                                    <div
-                                        style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
-                                    </div>
-                                </div>
-                                <div style="margin-left: auto;">
-                                    <div
-                                        style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
-                                    </div>
-                                    <div
-                                        style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
-                                    </div>
-                                    <div
-                                        style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
-                                <div
-                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
-                                </div>
-                                <div
-                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
-                                </div>
-                            </div>
-                        </a>
-                        <p
-                            style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-                            <a href="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
-                                target="_blank">A post shared by Pawon Media (@pawonmedia.010924)</a>
+            <!-- FeedBack -->
+            <section id="feedBack" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Kirim Masukan &amp; Saran</h2>
+                        <p class="mb-3 feedback-desc">
+                            Formulir ini digunakan untuk mengirimkan masukan, saran, atau pertanyaan terkait komunitas.
+                            Setiap pesan akan otomatis dikirim ke email
+                            <strong>mudikanusantaraindonesia@gmail.com</strong>.
                         </p>
-                    </div>
-                </blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-            <!-- Instagram Post's Show Ends -->
-        </section>
-
-        <section id="advice">
-            <div class="adviceCarloAcutis container">
-                <details name="wpucourse" open>
-                    <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="" class="card-img-top">
-                    <summary><span>SCAMP</span></summary>
-                    <div class="details-content-wrapper">
-                        <h4>Saran Carlo Acutis Malaikat Pelindung</h4>
-                        <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu.
-                            Karena, Malaikat Pelindung mu harus menjadi sahabat terbaik mu!</p>
-                        <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
-                            class="btn" target="_blank">Karya Website Carlo Acutis</a>
-                    </div>
-                </details>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="row mt-3">
-                    <div class="col-sm-6 col-md-4 col-lg col-xl" id="KeuskupanAgungJakarta">
-                        <div class="eBook" style="background-color: #00000028; padding: 5px 10px;">
-                            <h4 class="text-center" style="margin-top: 60px;">Panduan Praktis Tahun Yubileum 2025 <br>
-                                <strong>Keuskupan Agung Jakarta</strong>
-                            </h4>
-                        </div>
-                        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
-                            src="https://heyzine.com/flip-book/b913ba8a9a.html"
-                            style="border: 0px; width: 100%; height: 550px;"></iframe>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg col-xl" id="KeuskupanAgungSemarang">
-                        <div class="eBook" style="background-color: #00000028; padding: 5px 10px;">
-                            <h4 class="text-center" style="margin-top: 60px;">Panduan Praktis Tahun Yubileum 2025 <br>
-                                <strong>Keuskupan Agung Semarang</strong>
-                            </h4>
-                        </div>
-                        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
-                            src="https://heyzine.com/flip-book/e74f5f33f9.html"
-                            style="border: 1px solid lightgray; width: 100%; height: 550px;"></iframe>
+                        <style>
+                        </style>
+                        <form action="https://formspree.io/f/xqkrqzqg" method="POST" id="feedbackForm"
+                            autocomplete="on">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="fullname" class="form-label">Nama Lengkap <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="fullname" name="Nama Lengkap"
+                                        placeholder="Nama Lengkap Anda" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="Email"
+                                        placeholder="Alamat Email Aktif" required>
+                                </div>
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label for="message" class="form-label">Pesan / Saran <span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" name="Pesan" rows="4"
+                                    placeholder="Tulis pesan, masukan, atau saran Anda di sini..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold px-4 w-100">Kirim</button>
+                            <div id="feedbackStatus" class="mt-3"></div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('feedbackForm');
+                    const status = document.getElementById('feedbackStatus');
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        status.textContent = 'Mengirim...';
+                        status.className = 'text-secondary';
+                        try {
+                            const data = new FormData(form);
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                status.textContent = 'Terima kasih, pesan Anda telah terkirim!';
+                                status.className = 'alert alert-success mt-3';
+                                form.reset();
+                            } else {
+                                status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                                status.className = 'alert alert-danger mt-3';
+                            }
+                        } catch {
+                            status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                            status.className = 'alert alert-danger mt-3';
+                        }
+                    });
+                });
+            </script>
 
-        <section>
-            <!-- Widget YouTube Player Starts -->
-            <div class="container cols-sm-2 cols-md-4 cols-xl mt-5">
-                <h2 id="ProfilMUDIKANCA">Profil</h2>
+            <section id="ourActivity" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Aktivitas Kami &amp; Pendiri Komunitas</h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div id="carouselActivity" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner rounded">
+                                        <div class="carousel-item active">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Doa Rosario Bersama.png"
+                                                class="d-block w-100" alt="Rosario Bersama">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/MNCA Berbagi.png"
+                                                class="d-block w-100" alt="MNCA Berbagi">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Nonton Film Bersama.png"
+                                                class="d-block w-100" alt="Nonton Film Bersama">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Podcast~Hidup Panggilan.png"
+                                                class="d-block w-100" alt="Podcast">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselActivity" data-bs-slide="prev" aria-label="Sebelumnya">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselActivity" data-bs-slide="next" aria-label="Berikutnya">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="ourBelovedFounder">
+                                <div id="carouselFounder" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner rounded">
+                                        <div class="carousel-item active">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-1.png"
+                                                class="d-block w-100" alt="Founder 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-2.png"
+                                                class="d-block w-100" alt="Founder 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-3.png"
+                                                class="d-block w-100" alt="Founder 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-4.png"
+                                                class="d-block w-100" alt="Founder 4">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselFounder" data-bs-slide="prev" aria-label="Sebelumnya"
+                                        title="Sebelumnya">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselFounder" data-bs-slide="next" aria-label="Berikutnya"
+                                        title="Berikutnya">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instagram Post -->
+            <section id="instagramPost" class="mb-4">
+                <div class="text-center mb-3">
+                    <h4>Instagram Post Terbaru</h4>
+                    <div class="d-flex justify-content-center">
+                        <blockquote class="instagram-media custom-instagram-embed"
+                            data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"></blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yubileum -->
+            <section id="Yubileum2025" class="mb-4">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
+                                        Agung Jakarta</strong></h4>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/b913ba8a9a.html"
+                                        title="Panduan Yubileum 2025 KAJ"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/b913ba8a9a.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
+                                        Agung Semarang</strong></h4>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/e74f5f33f9.html"
+                                        title="Panduan Yubileum 2025 KAS"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/e74f5f33f9.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profil Video -->
+            <section id="profile" class="mb-4">
                 <div class="video-container">
-                    <iframe id="youtube-video" width="720" height="450"
-                        src="https://www.youtube.com/embed/TPgs-4Aorhs?si=bdhvtujkH5I9Byqo" frameborder="0"
-                        allowfullscreen class="mt-3"></iframe>
+                    <iframe id="youtube-video" src="https://www.youtube.com/embed/TPgs-4Aorhs?si=bdhvtujkH5I9Byqo"
+                        allowfullscreen></iframe>
                 </div>
-            </div>
-            <!-- Widget YouTube Player Ends -->
-            <!-- Registration Form Starts -->
-            <section class="form-container" id="joinWithUs">
-                <div style="background-color: #00000028; padding: 5px 10px;">
-                    <h1 class="text-center" style="margin-top: 60px;">Form Registrasi Calon Pengurus Komunitas</h1>
-                </div>
-                <div class="terms-conditions">
-                    <h3>Syarat dan Ketentuan:</h3>
-                    <p>1. WNI Beragama Katolik</p>
-                    <p>2. Berusia rentang dari usia 13 hingga 35 tahun</p>
-                    <p>3. BELUM MENIKAH apalagi KAWIN</p>
-                    <p>4. Memiliki alasan dan niat murni MELAYANI bukan DILAYANI</p>
-                    <p>5. SEHAT secara JASMANI-ROHANI (NORMAL secara SEKSUALITAS TIDAK MENYIMPANG)</p>
-                </div>
-                <form action="#" method="post" id="messageMeForm">
-                    <label for="fullname">Nama Lengkap:</label>
-                    <input type="text" id="fullname" name="fullname">
-                    <br>
-                    <label for="nickname">Nama Panggilan:</label>
-                    <input type="text" id="nickname" name="nickname">
-                    <br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <br>
-                    <label>Apakah memiliki akun Sosial Media?:
-                        <select class="form-select" aria-label="mediasocialSelected" required>
-                            <option value="Memiliki" aria-checked="true">Memiliki</option>
-                            <option value="Tidak Memiliki" aria-checked="true">Tidak Memiliki</option>
-                        </select>
-                    </label>
-                    <br>
-                    <label>Instagram / TikTok / YouTube</label>
-                    <select class="form-select" aria-label="mediasocialSelected" required>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Instagram">TikTok</option>
-                        <option value="Instagram">YouTube</option>
-                    </select>
-                    <br>
-                    <label for="whatsapp">Nomor WhatsApp:</label>
-                    <input type="tel" id="whatsapp" name="whatsapp">
-                    <br>
-                    <label>Jenis Kelamin: <span></span> <input type="radio" id="gender" value="laki-laki">Laki-Laki
-                        <span></span> <input type="radio" id="gender" value="perempuan">Perempuan</label>
-                    <br>
-                    <label for="birthdate">Tanggal Lahir:</label>
-                    <input type="date" id="birthdate" name="birthdate">
-                    <br><br>
-                    <label>Keuskupan: <span></span> <input type="text" id="diocese"
-                            placeholder="Isi Keuskupan mu di sini"></label>
-                    <br>
-                    <label>Paroki: <span></span> <input type="text" id="parish"
-                            placeholder="Isi Paroki mu di sini"></label>
-                    <br>
-                    <label>Jabatan Kepengurusan Komunitas:
-                        <select class="form-select" aria-label="divisionSelected" required>
-                            <option value="Sekretaris" aria-checked="true">Sekretaris</option>
-                            <option value="Bendahara" aria-checked="true">Bendahara</option>
-                            <option value="HPD - Humas Publikasi Dokumentasi" aria-checked="true">HPD - Humas Publikasi
-                                Dokumentasi</option>
-                            <option value="Acara Kerohanian" aria-checked="true">Acara Kerohanian</option>
-                            <option value="PSDM - Pengembangan Sumber Daya Manusia" aria-checked="true">PSDM -
-                                Pengembangan
-                                Sumber Daya Manusia</option>
-                            <option value="e-Sports" aria-checked="true">e-Sports</option>
-                        </select>
-                    </label>
-                    <br>
-                    <label>Alasan Bergabung:</label>
-                    <textarea name="reason" id="reason" cols="50" rows="4"></textarea>
-                    <br>
-                    <a href="mailto:mudikanusantaraindonesia@gmail.com" type="button"
-                        class="btn btn-lg btn-outline-warning">Kirim</a>
-                </form>
             </section>
-            <!-- Registration Form Ends -->
-        </section>
 
-        <section>
-            <!-- Image Events Starts -->
-            <div class="container text-center mt-4" id="RatuSurga">
-                <div id="ourActivity" class="communityActivity" style="background-color: #00000028; padding: 5px 10px;">
-                    <h1 class="text-center" style="margin-top: 60px;">Ratu Surga</h1>
+            <!-- Form Registrasi -->
+            <section id="joinWithUs" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Formulir Registrasi Calon Pengurus Komunitas</h2>
+                        <div class="alert alert-warning">
+                            <strong>Syarat &amp; Ketentuan:</strong>
+                            <ul class="mb-0">
+                                <li>WNI Beragama Katolik</li>
+                                <li>Usia 13-35 tahun</li>
+                                <li>Belum menikah</li>
+                                <li>Bersedia melayani dengan niat tulus</li>
+                                <li>Sehat jasmani &amp; rohani</li>
+                            </ul>
+                        </div>
+                        <form action="https://formspree.io/f/xqkrqzqg" method="POST" id="registrationForm"
+                            autocomplete="on">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label for="reg-fullname" class="form-label">Nama Lengkap <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-fullname" name="Nama Lengkap" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-nickname" class="form-label">Nama Panggilan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-nickname" name="Nama Panggilan" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-email" class="form-label">Email <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" id="reg-email" name="Email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-whatsapp" class="form-label">Nomor WhatsApp <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" id="reg-whatsapp" name="WhatsApp" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-mediasocial" class="form-label">Akun Media Sosial <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-mediasocial" name="Akun Media Sosial" required>
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Memiliki">Memiliki</option>
+                                        <option value="Tidak Memiliki">Tidak Memiliki</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-mediasocialType" class="form-label">Jenis Media Sosial</label>
+                                    <select class="form-select" id="reg-mediasocialType" name="Jenis Media Sosial">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="TikTok">TikTok</option>
+                                        <option value="YouTube">YouTube</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="reg-gender-male"
+                                                name="Jenis Kelamin" value="Laki-Laki" required>
+                                            <label class="form-check-label" for="reg-gender-male">Laki-Laki</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="reg-gender-female"
+                                                name="Jenis Kelamin" value="Perempuan" required>
+                                            <label class="form-check-label" for="reg-gender-female">Perempuan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-birthdate" class="form-label">Tanggal Lahir <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" id="reg-birthdate" name="Tanggal Lahir" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-diocese" class="form-label">Keuskupan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-diocese" name="Keuskupan" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-parish" class="form-label">Paroki <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-parish" name="Paroki" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-division" class="form-label">Jabatan Kepengurusan <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-division" name="Jabatan Kepengurusan" required>
+                                        <option value="">-- Pilih Jabatan --</option>
+                                        <option value="Sekretaris">Sekretaris</option>
+                                        <option value="Bendahara">Bendahara</option>
+                                        <option value="HPD - Humas Publikasi Dokumentasi">HPD - Humas Publikasi
+                                            Dokumentasi</option>
+                                        <option value="Acara Kerohanian">Acara Kerohanian</option>
+                                        <option value="PSDM - Pengembangan Sumber Daya Manusia">PSDM - Pengembangan
+                                            Sumber Daya Manusia</option>
+                                        <option value="e-Sports">e-Sports</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="reg-reason" class="form-label">Alasan Bergabung <span
+                                            class="text-danger">*</span></label>
+                                    <textarea name="Alasan Bergabung" id="reg-reason" class="form-control" rows="3"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold w-100 mt-3">Kirim</button>
+                            <div id="registrationStatus" class="mt-3"></div>
+                        </form>
+                    </div>
                 </div>
-                <div class="container text-center mt-3">
-                    <img src="data:image/jpeg;base64,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"
-                        class="rounded float-start w-100 mb-3" alt="...">
-                </div>
-            </div>
-            <!-- Image Events Ends -->
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('registrationForm');
+                    const status = document.getElementById('registrationStatus');
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        status.textContent = 'Mengirim...';
+                        status.className = 'text-secondary';
+                        try {
+                            const data = new FormData(form);
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                status.textContent = 'Terima kasih, data Anda telah terkirim. Kami akan menghubungi Anda melalui email atau WhatsApp.';
+                                status.className = 'alert alert-success mt-3';
+                                form.reset();
+                            } else {
+                                status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                                status.className = 'alert alert-danger mt-3';
+                            }
+                        } catch {
+                            status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                            status.className = 'alert alert-danger mt-3';
+                        }
+                    });
+                });
+            </script>
 
-            <!-- Rosary Prayers Starts -->
+            <!-- Saran Carlo Acutis -->
+            <section id="advice" class="mb-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="Carlo Acutis"
+                            class="mb-3 rounded" style="max-width:120px;">
+                        <h4 class="section-title">Saran Carlo Acutis Malaikat Pelindung</h4>
+                        <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu. Karena, Malaikat Pelindung mu
+                            harus
+                            menjadi sahabat terbaik mu!</p>
+                        <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
+                            class="btn btn-outline-warning" target="_blank" rel="noopener">Karya Website Carlo
+                            Acutis</a>
+                    </div>
+                </div>
+            </section>
             <section>
-                <div class="container text-center mt-3">
-                    <h2 class="fw-bolder">Didoakan Setelah Ibadat Jum'at Agung
-                        hingga Selama Pekan Paskah</h2>
-                    <p class="fw-bold">Ratu Surga bersukacitalah, Alleluya. <br>
-                        Sebab Ia yang sudi kaukandung, Alleluya. <br>
-                        Telah bangkit seperti yang disabdakan-Nya, Alleluya. <br>
-                        Doakanlah kami pada Allah, Alleluya. <br>
-                        Bersukacitalah dan bergembiralah, Perawan Maria, Alleluya. <br>
-                        Sebab Tuhan sungguh telah bangkit, Alleluya.</p>
-                    <p class="fw-bold">Marilah berdoa: <br><br>
-                        Ya Allah, Engkau telah menggembirakan dunia <br> dengan kebangkitan PutraMu, Tuhan kami Yesus
-                        Kristus. <br> Kami mohon, perkenankanlah kami bersukacita <br> dalam kehidupan kekal bersama
-                        bunda-Nya, Perawan Maria. <br> Demi Kristus, pengantara kami.
-                        Amin.</p>
-            </section>
-
-            <section id="events">
-                <h2>Acara Yang Telah Lalu &amp; Akan Datang</h2>
-                <!-- TikTok Post's Show Starts -->
-                <div id="tiktokPost" class="communityActivity" style="background-color: #00000028; padding: 5px 10px;">
-                    <h4 class="text-center" style="margin-top: 60px;">Apa saja yang dilakukan umat Katolik selama
-                        Konklaf?</h4>
-                </div>
-                <div class="container col-sm-2 col-md-4 col-lg col-xl">
-                    <blockquote class="tiktok-embed"
-                        cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
-                        data-video-id="7501535064715480375" style="max-width: 605px;min-width: 325px;">
-                        <section> <a target="_blank" title="@mudikanusantara.ca"
-                                href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
-                            <p></p> <a target="_blank" title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
-                                href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
-                                suara asli - MUDIKA Nusantara Carlo Acutis</a>
-                        </section>
-                    </blockquote>
-                    <script async src="https://www.tiktok.com/embed.js"></script>
-                </div>
-                <!-- TikTok Post's Show Ends -->
-
-                <!-- YouTube Post's Show Starts -->
-                <div id="youtubePost" class="communityActivity" style="background-color: #00000028; padding: 5px 10px;">
-                    <h4 class="text-center" style="margin-top: 60px;">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
-                </div>
-                <div class="container cols-sm-2 cols-md-4 cols-xl mb-3">
-                    <div class="video-container">
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- Image Events Starts -->
+                <div class="container text-center mt-4" id="RatuSurga">
+                    <div id="ourActivity" class="communityActivity"
+                        style="background-color: #00000028; padding: 5px 10px;">
+                        <h1 class="text-center" style="margin-top: 60px;">Ratu Surga</h1>
+                    </div>
+                    <div class="container text-center mt-3">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFhUXGRsbGBgYGB0aGhcdIBofGhgZGSEeHSggHhsnGxsYITEhJSkrLi4uGh8zODMtNygtLisBCgoKDg0OGhAQGi0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALEBHQMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgEAB//EAEIQAAECBAMFBgQEBQMCBwEAAAECEQADITEEEkEFIlFhcRMygZGh8AaxwdEUI0LhM1JicvGCkrIVUwckNEOiwtIW/8QAGAEAAwEBAAAAAAAAAAAAAAAAAQIDAAT/xAAkEQACAgIDAAICAwEAAAAAAAAAAQIREiEDMUEiUWFxBBMyQv/aAAwDAQACEQMRAD8ASbH2nLmJKJ5AKSMps/EHx+cC47ChOYAg8G4aNaF0rZiloKw1LDU+EHYaYQkS5oKSLHTk8RqitkMHilSksGLknmefSghhs/aksrabLSUquQ+ZPMHXpCyZIIqr9vO0el4ArIyBzwe5gNX2E0+OlTHJSSZaapUK040140gcbfWi6UKJFxuq6FrwXsLDTJahnQoHpfjyg7G/DoWt0sxL1ApEsqdDC6XOws2q5QQ7OWo/FwPb1g2XsaUwKADzcnSpu4pHpGwMiiClSuCkPTWo+sWL2ShW8mZMS1qG/GreTwMndAdIuwKyAUjjQlvn4Q1wag28zekKMNgpoJzLSocwQfGpi/NlDeDwJJoXIdSpLuwDcouEsGtBfS/rCmVjSBytyhgnGiz0+UL/AGeM1fQUhQDv74x7tE6NHRlNAfGILkDnfSB+jE0yBcetYhMl1B6xABQsfP30iapjg9P8Qjgq2jWXlDJi+UoFMCYpO4Q+jQHgtrS8gdQBIseNi/j0hFLZvBvLSKjnAU+USqzVPzpFmyJmbMp6P6BxE8S7mmvHlCUpVZujsnDcW6RIy0gsWpp792j0kq1PgItGHLuaQ6go9AsgVBsoEUHDD9X7QaVS03ItpAGKxwIYaQ8aX5CXmUlIBLWtCzETrtQC3PrFUzEl+9e0BzidIsouQLSB8VPd93w5wvn4aYe6tKOjqV0c0HUDWGSZT3NdfOL5GCJLuWe/vwimKXYuTfRl8ZsiaQpSlKmbtiph9VE8g3WF0zZ0xAdTJDCwY2s+t+MbvPLS++kEXcijXjO4/GqmKplIsDkct1NqcITPeii/Ijw2zs3E01608KekN9kbCQDnVYeT+MSwOHNzyHH6QJt3CTZhSN4Md1PzLAmvMwJNy1Y3QBtLa82as5VlCA+UJOVhXk/CKJE51AzFFWhJqpvb+sVLw6s7KBDFq3i9GHerMn9miqjFLQLZHH7SmTPywWliyRrTppAU+SuhB/aGU9BEssXPHUcWhUnr4k3hopVoVsPwTkuGvBc3AzGOXeGqbsNKRRL2aAKTBfjTgLaQwwmzpqWUJqXOnHhGbCCYbDEJO6xrQCh8DSJIOUulJSeDUjRy0lt9Jc6p+kSmSksHIVwC6HzpC5DIBw3xJMSd4ZgKH6VvDPCbcSoszHq7+QhWrDykqyrlqD3KT5XETVsELGaVMCgbhQIOpuAYm1H9GNbKxlKgjwaJFeo98Yw6Nn4pJADgclN5MesPdlKngfmKpzZ/fjA6BQ6VJSqtjxGv7wPiMIxqXf39/OLRPFf8f4imZjP5bxly0I4lf4Ua0ioYcisHSpz1WAR8jEEzEkkGDnxy70DFoqSpQ0glE8jwv78oqJliue9gYsExOUklgkEk/P5RsI+M1suTiwb+HvziwYtOUlqUflzhZJmlamASU2pQ6ZSNaknpSBsPOmF93dKqszANccbHkxHAxL7oahqdqIWSlL0NXtQmo8R6wINhSS6lEkmqumn+2783tF2Bl9plGRKU6EOFFqVq7mnlDRGyUBKmKw5JO9ryr84R8cnuPQbrQNs2eiSGLkAD/VX51B8+Bg4zkrBmJqCxrpy6wFNSUTEnJnHdCTVi28K2BB+cUTsbMyFSUZQp6FyzFiwHE+gJaEcWviwDJWNIt6acWiqfiSQX8vvFGHWsSgoJd0hRI3gkFs3o/lHZCytAWQASKgG2nzhlxpvbFbYOEEtoI4rDEnjDCQpJopSU6VIDnQB/CDSiWnj76RaChH0GxKjBDhX1i2XgDrRrQxVi0IZq8zAWL2gSIo+TxGUSlUlKdX6tCXa2JmlkSwpqEsOdK6D7wfMnGK1zffy/xE3J9solQrl7FoM6n4sYITg0Idy5Ae3DUCKp+LIcBKi0JcRiJ0zSgLDX0FON+cBXLsNBmK26EOMhpqVAP4BzCbaHxLNJZA7NPEd5XUwywexMwJmKetCePQXqOkTnbJw6d5alNwDAn9jzMMnBGZlEYhSiwBUfP3eCsRNUmi1gf0pDniH0BhsjFSB3EIQG/U6j1UQoDwBNonhNlSpyis5lNqRkSOQA0DekVzXqFtmfxO0FTN3LlSLAXbmeMVIci6R1Ah7isDLlrZCnFXJApa3ERTOxEtDOkVswHlbnDKS8AB4DDAmswAlhWx4esN8TikoZBCjq/wBqQpnFLlrefswTgsMFBg71vx+/7QGONZBKk7i2PA0f1vaB0ImV1Ouvu8dlYEhgx9sLiGEiWXDAhTs/WkJYUQw8ndqSDr+3CCHUiqeJpeG+FkkoCsyCSHCSLnQG1/GE+GWtSksM+ZakrUBuoLs6Xo2VhR2atHgNP03pJG2Et+YCGPeH10g3DzMz5TmB0N/8wu26lCxkD1UAkChLGl6JuVEqpSvKyXiUBKspWVHs8ymABZ0obKXALFrg89Zy/Aa0TXtQkKLKyh6tRTd5n4aWdmiP4lSUqU1GBCv0neAIfjensT2Xi5CM61Iz03gyDlASXCq6DLUCpJG9pz/qgWAiXhkJlneU5DFPA0KjxAADsPAtCgwxxKVqS+dt1yACwzFgbgBq8eTwamYqWVZyQD3S4J0cGpqC54VTCDDqWtSkygQEdym6rMcyu8rLY1BzWe5hliJhUiaAnIULLNQ0dKVgXIYpcm4JoRGaT0HotGMl9sSt0MGSkOrtH+ZJZ2bR3IpfmE2ZllLGRO6tL90sw6qAT8o7IwCEy/4u86ggiic2Q5ibkBwS9h0gaXIEyYhSCycozpZiGZIKSCClTuDoUlVLEaUGF66L5kgiayZgOaWEpUAMwIdBCdRvVYuxeDsFskguqYpLh8oAKUFsu69SGNH84JwmwQlYWFEgVSmjA6szauWOp6M7oDQe3/aDCLTdvsWUk0ijA4RMsAVNRe/u8HzpqUqylSQpVg7E9BAWIJ43qfC0YjaUhXaTlFcxRSp3yFRZ8ycpYghILVUnWwZ7WktE6tm9mAKUrq9OjOObGEu29nzlICZS0AjMA76kEvunh7aDNmrKQEqUVKSACo3UQGJJ1dj5wTiNDW9vfhEpRT+QU2jOSsZMTLmSglRZSsrF90sEvbeIOcNYkxHEy5ksZ0ZVOoUSsUrvZtCbuQ+XKWBh9isMkigZiCDd2NlJ4aNzjP7X2WZaZSJS1ZSoIKlGqcySVK3WDkOK03rVcCPFDbYN2U47EhJdRZehYORlfKAqjG4AJLHeYOIJlbQWpGYJUFF90uSeCnOlrtpxEWy8HJUtITNMtSSSGupV5hJLgD+HS9rAgwoXMOHC05u0XQJCFBAKauCSlTbxJZmryACtfG0WUbdIYy8UVZ8yu6oixHC4NUmwblziAnjKSTYh+T2+0LcThyFdoZZTmWnsyXCVINyeIqzGpYs0W7XMpjLSFEgZ2SCSUj9S6gXdiAGanGDiwUroNmlT3Ib06+frFS8QXAD1qD7OtW41iE9aQEKUoy2cJISVAunddi7MpXOpirAmXLQM68xCncKzsP8AS4pwFHJbhBUGZBUuaCGP38dYhOxGU0SCz3Iv0BgOeFBlCYkhVJeU0CwSWWWOUNkLUJcto93by8xdJCQCpT/ypD21cMPGBRmgedNmE6uLVZuQa2sBYqQpQqb3JqfUwbicVvolqUAuYMygLpeuV7EvRxS9mLRnyQlzrwB8NfdIa6FaF0kSklhLzG7qNP8AHjDvApSoZTOQpReibNGYxGDWSaFuFaQ22chMpLkspvTlBktdgRZjdlLCu8LvC6ZgSCbcqwd+LBpmPDkK2rFX4XNVSXPONFtBBcBs0a+/2hpJkhNMvkwI8zEZISQKZagDqaNy9jUPb+JQCUBlKFw/Jx46xsvsaic3FgIX2Z/NynIlQYk6AOGJegvWA9mbSZKJisxqUqBdytnSACKG7+dWMS2ipC0BE2mZLhQD5K7pHH94vwmPlzCmVlSkJNUJsoi2gUxd4TkngroaMbdAmI2mpnlKahGUks5IIUAlQIOjsbkB6mDtj7YnKC05DmBTmJZPe00cuxpf1Im30GQhARLZKFksWUVgjesXIqxcg2/li7BYUKmSsSqYpAcHIWIcuGBDsC7sPR4bj5MlaQsoolt+YZSkBJPfAWwBU1TlFnNGoXOYitIq2vJmiWoJQoJ7VATYKWgAqbV2c3qyaxBE4mYVKQFLllKQHBcuy1UuwCHa1eMNtobTyZhNYI7mW5dyN1iwaqnNODu8S5ZzjKoxsrGFxuyhWxCZcxWZLzAklAZgBVWR7perUsYqxJyywqTLUVJAUFbyswQrKczlwAC7jnwhrjdnrTLQUklUsDNqSDXKlrVAFq21hlsqQZaEJL5mzF76Mk9E+pMGGV/IFrB/Zl9mz5iipIB3iVZmdIBoQS4tRjrWDMXsLEZwBVOUJ7QmhHMPmo53Wh7OkIQMkuWlI/p/UdCdTB8tTpD1ceopDxhBSb9FlyNqvBXgdmoSFIUnOVJJUpQAUs0cqYApU1aMQWesXbK2VJkhQRmqf1NS4ZxdgTpqYY4SW0x20Pv5R4XaxMM5OibOIns9Ke/WLMMsKzNyhdjZ6UpzKIAFy9Bp4XiXbBKTWkTXJ8tmoOBC1G2UVJ/pFza5rGQx/wAOLVNWl8gxClKRKKt5soBS4o5yl3fkXcnVyiEyypYISl1KJDCgzOp2oGYDVn4CJyJaZ4TiFKIWpIKFAB5LkKCEhrvQuN43pQdOFrYl0wI4dmyJZHdbVBA7pvVm5Vi5Ci1a1EU4TH9tmUDRLomgUAKDRTfpJfNwY3o8WyJoZiWqx8+F4lyJIyLpSHPAfXT5+kdxmz+1ChUVBBaxFAY7KnuoAWBfn1g/8SAOsKkqCJsDs1EpKk5EzC6TMWtPeUzboV3QEBIe5eFON2StM1SkyyvOUpQD3ZaR+ngkHU6jnfTCc4zcVfsPQRewJcjuuR109S/hCsZSadmP+I1zZKUFbTcyyxbdLpBCNGOgLMRpcALFIkJQlCUqdkJTMS4K76jvBzbzrG0x0lC09ktihSQ4PLUHRXOBV7Nlpl9mkZUgAU/SSXzf3A1fiIq5ZBhNR7RkEJK0hRICUuCg91WU2NDQK0tRN2ijYyaEDeBzKYju77lBBLkFgTxOWDtk7NUsLCnSJYKE5TU5QygQrdZ0u4YnNA0iSmRPyzppyjKrMzZgKANpmWAG5+MTeaTDYFPxRTKUpZVmJSN5RTnSlisM2WgJAIqGs9zcIv8AJUpKlIKmY6pSSyc1ql3Nqk8IL2zjJa8omsEhRSsKGVrBLj+VnrwqKQDg5apwWiWAGypKiRUAkqr/ACswHEqfprckNCmxbMxg7QqRbKSrMRUvvGlAS4cpFdRR4Z4lylBT3l8QSLsVboJaunpAmLwq0zpILAy05ApnSoMQeFBU1g/D9nLASspJS5L/AKc36WJcltKm9DeGe6BNbFeDxJzTJcy6SAkgEZiXOUDU3ItS7QZipSWBKmUbJFQGANT0PCvoK5mDSVpUkLKQVMMxCUksnU015x6dPKiVJICbWyuaOK1ZkJSNN12hmkiZUiQhVfZ0P0jisWodwBrG+kM5GEdyR4g0OlOUWqwaaMwhcgivtgMyV2NDalioO9wfoYU7KBPbIcqJKiJhZnKqKBIfMamh8RFmLxiZctbbpAQwfdObdQauCWQskuXq7O0EYWTL7TDLAZ1P3gWVRSWCdKG7tTjFKSVBTfYXNwS1jMkJoKiwLXHSoqOIbhAeAlLTLBlJJmJV+amm6WI41qOFa8op2diGyfmpBCSSpBdaHVYkpACw4IFg1GvB+xZc0ZkSg5lkuQQ2Z3ZNakh/E84WcXVIfjr0dLnJBGdglgDV+h5EGKMNsOb2a07q0MFS5WcpmXcJBI3da6P0MAonlWLRLLMpf5gNQMqc9A9HoCNCD47TCKBVWrhyD1P0MS/j8WLbb7NyPxGU2cuXNxXZmWAsAlVGCcstklncEBYR66RqZWHEySAUgtoRcix5GhFNI7jMKO17UAOoBJU28QC6QT4kew1uDm5ej184o6TpE7bK5Kg/9JDF/rzipMsinM3+nzg2bIAJIsSYjMTV7igPLh5xKmGz3ZAoB8Itw6d1vKK0KooWALxGROYtwqDFLAXlRcHnaOTJtY5NZnFYpmlw72iWTRivEm+hPzijZ8vKFKW26oJQFFgXBZRLGgAU5rVCuUF4eWVkJbx4ff7tGf8AjubkmSlJJDAoASElmSVZnINitGliWYxbih/0wP6Qd8ZzEKly8Oqapc2atKUgEISN4Otk3AAJGYqqBBKfhqWhDCdPCWq0w8Lt0HoI+eYSaV4uSSSciAAeJHeV4qfwEfWFq/KfiP8A6R0RdiONGH+E5SJWPmoUtQUsOlSVkkKSWWnUEF7Kci3XY4zCEZnYnLmBA7ybEtYEUoKO5o7DA/FCDLxMmYHdPaFQF2VMJvzSaQ42V8RJE9L5lKrV3CkEhTtoRLAFDxo7QnJTWLGUX2aaXLCAVW0H3+cRSkrNaC/hBW0MMzEBwrxrw6QNNmBso1ufkOkQcMezWTCycrUBr0GkECYCnqfQQNKNerMDcDn84unKD5Rp6+3jJemCRIFFqsker0igpYE8TE3oA8DrXRnuYfEBzsGQenz/AGYQv2nstM5OVbBzQpAzB+bGh+YfhDDEzGyhtSfoIswozKHAB/fjBphE+09lS+zEgUTlKUE1yKZ0qe7uEvxc8Yyeygthh0gpmLcqygXSpQUF6gAAVFGL6iN1jKqFHraOStkoQFKA31hiSXfgPAC+rQMikZYmF2xMmoqtJDFOUmruCzcXr5NF2L3ptW7MDNWwJS9CxDWrRmNRSG+31EyQkAE9ogIfQqWBe7MSfbRydMWJZCEFSAHUpu9QbwGrA/KJT5GqpXYXLJ7Mpg5qjMXmRwY6Mz7o4kEFzpzIMMTLPfVKKkZVNu5gTRlMKg8xzizC4WQQtSynKSFDLuhgAaOQQpQIJiydjjKCENmStJoa5G3QXYGykUN3YCHdtWgKr2LtgT1yUqQtJOZRUhAaiTQkl2Smj+Z1hhM2krhLT1JP2pAeHmpVPnLIbNkJQR/SBmPjTk0ELWLZAWNQz5X4sKHkfrDNJ+AYjw60KUqXMYlUqVUkAJJkItRycxLJepJ4x34fxoSjKclC7kABRs72AtYABxQx3BpAzZZZK0skrmJJKVZCct8wSEsHIJqOKSXOwAklU7dIlnRu85od4sA6VBI0OloKjkmaX4FOMXLQRN7PslTM7JJZShQKURokkqANKjV41WxcMUS5ecMtaitQN3yEJfnlAd9QYJx+x0TWVMBUpCu0ll70Yp4MSAW1ID6xAryEE/zg/Qi2jwJ6VICCsds1JUmczLSCARrmDVe5Gn+IvwiwCCOnT2YJlKzJY6UPMaQHOSUsNLjnCye7MNp0sqSRrcQDoS7ftBcibYjpFWIFevusCa9QEWy5gUmns+/nEEzGr5j7wFKnZd2w5CCgk95Ot4VWMWTJbMpNuHWKbsRdN4uE0pFRQ+XvlA04lJzfp93jPowVJmMAU63iE9A/Tfhx98IHNnTXiNYMwYyjOtwRYG/U84EYuToD0SmKEiVU76ncj9KRVR8EuepTGb2ontVqcd1IBGmY1V45lZf9EMsfi3IB4Z1jXs0l0p4ZlramrERhttfFCZeZI3lqUbWDUfzc+MV5raUIlOJU3Jk5iUjES8takPxbUx9CwqnlMeA1/p/aPjmysapeIl5nO9f37pH1lK/ylB2OU/8AIj6iK8ax0yXJLJ2IPjBA/FM9Mo15J+x6xPC4EIyrH6VAluD/AGJ9IQ/HW0VFcqYEqqkHVrA0r529YnsL4mRlCJlC2UvqND5xDni7ziX4pXHE+q7MIXLMpV000NGdJH+kf/CFuIT2SmLk6cORHGK9h4jMEzAQBRCjwsZajxI3XP8AcI0U2UmallBqtzQqxS/WLShnHRzP4vYjkpypJ/Ubcv8AMclSq8+nm/SLsRJMss1dGsYpSoJFw5ufoPGJYU6DYSmY5NOQ+kDqW6hwSK9WoIkFlXd08hzJimZNFQCGGtKmKoxGbMdb6AQZhZmVFRU+gsPvAOGQS5Va558o7PnlRCRYn0/x841MwThkuc3l9THcTNLtRgD7MScIDC/KBsQSzM5OlyYEo+GKVyAvdKQQdLAf1Peh91iCWllKEJASHAHJq+cFZcgy66njy6QOtO8CffGJS0NR892pszLiFISSBdO8Q4IzpHQd0Dlxi7ZsheWUSrKqUpRYlTqBNVFt7VmetNI269ny0KGIUPzEpITyDu5/qux0CjCzbUrtpQUT+YATmDEkO5Tz6eMUd1pjQcb+RjcTLmoWrE5siC6FKGnFiovntVqVq4eHkrFSkpBDJSSQkK3SyWAJHHLlB5htIHlSykykzOyot6lRBXmzgEJDMD+qtQeULtq7bOYAqJAdlOWU5uN3pGal1QzintB8/BmeZcrtVhRmLfKreUObBnCEJHB6UpB+zNmqw0pcvMFgzMyVsz0SkBQ0NCHq7mKMFJ7FYmFSlBKSneDE7zhRI/ocEUZxqDGgwUwMGYiw4KGnvrDRWKoR7LcGtgAdLfaI4uQ+8A4N20JZ/Axl/izbKpM5EtGZKSnMpizuSAATUAN6w12NtZWRBOYu9SXzcediPOJT12NFWrQ2w09riov0hgwUP6fl7rABRm3pd/5dDFuFmsavzHDi/wB4VMRosJMvmIsWywz9CNDpBBZQ3WPKkBLwigXQSIysB0J0Vdu8PnBWHQpNbjlqPpFEqeQGmIfmPfOLBMlu6VKHIQyiGyYCC7KA5Kt/iBeyDsFAca5gfCGEqUD+hR5lk+celpy13QOX1OvSBizWV4fDBLMK8debcIHx2ISXL7kuqmDudEjjWOYraGd0Sv8AWs2SL+xAGOxcuTL7aZ3E0Qg3mLNn5mtdACYeN9IBnvivahlDswfz5rLXqEJFJSPBszcQNDGUwuwSuruSan6vDLDLzTVT5qkqUs5lEvc2A0AApyDCHsrb0hNFLS/A/YVMZzp6RRR1sTydgGUyyDya4p16eUbLDYjOkAu6pR82y/MQDjttSTLpLnlP6imStm/2j28QlfEuGSlE1ZXlokbjlZBJIAfMDQioFjajtB2yckK8Rs7t0BgSQB4CoGnukJsZ8OLcsCW4V8TGv2DtAJJmCTiEy5jnekrP6t07oIAynR4Jx+1MOd0TCk8C4fwUAYTPHQ0UIPgraasPNEifSXM3XV+kl8hJ0ZRI6LVH09OIKN9XdomaOdkr8Q3lHzjHykTEMnKryvzfS0aT4U212iewmFKpktICq/xZds1alSaA/wCk60pxTvRuSPpq505PdWHB7qjZXXgr5wsx2zS7jMoDQM4iYm5Pypu8hVUq5fce+Vq5cyUHSe0l6OajxirSfZJC1OdiMpSP5QK31+5if4F6qIAGmsMUY5KqGiuYtA0yWCX73RTejQFBINgZUVHKgUHgPHlHULyOBUm5i4JXZICR1Ee/6cXdRA46wrsIMlRJc1MFoDddT9BHlT5aN1I6njEHUq37e6RkzEZigA1+MRks2dVtAdf2iydJAFT4DXqftAxWVHibMInLXYUDY+apTsWLU4DrAHZ5wlSroIbMDlJFQb1BBKXL2s5g7G4iXKouqj+kB/leFkzFlUtagRdgP5bVVwAcK5NCKVbGSIYjASZUxCpqwU5VEsClKlE5QOAHRqC1YJVsfDTAO6UDu5QnU1qQX8GF4TbUxGQTWKCumVyXSAmgFSFVcuGbNraEuAxJlpIVIM0FWYHMQAFJSoANVyClTHRSaB4HJCc3cWGqRBKJpIWorUZdQoAywAdCdRS9BXUNFk3a0zDEhaMhFQgEFSnq7hwkVcqL1pUuwH4EpZRKlLVQOScx0LvYV9mC9l4LD4lKkGc0582//wC4GqEk94vpelqxdw+zZWVbRK8RMkzVJbtE75SoNWyQCp6algH0jZ7JwEhKGIUDXeBfKXqw4W6sDrGD2PIBWZiUlKAQA9zx6VvGv+HJ5/FnOPy0yyQ9XKlJD8O7mDWZ+MSk8pYlnDHiUvtj5GGUCCg5hxSfmLwbKnJVRbg8bEQrnyjmKpR1O6D/AMTr0gvB7UcMsAjgRCKkQdsJm4Q94EK52MVfiJgGvjBCig1AUn+0v4MaRzslMcs0cgpHo4+0FJXoFnZOMWQ+V/CLzOm6BKeZoG+cUdlNt2gH9gjhlS0VnTP9xaKfIGiz8Ukd5RmK4Du++pgbFla6rIQjX3cnkIslYkGkiU/9awUp8BdUe2kuThkCdi5mY/pS1Sf5UJFAfZMamzFcmWMjkZJKa1urmfFqcxGF+LJs2etJTmCUDcTTIBqX1UfECgHO/GbZnYuYCppMgdxD68VN3lM4ty5l78PYZOZK1OoF+zzAZXAd2BLUdnY0tAUkpKKHS1Z8tmJnKXkUSK1FQ0a7YWElSwN0FRFS1ebmN5j9hSMQrMtABDbyaE3d/SvXhGf2tsAppIz/AOouD0YOD1gc/HKSpG45pBuDxxY5AS1WTVvt1gnCbYw5USFJTNLgukJWGSCywd4u4A9HvCwfBU8pStM5IVdmLi9ibGtxGW218NT5Su1XUghyFOKcevGJw/jqK2Fyyejdzdq5rmFGOmIWCFAEHiIzUnHzH1VwFiPE3oP34bXYfwsZyBMmqUlJsBQ9TwiK/jO9DZqJ862ls9cskySWP6RVunEQ2+FpE4K7dSSlSe6oOTwIKb1FCOsfVtm/DmHkVSnMoGilVboIE2/gMzrlhprir97iDp/iO3Gaj+SWSbLsFMl4mUUqBSQagXlqqyk3dPPwOoimXi5shXZzRTRQ7qhxTw6Rl5uMmSZgUlWVYvQV4hXEFq/4jXbK2rJxSezUkoX/ACKsecs2I5daawYTy/YJRa34SyIU5AboHHiPqIFm4YioAVzQa+RrFOKwc2Sp5SqfyKp/tP0PpFCdqIKgJgVKX5fsfCHv7AjnapzVzu+pqPrBEuakk99rXiyVNKrTEKHBTfIj6xavAJI/hyuoYfKEphKQtCWoPExdPxzjdryEc/ASrFSByFfflF0nEy0USivGNtdgbBpOGWuqt1PO8UYuemWnKi+nHxMQxmOWtWUOPmfKEE7bsqWs9oohIKk50jO6hpTmCODjgXibd9DJMU/FS5n6czjeLWZxqRcUgH4WxK/zWGZRYuaBxQ3atRzhntPGEzJUtJKe0IKwtiAgl+zNCXyli1zwEI8JtCbJWZZVSUVpGqiQpqnWgLeA6GK+Oux48m9GnKVTJgRnl7gK84d0MQ7MHfNlpW76QzwqFDdSuYkDiWJLkF21BBBLM4vcDP8A/VuzVnBAC8qwWzBRBZSaWcZGL6ahwWPw5mm9osqy1CQNQHUoILHTOTWu8eEaX+Ndgk5SdsSqxaDhVTP1pTlHJ90ZeBzKBOtuAbFFJKWZ9Awv6ReuYpIA8b66k87RfseVUcdOXE8ovKWrF4oZSoNweOSiWJdiEqKjzyskDXvVfpHtkfEC5avz802XlISl3CVUyqZw7VDc4jtjDJCw1mD/ALxzD7PCw4PhEo41f2W5pTyxb60P/hL4jkypuSZMzS5gSnMtLKlkG5IFAxI1FrARv14QHeopOigQaGzx8qTsFIFT6wds+disKWkT1BIrl7yfIuB4Qbi9ENn0qUgC0dWk6KPpGFPxzi096TIWRTNlUD6Ka54cIifj7EEEJwskXd86uWptWz8IZRiA26MGpRbOs9Cw9BEpknDYYBc5UuWdFKUCpX9rlz0FbxgTtraWK3RO7NKqNKTkDdaqHmLxodm/BeHSypmadNPeWtRLnkNfF4KUfDbLdofHiS6MFKK1f9xSSwfUC58W6GM4MFNnTO2mKKlUGdRFOASAaC1AOcfQMiUSiiWEJocosH0J8Y+V7DwWJRiUypoIWGVlUxcA6ElncUV1bWE5E60xo1Y42psztJipJBCkJzpKAHU5DoU5ACG3iX0AYloq/wCrLlETpuaUxIQEpQpc2wzKcDKg00UVFILgBLu/iPALSUzU5UTBLVnLvmSCCUmoAUmm8CXc8BCPDH8SJiVrSXy5yCAoJDaHuhnNeVI0YRrvaNKcvrQRsX4hxE6eBmCEEMWepJZCR+YtIU9TQE+NN/hMEtK85xMyYkjuLEtgf5gUoB0ZrVjD7ClJTPMuXOTMksnLMCGWSLpNaW7zEE8LH6Fh5waKxS+xHYQlLiBJ+ykLorg0HSyIkGN4egWIZ2wpUtSZgysKNTzPvWD5G1M1PMxzaWHUUkJZjxhPLwy5YL1ETdR6Qe+wvaG28iSbVGhLOQBQa19IWbG+K0zpxk5S4SpTm26WNqHwizHbLTOltnKLXZlAGrhiSzmxHejKTthzcMAtCiVLWUiaFIyol5WWokspMwkJDupki7xP5ZZPodY1Xo++I8GnfmVcMVAZc28WF6VJ1peMhtzFqXiAJa8z5SFJSUihoyQKEAaECjsHjZI2nJlJRLQuWEFaQSokZ1KS6iWTVV0h2qmv9KrHGVPQQkhImjKzsFgVAAAYuXYJD60YEb+tXYf7KQ22Pt/EpAROQMRLbiO0Hi7K8WPOHAmyZxyIIKv+2sAKajsCa/KKtgfD+GlyZakpQVqQkmYBUuHo9UjRg1rQVitiylpOdL/TnFI5IVtN6AxspAsGewBYEchaJq2eBcFVeX2hLtTDY3DjPh8QpaBdK98Do5cCFkr4/wAUjv4aSo6lJUh6HTe1gfE2zZy8KlJdiPL6x1UtiVFRZq1anOwF4xS/jnErpLlyUA6KzrPqodLMABTil2kjEYj+NOWoO+V2Q9yyQyfSA1E1MafFHxhKSDKwhzE0XNTw1ShRu4oV6Cz3GZ2fjCQXQkJAO4e6aXL/AKrF+UTTsnLdrV+8RXQ/lslIuTx0I4D1gOukB3RLF4srxAUdCW4gZt3xq0NsDhJasTNWQSpMyYRWneICgOMKDPC5yMxoln/tG8ac2fqYgjGKQozC7rBdjr+xgJfRX+M1GVyGMpGdctKU0ExWV7DdUWp/a4EPcDhCAcq2cuSpnJhB8M7TRKClLd3BDDg4HzP+6HWBxapxUqyf0jg7v6xqo055foxC5NVBQFOJ8maCJOJ7MMACf5WDcn9I7Lw5KJiyylPQWZ+Pv5wPi8pSkpDFt4cCHqOv3jVfZocmG0RM9SjvFyb/AEhhhZyhQEhoUSgdYNQkpYku9vtDUqEybdseIn5mCkn37MM5a0qSyQ54exCBBJAUmuUMR8jB+y9qJTRTA+FeI+kTSCyeNwajTK1/fpBGzsACWb3fzhicfLmMcwfTj1iBniWXekEBoMDh5csUABgpcwMwUz6jTo40jMK2wLhVvfGPYTHqXz4NUwc6NQZj8IcpVIVMVMcFlEHMx3rpFW5xmpWNKJip2XMUAAlw6gzFJcOUgHKlIIHIk12uGwzJdagl+dfCF2L+G5OKIXLdBSlKQCCAcvd8qeUGMd2uwSlapi6dtHDzZiZilEpZSVIOZQIUBZrAEJo2praLPiBMiZgFfhMucFHbsvKoJdi5U1ApQLlrPDnYvw2MOX7NCiDmSvIMwOoB4fKvGE21NkpTj0FSQmVNSVLQCyV5WbMOAVvNFGm2Kqq2L/h1eVITNIKs4EtJcHPcKt3soa7ca0jbYfE0SoWUAUniDUGMjt2WhExMzL2YllHYoSBmKhMClLVqE0SOhjRbCwwXh3DrGZVjVG8wQxYjKAKOXvrCQWLdDyd0x2jF82ERm7QCbGM1tEzpbM5Sdahur2PKA5RUtytTDkYD5q8NgaVG30mxoIpxu1AoZkhgKm9QKqtWwNoAw0mSmuUUeta84ulS86nskVpRgKuPfCJPllLSNikBYjGS5YmTJlJhzZskxSkJDMN40K3A3QCXNialNJxMxUqVMKSFOqYQpVchYIKKHLTeF6pBFxlcbU+DROXmEycqWDSXZCdGBuY6rZwOZK9xYUlbkspUsqyBK9Mrg00ALc6w45QXy2xbT60DbbXL/wDK4mkmayVqTkvMKaKKSwSbl3DOHtAuFz4sTFSVdmApIUlAINAXJ0ckqFDYNY17tbYyVhMoTVdsyjlIzjuh8xBscqQCWelYafBkqVg0L/NE0TQhYUElIAIollVz6mzOBAVXlIdrVIefDyCiQiXkWkIATvBnbWGM2fHfxKVJzAgp4/N+BgHFT0Ed4DxiypISi6dOcHyjD7Q2RvljSHkzHocZJgU/COzUguSRCS2woy52YEgt75fKPLTkoLF7+/SGU6RW9PdIz22Zh/nOYggGErY1g+0J/wCh6m7VYa291MKZs8knKzDj9Od4sQyRw4k168SY5IlKUcoDkv5c+dYZKiXYVgNlhaSc+juS3zhhs+XIlF1oVPP9IdI4VNH6Qow04hkqdhp94bp2jlSwFH9/ODsdDVbTSCmQlKOMzvPyAtfrF8pZzGvANbjw8YUStohO81YJwWOCioqBNvraFoJntnKKVOXZ9dTxg1OF7RTpF7BnhLg1nK2vP30hvs2cQoMpoDMWbR2UtJDIPgHhUhPG3P3weNjjNpsgKVVqEPodP8wk2smWpImg5XsLW+YhYyfpqAZM3IQQYqxE5ClEqe/6aPECpCbjM+r1jgkA0SXN7ej+XlDpGZBeJKS6H863guXtMl81R8oXT5KkKym+rVby1jqFhjpzLevKDSAHqxdDlPhpxpDz4SSVTBmWwFvtCvAYFC2zKal6N7uKw2XhuxSyMy3uQAW8GicmuhzfJkpUQl6awxQqWkUaPmOG232YIUTazEfvDDZ+2itaUpQvKp2cFieRZobNpdCUfQE4sWFTyjEf+IczekzULSVoUUqQFDOApiFAO7BQP+5MafZ+4mtOtz196RdjNnS8QnKoCtjSnThFIybVgaPn0uSvEyldhLKjlKSVFKSFkKytnUMwBWbHhGp+HE9hLOVQV2pzUdkshKAmoBcBNeZgvC/CkmUwBVmGoLN4efnBuDwaJQyJql3rW8HFXl6a3VeCHbm0t0pmSlqBtlYP6xmJmJyndJZ6A/L1jebXwnaoITQtuuH8I+aqWuXNIUCkpJFRbp94jOO9jxZttgYFKwlUwmthbXjGvkS5aEskMOl4xuxNoo7PMuaFaDLcQ+2XiUr7qwsQ8MULLY7GILMKRjPjXZM9SxOw8wZwAlSCcrgFRCkk0d1FweAIqI1qJgNHYwFP2YVneVT3+0PJvwVI+TbP2quTMmldSBMSXU7lLMDxeYPV7VjU/BkpKpIWpOcpdDKS4AFmfiGr1EPU/B2EQpUxYzlRKmUWSCS5prAE7Zkl3SokfypJCejA2hOTW2NGw2ZMShJyIKQbhIJ9LCMhtjGIckpUSLBRsKaC/jGhxG3hKZO4OABtGO+JZyJszNLqTreusTW3sY7/AP0VByPBoHm7fWxa3XyhKoqqCHJo3za0WJKU0q5a1/Xnw4RXEFjBG2Jit0G1+HV9I6ggl1EFzSrDhcsGr6QsmKUdS3B/RoKwCUtmmd0cL2/xGaMh5hsBLKgQEsLkd1yC7cQHGjXrFeITIQCkKA4gDm5FPD2YAmbQLZQClPzpAX4ZSi7udXNvO/WsKl9jMJPZJUa5lGrizRBeKlkOUMQaVOnH7QOcKlIOYuo2SDbqY4MOl+8bWhxCEzFOrX94M2TPO8xa2t7wCUBwAPdoY7GkvnZj3Xq3H34Rn0ZCVP1+og/B/T6R2PRPwwzxfdHh/wATC3FWHvSPR6EiMwbQ9D8otV9v+Mej0UYkeyW1rJ8PrAeh/wBXyj0egroL7HuxP4av7f8A9RotmX8fpHo9HPLscJ2h3E9B84pX309D8xHo9GQBxIt74w+wHeEcj0dMRWWzLn3qY6m8ej0OKiMn9XvSPnf/AIh/xUf2n5x6PRKfQyEeA7qP7vqI+ifDncHvSPR6JL/Q76NDs+C9Y9Ho6ETFm2u4r+36Rjz/AOnV/cr5RyPRLl7QUZXaP3+QgeR/El9Y7HoePQX2CbQ/je+EDzbj3rHo9BAMBbxT/wAYOTYdFx6PQGMhSP4g96Reix6R6PRjFI18YpHfPQfIR2PQ6FCJGvX6mDvhu83qn6x6PRn0A//Z"
+                            class="rounded float-start mb-3" width="465">
                     </div>
                 </div>
-                <!-- YouTube Post's Show Ends -->
-            </section>
+                <!-- Image Events Ends -->
 
-            <section id="amazed">
-                <div class="kekaguman container">
-                    <details name="kagum" open>
-                        <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt=""
-                            class="card-img-top">
-                        <summary><span>KYEV</span></summary>
-                        <div class="details-content-wrapper">
-                            <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
-                            <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam mengorganisir
-                                sebuah
-                                acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara dari mereka
-                                benar-benar luar biasa dan platform yang mereka sediakan sungguh sangat bermanfaat bagi
-                                para
-                                muda-mudi di luar Gereja Katolik (secara luas) dan juga bermanfaat bagi seluruh
-                                muda-mudi
-                                Katolik (secara khususnya)</p>
-                            <a href="https://www.instagram.com/yohanaevita" class="btn">Ikuti Akun Instagram Saya</a>
-                        </div>
-                    </details>
-            </section>
-
-            <section id="contact">
-                <!-- Join Group Starts -->
-                <section id="joinGroup" class="discussion main center" style="color: rgb(0, 0, 0);">Gabung Grup Diskusi
-                    ➡️
-                    <div class="row justify-content-center">
-                        <div class="col-md col-10">
-                            <a class="icon center" href="https://t.me/MUDIKANusCA"><i
-                                    class="fa-brands fa-telegram fa-xl"></i></a>
-                            <a class="icon center" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC"><i
-                                    class="fa-brands fa-whatsapp fa-xl"></i></a>
-                        </div>
-                    </div>
+                <!-- Regina Caeli Starts -->
+                <section class="container text-center mb-3">
+                    <div class="container text-center mt-3">
+                        <h2 class="fw-bolder">Didoakan Selama Pekan Paskah</h2>
+                        <p class="mt-2">Ratu Surga bersukacitalah, Alleluya. <br>
+                            Sebab Ia yang sudi kaukandung, Alleluya. <br>
+                            Telah bangkit seperti yang disabdakan-Nya, Alleluya. <br>
+                            Doakanlah kami pada Allah, Alleluya. <br>
+                            Bersukacitalah dan bergembiralah, Perawan Maria, Alleluya. <br>
+                            Sebab Tuhan sungguh telah bangkit, Alleluya.</p>
+                        <p class="mt-2">Marilah berdoa: <br><br>
+                            Ya Allah, Engkau telah menggembirakan dunia <br> dengan kebangkitan PutraMu, Tuhan kami
+                            Yesus
+                            Kristus. <br> Kami mohon, perkenankanlah kami bersukacita <br> dalam kehidupan kekal bersama
+                            bunda-Nya, Perawan Maria. <br> Demi Kristus, pengantara kami.
+                            Amin.</p>
                 </section>
-                <!-- Join Group Ends -->
             </section>
+
+            <!-- Social Media Latest Posts Section -->
+            <section id="latestSocialPosts" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6" id="tiktokPost">
+                                <h4 class="mb-3 text-center">TikTok Post Terbaru</h4>
+                                <blockquote class="tiktok-embed tiktok-custom-width"
+                                    cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
+                                    data-video-id="7501535064715480375">
+                                    <section>
+                                        <a target="_blank" rel="noopener" title="@mudikanusantara.ca"
+                                            href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
+                                        <p></p>
+                                        <a target="_blank" rel="noopener"
+                                            title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                            href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
+                                            suara asli - MUDIKA Nusantara Carlo Acutis</a>
+                                    </section>
+                                </blockquote>
+                                <div class="mt-2 text-center">
+                                    <a target="_blank" rel="noopener"
+                                        title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                        href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed"
+                                        class="tiktok-music-link"></a>
+                                    ♬ suara asli - MUDIKA Nusantara Carlo Acutis
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="youtubePost">
+                                <h4 class="text-center mb-3">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
+                                <div class="custom-video-embed">
+                                    <div class="ratio ratio-16x9 rounded shadow-sm border border-warning">
+                                        <iframe src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
+                                            title="Doa Rosario & Rekoleksi Singkat: Maria" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kekaguman -->
+            <section id="amazed" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <details open>
+                            <summary><span>KYEV</span></summary>
+                            <div class="text-center">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png"
+                                    alt="Sr. Yohana Evita Veron, CAE" class="card-img-top mb-3"
+                                    style="max-width:180px; width:100%; height:auto;">
+                                <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
+                                <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam
+                                    mengorganisir
+                                    sebuah acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara
+                                    dari mereka benar-benar luar biasa dan platform yang mereka sediakan sungguh
+                                    sangat
+                                    bermanfaat bagi para muda-mudi di luar Gereja Katolik (secara luas) dan juga
+                                    bermanfaat bagi seluruh muda-mudi Katolik (secara khususnya)</p>
+                                <a href="https://www.instagram.com/yohanaevita" class="btn btn-outline-warning">Ikuti
+                                    Akun Instagram Saya</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Join Group -->
+            <section id="joinGroup" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5>Gabung Grup Diskusi ➡️</h5>
+                        <a class="icon mx-2" href="https://t.me/MUDIKANusCA" target="_blank" rel="noopener"
+                            title="Gabung Grup Telegram">
+                            <i class="fa-brands fa-telegram fa-xl"></i>
+                        </a>
+                        <a class="icon mx-2" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC" target="_blank"
+                            rel="noopener" title="Gabung Grup WhatsApp">
+                            <i class="fa-brands fa-whatsapp fa-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="footer mt-auto">
+        <div class="container">
             <small class="block fw-bold">&copy; <span id="currentYear"></span>
-                <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-                <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara
-                    Carlo Acutis <span><a href="/login.html">Mitra dari Pawon Media</a></span></a>
+                <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara Carlo
+                    Acutis <span><a href="/login.html">Mitra dari Pawon Media</a></span></a>
             </small>
             <div class="social-icons">
-                <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank" class="social-icon"><i
+                <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank" rel="noopener"
+                    class="social-icon" title="Instagram MUDIKA Nusantara Carlo Acutis"><i
                         class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@mudikanusantara.ca" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@mudikanusantara.ca" target="_blank" rel="noopener" class="social-icon"
+                    title="TikTok MUDIKA Nusantara Carlo Acutis"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" rel="noopener" class="social-icon"
+                    title="YouTube MUDIKA Nusantara Carlo Acutis"><i class="fa-brands fa-youtube"></i></a>
+                <section id="flagCounter" class="my-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="https://info.flagcounter.com/Xdjm" class="d-block w-100 flagcounter-link">
+                            <img src="https://s01.flagcounter.com/countxl/Xdjm/bg_FFD700/txt_FF0000/border_0BB321/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
+                                alt="Flag Counter" class="flagcounter-img" loading="lazy" />
+                        </a>
+                    </div>
+                </section>
             </div>
-
-            <section id="flagCounter">
-                <a href="https://info.flagcounter.com/Xdjm>"><img
-                        src="https://s01.flagcounter.com/countxl/Xdjm/bg_FFD700/txt_FF0000/border_0BB321/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
-                        alt="Flag Counter" border="0"></a>
-            </section>
-        </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send/?phone=6285878101755&text=Halo%2C+sis+aku+mau+nanya+dong..&type=phone_number&app_absent=0"
-        class="float" target=" _blank">
-        <i class="fa-brands fa-whatsapp my-float"></i>
-    </a>
-
-    <div class="back-to-home">
-        <button class="back-to-top" onclick="scrollToTop()">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+    <!-- WhatsApp Floating -->
+    <div class="container">
+        <div class="">
+            <a class="float"
+                href="https://api.whatsapp.com/send/?phone=6285878101755&text=Halo%2C+sis+aku+mau+nanya+dong..&type=phone_number&app_absent=0"
+                target="_blank" rel="noopener" title="Hubungi via WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
     </div>
-    </section>
+    <!-- WhatsApp Floating Button -->
 
-    <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>
-        const circles = document.querySelectorAll(".circle");
-        circles.forEach(circle => {
-            circle.addEventListener("click", ({ target }) => {
-                const { backgroundColor } = getComputedStyle(target)
-                document.body.style.backgroundColor = backgroundColor
-            })
-        })
-        const backToTopButton = document.querySelector('.back-to-top');
+    <div class="back-to-top">
+        <div class="back-to-home">
+            <button class="back-to-top" onclick="scrollToTop()">Kembali ke Atas <i
+                    class="fa-solid fa-up-long"></i></button>
+        </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display
-                    = 'none';
-            }
-        });
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior:
-                    'smooth'
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-home');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
             });
-        }
-    </script>
-
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        </script>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+        <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 
 </html>

@@ -4,794 +4,1031 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta data-rh="true" name="page-type" content="home-desktop">
-
-    <meta data-rh="true" property="og:title"
-        content="Situs resmi dari komunitas Muda-Mudi Katolik Nusantara | MUDIKA Nusantara Carlo Acutis">
-    <meta data-rh="true" property="og:site_name" content="Pawon Media">
-    <meta data-rh="true" property="og:description"
-        content="Situs resmi dari komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
-    <meta data-rh="true" property="og:url"
-        content="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA Nusantara Carlo Acutis.html">
     <title>MUDIKA Nusantara Carlo Acutis</title>
-    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.css">
-
-    <!-- Bootstrap Elements Start -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap Elements Ends -->
-
-    <!-- Bootstrap Icons Starts -->
+    <meta name="description"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
+    <meta property="og:title"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara | MUDIKA Nusantara Carlo Acutis">
+    <meta property="og:site_name" content="Pawon Media">
+    <meta property="og:description"
+        content="Situs resmi komunitas Muda-Mudi Katolik Nusantara (MUDIKA Nusantara Carlo Acutis)">
+    <meta property="og:url" content="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/index.html">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Bootstrap Icons Ends -->
-
-    <!-- Font Awesome Starts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome Ends -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis/FeedBack.css">
 </head>
 
 <body>
-    <header class="navbar" id="nav-menu">
+    <header class="py-2 shadow-sm">
+        <div class="container d-flex justify-content-end align-items-center">
+            <span id="currentDateTime" class="fw-bold current-date-time"></span>
+        </div>
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                // Convert to GMT+7
+                const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+                const gmt7 = new Date(utc + (7 * 3600000));
+                const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+                const months = [
+                    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+                ];
+                const day = days[gmt7.getDay()];
+                const date = gmt7.getDate();
+                const month = months[gmt7.getMonth()];
+                const year = gmt7.getFullYear();
+                const hour = String(gmt7.getHours()).padStart(2, '0');
+                const minute = String(gmt7.getMinutes()).padStart(2, '0');
+                const second = String(gmt7.getSeconds()).padStart(2, '0');
+                document.getElementById('currentDateTime').textContent =
+                    `${day}, ${date} ${month} ${year} - ${hour}:${minute}:${second} WIB`;
+            }
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+        </script>
+
+        <div class="mt-2">
+            <div class="scrolling-banner bg-warning fw-bold py-1">
+                <span class="px-3">
+                    <i class="fa-solid fa-bullhorn"></i> Selamat datang di website resmi MUDIKA Nusantara Carlo Acutis!
+                    <i class="fa-solid fa-bullhorn"></i>
+                    Dukung pengembangan website ini dengan berdonasi! Setiap donasi Anda sangat berarti untuk
+                    kelangsungan dan pengembangan karya komunitas ini. Terima kasih atas dukungannya.
+                </span>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+    <nav class="navbar">
         <div class="container">
-            <div class="nav-start"><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"
-                    class="navbar-brand"><img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png"
-                        alt="" class="nav-logo">
-                    MUDIKA Nusantara Carlo Acutis</a>
-            </div>
-            <div id="date-time">
-                <script>// Menampilkan hari, tanggal, dan jam
-                    function updateTime() {
-                        const now = new Date();
-                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                        const dateString = now.toLocaleDateString('id-ID', options);
-                        document.getElementById('date-time').innerText = dateString;
-                    }
-
-                    // Panggil fungsi updateTime setiap detik
-                    setInterval(updateTime, 1000);</script>
-            </div>
-
-            <marquee behavior="main" direction="left">Selamat Datang di website komunitas MUDIKA Nusantara Carlo Acutis!
-                Jangan lupa donasikan penghasilan Anda kepada kami, agar kami semakin semangat dalam membuat konten pada
-                sosial media dan website ini. Terima Kasih Tuhan Berkati! 😊🙏
-            </marquee>
-
-            <section id="social-media">
-                <p>Ikuti Kami di Sosial Media
-                    <a href="#instagramPost"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#youtubePost"><i class="fa-brands fa-youtube"></i></a>
-                </p>
-
-                <div class="col-md-6 px-3 mt-5">
-                    <a type="button" class="btn-MNCAbutton" href="#welcome">Selayang Pandang Komunitas</a>
-                    <a type="button" class="btn-MNCAbutton" href="#advice">Saran Carlo Acutis Malaikat Pelindung</a>
-                    <a type="button" class="btn-MNCAbutton" href="#amazed">Kekaguman Suster Yohana Evita Veron Silaban,
-                        CAE</a>
-                </div>
-            </section>
-
-            <nav>
-                <ul>
-                    <li><a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html"><i
-                                class="fa-solid fa-house"></i></a></li>
-                    <li><a href="#">Mitra <i class="fa-solid fa-handshake"></i></a>
-                        <ul>
-                            <li><a href="#eShop">Produk UMKM</a></li>
-                            <li><a href="/registrationForm.html" target="_blank"><img src="/assets/LOGO-1.png"
-                                        style="width: 25px; height: auto;"> Pawon Media</a></li>
+            <a class="navbar-brand d-flex align-items-center"
+                href="/MUDIKA Nusantara Carlo Acutis//MUDIKA Nusantara Carlo Acutis.html">
+                <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="Logo">
+                MUDIKA Nusantara Carlo Acutis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">Buka
+                Tutup
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Mitra <i
+                                class="fa-solid fa-handshake"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/login.html" target="_blank">Pawon Media</a></li>
+                            <li><a class="dropdown-item" href="#eShop">Produk UMKM</a></li>
                         </ul>
                     </li>
-                    <li><a href="#ourActivity">Aktivitas Rutin</a></li>
-                    <li><a href="#">Devosi <i class="fa-solid fa-church"></i> I</a>
-                        <ul>
-                            <li><a
+                    <li class="nav-item"><a class="nav-link" href="#ourActivity">Aktivitas Kami</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Devosi 1</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
                                     href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Bagi Bangsa dan Negara Indonesia.html">Bagi
                                     Bangsa &amp; Negara</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon Jodoh</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Mohon
-                                    Kelancaran Penjualan Rumah</a>
-                            </li>
-                            <li><a href="#MohonKesehatanKeluarga">Mohon Kesehatan Keluarga</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Mohon
-                                    Kesembuhan Keluarga</a>
-                            </li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Tetap Baik.html">Lirik Lagu Tetap
-                                    Baik - GoodFriends</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#ourBelovedFounder">Pendiri Komunitas</a></li>
-                    <li><a href="#">Devosi <i class="fa-solid fa-church"></i> II</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Mohon
-                                    Pekerjaan</a></li>
-                            <li><a
-                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#KelancaranBisnis">Mohon
-                                    Kelancaran Bisnis</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Perjalanan
-                                    Apostolik Paus Fransiskus ke Indonesia</a>
-                            </li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Untuk
-                                    Kesembuhan Bapa Suci Paus Fransiskus</a></li>
-                            <li><a
-                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Mohon
-                                    Perantara Carlo Acutis</a>
-                            </li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Konklaf Paus.html">Doa Konklaf
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Konklaf Paus.html">Konklaf
                                     Paus</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Jodoh.html">Mohon
+                                    Jodoh</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kelancaran Penjualan Rumah.html">Kelancaran
+                                    Penjualan Rumah</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesehatan Keluarga.html">Mohon
+                                    Kesehatan Keluarga</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Kesembuhan Keluarga.html">Mohon
+                                    Kesembuhan Keluarga</a></li>
+                            <li><a class="dropdown-item" href="#tetapBaik">Lirik Lagu Tetap
+                                    Baik</a></li>
                         </ul>
                     </li>
-                    <li><a href="#Yubileum2025">Panduan Praktis Tahun Yubileum 2025</a></li>
-                    <li><a href="#">Devosi Ibunda Maria</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Rosario:
-                                    Peristiwa Gembira</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Rosario:
-                                    Peristiwa Mulia</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Rosario:
-                                    Peristiwa Sedih</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Rosario:
-                                    Peristiwa Terang</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Ratu Surga.html">Ratu Surga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Yubileum2025">Tahun Yubileum 2025</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Devosi 2</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Pekerjaan.html">Mohon
+                                    Pekerjaan</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Mohon Perlindungan.html">Mohon
+                                    Perlindungan</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html#SuccessfulBusiness">Mohon
+                                    Kelancaran Bisnis</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Perjalanan Apostolik Paus Fransiskus ke Indonesia.html">Perjalanan
+                                    Apostolik Paus Fransiskus ke Indonesia</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Untuk Kesembuhan Bapa Suci Paus Fransiskus.html">Kesembuhan
+                                    Bapa Suci Paus Fransiskus</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Permohonan Perantara Carlo Acutis.html">Permohonan
+                                    Perantara Carlo Acutis</a></li>
                         </ul>
                     </li>
-                    <li><a href="/MUDIKA Nusantara Carlo Acutis/Feedback.html"><i class="fa-solid fa-comment"></i>
+                    <li class="nav-item"><a class="nav-link" href="#joinWithUs">Gabung Bersama Kami</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Doa Perantara Bunda
+                            Maria</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Gembira.html">Peristiwa
+                                    Gembira</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Mulia.html">Peristiwa
+                                    Mulia</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Sedih.html">Peristiwa
+                                    Sedih</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Peristiwa Terang.html">Peristiwa
+                                    Terang</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Ratu Surga.html">Ratu Surga</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#ourBelovedFounder">Pendiri Komunitas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Doa Perantara Ayah
+                            Yosef</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef.html">Litani Ayah
+                                    Yosef</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html.html">Doa
+                                    Ayah Yosef Tidur</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
+                                    Misteri Kehidupan Ayah Yosef</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#joinGroup">Grup Komunitas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Kalender</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#calendar">Kalender Masehi</a></li>
+                            <li><a class="dropdown-item" href="#liturgy">Kalender Liturgi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#feedBack"><i class="fa-solid fa-comment"></i>
                             FeedBack</a></li>
-                    <li><a href="#">Devosi Ayah Yosef</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Doa Santo Yosef Tidur.html">Santo
-                                    Yosef Tidur</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Litani Santo Yosef Tidur.html">Litani
-                                    Santo Yosef</a></li>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/Devotional/Rosario Santo Yosef.html">Rosario: 3
-                                    Misteri Keutamaan Ayah Yosef</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">NontonBareng</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/Film Layar Lebar.html">Film Layar
+                                    Lebar</a></li>
+                            <li><a class="dropdown-item" href="#">Serial TV Favorit (Coming Soon)</a></li>
                         </ul>
                     </li>
-                    <li><a href="#joinWithUs">Bergabung Dalam Kepengurusan</a></li>
-                    <li><a href="#">Kalender</a>
-                        <ul>
-                            <li><a href="#calendar">Kalender Masehi</a></li>
-                            <li><a href="#liturgy">Kalender Liturgi</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#joinGroup">Bergabung Dalam Group Chat</a></li>
-                    <li><a href="#">Nonton Bareng</a>
-                        <ul>
-                            <li><a href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/NoBar Film.html">NoBar Film</a></li>
-                            <!-- <li><a href="/MUDIKA Nusantara Carlo Acutis/NoBar Film/NoBar Series.html">NoBar Series</a>
-                            </li> -->
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#saweria">Donasi</a></li>
                 </ul>
-            </nav>
-    </header>
-
-    <main>
-        <div class="container-fluid" id="ads-jagoanhosting">
-            <a href="https://member.jagoanhosting.com/aff.php?aff=7420"><img
-                    src=https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg
-                    border="0"></a>
-            <a href="https://member.jagoanhosting.com/aff.php?aff=7420"><img
-                    src=https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg border="0"></a>
-        </div>
-
-        <section id="welcome">
-            <div class="selayang-pandang container">
-                <details name="wpucourse" open>
-                    <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt=""
-                        class="card-img-top">
-                    <summary><span>SPK</span></summary>
-                    <div class="details-content-wrapper">
-                        <p>Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam
-                            1 (satu) wadah kreativitas atas sepengetahuan pendiri komunitas namun tidak terlepas
-                            daripada nilai-nilai ajaran Gereja Katolik</p>
-                        <a href="#profile" class="btn">Profil Lengkap</a>
-                    </div>
-                </details>
-        </section>
-
-        <section id="saweria">
-            <h1>Mari Bantu Kami Dengan Berdonasi</h1>
-            <div class="box">
-                <a class="button" href="#popup1">Donasi di SINI</a>
             </div>
+        </div>
+    </nav>
 
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <h2>Mari bantu kami</h2>
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
-                            id="saweria-img">
+    <!-- Info Bar -->
+    <div class="container">
+        <section class="mediaSosial">
+            <span class="d-inline d-md-none">
+                Ikuti Kami di Media Sosial <i class="fa-solid fa-arrow-down"></i>
+            </span>
+            <span class="d-none d-md-inline">
+                Ikuti Kami di Media Sosial <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <a href="#instagramPost"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#tiktokPost"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="#youtubePost"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        </section>
+        <section class="additional-info">
+            <span class="d-inline d-md-none">
+                Informasi Tambahan yang Wajib Dilihat! <i class="fa-solid fa-arrow-down"></i>
+            </span>
+            <span class="d-none d-md-inline">
+                Informasi Tambahan yang Wajib Dilihat! <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            <a href="#welcome">Selayang Pandang Komunitas</a>
+            <a href="#advice">Saran Carlo Acutis Malaikat Pelindung</a>
+            <a href="#amazed">Kekaguman Suster Yohana Evita Veron Silaban, CAE</a>
+        </section>
+    </div>
+
+    <main class="flex-shrink-0">
+        <div class="container my-3">
+            <!-- Ads -->
+            <div class="row mb-3">
+                <div class="col d-flex flex-column align-items-center justify-content-center gap-3">
+                    <div class="d-flex flex-row w-100 gap-3">
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2022/05/banner-adiliasi-VPS-X-02.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 1"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
+                        <a href="https://member.jagoanhosting.com/aff.php?aff=7420" class="w-50">
+                            <img src="https://www.jagoanhosting.com/wp-content/uploads/2019/09/Banner-Afiliasi-01.jpg"
+                                class="img-fluid rounded border border-dark shadow-sm" alt="Jagoan Hosting 2"
+                                style="max-height: 480px; object-fit: contain; padding: 0; width:100%;">
+                        </a>
                     </div>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Gregorian calendar's Starts -->
-        <section id="calendar">
+            <!-- Welcome -->
+            <section id="welcome" class="mb-4">
+                <div class="text-center">
+                    <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.png" alt="Logo Komunitas"
+                        class="mb-3 rounded" style="max-width:120px;">
+                    <h2 class="section-title">Selayang Pandang Komunitas</h2>
+                    <p>Sebuah komunitas muda-mudi Katolik (MUDIKA) yang dihimpun dalam satu wadah kreativitas atas
+                        sepengetahuan pendiri komunitas namun tidak terlepas dari nilai-nilai ajaran Gereja Katolik.</p>
+                    <a href="#profile" class="btn btn-outline-warning">Profil Lengkap</a>
+                </div>
+            </section>
+
+            <!-- Donasi -->
+            <section id="saweria" class="mb-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Mari Bantu Kami Dengan Berdonasi</h2>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#donasiModal">Donasi di
+                            SINI</button>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="donasiModal" tabindex="-1" aria-labelledby="donasiModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="donasiModalLabel">Mari bantu kami</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/MUDIKA_Nusantara_Carlo_Acutis-Saweria.png"
+                                    class="img-fluid rounded" alt="Saweria">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kalender -->
+            <section id="calendar" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Kalender Masehi</h2>
+                        <div id="calendar-table"></div>
+                        <div
+                            class="d-flex flex-column flex-md-row align-items-center justify-content-between mt-3 gap-2">
+                            <button class="btn btn-outline-warning px-4 py-2" id="prevMonth">
+                                <i class="bi bi-chevron-left"></i> Sebelumnya
+                            </button>
+                            <div id="calendar-month-picker" class="d-flex align-items-center gap-2">
+                                <label for="calendar-month" class="visually-hidden">Pilih Bulan</label>
+                                <select id="calendar-month" class="form-select form-select-sm" title="Pilih Bulan">
+                                    <option value="0">Januari</option>
+                                    <option value="1">Februari</option>
+                                    <option value="2">Maret</option>
+                                    <option value="3">April</option>
+                                    <option value="4">Mei</option>
+                                    <option value="5">Juni</option>
+                                    <option value="6">Juli</option>
+                                    <option value="7">Agustus</option>
+                                    <option value="8">September</option>
+                                    <option value="9">Oktober</option>
+                                    <option value="10">November</option>
+                                    <option value="11">Desember</option>
+                                </select>
+                                <input type="number" id="calendar-year" class="form-control form-control-sm" min="1900"
+                                    max="2100" title="Pilih Tahun" placeholder="Tahun">
+                                <button class="btn btn-outline-secondary btn-sm" id="calendar-today" title="Bulan Ini">
+                                    <i class="bi bi-calendar-event"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-warning px-4 py-2" id="nextMonth">
+                                Berikutnya <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <script>
-                var tanggal = new Date();
+                // Kalender Masehi Modern
+                const calendarTable = document.getElementById('calendar-table');
+                const prevBtn = document.getElementById('prevMonth');
+                const nextBtn = document.getElementById('nextMonth');
+                const monthSelect = document.getElementById('calendar-month');
+                const yearInput = document.getElementById('calendar-year');
+                const todayBtn = document.getElementById('calendar-today');
+                let today = new Date();
+                let currentMonth = today.getMonth();
+                let currentYear = today.getFullYear();
 
-                function buatKalender() {
-                    var hariIni = tanggal.getDate(),
-                        bulanIni = tanggal.getMonth(),
-                        tahunIni = tanggal.getFullYear(),
-                        hariPertama = new Date(tahunIni, bulanIni, 1),
-                        hariTerakhir = new Date(tahunIni, bulanIni + 1, 0),
-                        htmlKalender = '<table><tr>';
+                function renderCalendar(month, year) {
+                    const monthNames = [
+                        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+                    ];
+                    const days = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+                    let firstDay = new Date(year, month, 1).getDay();
+                    let daysInMonth = new Date(year, month + 1, 0).getDate();
 
-                    for (var i = 0; i < hariPertama.getDay(); i++) {
-                        htmlKalender += '<td></td>';
+                    let html = `
+                                <div class="calendar-modern rounded-3 shadow-sm overflow-hidden">
+                                    <div class="bg-gradient bg-warning bg-opacity-75 py-2 px-3 d-flex align-items-center justify-content-between">
+                                        <span class="fw-bold fs-5 text-dark">${monthNames[month]} ${year}</span>
+                                        <span class="badge bg-success bg-gradient text-white">Digital Calendar</span>
+                                    </div>
+                                    <table class="table table-bordered table-hover text-center mb-0 align-middle" style="background:rgba(255,255,255,0.97);">
+                                        <thead>
+                                            <tr>`;
+                    days.forEach((d, i) => {
+                        html += `<th class="${i === 0 ? 'text-danger' : i === 6 ? 'text-primary' : 'text-dark'} bg-light">${d}</th>`;
+                    });
+                    html += `</tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>`;
+
+                    // Empty cells before first day
+                    for (let i = 0; i < firstDay; i++) {
+                        html += '<td></td>';
                     }
 
-                    for (var i = 1; i <= hariTerakhir.getDate(); i++) {
-                        if (i === hariIni) {
-                            htmlKalender += '<td class="hari-ini">' + i + '</td>';
-                        } else {
-                            htmlKalender += '<td>' + i + '</td>';
-                        }
-
-                        if ((i + hariPertama.getDay()) % 7 === 0) {
-                            htmlKalender += '</tr><tr>';
-                        }
+                    for (let date = 1; date <= daysInMonth; date++) {
+                        let isToday = (date === today.getDate() && month === today.getMonth() && year === today.getFullYear());
+                        let weekend = ((date + firstDay - 1) % 7 === 0) ? 'text-danger' : ((date + firstDay - 1) % 7 === 6) ? 'text-primary' : '';
+                        html += `<td class="position-relative ${weekend} ${isToday ? 'bg-success text-white fw-bold shadow-sm rounded-circle' : ''}" style="${isToday ? 'box-shadow:0 0 0 2px #198754;' : ''}">
+                                        <span class="d-inline-block" style="min-width:2em;">${date}</span>
+                                        ${isToday ? '<span class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-warning text-dark" style="font-size:0.7em;">Hari ini</span>' : ''}
+                                    </td>`;
+                        if ((date + firstDay) % 7 === 0 && date !== daysInMonth) html += '</tr><tr>';
                     }
 
-                    htmlKalender += '</tr></table>';
-
-                    document.getElementById('calendar').innerHTML = htmlKalender;
+                    // Empty cells after last day
+                    let lastDay = (daysInMonth + firstDay) % 7;
+                    if (lastDay !== 0) {
+                        for (let i = lastDay; i < 7; i++) {
+                            html += '<td></td>';
+                        }
+                    }
+                    html += '</tr></tbody></table></div>';
+                    calendarTable.innerHTML = html;
+                    // Sync selector
+                    monthSelect.value = month;
+                    yearInput.value = year;
                 }
 
-                buatKalender();
+                prevBtn.onclick = function () {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                };
+                nextBtn.onclick = function () {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                };
+                monthSelect.onchange = function () {
+                    currentMonth = parseInt(this.value, 10);
+                    renderCalendar(currentMonth, currentYear);
+                };
+                yearInput.onchange = function () {
+                    let val = parseInt(this.value, 10);
+                    if (val >= 1900 && val <= 2100) {
+                        currentYear = val;
+                        renderCalendar(currentMonth, currentYear);
+                    }
+                };
+                todayBtn.onclick = function () {
+                    currentMonth = today.getMonth();
+                    currentYear = today.getFullYear();
+                    renderCalendar(currentMonth, currentYear);
+                };
+
+                // Init
+                renderCalendar(currentMonth, currentYear);
             </script>
-        </section>
-        <!-- Gregorian calendar's Ends -->
 
-        <!-- Liturgi Calendar Starts -->
-        <section>
-            <div id="liturgy" class="liturgy-calendar" style="background-color: #00000028; padding: 5px 10px;">
-                <h1 class="text-center" style="margin-top: 60px;">Kalender Liturgi</h1>
-            </div>
-            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-176cf0d"
-                data-id="176cf0d" data-element_type="column">
-                <div class="elementor-element elementor-element-7a1f087 elementor-widget elementor-widget-html"
-                    data-id="7a1f087" data-element_type="widget" data-widget_type="html.default">
-                    <div class="elementor-widget-container">
-                        <iframe align="center" height="208" id="topikFrame" scrolling="no"
-                            src="https://imankatolik.or.id/kalender_index.php"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Liturgy Calendar Ends -->
-
-        <section>
-            <!-- Activity Starts -->
-            <div id="ourActivity" class="activity" style="background-color: #00000028; padding: 5px 10px;">
-                <h1 class="text-center" style="margin-top: 60px;">Aktivitas Kami &amp; Pendiri Pemilik Komunitas</h1>
-            </div>
-            <section class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0 mt-3">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Doa Rosario Bersama.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/MNCA Berbagi.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Nonton Film Bersama.png" class="d-block w-100"
-                                    alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Podcast~Hidup Panggilan.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
+            <!-- Kalender Liturgi Modern -->
+            <section id="liturgy" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title text-center mb-3">Kalender Liturgi Katolik</h2>
+                        <div class="d-flex justify-content-center mb-3">
+                            <iframe id="liturgy" title="Kalender Liturgi Katolik" frameborder="0" width="300"
+                                height="420" scrolling="no" src="https://www.imankatolik.or.id/kalender_share_kecil.php"
+                                class="liturgical-calendar-iframe">
+                            </iframe>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-sm-6 mb-3 mb-sm-0 mt-3" id="ourBelovedFounder">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-1.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-2.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-3.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-4.png"
-                                    class="d-block w-100" alt="...">
-                            </div>
+                        <div class="alert alert-info text-center mb-0">
+                            <i class="fa-solid fa-book-bible"></i>
+                            <strong>Bacaan &amp; Liturgi diambil langsung dari <a href="https://www.imankatolik.or.id/"
+                                    target="_blank" rel="noopener">Iman Katolik</a></strong>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </section>
-            <!-- Activity Ends -->
-        </section>
 
-        <section>
-            <!-- Instagram Post's Show Starts -->
-            <div id="instagramPost" class="communityActivity" style="background-color: #30303030; padding: 5px 10px;">
-                <h4 class="text-center" style="margin-top: 60px;">Postingan Instagram #MUDIKANusantaraCarloAcutis
-                </h4>
-            </div>
-            <div class="container col-sm-2 col-md-4 col-lg col-xl">
-                <blockquote class="instagram-media" data-instgrm-captioned
-                    data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                    <div style="padding:16px;"> <a
-                            href="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                            style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                            target="_blank">
-                            <div style=" display: flex; flex-direction: row; align-items: center;">
-                                <div
-                                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+            <!-- FeedBack -->
+            <section id="feedBack" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Kirim Masukan &amp; Saran</h2>
+                        <p class="mb-3 feedback-desc">
+                            Formulir ini digunakan untuk mengirimkan masukan, saran, atau pertanyaan terkait komunitas.
+                            Setiap pesan akan otomatis dikirim ke email
+                            <strong>mudikanusantaraindonesia@gmail.com</strong>.
+                        </p>
+                        <style>
+                        </style>
+                        <form action="https://formspree.io/f/xqkrqzqg" method="POST" id="feedbackForm"
+                            autocomplete="on">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="fullname" class="form-label">Nama Lengkap <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="fullname" name="Nama Lengkap"
+                                        placeholder="Nama Lengkap Anda" required>
                                 </div>
-                                <div
-                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
-                                    </div>
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding: 19% 0;"></div>
-                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px"
-                                    height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
-                                    xmlns:xlink="https://www.w3.org/1999/xlink">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                                            <g>
-                                                <path
-                                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
-                                                </path>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                            <div style="padding-top: 8px;">
-                                <div
-                                    style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
-                                    View this post on Instagram</div>
-                            </div>
-                            <div style="padding: 12.5% 0;"></div>
-                            <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
-                                <div>
-                                    <div
-                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
-                                    </div>
-                                    <div
-                                        style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
-                                    </div>
-                                    <div
-                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
-                                    </div>
-                                </div>
-                                <div style="margin-left: 8px;">
-                                    <div
-                                        style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
-                                    </div>
-                                    <div
-                                        style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
-                                    </div>
-                                </div>
-                                <div style="margin-left: auto;">
-                                    <div
-                                        style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
-                                    </div>
-                                    <div
-                                        style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
-                                    </div>
-                                    <div
-                                        style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
-                                    </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="Email"
+                                        placeholder="Alamat Email Aktif" required>
                                 </div>
                             </div>
-                            <div
-                                style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
-                                <div
-                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
-                                </div>
-                                <div
-                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                            <div class="mb-3 mt-3">
+                                <label for="message" class="form-label">Pesan / Saran <span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" name="Pesan" rows="4"
+                                    placeholder="Tulis pesan, masukan, atau saran Anda di sini..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold px-4 w-100">Kirim</button>
+                            <div id="feedbackStatus" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('feedbackForm');
+                    const status = document.getElementById('feedbackStatus');
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        status.textContent = 'Mengirim...';
+                        status.className = 'text-secondary';
+                        try {
+                            const data = new FormData(form);
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                status.textContent = 'Terima kasih, pesan Anda telah terkirim!';
+                                status.className = 'alert alert-success mt-3';
+                                form.reset();
+                            } else {
+                                status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                                status.className = 'alert alert-danger mt-3';
+                            }
+                        } catch {
+                            status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                            status.className = 'alert alert-danger mt-3';
+                        }
+                    });
+                });
+            </script>
+
+            <section id="ourActivity" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Aktivitas Kami &amp; Pendiri Komunitas</h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div id="carouselActivity" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner rounded">
+                                        <div class="carousel-item active">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Doa Rosario Bersama.png"
+                                                class="d-block w-100" alt="Rosario Bersama">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/MNCA Berbagi.png"
+                                                class="d-block w-100" alt="MNCA Berbagi">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Nonton Film Bersama.png"
+                                                class="d-block w-100" alt="Nonton Film Bersama">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Podcast~Hidup Panggilan.png"
+                                                class="d-block w-100" alt="Podcast">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselActivity" data-bs-slide="prev" aria-label="Sebelumnya">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselActivity" data-bs-slide="next" aria-label="Berikutnya">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
                                 </div>
                             </div>
-                        </a>
-                        <p
-                            style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-                            <a href="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
-                                target="_blank">A post shared by Pawon Media (@pawonmedia.010924)</a>
+                            <div class="col-md-6" id="ourBelovedFounder">
+                                <div id="carouselFounder" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner rounded">
+                                        <div class="carousel-item active">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-1.png"
+                                                class="d-block w-100" alt="Founder 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-2.png"
+                                                class="d-block w-100" alt="Founder 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-3.png"
+                                                class="d-block w-100" alt="Founder 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="/MUDIKA Nusantara Carlo Acutis/Profil Pendiri Pemilik MUDIKA Nusantara Carlo Acutis-4.png"
+                                                class="d-block w-100" alt="Founder 4">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselFounder" data-bs-slide="prev" aria-label="Sebelumnya"
+                                        title="Sebelumnya">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselFounder" data-bs-slide="next" aria-label="Berikutnya"
+                                        title="Berikutnya">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instagram Post -->
+            <section id="instagramPost" class="mb-4">
+                <div class="text-center mb-3">
+                    <h4>Instagram Post Terbaru</h4>
+                    <div class="d-flex justify-content-center">
+                        <blockquote class="instagram-media custom-instagram-embed"
+                            data-instgrm-permalink="https://www.instagram.com/p/DJbDHdfSSFK/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-version="14"></blockquote>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yubileum -->
+            <section id="Yubileum2025" class="mb-4">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
+                                        Agung Jakarta</strong></h4>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/b913ba8a9a.html"
+                                        title="Panduan Yubileum 2025 KAJ"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/b913ba8a9a.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h4 class="section-title">Panduan Praktis Tahun Yubileum 2025 <br><strong>Keuskupan
+                                        Agung Semarang</strong></h4>
+                                <div class="ratio ratio-16x9 mb-3 shadow-sm rounded border border-warning">
+                                    <iframe allowfullscreen scrolling="no" class="fp-iframe rounded"
+                                        src="https://heyzine.com/flip-book/e74f5f33f9.html"
+                                        title="Panduan Yubileum 2025 KAS"></iframe>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <a href="https://heyzine.com/flip-book/e74f5f33f9.html" target="_blank"
+                                        rel="noopener" class="btn btn-outline-warning btn-sm px-4 fw-bold">
+                                        <i class="fa-solid fa-book-open"></i> Buka Panduan Lengkap (Full Screen)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profil Video -->
+            <section id="profile" class="mb-4">
+                <div class="video-container">
+                    <iframe id="youtube-video" src="https://www.youtube.com/embed/TPgs-4Aorhs?si=bdhvtujkH5I9Byqo"
+                        allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- Form Registrasi -->
+            <section id="joinWithUs" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="section-title">Formulir Registrasi Calon Pengurus Komunitas</h2>
+                        <div class="alert alert-warning">
+                            <strong>Syarat &amp; Ketentuan:</strong>
+                            <ul class="mb-0">
+                                <li>WNI Beragama Katolik</li>
+                                <li>Usia 13-35 tahun</li>
+                                <li>Belum menikah</li>
+                                <li>Bersedia melayani dengan niat tulus</li>
+                                <li>Sehat jasmani &amp; rohani</li>
+                            </ul>
+                        </div>
+                        <form action="https://formspree.io/f/xqkrqzqg" method="POST" id="registrationForm"
+                            autocomplete="on">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label for="reg-fullname" class="form-label">Nama Lengkap <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-fullname" name="Nama Lengkap" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-nickname" class="form-label">Nama Panggilan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-nickname" name="Nama Panggilan" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-email" class="form-label">Email <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" id="reg-email" name="Email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-whatsapp" class="form-label">Nomor WhatsApp <span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" id="reg-whatsapp" name="WhatsApp" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-mediasocial" class="form-label">Akun Media Sosial <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-mediasocial" name="Akun Media Sosial" required>
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Memiliki">Memiliki</option>
+                                        <option value="Tidak Memiliki">Tidak Memiliki</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-mediasocialType" class="form-label">Jenis Media Sosial</label>
+                                    <select class="form-select" id="reg-mediasocialType" name="Jenis Media Sosial">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Instagram">Instagram</option>
+                                        <option value="TikTok">TikTok</option>
+                                        <option value="YouTube">YouTube</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="reg-gender-male"
+                                                name="Jenis Kelamin" value="Laki-Laki" required>
+                                            <label class="form-check-label" for="reg-gender-male">Laki-Laki</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" id="reg-gender-female"
+                                                name="Jenis Kelamin" value="Perempuan" required>
+                                            <label class="form-check-label" for="reg-gender-female">Perempuan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-birthdate" class="form-label">Tanggal Lahir <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" id="reg-birthdate" name="Tanggal Lahir" class="form-control"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-diocese" class="form-label">Keuskupan <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-diocese" name="Keuskupan" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-parish" class="form-label">Paroki <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="reg-parish" name="Paroki" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="reg-division" class="form-label">Jabatan Kepengurusan <span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-select" id="reg-division" name="Jabatan Kepengurusan" required>
+                                        <option value="">-- Pilih Jabatan --</option>
+                                        <option value="Sekretaris">Sekretaris</option>
+                                        <option value="Bendahara">Bendahara</option>
+                                        <option value="HPD - Humas Publikasi Dokumentasi">HPD - Humas Publikasi
+                                            Dokumentasi</option>
+                                        <option value="Acara Kerohanian">Acara Kerohanian</option>
+                                        <option value="PSDM - Pengembangan Sumber Daya Manusia">PSDM - Pengembangan
+                                            Sumber Daya Manusia</option>
+                                        <option value="e-Sports">e-Sports</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="reg-reason" class="form-label">Alasan Bergabung <span
+                                            class="text-danger">*</span></label>
+                                    <textarea name="Alasan Bergabung" id="reg-reason" class="form-control" rows="3"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold w-100 mt-3">Kirim</button>
+                            <div id="registrationStatus" class="mt-3"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const form = document.getElementById('registrationForm');
+                    const status = document.getElementById('registrationStatus');
+                    form.addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        status.textContent = 'Mengirim...';
+                        status.className = 'text-secondary';
+                        try {
+                            const data = new FormData(form);
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                status.textContent = 'Terima kasih, data Anda telah terkirim. Kami akan menghubungi Anda melalui email atau WhatsApp.';
+                                status.className = 'alert alert-success mt-3';
+                                form.reset();
+                            } else {
+                                status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                                status.className = 'alert alert-danger mt-3';
+                            }
+                        } catch {
+                            status.textContent = 'Maaf, terjadi kesalahan. Silakan coba lagi.';
+                            status.className = 'alert alert-danger mt-3';
+                        }
+                    });
+                });
+            </script>
+
+            <!-- Saran Carlo Acutis -->
+            <section id="advice" class="mb-4">
+                <div class="card text-center shadow-sm">
+                    <div class="card-body">
+                        <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="Carlo Acutis"
+                            class="mb-3 rounded" style="max-width:120px;">
+                        <h4 class="section-title">Saran Carlo Acutis Malaikat Pelindung</h4>
+                        <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu. Karena, Malaikat Pelindung mu
+                            harus
+                            menjadi sahabat terbaik mu!</p>
+                        <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
+                            class="btn btn-outline-warning" target="_blank" rel="noopener">Karya Website Carlo
+                            Acutis</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <!-- Image Events Starts -->
+                <div class="container text-center mt-4">
+                    <div id="MohonKesehatanKeluarga" class="communityActivity"
+                        style="background-color: rgba(248, 236, 236, 0.26); padding: 5px 10px;">
+                        <h4 class="text-center" style="margin-top: 60px;">Doa Mohon Kesehatan Keluarga <br>
+                            (Dipanjatkan setelah Devosi Rosario)</h4>
+                    </div>
+                    <img src="/MUDIKA Nusantara Carlo Acutis/Devotional/Keluarga Katolik.jpeg" width="auto"
+                        class="mt-3">
+                </div>
+                <!-- Image Events Ends -->
+
+                <!-- Doa Mohon Kesehatan Keluarga Starts -->
+                <section>
+                    <div class="container text-center mt-3">
+                        <h3 class="fw-bolder mt-2">Doa Mohon Kesehatan Keluarga</h3>
+                        <p class="mt-2">Ya Tuhan Bapa Surgawi, terima kasih atas segala kebaikan-Mu. Engkau
+                            telah memberikan kami sekeluarga hidup yang layak, nafas kehidupan, serta rezeki yang cukup.
+                            Bapa, kami sekeluarga berdoa pada-Mu hendak memohon kesehatan. Semoga kami dijauhkan dari
+                            berbagai macam penyakit, kemalangan, dan hal yang dapat mengganggu aktivitas kami. Semoga
+                            Engkau senantiasa menuntun kami ke dalam jalan kebenaran-Mu ya Bapa, lindungilah kami dalam
+                            naunganmu. Dalam nama Tuhan Yesus Kristus, kami sudah menghaturkan doa dan ucapan syukur.
+                            Amin.</p>
+
+                        <h3 class="fw-bolder mt-2">Bapa Kami,</h3>
+                        <p class="mt-2">yang ada di surga, dimuliakanlah namaMu. Datanglah KerajaanMu. Jadilah
+                            kehendakMu di atas bumi seperti di dalam surga. Berilah kami rejeki pada hari ini, dan
+                            ampunilah kesalahan kami, seperti kami pun mengampuni yang bersalah kepada kami. Dan
+                            janganlah masukkan kami ke dalam pencobaan. Tetapi bebaskanlah kami dari yang jahat. Amin.
+                        </p>
+
+                        <h3 class="fw-bolder mt-2">Salam Maria,</h3>
+                        <p class="mt-2">penuh rahmat, Tuhan sertamu. Terpujilah engkau di antara wanita, dan
+                            terpujilah buah tubuhmu, Yesus. Santa Maria, bunda Allah, doakanlah kami yang berdosa ini,
+                            sekarang dan waktu kami mati. Amin.</p>
+                        <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
+
+                        <h3 class="fw-bolder mt-2">Salam Yosef,</h3>
+                        <p class="mt-2">pria yang tulus, mempelai murni Maria ayah Mesias keturunan Daud.
+                            Terpujilah engkau di antara semua pria, dan terpujilah Yesus Putera Allah yang telah
+                            dipercayakan kepada mu.
+                            Santo Yosef pelindung Gereja semesta lindungilah seluruh anggota keluarga kami dalam damai
+                            dan rahmat Ilahi, dan
+                            dampingilah kami pada waktu kami mati. Amin</p>
+                        <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
+
+                        <h3 class="fw-bolder mt-2">Kemuliaan,</h3>
+                        <p class="mt-2">kepada Allah Bapa, Allah Putra, dan Allah Roh Kudus, seperti pada
+                            permulaan-sekarang-selalu-dan sepanjang segala masa. Amin</p>
+
+                        <h3 class="fw-bolder mt-2">Terpujilah,</h3>
+                        <p class="mt-2">Keluarga Kudus: Tuhan Yesus, Bunda Maria, Bapak Yosef, sekarang
+                            selama-lamanya. Amin
                         </p>
                     </div>
-                </blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
-            </div>
-            <!-- Instagram Post's Show Ends -->
-        </section>
+                </section>
+                <!-- Doa Mohon Kesehatan Keluarga Ends -->
+            </section>
 
-        <section>
-            <div class="container">
-                <div class="row mt-3">
-                    <div class="col-sm-6 col-md-4 col-lg col-xl" id="KeuskupanAgungJakarta">
-                        <div class="eBook" style="background-color: #00000028; padding: 5px 10px;">
-                            <h4 class="text-center" style="margin-top: 60px;">Panduan Praktis Tahun Yubileum 2025 <br>
-                                <strong>Keuskupan Agung Jakarta</strong>
-                            </h4>
+            <!-- Social Media Latest Posts Section -->
+            <section id="latestSocialPosts" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="row g-4">
+                            <div class="col-md-6" id="tiktokPost">
+                                <h4 class="mb-3 text-center">TikTok Post Terbaru</h4>
+                                <blockquote class="tiktok-embed tiktok-custom-width"
+                                    cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
+                                    data-video-id="7501535064715480375">
+                                    <section>
+                                        <a target="_blank" rel="noopener" title="@mudikanusantara.ca"
+                                            href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
+                                        <p></p>
+                                        <a target="_blank" rel="noopener"
+                                            title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                            href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
+                                            suara asli - MUDIKA Nusantara Carlo Acutis</a>
+                                    </section>
+                                </blockquote>
+                                <div class="mt-2 text-center">
+                                    <a target="_blank" rel="noopener"
+                                        title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
+                                        href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed"
+                                        class="tiktok-music-link"></a>
+                                    ♬ suara asli - MUDIKA Nusantara Carlo Acutis
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="youtubePost">
+                                <h4 class="text-center mb-3">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
+                                <div class="custom-video-embed">
+                                    <div class="ratio ratio-16x9 rounded shadow-sm border border-warning">
+                                        <iframe src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
+                                            title="Doa Rosario & Rekoleksi Singkat: Maria" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
-                            src="https://heyzine.com/flip-book/b913ba8a9a.html"
-                            style="border: 0px; width: 100%; height: 550px;"></iframe>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg col-xl" id="KeuskupanAgungSemarang">
-                        <div class="eBook" style="background-color: #00000028; padding: 5px 10px;">
-                            <h4 class="text-center" style="margin-top: 60px;">Panduan Praktis Tahun Yubileum 2025 <br>
-                                <strong>Keuskupan Agung Semarang</strong>
-                            </h4>
-                        </div>
-                        <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
-                            src="https://heyzine.com/flip-book/e74f5f33f9.html"
-                            style="border: 1px solid lightgray; width: 100%; height: 550px;"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <!-- Widget YouTube Player Starts -->
-            <div class="container cols-sm-2 cols-md-4 cols-xl mt-5">
-                <h2 id="ProfilMUDIKANCA">Profil</h2>
-                <div class="video-container">
-                    <iframe id="youtube-video" width="720" height="450"
-                        src="https://www.youtube.com/embed/TPgs-4Aorhs?si=bdhvtujkH5I9Byqo" frameborder="0"
-                        allowfullscreen class="mt-3"></iframe>
-                </div>
-            </div>
-            <!-- Widget YouTube Player Ends -->
-            <!-- Registration Form Starts -->
-            <section class="form-container" id="joinWithUs">
-                <div style="background-color: #00000028; padding: 5px 10px;">
-                    <h1 class="text-center" style="margin-top: 60px;">Form Registrasi Calon Pengurus Komunitas</h1>
-                </div>
-                <div class="terms-conditions">
-                    <h3>Syarat dan Ketentuan:</h3>
-                    <p>1. WNI Beragama Katolik</p>
-                    <p>2. Berusia rentang dari usia 13 hingga 35 tahun</p>
-                    <p>3. BELUM MENIKAH apalagi KAWIN</p>
-                    <p>4. Memiliki alasan dan niat murni MELAYANI bukan DILAYANI</p>
-                    <p>5. SEHAT secara JASMANI-ROHANI (NORMAL secara SEKSUALITAS TIDAK MENYIMPANG)</p>
-                </div>
-                <form action="#" method="post" id="messageMeForm">
-                    <label for="fullname">Nama Lengkap:</label>
-                    <input type="text" id="fullname" name="fullname">
-                    <br>
-                    <label for="nickname">Nama Panggilan:</label>
-                    <input type="text" id="nickname" name="nickname">
-                    <br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
-                    <br>
-                    <label>Apakah memiliki akun Sosial Media?:
-                        <select class="form-select" aria-label="mediasocialSelected" required>
-                            <option value="Memiliki" aria-checked="true">Memiliki</option>
-                            <option value="Tidak Memiliki" aria-checked="true">Tidak Memiliki</option>
-                        </select>
-                    </label>
-                    <br>
-                    <label>Instagram / TikTok / YouTube</label>
-                    <select class="form-select" aria-label="mediasocialSelected" required>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Instagram">TikTok</option>
-                        <option value="Instagram">YouTube</option>
-                    </select>
-                    <br>
-                    <label for="whatsapp">Nomor WhatsApp:</label>
-                    <input type="tel" id="whatsapp" name="whatsapp">
-                    <br>
-                    <label>Jenis Kelamin: <span></span> <input type="radio" id="gender" value="laki-laki">Laki-Laki
-                        <span></span> <input type="radio" id="gender" value="perempuan">Perempuan</label>
-                    <br>
-                    <label for="birthdate">Tanggal Lahir:</label>
-                    <input type="date" id="birthdate" name="birthdate">
-                    <br><br>
-                    <label>Keuskupan: <span></span> <input type="text" id="diocese"
-                            placeholder="Isi Keuskupan mu di sini"></label>
-                    <br>
-                    <label>Paroki: <span></span> <input type="text" id="parish"
-                            placeholder="Isi Paroki mu di sini"></label>
-                    <br>
-                    <label>Jabatan Kepengurusan Komunitas:
-                        <select class="form-select" aria-label="divisionSelected" required>
-                            <option value="Sekretaris" aria-checked="true">Sekretaris</option>
-                            <option value="Bendahara" aria-checked="true">Bendahara</option>
-                            <option value="HPD - Humas Publikasi Dokumentasi" aria-checked="true">HPD - Humas Publikasi
-                                Dokumentasi</option>
-                            <option value="Acara Kerohanian" aria-checked="true">Acara Kerohanian</option>
-                            <option value="PSDM - Pengembangan Sumber Daya Manusia" aria-checked="true">PSDM -
-                                Pengembangan
-                                Sumber Daya Manusia</option>
-                            <option value="e-Sports" aria-checked="true">e-Sports</option>
-                        </select>
-                    </label>
-                    <br>
-                    <label>Alasan Bergabung:</label>
-                    <textarea name="reason" id="reason" cols="50" rows="4"></textarea>
-                    <br>
-                    <a href="mailto:mudikanusantaraindonesia@gmail.com" type="button"
-                        class="btn btn-lg btn-outline-warning">Kirim</a>
-                </form>
-            </section>
-            <!-- Registration Form Ends -->
-        </section>
-
-        <section id="advice">
-            <div class="adviceCarloAcutis container">
-                <details name="wpucourse" open>
-                    <img src="/MUDIKA Nusantara Carlo Acutis/Carlo Acutis.png" alt="" class="card-img-top">
-                    <summary><span>SCAMP</span></summary>
-                    <div class="details-content-wrapper">
-                        <h4>Saran Carlo Acutis Malaikat Pelindung</h4>
-                        <p>Teruslah memohon bantuan kepada Malaikat Pelindung mu.
-                            Karena, Malaikat Pelindung mu harus menjadi sahabat terbaik mu!</p>
-                        <a href="http://www.carloacutis.com/en/association/le-frasi-di-carlo-acutis#prettyPhoto"
-                            class="btn" target="_blank">Karya Website Carlo Acutis</a>
-                    </div>
-                </details>
-        </section>
-
-        <section>
-            <!-- Image Events Starts -->
-            <div class="container text-center mt-4">
-                <div id="MohonKesehatanKeluarga" class="communityActivity"
-                    style="background-color: rgb(248, 236, 236); padding: 5px 10px;">
-                    <h4 class="text-center" style="margin-top: 60px;">Doa Mohon Kesehatan Keluarga <br>
-                        (Dipanjatkan setelah Devosi Rosario)</h4>
-                </div>
-                <img src="/MUDIKA Nusantara Carlo Acutis/Devotional/Keluarga Katolik.jpeg" width="auto" class="mt-3">
-            </div>
-            <!-- Image Events Ends -->
-
-            <!-- Doa Mohon Kesehatan Keluarga Starts -->
-            <section>
-                <div class="container text-center mt-3">
-                    <h3 class="fw-bolder mt-2">Doa Mohon Kesehatan Keluarga</h3>
-                    <p class="fw-bold mt-2">Ya Tuhan Bapa Surgawi, terima kasih atas segala kebaikan-Mu. Engkau telah
-                        memberikan
-                        kami sekeluarga hidup yang layak, nafas kehidupan, serta rezeki yang cukup. Bapa, kami
-                        sekeluarga berdoa
-                        pada-Mu hendak memohon kesehatan. Semoga kami dijauhkan dari berbagai macam penyakit,
-                        kemalangan, dan
-                        hal yang dapat mengganggu aktivitas kami. Semoga Engkau senantiasa menuntun kami ke dalam jalan
-                        kebenaran-Mu ya Bapa, lindungilah kami dalam naunganmu. Dalam nama Tuhan Yesus Kristus, kami
-                        sudah
-                        menghaturkan doa dan ucapan syukur. Amin.</p>
-
-                    <h3 class="fw-bolder mt-2">Bapa Kami,</h3>
-                    <p class="fw-bold mt-2">yang ada di surga, dimuliakanlah namaMu. Datanglah KerajaanMu. Jadilah
-                        kehendakMu di
-                        atas bumi seperti di dalam surga. Berilah kami rejeki pada hari ini, dan ampunilah kesalahan
-                        kami,
-                        seperti kami pun mengampuni yang bersalah kepada kami. Dan janganlah masukkan kami ke dalam
-                        pencobaan.
-                        Tetapi bebaskanlah kami dari yang jahat. Amin.</p>
-
-                    <h3 class="fw-bolder mt-2">Salam Maria,</h3>
-                    <p class="fw-bold mt-2">penuh rahmat, Tuhan sertamu. Terpujilah engkau di antara wanita, dan
-                        terpujilah buah
-                        tubuhmu, Yesus. Santa Maria, bunda Allah, doakanlah kami yang berdosa ini, sekarang dan waktu
-                        kami mati.
-                        Amin.</p>
-                    <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
-
-                    <h3 class="fw-bolder mt-2">Salam Yosef,</h3>
-                    <p class="fw-bold mt-2">pria yang tulus, mempelai murni Maria ayah Mesias keturunan Daud. Terpujilah
-                        engkau
-                        di antara semua pria, dan terpujilah Yesus Putera Allah yang telah dipercayakan kepada mu. Santo
-                        Yosef
-                        pelindung
-                        Gereja
-                        semesta lindungilah seluruh anggota keluarga kami dalam damai dan rahmat Ilahi, dan dampingilah
-                        kami
-                        pada waktu kami mati. Amin</p>
-                    <h4>⬆️ Didoakan sebanyak 3x ⬆️</h4>
-
-                    <h3 class="fw-bolder mt-2">Kemuliaan,</h3>
-                    <p class="fw-bold mt-2">kepada Allah Bapa, Allah Putra, dan Allah Roh Kudus, seperti pada
-                        permulaan-sekarang-selalu-dan sepanjang segala masa. Amin</p>
-
-                    <h3 class="fw-bolder mt-2">Terpujilah,</h3>
-                    <p class="fw-bold mt-2">Keluarga Kudus: Tuhan Yesus, Bunda Maria, Bapak Yosef, sekarang
-                        selama-lamanya. Amin
-                    </p>
-                </div>
-            </section>
-            <!-- Doa Mohon Kesehatan Keluarga Ends -->
-        </section>
-
-        <section id="events">
-            <h2>Acara Yang Telah Lalu &amp; Akan Datang</h2>
-            <!-- TikTok Post's Show Starts -->
-            <div id="tiktokPost" class="communityActivity" style="background-color: #00000028; padding: 5px 10px;">
-                <h4 class="text-center" style="margin-top: 60px;">apa saja yang dilakukan umat Katolik selama Konklaf?
-                </h4>
-            </div>
-            <div class="container col-sm-2 col-md-4 col-lg col-xl">
-                <blockquote class="tiktok-embed"
-                    cite="https://www.tiktok.com/@mudikanusantara.ca/video/7501535064715480375"
-                    data-video-id="7501535064715480375" style="max-width: 605px;min-width: 325px;">
-                    <section> <a target="_blank" title="@mudikanusantara.ca"
-                            href="https://www.tiktok.com/@mudikanusantara.ca?refer=embed">@mudikanusantara.ca</a>
-                        <p></p> <a target="_blank" title="♬ suara asli  - MUDIKA Nusantara Carlo Acutis"
-                            href="https://www.tiktok.com/music/suara-asli-MUDIKA-Nusantara-Carlo-Acutis-7501535252901661446?refer=embed">♬
-                            suara asli - MUDIKA Nusantara Carlo Acutis</a>
-                    </section>
-                </blockquote>
-                <script async src="https://www.tiktok.com/embed.js"></script>
-            </div>
-            <!-- TikTok Post's Show Ends -->
-
-            <!-- YouTube Post's Show Starts -->
-            <div id="youtubePost" class="communityActivity" style="background-color: #00000028; padding: 5px 10px;">
-                <h4 class="text-center" style="margin-top: 60px;">Doa Rosario &amp; Rekoleksi Singkat: "Maria"</h4>
-            </div>
-            <div class="container cols-sm-2 cols-md-4 cols-xl mb-3">
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aLibWCPdLWA?si=4GHIIeciuybiEOO0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-            <!-- YouTube Post's Show Ends -->
-        </section>
-
-        <section id="amazed">
-            <div class="kekaguman container">
-                <details name="kagum" open>
-                    <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png" alt=""
-                        class="card-img-top">
-                    <summary><span>KYEV</span></summary>
-                    <div class="details-content-wrapper">
-                        <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
-                        <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam mengorganisir sebuah
-                            acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara dari mereka
-                            benar-benar luar biasa dan platform yang mereka sediakan sungguh sangat bermanfaat bagi para
-                            muda-mudi di luar Gereja Katolik (secara luas) dan juga bermanfaat bagi seluruh muda-mudi
-                            Katolik (secara khususnya)</p>
-                        <a href="https://www.instagram.com/yohanaevita" class="btn">Ikuti Akun Instagram Saya</a>
-                    </div>
-                </details>
-        </section>
-
-        <section id="contact">
-            <!-- Join Group Starts -->
-            <section id="joinGroup" class="discussion main center" style="color: rgb(0, 0, 0);">Gabung Grup Diskusi
-                ➡️
-                <div class="row justify-content-center">
-                    <div class="col-md col-10">
-                        <a class="icon center" href="https://t.me/MUDIKANusCA"><i
-                                class="fa-brands fa-telegram fa-xl"></i></a>
-                        <a class="icon center" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC"><i
-                                class="fa-brands fa-whatsapp fa-xl"></i></a>
                     </div>
                 </div>
             </section>
-            <!-- Join Group Ends -->
-        </section>
+
+            <!-- Kekaguman -->
+            <section id="amazed" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <details open>
+                            <summary><span>KYEV</span></summary>
+                            <div class="text-center">
+                                <img src="/MUDIKA Nusantara Carlo Acutis/Sr. Yohana Evita Veron Silaban,CAE.png"
+                                    alt="Sr. Yohana Evita Veron, CAE" class="card-img-top mb-3"
+                                    style="max-width:180px; width:100%; height:auto;">
+                                <h4>Kekaguman Sr. Yohana Evita Veron, CAE</h4>
+                                <p>Komunitas MUDIKA Nusantara Carlo Acutis benar-benar mengesankan dalam
+                                    mengorganisir
+                                    sebuah acara. Meskipun, tidak banyak orang yang hadir, namun sungguh acara-acara
+                                    dari mereka benar-benar luar biasa dan platform yang mereka sediakan sungguh
+                                    sangat
+                                    bermanfaat bagi para muda-mudi di luar Gereja Katolik (secara luas) dan juga
+                                    bermanfaat bagi seluruh muda-mudi Katolik (secara khususnya)</p>
+                                <a href="https://www.instagram.com/yohanaevita" class="btn btn-outline-warning">Ikuti
+                                    Akun Instagram Saya</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Join Group -->
+            <section id="joinGroup" class="mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5>Gabung Grup Diskusi ➡️</h5>
+                        <a class="icon mx-2" href="https://t.me/MUDIKANusCA" target="_blank" rel="noopener"
+                            title="Gabung Grup Telegram">
+                            <i class="fa-brands fa-telegram fa-xl"></i>
+                        </a>
+                        <a class="icon mx-2" href="https://chat.whatsapp.com/BrBlRbfoBenGPXILdCFurC" target="_blank"
+                            rel="noopener" title="Gabung Grup WhatsApp">
+                            <i class="fa-brands fa-whatsapp fa-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="footer mt-auto">
+        <div class="container">
             <small class="block fw-bold">&copy; <span id="currentYear"></span>
-                <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-                <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara
-                    Carlo Acutis <span><a href="/login.html">Mitra dari Pawon Media</a></span></a>
+                <a href="/MUDIKA Nusantara Carlo Acutis/MUDIKA Nusantara Carlo Acutis.html">MUDIKA Nusantara Carlo
+                    Acutis <span><a href="/login.html">Mitra dari Pawon Media</a></span></a>
             </small>
             <div class="social-icons">
-                <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank" class="social-icon"><i
+                <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank" rel="noopener"
+                    class="social-icon" title="Instagram MUDIKA Nusantara Carlo Acutis"><i
                         class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@mudikanusantara.ca" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@mudikanusantara.ca" target="_blank" rel="noopener" class="social-icon"
+                    title="TikTok MUDIKA Nusantara Carlo Acutis"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@mudikanusantara_ca" target="_blank" rel="noopener" class="social-icon"
+                    title="YouTube MUDIKA Nusantara Carlo Acutis"><i class="fa-brands fa-youtube"></i></a>
+                <section id="flagCounter" class="my-3">
+                    <div class="d-flex justify-content-center">
+                        <a href="https://info.flagcounter.com/Xdjm" class="d-block w-100 flagcounter-link">
+                            <img src="https://s01.flagcounter.com/countxl/Xdjm/bg_FFD700/txt_FF0000/border_0BB321/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
+                                alt="Flag Counter" class="flagcounter-img" loading="lazy" />
+                        </a>
+                    </div>
+                </section>
             </div>
-
-            <section id="flagCounter">
-                <a href="https://info.flagcounter.com/Xdjm>"><img
-                        src="https://s01.flagcounter.com/countxl/Xdjm/bg_FFD700/txt_FF0000/border_0BB321/columns_8/maxflags_250/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
-                        alt="Flag Counter" border="0"></a>
-            </section>
-        </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send/?phone=6285878101755&text=Halo%2C+sis+aku+mau+nanya+dong..&type=phone_number&app_absent=0"
-        class="float" target=" _blank">
-        <i class="fa-brands fa-whatsapp my-float"></i>
-    </a>
-
-    <div class="back-to-home">
-        <button class="back-to-top" onclick="scrollToTop()">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+    <!-- WhatsApp Floating -->
+    <div class="container">
+        <div class="">
+            <a class="float"
+                href="https://api.whatsapp.com/send/?phone=6285878101755&text=Halo%2C+sis+aku+mau+nanya+dong..&type=phone_number&app_absent=0"
+                target="_blank" rel="noopener" title="Hubungi via WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
     </div>
-    </section>
+    <!-- WhatsApp Floating Button -->
 
-    <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script>
-        const circles = document.querySelectorAll(".circle");
-        circles.forEach(circle => {
-            circle.addEventListener("click", ({ target }) => {
-                const { backgroundColor } = getComputedStyle(target)
-                document.body.style.backgroundColor = backgroundColor
-            })
-        })
-    </script>
+    <div class="back-to-top">
+        <div class="back-to-home">
+            <button class="back-to-top" onclick="scrollToTop()">Kembali ke Atas <i
+                    class="fa-solid fa-up-long"></i></button>
+        </div>
 
-    <script>
-        const backToTopButton = document.querySelector('.back-to-top');
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display
-                    = 'none';
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior:
-                    'smooth'
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-home');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
             });
-        }
-    </script>
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        </script>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+        <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 
 </html>

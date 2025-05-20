@@ -324,7 +324,7 @@ section,
     color: var(--primary) !important;
 }
 
-@media (min-width: 400px) and (max-width: 2000px) {
+@media (min-width: 400px) and (max-width: 1500px) {
 
     .calendar-modern table th,
     .calendar-modern table td {
