@@ -12,170 +12,126 @@ body {
     align-items: center;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background: #000000;
-}
-
-.dark-mode header {
-    background: linear-gradient(to left, rgb(255, 215, 0), rgb(169, 94, 0));
-}
-
-.dark-mode footer {
-    background: linear-gradient(to right, rgb(169, 94, 0), rgb(255, 215, 0));
-}
-
-.dark-mode .product-card {
-    background: #1f1f1f;
-    border: 1px solid #333;
-}
-
-.dark-mode .hero {
-    background: #1f1f1f;
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: 2px solid white;
-    color: white;
-    padding: 5px 10px;
-    margin-left: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Navbar styling */
 .navbar {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: rgb(169, 94, 19);
-    padding: 10px 20px;
-    position: relative;
-    z-index: 10;
+    padding: 1rem;
+    box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
-.navbar .navbar-brand {
-    margin-left: 10px;
-    text-decoration: none;
+.navbar-brand {
     color: rgb(255, 215, 0);
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
-.navbar .navbar-brand:hover {
+.navbar-brand:hover {
     color: red;
     text-shadow: 0 5px 20px rgb(255, 215, 0);
 }
 
-.navbar .nav-logo {
-    width: 35px;
-    height: 35px;
+.nav-logo {
+    width: 50px;
+    height: auto;
 }
 
-nav {
-    width: auto;
-    margin: 100px auto 0 auto;
-    text-align: center;
+.navbar-toggler-icon {
+    color: rgb(255, 215, 0);
 }
 
-#navbar-links {
-    background-color: rgb(169, 94, 19);
+.navbar-nav .nav-link {
+    color: rgb(255, 215, 0);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
 }
 
-/* Navbar links - desktop view */
-.navbar-links ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: rgb(169, 94, 19);
+    background: rgb(255, 215, 0);
+    border-radius: 5px;
 }
 
-.navbar-links ul li {
-    padding: 0 15px;
+.navbar-nav .dropdown-menu {
+    background: red;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    min-width: 220px;
+}
+
+.navbar-nav .dropdown-item {
+    color: rgb(255, 215, 0);
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+    background: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
+.navbar-toggler {
+    color: rgb(255, 215, 0);
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background: rgb(255, 215, 0);
+    border-radius: 2px;
     position: relative;
 }
 
-/* Link styling */
-.navbar-links ul li a {
-    color: rgb(255, 215, 0);
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
     display: block;
-    transition: background-color 0.3s ease;
-    /* Smooth hover effect */
-}
-
-/* Hover effect for links */
-.navbar-links ul li a:hover {
-    background-color: black;
-    border-radius: 4px;
-}
-
-/* Dropdown menu styling */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(169, 94, 19);
-    min-width: 160px;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-    /*Hiddenbydefault*/
-    transition: opacity 0.3s ease;
-}
-
-.dropdown-content a {
-    color: rgb(169, 94, 19);
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    /* Make the dropdown visible */
-}
-
-/* Hamburger icon styling */
-.toggle-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
     width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 15;
-    color: rgb(255, 215, 0);
-    box-shadow: 5px 0 20px black;
-}
-
-.toggle-button .bar {
     height: 3px;
-    width: 100%;
-    background-color: rgb(255, 215, 0);
-    border-radius: 10px;
+    background: rgb(255, 215, 0);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: 0.2s;
 }
 
-marquee {
+.navbar-toggler-icon::before {
+    top: -10px;
+}
+
+.navbar-toggler-icon::after {
+    top: 10px;
+}
+
+.scrolling-text-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.scrolling-text {
     color: rgb(255, 215, 0);
-    text-shadow: 5px 0 20px black;
-    width: auto;
-    height: 40px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 60s linear infinite;
+    font-size: 1.1rem;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 #date-time {
@@ -317,6 +273,20 @@ main {
     box-shadow: 0 0 50px rgb(255, 215, 0);
 }
 
+.token-wa-order-form .input-group-text {
+    min-width: 80px;
+}
+
+.token-wa-order-form input {
+    border-radius: 0 4px 4px 0;
+}
+
+.card .price-text-style {
+    color: #b8860b;
+    text-shadow: 0 5px 20px rgb(255, 215, 0);
+    font-size: 1.5rem;
+}
+
 #biq {
     margin-top: 50px;
     margin-bottom: 100px;
@@ -389,51 +359,57 @@ main {
 footer {
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
-    padding: 1em;
+    padding: 20px;
     text-align: center;
-    clear: both;
-    box-shadow: 0 0 50px rgb(255, 215, 0);
+    position: relative;
 }
 
-.footer-section {
-    background-color: rgb(169, 94, 19);
-    padding: 3% 1% 1% 1%;
+#pamed-footer {
+    width: 80px;
+    height: 80px;
 }
 
-.footer-section #pamed-footer {
-    width: 95px;
+footer a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
 }
 
-.footer-section h4 {
+footer a:hover {
+    color: red;
+}
+
+footer .social-icons {
     margin-top: 10px;
 }
 
-.footer-section h5 {
-    font-size: 50px;
+footer .social-icons a {
+    margin: 0 10px;
+    color: rgb(255, 215, 0);
+    font-size: 20px;
 }
 
-.footer-section p {
+footer .social-icons a:hover {
+    color: red;
+}
+
+footer .social-icons a i {
+    transition: transform 0.3s;
+}
+
+footer .social-icons a:hover i {
+    transform: scale(1.2);
+}
+
+footer h4 {
+    font-size: 25px;
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
+}
+
+footer h5 {
     font-size: 15px;
-}
-
-.fa-ul {
-    margin-left: 1.65em;
-}
-
-.footer-section ul li a {
-    text-decoration: none;
     color: rgb(255, 215, 0);
-}
-
-.footer-section i {
-    background-color: rgb(169, 94, 19);
-    color: rgb(255, 215, 0);
-    size: 60px;
-}
-
-.footer-section i:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
 }
 
 .payment-method h5 {
@@ -447,16 +423,72 @@ iframe {
     border: 0;
 }
 
+#pamed-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#pamed-contact h5 {
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
+    margin-bottom: 10px;
+}
+
+#pamed-contact span {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
+    margin-bottom: 10px;
+    display: block;
+}
+
+#pamed-operational-hours {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#pamed-operational-hours h5 {
+    font-size: 20px;
+    color: rgb(255, 215, 0);
+    text-shadow: 0 5px 20px rgb(169, 94, 19);
+    margin-bottom: 10px;
+}
+
+#pamed-operational-hours table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(255, 215, 0);
+}
+
+#pamed-operational-hours th,
+#pamed-operational-hours td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(255, 215, 0);
+}
+
+#pamed-operational-hours th {
+    background-color: rgb(169, 94, 19);
+}
+
+#pamed-operational-hours td {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+}
+
 small .Copyright {
     text-align: center;
     font-size: 15px;
     text-decoration: none;
     color: rgb(255, 215, 0);
-}
-
-small .Copyright:hover {
-    background-color: rgb(255, 215, 0);
-    color: rgb(169, 94, 19);
 }
 
 #ads-jagoanhosting {
@@ -471,50 +503,24 @@ small .Copyright:hover {
 
 /* Responsive */
 @media only screen and (max-width: 800px) {
-    .navbar-links {
+    .navbar-collapse {
         display: none;
-        /* Hide by default on mobile */
+    }
+
+    .navbar-collapse.show {
+        display: block;
+        background: rgb(169, 94, 19);
+        border-radius: 10px;
+        margin-top: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+
+    .navbar-nav {
         flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: fixed;
-        /* Cover the entire screen */
-        top: 0;
-        left: 0;
-        height: 100vh;
-        /* Cover full screen height */
-        justify-content: center;
-        align-items: center;
     }
 
-    .navbar-links ul {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .navbar-links ul li {
-        padding: 10px 0;
-    }
-
-    .dropdown-content {
-        position: static;
-        /* Align dropdown centrally */
-        background-color: transparent;
-        text-align: center;
-        padding: 0;
-        opacity: 1;
-        /* Make dropdown visible */
-    }
-
-    .toggle-button {
-        display: flex;
-        /* Show hamburger icon */
-    }
-
-    .navbar-links.active {
-        display: flex;
-        /* Show menu when hamburger is clicked */
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
     }
 
     main {
@@ -525,38 +531,152 @@ small .Copyright:hover {
         margin-bottom: 10px;
     }
 
-    marquee {
+    .scrolling-text {
+        font-size: 0.95rem;
+        animation-duration: 60s;
+    }
+
+    .token-wa-order-form .input-group-text {
+        min-width: 60px;
+        font-size: 0.95rem;
+    }
+
+    .card .price-text-style {
+        font-size: 1.2rem;
+    }
+
+    .token-wa-order-form input {
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer h4 {
+        font-size: 20px;
+    }
+
+    footer h5 {
+        font-size: 12px;
+    }
+
+    #pamed-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #pamed-contact h5 {
+        font-size: 18px;
         color: rgb(255, 215, 0);
-        width: auto;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
+        text-shadow: 0 5px 20px rgb(169, 94, 19);
+        margin-bottom: 10px;
+    }
+
+    #pamed-contact span {
         font-weight: bold;
-        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        color: rgb(255, 215, 0);
+        text-shadow: 0 5px 20px rgb(169, 94, 19);
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    #pamed-operational-hours {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    #pamed-operational-hours h5 {
+        font-size: 18px;
+        color: rgb(255, 215, 0);
+        text-shadow: 0 5px 20px rgb(169, 94, 19);
+        margin-bottom: 10px;
+    }
+
+    #pamed-operational-hours table {
+        width: 100%;
+        border-collapse: collapse;
+        color: rgb(255, 215, 0);
+    }
+
+    #pamed-operational-hours th,
+    #pamed-operational-hours td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid rgb(255, 215, 0);
+    }
+
+    #pamed-operational-hours th {
+        background-color: rgb(169, 94, 19);
+    }
+
+    small {
+        text-align: center;
         font-size: 15px;
+        text-decoration: none;
+        color: rgb(255, 215, 0);
+    }
+
+    .float {
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+        right: 20px;
+        font-size: 25px;
+    }
+
+    .float i {
+        font-size: 20px;
+    }
+
+    .back-to-top {
+        display: block;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+
+    .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
+        color: rgb(169, 94, 19);
+    }
+
+    .back-to-top i {
+        font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 370px) {
-    .navbar-links {
-        display: flex;
-        /* Show navbar links on desktop */
-    }
-
-    .toggle-button {
+    .navbar-collapse {
         display: none;
-        /* Hide hamburger icon on desktop */
     }
 
-    marquee {
-        color: rgb(255, 215, 0);
-        width: auto;
-        height: 40px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
+    .navbar-collapse.show {
+        display: block;
+        background: rgb(169, 94, 19);
+        border-radius: 10px;
+        margin-top: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+    }
+
+    .scrolling-text {
+        font-size: 0.85rem;
+        animation-duration: 60s;
     }
 
     main {
@@ -565,5 +685,64 @@ small .Copyright:hover {
 
     section {
         padding: 0.5em;
+    }
+
+    .card .price-text-style {
+        font-size: 1.1rem;
+    }
+
+    .token-wa-order-form .input-group {
+        flex-direction: column;
+    }
+
+    .token-wa-order-form .input-group-text {
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .token-wa-order-form input {
+        border-radius: 0 0 4px 4px;
+        width: 100%;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    footer h4 {
+        font-size: 18px;
+    }
+
+    footer h5 {
+        font-size: 10px;
+    }
+
+    .float {
+        width: 40px;
+        height: 40px;
+        bottom: 60px;
+        right: 10px;
+        font-size: 20px;
+    }
+
+    .float i {
+        font-size: 15px;
+    }
+
+    .back-to-top {
+        display: block;
+        bottom: 5px;
+        right: 5px;
+        padding: 8px;
+    }
+
+    .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
+        color: rgb(169, 94, 19);
+    }
+
+    .back-to-top i {
+        font-size: 15px;
     }
 }
