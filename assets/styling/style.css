@@ -155,9 +155,9 @@ body {
     text-decoration: none;
     display: flex;
     position: relative;
-    color: wheat;
+    color: rgb(255, 215, 0);
     border-radius: 20px;
-    text-shadow: 0 5px 20px rgb(255, 215, 0);
+    text-shadow: 0 5px 20px wheat;
 }
 
 .navbar #social-media a:hover {
@@ -184,6 +184,69 @@ h1 {
     color: rgb(169, 94, 19);
     text-shadow: 0 0 25px rgb(255, 215, 0);
 }
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: black;
+}
+
 
 #promotion {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -311,39 +374,39 @@ main {
     cursor: pointer;
 }
 
-.float {
-    position: absolute;
+.whatsapp-float {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    background-color: rgb(169, 94, 19);
+    color: rgb(255, 215, 0);
+    border-radius: 50%;
     width: 60px;
     height: 60px;
-    bottom: 85px;
-    right: 50px;
-    background-color: green;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px rgb(255, 215, 0);
-    z-index: 100;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.float:hover {
-    background-color: rgb(169, 94, 19);
+.whatsapp-float:hover {
+    background-color: rgb(255, 215, 0);
+    color: rgb(169, 94, 19);
+    transform: scale(1.1);
 }
 
-.float i {
-    color: rgb(255, 215, 0);
-    text-shadow: 0 5px 20px rgb(169, 94, 19);
-}
-
-.my-float {
-    margin-top: 16px;
+.whatsapp-float i {
+    font-size: 28px;
 }
 
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
+    display: block;
     background-color: rgb(169, 94, 19);
     color: rgb(255, 215, 0);
     border-radius: 50%;
@@ -406,13 +469,18 @@ footer h4 {
     text-shadow: 0 5px 20px rgb(169, 94, 19);
 }
 
-footer h5 {
-    font-size: 15px;
+#about-us h5 {
+    font-size: 35px;
     color: rgb(255, 215, 0);
     text-shadow: 0 5px 20px rgb(169, 94, 19);
 }
 
 .payment-method h5 {
+    padding: 5px;
+    font-size: 35px;
+}
+
+.courier-method h5 {
     padding: 5px;
     font-size: 35px;
 }

@@ -13,7 +13,28 @@
     <!-- HEADER -->
     <header class="navbar navbar-expand-lg">
         </ul>
-        <span id="currentTime" class="ms-3"></span>
+
+        <div id="date-time">
+            <script>
+                // Menampilkan hari, tanggal, dan jam
+                function updateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                    const dateString = now.toLocaleDateString('id-ID', options);
+                    document.getElementById('date-time').innerText = dateString;
+                }
+
+                // Panggil fungsi updateTime setiap detik
+                setInterval(updateTime, 1000);
+            </script>
+        </div>
+
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+                Selamat Datang di website toko Pawon Media, sudahkah Anda
+                berbelanja hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
+            </div>
+        </div>
         <div class="container">
             <a href="#registerForm" class="navbar-brand d-flex">
                 <img src="/assets/LOGO-1.png" alt="Logo" class="logo me-2">
@@ -43,23 +64,6 @@
             </div>
         </div>
     </header>
-    <script>
-        function updateTime() {
-            // Gunakan zona waktu pengguna
-            const now = new Date();
-            // Format tanggal dan jam lokal pengguna
-            const options = {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
-                hour12: false
-            };
-            // Tampilkan waktu lokal pengguna
-            document.getElementById('currentTime').textContent =
-                now.toLocaleString('id-ID', options) + ' (Waktu Anda)';
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
 
     <!-- BANNER -->
     <section class="bg-white py-5 text-center border-bottom">
@@ -103,9 +107,7 @@
                             <div class="text-center mt-3">
                                 <span class="text-muted" style="font-size: 1rem;">
                                     Sudah punya akun?
-                                    <a href="login.html" class="login-btn">
-                                        Masuk
-                                    </a>
+                                    <a href="login.html" class="login-btn">Masuk</a>
                                 </span>
                             </div>
                         </div>
@@ -113,41 +115,44 @@
                 </div>
             </div>
         </div>
-        <!-- EmailJS integration -->
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-        <script>
-            (function () {
-                emailjs.init("user_XXXXXXXXXXXXXXXXX"); // Ganti dengan User ID EmailJS Anda
-            })();
-
-            document.getElementById('registrationForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                // Validasi sederhana
-                var nama = document.getElementById('nama').value.trim();
-                var email = document.getElementById('email').value.trim();
-                var password = document.getElementById('password').value.trim();
-
-                if (!nama || !email || password.length < 6) {
-                    alert('Mohon lengkapi data dengan benar.');
-                    return;
-                }
-
-                // Kirim data ke email menggunakan EmailJS
-                emailjs.send("service_xxxxxxxx", "template_xxxxxxxx", {
-                    nama: nama,
-                    email: email,
-                    password: password
-                })
-                    .then(function () {
-                        alert('Pendaftaran berhasil! Data Anda telah dikirim.');
-                        document.getElementById('registrationForm').reset();
-                    }, function (error) {
-                        alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi.');
-                    });
-            });
-        </script>
     </section>
+
+    <!-- EmailJS integration -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("user_XXXXXXXXXXXXXXXXX"); // Ganti dengan User ID EmailJS Anda
+        })();
+
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Validasi sederhana
+            var nama = document.getElementById('nama').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value.trim();
+
+            if (!nama || !email || password.length < 6) {
+                alert('Mohon lengkapi data dengan benar.');
+                return;
+            }
+
+            // Kirim data ke email menggunakan EmailJS
+            emailjs.send("service_xxxxxxxx", "template_xxxxxxxx", {
+                nama: nama,
+                email: email,
+                password: password
+            })
+                .then(function () {
+                    alert('Pendaftaran berhasil! Anda akan diarahkan ke halaman login.');
+                    document.getElementById('registrationForm').reset();
+                    window.location.href = "login.html"; // Menambahkan pengalihan ke halaman login setelah pendaftaran berhasil
+                }, function (error) {
+                    alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi.');
+                });
+        });
+    </script>
+
 
     <section id="promotion" class="container my-5">
         <h2 class="promotion mb-4">Promo & Informasi Terbaru</h2>

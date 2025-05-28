@@ -28,8 +28,27 @@
 <body>
     <!-- HEADER -->
     <header class="navbar navbar-expand-lg">
-        </ul>
-        <span id="currentTime" class="ms-3"></span>
+        <div id="date-time">
+            <script>
+                // Menampilkan hari, tanggal, dan jam
+                function updateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                    const dateString = now.toLocaleDateString('id-ID', options);
+                    document.getElementById('date-time').innerText = dateString;
+                }
+
+                // Panggil fungsi updateTime setiap detik
+                setInterval(updateTime, 1000);
+            </script>
+        </div>
+
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+                Selamat Datang di website toko Pawon Media, sudahkah Anda
+                berbelanja hari ini? Jika belum, silahkan berbelanja langsung ke toko 😊🙏
+            </div>
+        </div>
         <div class="container">
             <a href="#registerForm" class="navbar-brand d-flex">
                 <img src="/assets/LOGO-1.png" alt="Logo" class="logo me-2">
@@ -59,23 +78,6 @@
             </div>
         </div>
     </header>
-    <script>
-        function updateTime() {
-            // Gunakan zona waktu pengguna
-            const now = new Date();
-            // Format tanggal dan jam lokal pengguna
-            const options = {
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
-                hour12: false
-            };
-            // Tampilkan waktu lokal pengguna
-            document.getElementById('currentTime').textContent =
-                now.toLocaleString('id-ID', options) + ' (Waktu Anda)';
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
 
     <!-- BANNER -->
     <section class="bg-white py-5 text-center border-bottom">
@@ -114,16 +116,12 @@
                             <div class="text-center mt-3">
                                 <span class="text-muted" style="font-size: 1rem;">
                                     Belum punya akun?
-                                    <a href="#registerForm" class="login-btn">
-                                        Daftar
-                                    </a>
+                                    <a href="#registerForm" class="login-btn">Daftar</a>
                                 </span>
 
                                 <span class="text-muted" style="font-size: 1rem;">
                                     <br>
-                                    <a href="forgotPassword.html" class="login-btn">
-                                        Lupa Kata Sandi?
-                                    </a>
+                                    <a href="forgotPassword.html" class="login-btn">Lupa Kata Sandi?</a>
                                 </span>
                             </div>
                         </div>
@@ -132,6 +130,7 @@
             </div>
         </div>
     </section>
+
     <!-- EmailJS integration -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
@@ -157,13 +156,15 @@
                 to_email: "pawonmedia.010924@gmail.com"
             })
                 .then(function () {
-                    alert('Login berhasil! Data Anda telah dikirim.');
+                    alert('Login berhasil! Anda akan diarahkan ke halaman utama.');
                     document.getElementById('loginFormElement').reset();
+                    window.location.href = "index.html"; // Menambahkan pengalihan ke halaman utama setelah login berhasil
                 }, function (error) {
                     alert('Terjadi kesalahan saat mengirim data. Silakan coba lagi.');
                 });
         });
     </script>
+
 
     <section id="promotion" class="container my-5">
         <h2 class="promotion mb-4">Promo & Informasi Terbaru</h2>
