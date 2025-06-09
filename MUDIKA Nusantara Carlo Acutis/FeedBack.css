@@ -139,21 +139,6 @@ section,
     text-shadow: var(--primary) 0px 0px 5px;
 }
 
-.feedback-desc {
-    color: #856404;
-    background: linear-gradient(90deg, #fffbe6 0%, #fffde4 100%);
-    border-left: 5px solid #ffc107;
-    border-radius: 6px;
-    padding: 12px 18px;
-    font-size: 1.05em;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 1px 6px rgba(255, 193, 7, 0.08);
-}
-
-.feedback-desc strong {
-    color: #b8860b;
-}
-
 .section-title {
     margin: 2rem 0 1rem 0;
     font-weight: bold;
@@ -184,40 +169,179 @@ section,
     min-width: 325px;
 }
 
-#liturgy-year {
-    width: 80px;
+.ads-image {
+    max-height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.calendar-modern table td,
-.calendar-modern table th {
-    vertical-align: middle;
-    font-size: 1.08em;
-    transition: background 0.2s, color 0.2s;
+.ads-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.calendar-modern table td.bg-success {
-    border-radius: 50% !important;
+.ads-link {
+    display: block;
+    text-align: center;
+}
+
+/* Styling Section */
+#welcome {
+    background: linear-gradient(to right, #ffcc00, #ff9900);
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Animasi Logo */
+.logo-animation {
+    transition: transform 0.4s ease-in-out;
+}
+
+.logo-animation:hover {
+    transform: scale(1.1);
+}
+
+/* Styling Header */
+.section-title {
+    font-size: 28px;
     font-weight: bold;
-    box-shadow: 0 0 0 2px #198754;
+    text-transform: uppercase;
 }
 
-.calendar-modern table td:hover:not(.bg-success) {
-    background: #ffe066;
-    color: #212529;
-    cursor: pointer;
-    border-radius: 50%;
+.highlight {
+    color: rgb(255, 215, 0);
 }
 
-.calendar-modern .badge {
-    font-size: 0.9em;
-    letter-spacing: 0.02em;
+/* Styling Tombol */
+.btn-custom {
+    background: rgb(255, 215, 0);
+    color: green;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
-#liturgy {
-    background: var(--section-bg);
-    color: var(--primary);
-    padding: 1rem;
-    border-radius: 0.3rem;
+.btn-custom:hover {
+    background: red;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Section Donasi */
+.donation-section {
+    background: linear-gradient(to right, rgb(255, 215, 0), green);
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Styling Card Donasi */
+.donation-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* Styling Tombol Donasi */
+.btn-donate {
+    background: rgb(255, 215, 0);
+    color: green;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-donate:hover {
+    background: red;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Modal Donasi */
+.modal-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.donation-image {
+    max-width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.donation-image:hover {
+    transform: scale(1.1);
+}
+
+/* Styling Section */
+.liturgy-card {
+    background: linear-gradient(to right, #f8e3c8, #e2b878);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    color: #4a2e00;
+}
+
+/* Teks Header */
+.section-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Frame Kalender */
+.liturgy-frame-container {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Iframe */
+.liturgical-calendar-iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 450px;
+    border-radius: 8px;
+}
+
+/* Alert Bacaan */
+.alert {
+    background: #e8f0ff;
+    color: #004085;
+    border-left: 5px solid #1e3a8a;
+}
+
+.alert a {
+    color: #004085;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alert a:hover {
+    text-decoration: underline;
+}
+
+.feedback-desc {
+    color: #856404;
+    background: linear-gradient(90deg, #fffbe6 0%, #fffde4 100%);
+    border-left: 5px solid #ffc107;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-size: 1.05em;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 6px rgba(255, 193, 7, 0.08);
+}
+
+.feedback-desc strong {
+    color: #b8860b;
 }
 
 .icon.mx-2 {
