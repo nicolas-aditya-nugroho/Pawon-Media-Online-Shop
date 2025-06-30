@@ -560,7 +560,12 @@ small .Copyright {
 }
 
 #ads-jagoanhosting {
-    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    display: block;
     justify-content: center;
     margin-bottom: 50px;
 }
@@ -569,248 +574,508 @@ small .Copyright {
     padding: 15px;
 }
 
-/* Responsive */
-@media only screen and (max-width: 800px) {
-    .navbar-collapse {
-        display: none;
-    }
-
-    .navbar-collapse.show {
-        display: block;
-        background: rgb(169, 94, 19);
-        border-radius: 10px;
-        margin-top: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-    }
-
-    .navbar-nav {
+@media screen and (max-width: 768px) {
+    #ads-jagoanhosting {
         flex-direction: column;
+        align-items: center;
     }
 
-    .navbar-nav .nav-item {
-        margin-bottom: 0.5rem;
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    section {
+    #ads-jagoanhosting a {
         margin-bottom: 10px;
     }
 
-    .scrolling-text {
-        font-size: 0.95rem;
-        animation-duration: 60s;
+    #ads-jagoanhosting a img {
+        width: auto;
+        height: auto;
     }
 
-    .token-wa-order-form .input-group-text {
-        min-width: 60px;
-        font-size: 0.95rem;
-    }
-
-    .card .price-text-style {
+    .navbar-brand {
         font-size: 1.2rem;
     }
 
-    .token-wa-order-form input {
-        font-size: 0.95rem;
+    .navbar-toggler-icon {
+        width: 25px;
+        height: 2px;
+    }
+
+    .navbar-toggler {
+        border: 2px solid rgb(255, 215, 0);
+    }
+
+    .navbar-nav {
+        background-color: rgb(169, 94, 19);
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link:hover {
+        color: red;
+    }
+
+    .scrolling-text {
+        font-size: 0.9rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        width: 40px;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .nav-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .navbar-nav .dropdown-menu {
+        min-width: 180px;
+    }
+
+    .dropdown-item {
+        color: rgb(255, 215, 0);
+    }
+
+    .dropdown-item:hover {
+        background-color: rgb(169, 94, 19);
+    }
+
+    .dropdown-menu {
+        background-color: rgb(169, 94, 19);
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        width: 25px;
+        height: 2px;
+    }
+
+    .navbar-toggler-icon {
+        background-color: rgb(255, 215, 0);
+    }
+
+    .navbar-toggler {
+        border: 2px solid rgb(255, 215, 0);
+    }
+
+    .nav-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link:hover {
+        color: red;
+    }
+
+    .scrolling-text {
+        font-size: 0.9rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 90px;
+    }
+
+    .whatsapp-float i {
+        font-size: 24px;
+    }
+
+    .back-to-top {
+        padding: 10px;
+        right: 15px;
+    }
+
+    .back-to-top i {
+        font-size: 24px;
+    }
+
+    .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
     }
 
     footer {
-        padding: 10px;
+        padding: 15px;
+        color: rgb(255, 215, 0);
     }
 
-    footer h4 {
+    .footer-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-link:hover {
+        color: red;
+    }
+
+    .footer-social {
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-social:hover {
+        color: red;
+    }
+
+    .footer-social i {
         font-size: 20px;
     }
 
-    footer h5 {
-        font-size: 12px;
-    }
-
-    #pamed-contact {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 50px;
-    }
-
-    #pamed-contact h5 {
-        font-size: 18px;
+    .footer-social a {
         color: rgb(255, 215, 0);
-        text-shadow: 0 5px 20px rgb(169, 94, 19);
-        margin-bottom: 10px;
     }
 
-    #pamed-contact span {
-        font-weight: bold;
-        font-size: 18px;
-        color: rgb(255, 215, 0);
-        text-shadow: 0 5px 20px rgb(169, 94, 19);
-        margin-bottom: 10px;
-        display: block;
+    .footer-social a:hover {
+        color: red;
     }
 
-    #pamed-operational-hours {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 50px;
+    .footer-social a i {
+        transition: transform 0.3s;
     }
 
+    .footer-social a:hover i {
+        transform: scale(1.2);
+    }
+
+    #pamed-footer {
+        width: 60px;
+        height: 60px;
+    }
+
+    #pamed-contact h5,
     #pamed-operational-hours h5 {
         font-size: 18px;
-        color: rgb(255, 215, 0);
-        text-shadow: 0 5px 20px rgb(169, 94, 19);
-        margin-bottom: 10px;
+    }
+
+    #pamed-contact span,
+    #pamed-operational-hours span {
+        font-size: 18px;
     }
 
     #pamed-operational-hours table {
-        width: 100%;
-        border-collapse: collapse;
-        color: rgb(255, 215, 0);
+        font-size: 14px;
+    }
+
+    #pamed-contact p {
+        font-size: 18px;
     }
 
     #pamed-operational-hours th,
     #pamed-operational-hours td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid rgb(255, 215, 0);
-    }
-
-    #pamed-operational-hours th {
-        background-color: rgb(169, 94, 19);
-    }
-
-    small {
-        text-align: center;
-        font-size: 15px;
-        text-decoration: none;
-        color: rgb(255, 215, 0);
-    }
-
-    .float {
-        width: 50px;
-        height: 50px;
-        bottom: 70px;
-        right: 20px;
-        font-size: 25px;
-    }
-
-    .float i {
-        font-size: 20px;
-    }
-
-    .back-to-top {
-        display: block;
-        bottom: 10px;
-        right: 10px;
-        padding: 10px;
-    }
-
-    .back-to-top:hover {
-        background-color: rgb(255, 215, 0);
-        color: rgb(169, 94, 19);
-    }
-
-    .back-to-top i {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 370px) {
-    .navbar-collapse {
-        display: none;
-    }
-
-    .navbar-collapse.show {
-        display: block;
-        background: rgb(169, 94, 19);
-        border-radius: 10px;
-        margin-top: 0.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-    }
-
-    .navbar-nav .nav-item {
-        margin-bottom: 0.5rem;
-    }
-
-    .scrolling-text {
-        font-size: 0.85rem;
-        animation-duration: 60s;
-    }
-
-    main {
-        padding: 1em;
-    }
-
-    section {
-        padding: 0.5em;
-    }
-
-    .card .price-text-style {
-        font-size: 1.1rem;
-    }
-
-    .token-wa-order-form .input-group {
-        flex-direction: column;
-    }
-
-    .token-wa-order-form .input-group-text {
-        border-radius: 4px 4px 0 0;
-        width: 100%;
-        text-align: left;
-    }
-
-    .token-wa-order-form input {
-        border-radius: 0 0 4px 4px;
-        width: 100%;
-    }
-
-    footer {
-        padding: 5px;
-    }
-
-    footer h4 {
-        font-size: 18px;
-    }
-
-    footer h5 {
-        font-size: 10px;
-    }
-
-    .float {
-        width: 40px;
-        height: 40px;
-        bottom: 60px;
-        right: 10px;
-        font-size: 20px;
-    }
-
-    .float i {
-        font-size: 15px;
-    }
-
-    .back-to-top {
-        display: block;
-        bottom: 5px;
-        right: 5px;
         padding: 8px;
     }
 
-    .back-to-top:hover {
+    .pamed-category {
+        padding: 12px;
+    }
+
+    .pamed-category p {
+        font-size: 18px;
+    }
+
+    .pamed-category img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .pamed-category h3 {
+        font-size: 24px;
+    }
+
+    .pamed-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .pamed-btn:hover {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-pamed {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-pamed:hover {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .carousel .slides {
+        flex-direction: column;
+    }
+
+    .carousel .slide {
+        width: 100%;
+    }
+
+    .carousel .slide img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #ads-jagoanhosting {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #ads-jagoanhosting a {
+        margin-bottom: 10px;
+    }
+
+    #ads-jagoanhosting a img {
+        width: auto;
+        height: auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-toggler-icon {
+        width: 25px;
+        height: 2px;
+    }
+
+    .navbar-toggler {
+        border: 2px solid rgb(255, 215, 0);
+    }
+
+    .navbar-nav {
+        background-color: rgb(169, 94, 19);
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link:hover {
+        color: red;
+    }
+
+    .scrolling-text {
+        font-size: 0.9rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        width: 40px;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .nav-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .navbar-nav .dropdown-menu {
+        min-width: 180px;
+    }
+
+    .dropdown-item {
+        color: rgb(255, 215, 0);
+    }
+
+    .dropdown-item:hover {
+        background-color: rgb(169, 94, 19);
+    }
+
+    .dropdown-menu {
+        background-color: rgb(169, 94, 19);
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        width: 25px;
+        height: 2px;
+    }
+
+    .navbar-toggler-icon {
         background-color: rgb(255, 215, 0);
-        color: rgb(169, 94, 19);
+    }
+
+    .navbar-toggler {
+        border: 2px solid rgb(255, 215, 0);
+    }
+
+    .nav-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .nav-link:hover {
+        color: red;
+    }
+
+    .scrolling-text {
+        font-size: 0.9rem;
+    }
+
+    .scrolling-text span {
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 90px;
+    }
+
+    .whatsapp-float i {
+        font-size: 24px;
+    }
+
+    .back-to-top {
+        padding: 10px;
+        right: 15px;
     }
 
     .back-to-top i {
-        font-size: 15px;
+        font-size: 24px;
+    }
+
+    .back-to-top:hover {
+        background-color: rgb(255, 215, 0);
+    }
+
+    footer {
+        padding: 15px;
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-link {
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-link:hover {
+        color: red;
+    }
+
+    .footer-social {
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-social:hover {
+        color: red;
+    }
+
+    .footer-social i {
+        font-size: 20px;
+    }
+
+    .footer-social a {
+        color: rgb(255, 215, 0);
+    }
+
+    .footer-social a:hover {
+        color: red;
+    }
+
+    .footer-social a i {
+        transition: transform 0.3s;
+    }
+
+    .footer-social a:hover i {
+        transform: scale(1.2);
+    }
+
+    #pamed-footer {
+        width: 60px;
+        height: 60px;
+    }
+
+    #pamed-contact h5,
+    #pamed-operational-hours h5 {
+        font-size: 18px;
+    }
+
+    #pamed-contact span,
+    #pamed-operational-hours span {
+        font-size: 18px;
+    }
+
+    #pamed-operational-hours table {
+        font-size: 14px;
+    }
+
+    #pamed-contact p {
+        font-size: 18px;
+    }
+
+    #pamed-operational-hours th,
+    #pamed-operational-hours td {
+        padding: 8px;
+    }
+
+    .pamed-category {
+        padding: 12px;
+    }
+
+    .pamed-category p {
+        font-size: 18px;
+    }
+
+    .pamed-category img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .pamed-category h3 {
+        font-size: 24px;
+    }
+
+    .pamed-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .pamed-btn:hover {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-pamed {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-pamed:hover {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .carousel .slides {
+        flex-direction: column;
+    }
+
+    .carousel .slide {
+        width: 100%;
+    }
+
+    .carousel .slide img {
+        width: 100%;
     }
 }
