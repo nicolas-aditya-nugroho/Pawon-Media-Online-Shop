@@ -20,176 +20,261 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Muhammad Fadhlan 💘 Aisyah Zahira</title>
+    <title>[Nama Mempelai Pria] 💘 [Nama Mempelai Wanita]</title>
     <link rel="stylesheet" href="/Contoh Undangan Nikah/hari-bahagia_islam.css">
 </head>
 
 <body>
-    <!-- Splash / Cover Page -->
-    <div class="cover-page" id="cover">
-        <h1><strong>Undangan Pernikahan</strong></h1>
-        <p><strong>Muhammad Fadhlan <br> 💍 <br> Aisyah Zahira</strong></p>
-        <!-- Tombol untuk membuka undangan -->
-        <a href="#invitation" id="open-invitation" class="btn">Buka Undangan</a>
-    </div>
+    <div class="undangan-container">
+        <header class="hero-section">
+            <div class="hero-content">
+                <p class="opening-line">Dengan memohon ridho Tuhan Yang Maha Esa,</p>
+                <h1>Undangan Pernikahan</h1>
+                <h2>[Nama Mempelai Pria] & [Nama Mempelai Wanita]</h2>
+                <p class="date-hero">[Tanggal Pernikahan]</p>
+                <button id="openUndanganBtn">Buka Undangan</button>
+            </div>
+        </header>
 
+        <main id="mainContent" class="main-content" style="display:none;">
+            <section class="quote-section">
+                <p id="religiousQuote" class="quote-text">
+                </p>
+            </section>
 
-    <!-- Div untuk undangan yang disembunyikan awalnya -->
-    <div class="invitation-content" id="invitation">
-        <h1>Selamat Bergabung di Acara Pernikahan Kami</h1>
-        <p>Dengan penuh kebahagiaan, kami mengundang bapak/ibu/saudara/i untuk hadir dalam acara pernikahan kami.</p>
-        <a href="#daftar-dulu" class="btn">Isi Daftar Kehadiran</a>
+            <section class="mempelai-section">
+                <h3>Mempelai yang Berbahagia</h3>
+                <div class="mempelai-info">
+                    <div class="mempelai-pria">
+                        <img src="placeholder-pria.jpg" alt="Foto Mempelai Pria" class="profile-pic">
+                        <h4>[Nama Lengkap Mempelai Pria]</h4>
+                        <p>Putra dari Bapak [Nama Ayah Pria] & Ibu [Nama Ibu Pria]</p>
+                    </div>
+                    <div class="symbol-and">
+                        <span class="heart-icon">&#10084;</span>
+                    </div>
+                    <div class="mempelai-wanita">
+                        <img src="placeholder-wanita.jpg" alt="Foto Mempelai Wanita" class="profile-pic">
+                        <h4>[Nama Lengkap Mempelai Wanita]</h4>
+                        <p>Putri dari Bapak [Nama Ayah Wanita] & Ibu [Nama Ibu Wanita]</p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Audio -->
-        <audio id="background-music" loop>
-            <source src="/Contoh Undangan Nikah/audio/background-music_islam.mp3" type="audio/mpeg">
-            Browser Anda tidak mendukung pemutar audio.
-        </audio>
+            <section class="akad-section">
+                <h3>[Judul Acara Utama: Akad Nikah]</h3>
+                <p>Yang Insya Allah akan dilaksanakan pada:</p>
+                <p class="event-detail"><span class="icon">&#128197;</span> Tanggal: [Tanggal Utama Acara]</p>
+                <p class="event-detail"><span class="icon">&#9200;</span> Pukul: [Waktu Utama Acara] WIB</p>
+                <p class="event-detail"><span class="icon">&#127963;</span> Lokasi: [Nama Tempat Acara Utama], [Alamat
+                    Lengkap]</p>
+                <a href="[Link Google Maps]" target="_blank" class="btn-location">Lihat di Google Maps</a>
+            </section>
 
-        <section class="hero">
-            <img src="images/couple.jpg" alt="Foto Pasangan">
-            <h2>Pernikahan</h2>
-            <h1><strong>Fadhlan 💘 Aisyah</strong></h1>
-            <p><strong>📆Sabtu, 5 Juli 2025 <br> 🕌 Masjid Agung Darul Amal, Kota Salatiga</strong></p>
-        </section>
+            <section class="resepsi-section">
+                <h3>Resepsi / Perjamuan</h3>
+                <p>Mohon doa restu Anda dalam momen bahagia kami:</p>
+                <p class="event-detail"><span class="icon">&#128197;</span> Tanggal: [Tanggal Resepsi]</p>
+                <p class="event-detail"><span class="icon">&#9200;</span> Pukul: [Waktu Resepsi] WIB</p>
+                <p class="event-detail"><span class="icon">&#127963;</span> Lokasi: [Nama Tempat Resepsi], [Alamat
+                    Lengkap]</p>
+                <a href="[Link Google Maps Resepsi]" target="_blank" class="btn-location">Lihat di Google Maps</a>
+            </section>
 
-        <section class="maps">
-            <h3>Lokasi Sakramen Pernikahan</h3>
-            <iframe id="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2143363481887!2d110.49617667574441!3d-7.3298079720899905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a7848194ef4c7%3A0xb24c7e899110f914!2sMasjid%20Agung%20Darul%20Amal%20Kota%20Salatiga!5e0!3m2!1sid!2sid!4v1744082600095!5m2!1sid!2sid"></iframe>
-        </section>
+            <section class="gallery-section">
+                <h3>Galeri Foto</h3>
+                <div class="gallery-grid">
+                    <img src="#" alt="Foto Galeri 1">
+                    <img src="#" alt="Foto Galeri 2">
+                    <img src="#" alt="Foto Galeri 3">
+                    <img src="#" alt="Foto Galeri 4">
+                </div>
+            </section>
 
-        <section class="rsvp" id="daftar-dulu">
-            <h3>Konfirmasi Kehadiran</h3>
-            <form id="rsvp-form">
-                <input type="text" id="guestName" placeholder="Nama Lengkap" required>
-                <select id="guestStatus" required>
-                    <option value="">Pilih Kehadiran</option>
-                    <option value="Hadir">Hadir</option>
-                    <option value="Tidak Hadir">Tidak Hadir</option>
-                </select>
-                <button type="submit">Kirim</button>
-            </form>
-            <script>
-                // Revisi bagian RSVP alert agar tidak error
-                document.addEventListener("DOMContentLoaded", () => {
-                    const form = document.getElementById('rsvp-form');
-                    form.addEventListener('submit', function (e) {
-                        e.preventDefault();
+            <section class="rsvp-section">
+                <h3>Konfirmasi Kehadiran</h3>
+                <p>Mohon informasikan kehadiran Anda:</p>
+                <form id="rsvpForm">
+                    <input type="text" id="nama" placeholder="Nama Anda" required>
+                    <select id="kehadiran" required>
+                        <option value="">Informasi Kehadiran</option>
+                        <option value="hadir">Hadir</option>
+                        <option value="tidak-hadir">Tidak Hadir</option>
+                    </select>
+                    <textarea id="pesan" placeholder="Pesan dan Doa untuk Mempelai (opsional)"></textarea>
+                    <button type="submit">Kirim Konfirmasi</button>
+                </form>
+                <p id="rsvpMessage" class="message"></p>
+            </section>
 
-                        const name = document.getElementById('guestName').value.trim();
-                        const status = document.getElementById('guestStatus').value;
+            <section class="gift-section">
+                <h3>Pemberian Hadiah</h3>
+                <p>Tanpa mengurangi rasa hormat, bagi Bapak/Ibu/Saudara/i yang ingin memberikan tanda kasih untuk
+                    kebahagiaan kami, dapat melalui:</p>
 
-                        if (!name || !status) {
-                            alert("Mohon isi semua data terlebih dahulu.");
-                            return;
-                        }
+                <div class="gift-options">
+                    <div class="bank-transfer">
+                        <h4>Transfer Bank</h4>
+                        <p>Bank: **[Nama Bank Anda]**</p>
+                        <p>No. Rekening: <span id="norekCopy1">**[Nomor Rekening Anda]**</span> <button class="copy-btn"
+                                data-clipboard-target="#norekCopy1">Salin</button></p>
+                        <p>Atas Nama: **[Nama Pemilik Rekening]**</p>
+                        <p class="note">*(Mohon konfirmasi setelah transfer)*</p>
+                    </div>
 
-                        alert(`Terima kasih, (!name) kehadiran Anda:(!status).`);
-                        form.reset();
-                    });
-                });
-            </script>
-        </section>
+                    <div class="bank-transfer">
+                        <h4>Transfer Bank (Alternatif)</h4>
+                        <p>Bank: **[Nama Bank Alternatif]**</p>
+                        <p>No. Rekening: <span id="norekCopy2">**[Nomor Rekening Alternatif Anda]**</span> <button
+                                class="copy-btn" data-clipboard-target="#norekCopy2">Salin</button></p>
+                        <p>Atas Nama: **[Nama Pemilik Rekening Alternatif]**</p>
+                        <p class="note">*(Mohon konfirmasi setelah transfer)*</p>
+                    </div>
 
-        <section class="reception">
-            <h3>Resepsi Pernikahan</h3>
-            <p>
-                Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara resepsi pernikahan kami yang akan
-                diselenggarakan pada:
-            </p>
-            <ul>
-                <li>📆 <strong>Sabtu, 5 Juli 2025</strong></li>
-                <li>⏲️ <strong>Pukul 11.00 WIB - selesai</strong></li>
-                <li>📍 <strong>Graha Korpri. Mangunsari, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50721</strong>
-                </li>
-            </ul>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63316.17185651714!2d110.43993103125!3d-7.324582799999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a7837f9b4d6fd%3A0x22da4b9a91c0ba6c!2sGraha%20Korpri%20Salatiga!5e0!3m2!1sid!2sid!4v1744087586102!5m2!1sid!2sid"
-                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="physical-gift">
+                        <h4>Pengiriman Kado Fisik</h4>
+                        <p>Bagi yang ingin mengirim kado fisik, dapat dikirimkan ke alamat:</p>
+                        <p>
+                            **[Nama Penerima Kado, misal: [Nama Mempelai Wanita]]**<br>
+                            [Alamat Lengkap Anda]<br>
+                            [Kota, Kode Pos]<br>
+                            [Nomor Telepon Penerima, opsional]
+                        </p>
+                    </div>
+                </div>
+                <p class="closing-gift">Doa restu Anda merupakan hadiah yang paling berharga bagi kami.</p>
+            </section>
 
-            <p style="margin-top:10px;">
-                <a href="https://maps.app.goo.gl/YgTgJ9GdgXAmfAtJ9" target="_blank" class="map-button">Buka di
-                    Google
-                    Maps</a>
-            </p>
+            <section class="closing-section">
+                <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk
+                    memberikan doa restu.</p>
+                <p>Atas kehadiran dan doa restunya, kami ucapkan terima kasih.</p>
+                <p class="closing-salutation">Hormat kami,</p>
+                <h4>[Nama Mempelai Pria] & [Nama Mempelai Wanita]</h4>
+            </section>
+        </main>
 
-            <a href="#buah-tangan" class="btn">Pemberian Hadiah</a>
-        </section>
-
-        <section class="gift" id="buah-tangan">
-            <h3>Pemberian Hadiah</h3>
-            <p>Jika Bapak/Ibu/Saudara/i berkenan memberikan tanda kasih, dapat melalui QRIS berikut ini:</p>
-
-            <img src="images/qris-fadhlanaisyah.png" alt="QRIS Fadhlan & Aisyah" class="qris-image">
-
-            <p>Atas doa dan restunya, kami ucapkan terima kasih yang tulus. 🙏</p>
-
-            <!-- (Optional) Jika kamu punya link QRIS ke e-wallet langsung -->
-            <!-- <a href="https://link.qris.id/fadhlanaisyah" target="_blank" class="qris-link">Klik di sini untuk bayar via QRIS</a> -->
-        </section>
-
-        <footer class="footer">
-            <p>&copy; <span id="currentYear"></span>
+        <footer>
+            <small class="block fw-bold">© <span id="currentYear">2025</span> [Nama Mempelai Pengantin]. All rights
+                reserved.
                 <script>document.getElementById("currentYear").textContent = new Date().getFullYear();</script>
-                Undangan
-                ini Dibuat Oleh:
-                <a href="/login.html" target="_blank">Pawon Media ◯ Foto Kopi <br> ◯ Alat-alat Tulis Kantor &amp;
-                    Sekolah ◯ Desain ◯ Pulsa</a>
-            </p>
+            </small>
         </footer>
     </div>
-    <script>
-        const openInvitationButton = document.getElementById("open-invitation");
-        const invitationContent = document.getElementById("invitation");
-        const backgroundMusic = document.getElementById("background-music");
 
-        // Event listener untuk tombol buka undangan
-        openInvitationButton.addEventListener("click", function () {
-            // Tampilkan konten undangan
-            invitationContent.style.display = "block";
-
-            // Putar musik latar belakang otomatis
-            backgroundMusic.play();
-
-            // Sembunyikan tombol setelah diklik
-            openInvitationButton.style.display = "none";
-        });
-
-        function openInvitation() {
-            document.getElementById('cover').style.display = 'none';
-            document.getElementById('invitation').classList.remove('hidden');
-
-            openBtn.addEventListener('click', function () {
-                bgMusic.play(); document.querySelector('.open-invite').style.display = 'none';
-                document.querySelector('.main-content').style.display = 'block';
-            });
-        }
-    </script>
+    <audio id="backgroundMusic" loop>
+        <source src="/Contoh Undangan Nikah/audio/background-music_islam.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
 
     <div class="back-to-home">
-        <button class="back-to-top" onclick="scrollToTop()">
+        <button class="back-to-top" onclick="scrollToTop()">Kembali ke
             <i class="fa-solid fa-chevron-up"></i>
         </button>
+    </div>
 
-        <script>const backToTopButton = document.querySelector('.back-to-top');
+    <script>
+        const backToTopButton = document.querySelector('.back-to-top');
 
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 100) {
-                    backToTopButton.style.display = 'block';
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display
+                    = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior:
+                    'smooth'
+            });
+        }
+        // Menangani klik pada tombol "Buka Undangan"
+        document.addEventListener('DOMContentLoaded', function () {
+            const openUndanganBtn = document.getElementById('openUndanganBtn');
+            const mainContent = document.getElementById('mainContent');
+            const heroSection = document.querySelector('.hero-section');
+            const rsvpForm = document.getElementById('rsvpForm');
+            const rsvpMessage = document.getElementById('rsvpMessage');
+            const religiousQuote = document.getElementById('religiousQuote');
+            const backgroundMusic = document.getElementById('backgroundMusic'); // Ambil elemen audio
+
+            // Contoh data kutipan berdasarkan agama (Anda bisa menambahkan lebih banyak)
+            const quotes = {
+                islam: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir. (QS. Ar-Rum: 21)",
+                kristen: "Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia. (Matius 19:6)",
+                katolik: "Kasihilah seorang akan yang lain dengan kasih persaudaraan, dan saling mendahului dalam memberi hormat. (Roma 12:10)",
+                hindu: "Wanita itu ibu bagi dunia. Dia harus diperlakukan dengan hormat dan bermartabat. Dia adalah sumber kebahagiaan dan keharmonisan. (Rig Veda)",
+                buddha: "Kedamaian batin adalah kebahagiaan sejati. (Ajaran Buddha)",
+                khonghucu: "Dalam hubungan antara suami dan istri, ada cinta dan penghormatan. (Li Ji)"
+            };
+
+            // Fungsi untuk menampilkan kutipan acak atau berdasarkan agama tertentu
+            function displayReligiousQuote(agama = 'islam') { // Default ke Islam
+                const quoteText = quotes[agama.toLowerCase()];
+                if (quoteText) {
+                    religiousQuote.textContent = quoteText;
                 } else {
-                    backToTopButton.style.display
-                        = 'none';
+                    religiousQuote.textContent = "Semoga kasih sayang dan kebahagiaan senantiasa menyertai kita semua.";
                 }
+            }
+
+            // Panggil saat halaman dimuat (Anda bisa mengubah 'islam' ke agama lain jika ingin default berbeda)
+            displayReligiousQuote('islam');
+
+            openUndanganBtn.addEventListener('click', function () {
+                // Coba putar musik saat tombol diklik
+                if (backgroundMusic) {
+                    backgroundMusic.play().catch(error => {
+                        console.error("Gagal memutar musik:", error);
+                        // Tangani kasus di mana autoplay diblokir (misalnya, tampilkan tombol play)
+                    });
+                }
+
+                heroSection.style.opacity = '0';
+                heroSection.style.transition = 'opacity 1s ease-in-out';
+
+                setTimeout(() => {
+                    heroSection.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    mainContent.style.opacity = '0';
+                    mainContent.style.transition = 'opacity 1s ease-in-out';
+                    setTimeout(() => {
+                        mainContent.style.opacity = '1';
+                    }, 50); // Small delay to trigger transition
+                }, 1000); // Match hero transition duration
             });
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior:
-                        'smooth'
-                });
-            }</script>
-    </div>
+            rsvpForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Mencegah form untuk refresh halaman
+
+                const nama = document.getElementById('nama').value;
+                const kehadiran = document.getElementById('kehadiran').value;
+                const pesan = document.getElementById('pesan').value;
+
+                // Simulasi pengiriman data
+                console.log(`RSVP dari: ${nama}`);
+                console.log(`Kehadiran: ${kehadiran}`);
+                console.log(`Pesan: ${pesan}`);
+
+                // Anda bisa mengintegrasikan ini dengan Google Sheets, Formspree, atau backend lainnya
+                // Contoh: fetch('/api/rsvp', { method: 'POST', body: JSON.stringify({ nama, kehadiran, pesan }) })
+
+                rsvpMessage.textContent = `Terima kasih ${nama}, konfirmasi kehadiran Anda (${kehadiran === 'hadir' ? 'Akan Hadir' : 'Tidak Bisa Hadir'}) telah diterima!`;
+                rsvpMessage.style.color = 'green';
+                rsvpForm.reset(); // Reset form setelah submit
+            });
+
+            // Menangani scroll saat masuk ke main content
+            if (window.location.hash) {
+                const targetSection = document.querySelector(window.location.hash);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
 </body>

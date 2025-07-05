@@ -19,7 +19,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/736x/09/90/5d/09905db0070b773d672bcf42d8b030ed.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/736x/04/2b/4a/042b4a6090b4d161b0ed686351838b42.jpg) no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
@@ -159,7 +159,7 @@ body {
 
 .symbol-and {
     font-size: 2em;
-    color: #e74c3c;
+    color: #ff1900;
     /* Red heart */
     font-weight: bold;
 }

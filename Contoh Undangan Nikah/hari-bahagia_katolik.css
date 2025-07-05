@@ -1,280 +1,448 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
 body {
-    font-family: 'Great Vibes', cursive;
-    background: linear-gradient(to left, blue, rgb(255, 215, 0));
-    color: whitesmoke;
-    text-align: center;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-.cover-page {
+.undangan-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/736x/c2/ea/d1/c2ead1309726bc2d4c0f3926be933ecc.jpg) no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(to right, rgb(255, 215, 0), blue);
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.btn {
-    background: linear-gradient(to left, blue, rgb(255, 215, 0));
-    color: whitesmoke;
-    box-shadow: 5px 0 20px whitesmoke;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.invitation-content {
-    display: none;
-    padding: 40px;
-    text-shadow: 5px 0 20px black;
-    text-align: center;
-    width: 100%;
+    align-items: center;
+    min-height: 100vh;
+    /* Full viewport height */
     position: relative;
+    z-index: 1;
+    /* Ensure hero content is above any background elements */
 }
 
-.cover-page h1 {
-    font-size: 36px;
-    color: white;
-    text-shadow: 5px 0 20px rgb(255, 215, 0);
+.hero-content {
+    animation: fadeIn 2s ease-in-out;
 }
 
-.cover-page p {
-    font-size: 24px;
-    color: #fff;
-    text-shadow: 5px 0 20px rgb(255, 215, 0);
-    margin-bottom: 30px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.cover-page button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #ffffff;
-    color: #333;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.invitation {
-    padding: 30px 15px;
-}
-
-#map {
-    margin-top: 20px;
-    height: 200px;
-    background-color: #eaeaea;
-    border-radius: 10px;
-}
-
-
-.hidden {
-    display: none;
-}
-
-.reception {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: blue;
-    color: rgb(255, 215, 0);
-    border-radius: 10px;
-}
-
-.reception h3 {
-    color: rgb(255, 215, 0);
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
     margin-bottom: 10px;
+    color: #ffd700;
+    /* Gold color for heading */
 }
 
-.reception ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
+.hero-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-.reception li {
+.hero-section .opening-line {
+    font-size: 1.1em;
     margin-bottom: 5px;
 }
 
-.map-button {
-    display: inline-block;
-    background-color: blue;
-    color: rgb(255, 215, 0);
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 6px;
+.hero-section .date-hero {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#openUndanganBtn {
+    background-color: #ffd700;
+    color: #333;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: bold;
 }
 
-.hero img {
-    width: 160px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+#openUndanganBtn:hover {
+    background-color: #e0b800;
+    transform: translateY(-3px);
 }
 
-.hero h1 {
-    font-size: 28px;
-    margin: 10px 0;
+/* Main Content Sections */
+.main-content section {
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
 }
 
-.hero p {
-    font-size: 16px;
+.main-content section:last-child {
+    border-bottom: none;
 }
 
-.rsvp {
-    color: rgb(255, 215, 0);
-    text-shadow: 5px 0 20px blue;
-    margin-top: 30px;
+.main-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #555;
+    margin-bottom: 25px;
 }
 
-form {
-    max-width: 400px;
+/* Quote Section */
+.quote-section {
+    background-color: #f2f2f2;
+    font-style: italic;
+    color: #666;
+    padding: 30px 20px;
+}
+
+.quote-text {
+    font-size: 1.2em;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-form input, form select, form button {
-    width: 100%;
-    background: blue;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 6px;
-    border: 1px solid rgb(255, 215, 0);
+/* Mempelai Section */
+.mempelai-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-
-.gift {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: blue;
-    color: rgb(255, 215, 0);
-    border-radius: 10px;
+.mempelai-pria, .mempelai-wanita {
+    text-align: center;
+    flex: 1 1 250px;
+    /* Allows flexibility for responsiveness */
 }
 
-.qris-image {
-    width: 220px;
-    margin: 20px auto;
-    display: block;
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.qris-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
+.mempelai-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 5px;
 }
 
-.footer {
-    margin-top: 20px;
-    padding: 5px;
-    background-color: blue;
-    border-radius: 10px;
-}
-
-.footer a {
-    color: rgb(255, 215, 0);
-    text-decoration: none;
+.symbol-and {
+    font-size: 2em;
+    color: #ff1900;
+    /* Red heart */
     font-weight: bold;
 }
 
-.footer a:hover {
-    color: whitesmoke;
-    text-shadow: 5px 0 20px rgb(255, 215, 0);
+/* Event Details (Akad/Resepsi) */
+.event-detail {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer p {
-    color: rgb(255, 215, 0);
-    font-family: 'France', sans-serif;
-    font-size: 15px;
-    text-align: center;
+.event-detail .icon {
+    margin-right: 10px;
+    color: #ffd700;
+    font-size: 1.3em;
+}
+
+.btn-location {
+    display: inline-block;
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-location:hover {
+    background-color: #45a049;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* RSVP Section */
+.rsvp-section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.rsvp-section input[type="text"],
+.rsvp-section select,
+.rsvp-section textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    /* Include padding in width */
+}
+
+.rsvp-section textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.rsvp-section button[type="submit"] {
+    background-color: #007bff;
+    /* Blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rsvp-section button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.rsvp-section .message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+
+/* Gift Section - NEW STYLES */
+.gift-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.gift-options {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.bank-transfer, .physical-gift {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1 1 300px;
+    /* Adjust width based on content */
+    max-width: 350px;
+    /* Max width for each card */
+    text-align: left;
+}
+
+.gift-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bank-transfer p, .physical-gift p {
+    margin-bottom: 8px;
+    word-break: break-all;
+    /* Ensures long numbers break lines */
+}
+
+.bank-transfer .note {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.copy-btn {
+    background-color: #28a745;
+    /* Green for copy button */
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #218838;
+}
+
+.closing-gift {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+
+/* Closing Section */
+.closing-section p {
+    margin-bottom: 5px;
+}
+
+.closing-salutation {
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.closing-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 10px;
 }
 
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
-    background: linear-gradient(to right, rgb(255, 215, 0), blue);
-    color: white;
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 215, 0);
     border-radius: 50%;
     padding: 15px;
     z-index: 9999;
 }
 
-/* ============ Responsive Design ============ */
+.back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.373);
+    color: rgb(255, 215, 0);
+}
 
-/* Umum: Maksimal lebar 768px (tablet & HP) */
+/* Footer */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.67);
+    color: rgb(255, 215, 0);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    body {
-        font-size: 16px;
-        padding: 10px;
+    .hero-section h1 {
+        font-size: 2.5em;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    .hero-section h2 {
+        font-size: 1.5em;
     }
 
-    .hero p {
-        font-size: 18px;
+    .mempelai-info {
+        flex-direction: column;
+        gap: 20px;
     }
 
-    section {
-        padding: 15px;
+    .symbol-and {
+        order: -1;
+        /* Move '&' symbol above names on small screens */
+        margin-bottom: 10px;
     }
 
-    .qris-image {
-        width: 100%;
-        max-width: 250px;
+    .gift-options {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .map-button {
-        padding: 10px 12px;
-        font-size: 14px;
-    }
-
-    iframe {
-        height: 200px;
-    }
-
-    .footer {
-        font-size: 13px;
-        padding: 15px;
+    .bank-transfer, .physical-gift {
+        width: 90%;
+        /* Adjust width for smaller screens */
+        max-width: none;
+        /* Remove max-width on smaller screens */
     }
 }
 
-/* Untuk layar sangat kecil (maks. 480px - HP kecil) */
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 22px;
+    .hero-section {
+        padding: 80px 15px;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero-section h1 {
+        font-size: 2em;
     }
 
-    .map-button {
-        width: 100%;
-        box-sizing: border-box;
+    .hero-section h2 {
+        font-size: 1.2em;
     }
 
-    .footer p {
-        padding: 0 10px;
+    .main-content section {
+        padding: 30px 15px;
     }
-}
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    .main-content h3 {
+        font-size: 1.8em;
+    }
 
-iframe {
-    width: 100%;
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
 }
