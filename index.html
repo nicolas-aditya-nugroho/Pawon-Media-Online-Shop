@@ -2848,7 +2848,7 @@
                 </div>
                 <div class="col col-md-4">
                     <div class="card h-100 pamed-card-border shadow rounded">
-                        <img src="/assets/Products/Buku Tulis/Buku Tulis-SiDu-EB38N-Avengers.png"
+                        <img src="/assets/Products/Buku Tulis/Buku Tulis-SiDu-EB38N.png"
                             class="card-img-top pamed-card-img w-100" alt="...">
 
                         <div class="card-body">
@@ -2858,73 +2858,46 @@
                         </div>
                         <form class="wa-product-order-form" data-product="Sinar Dunia Buku Tulis EB-38N">
                             <div class="mb-2">
-                                <label for="serial-sidu-eb38n" class="form-label">Pilih Seri:</label>
-                                <select id="serial-sidu-eb38n" class="form-select product-variant-input" required>
-                                    <option value="Polos" data-harga="4.000">Avengers - Rp 4.000</option>
-                                    <option value="Motif" data-harga="4.000">Explore - Rp 4.000</option>
-                                </select>
-                            </div>
-                            <div class="mb-2">
-                                <label for="qty-origami-14x14" class="form-label">Jumlah:</label>
-                                <input type="number" id="qty-origami-14x14" class="form-control product-qty-input"
+                                <label for="qty-book-SiDu" class="form-label">Jumlah:</label>
+                                <input type="number" id="qty-book-SiDu" class="form-control product-qty-input"
                                     min="1" value="1" required>
                             </div>
                         </form>
                         <div class="card-footer d-flex justify-content-between align-items-center pamed-card-footer">
                             <div>
                                 <h3 class="price-text-style text-center justify-content-center">
-                                    Silahkan pilih seri sebelum lanjut ke form pembelian!</h3>
-                                <div>
-                                    <a href="https://tokopedia.link/pIwHzasQ2Ob" class="btn pamed-btn" target="_blank"
-                                        rel="noopener"><i class="fa fa-shopping-cart"></i> Dilarisi Lur!
-                                    </a>
-                                    <button type="submit" class="btn btn-pamed w-100">Dilarisi Lur! via
-                                        <i class="fa-brands fa-whatsapp"></i>
-                                    </button>
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function () {
-                                            var card = document.currentScript.closest('.card');
-                                            var form = card.querySelector('.wa-product-order-form');
-                                            var variantInput = card.querySelector('.product-variant-input');
-                                            var priceInput = card.querySelector('.product-price-input');
-                                            var qtyInput = form.querySelector('.product-qty-input');
-
-                                            // Update harga saat varian berubah
-                                            if (variantInput) {
-                                                variantInput.addEventListener('change', function () {
-                                                    var selected = variantInput.options[variantInput.selectedIndex];
-                                                    var harga = selected.getAttribute('data-harga');
-                                                    priceInput.value = harga ? 'Rp ' + parseInt(harga).toLocaleString('id-ID') : '';
-                                                });
+                                    Rp 3.500</h3>
+                            </div>
+                            <div>
+                                <a href="https://tokopedia.link/pIwHzasQ2Ob" class="btn pamed-btn" target="_blank"
+                                    rel="noopener"><i class="fa fa-shopping-cart"></i> Dilarisi Lur!
+                                </a>
+                                <button type="submit" class="btn btn-pamed w-100">Dilarisi Lur! via
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </button>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var card = document.currentScript.closest('.card');
+                                        var form = card.querySelector('.wa-product-order-form');
+                                        var qtyInput = form.querySelector('.product-qty-input');
+                                        function sendWA() {
+                                            var product = form.getAttribute('data-product');
+                                            var qty = qtyInput.value;
+                                            if (!qty) {
+                                                alert('Silakan pilih jumlah produk.');
+                                                return;
                                             }
-
-                                            function sendWA() {
-                                                var product = form.getAttribute('data-product');
-                                                var variant = variantInput ? variantInput.value : '';
-                                                var harga = variantInput ? variantInput.options[variantInput.selectedIndex].getAttribute('data-harga') : '';
-                                                var qty = qtyInput.value;
-                                                if (!variant) {
-                                                    alert('Silakan pilih varian produk.');
-                                                    return;
-                                                }
-                                                if (!qty) {
-                                                    alert('Silakan pilih jumlah produk.');
-                                                    return;
-                                                }
-                                                var total = harga * qty;
-                                                var msg = `Halo, saya ingin membeli:\nProduk: ${product}\nVarian: ${variant}\nJumlah: ${qty}\nTotal: Rp ${parseInt(total).toLocaleString('id-ID')}`;
-                                                var waUrl = 'https://wa.me/62895360074499?text=' + encodeURIComponent(msg);
-                                                window.open(waUrl, '_blank');
-                                            }
-
-                                            qtyInput.addEventListener('change', sendWA);
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                sendWA();
-                                            });
+                                            var msg = `Halo, saya ingin membeli:\nProduk: ${product}\nJumlah: ${qty}`;
+                                            var waUrl = 'https://wa.me/62895360074499?text=' + encodeURIComponent(msg);
+                                            window.open(waUrl, '_blank');
+                                        }
+                                        qtyInput.addEventListener('change', sendWA);
+                                        form.addEventListener('submit', function (e) {
+                                            e.preventDefault();
+                                            sendWA();
                                         });
-                                    </script>
-                                </div>
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
