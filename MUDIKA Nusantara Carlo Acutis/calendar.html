@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta data-rh="true" name="page-type" content="home-desktop">
+
+    <meta data-rh="true" property="og:title"
+        content="Situs Komunitas MUDIKA Nusantara Carlo Acutis | Powered by: Pawon Media">
+    <meta data-rh="true" property="og:site_name" content="MUDIKA Nusantara Carlo Acutis">
+    <meta data-rh="true" property="og:description"
+        content="Situs komunitas MUDIKA Nusantara Carlo Acutis, tempat berkumpulnya generasi muda Katolik di Indonesia.">
+    <meta data-rh="true" property="og:url"
+        content="https://pawon-media.com/MUDIKA%20Nusantara%20Carlo%20Acutis/MUDIKA%20Nusantara%20Carlo%20Acutis.html">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=France&amp;display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Kalender 2025 — Masehi & Liturgi (Ritus Roma)</title>
+    <link rel="stylesheet" href="/MUDIKA Nusantara Carlo Acutis/calendar.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <main>
+            <header>
+                <div>
+                    <h1>Kalender 2025 — Masehi & Liturgi (Ritus Roma)</h1>
+                    <div class="small">Tampilan bulan-per-bulan. Klik tanggal untuk detail liturgi. Bahasa: Indonesia.
+                    </div>
+                </div>
+                <div style="flex:1"></div>
+                <div class="controls">
+                    <div class="month-nav">
+                        <button class="btn" id="prev" aria-label="Bulan sebelumnya">‹</button>
+                        <div class="btn" id="monthYear">—</div>
+                        <button class="btn" id="next" aria-label="Bulan berikutnya">›</button>
+                    </div>
+                    <select id="monthSelect" class="btn" aria-label="Pilih bulan"></select>
+                    <select id="yearSelect" class="btn" aria-label="Pilih tahun"></select>
+                    <button class="btn primary" id="downloadYearIcs">Unduh .ics (Seluruh 2025)</button>
+                </div>
+            </header>
+            <div class="calendar-card">
+                <div class="month-header small" id="monthLabel"></div>
+                <div class="month-grid" id="calendarGrid"></div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="panel">
+                <h3>Rincian Tanggal</h3>
+                <div id="selectedInfo" class="small">Klik sebuah tanggal pada kalender untuk melihat informasi liturgi
+                    di sini.</div>
+                <hr>
+                <h4>Warna Liturgi</h4>
+                <div class="legend">
+                    <div class="item"><span class="dot white"></span>Putih (Solemnitas, Pesta)</div>
+                    <div class="item"><span class="dot green"></span>Hijau (Biasa)</div>
+                    <div class="item"><span class="dot red"></span>Merah (Martir, Pentekosta)</div>
+                    <div class="item"><span class="dot purple"></span>Ungu (Prapaskah, Adven)</div>
+                    <div class="item"><span class="dot black"></span>Hitam (Peringatan berkabung)</div>
+                </div>
+                <hr>
+                <button class="btn" id="downloadDayIcs" disabled>Unduh .ics (Tanggal Terpilih)</button>
+                <button class="btn" id="resetToday">Kembali ke Awal</button>
+            </div>
+        </aside>
+
+        <footer>File ini dibuat otomatis; sesuaikan daftar hari liturgi jika ingin sinkronisasi dengan sumber
+            lokal/keuskupan.</footer>
+    </div>
+
+    <script>
+        // helper
+        const el = id => document.getElementById(id);
+        const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const weekdayNames = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+
+        function fmtDateISO(d) {
+            return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+        }
+        function addDays(d, n) {
+            const x = new Date(d);
+            x.setDate(x.getDate() + n);
+            return x;
+        }
+
+        // Algoritma Paskah
+        function easterDate(year) {
+            const a = year % 19, b = Math.floor(year / 100), c = year % 100;
+            const d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25);
+            const g = Math.floor((b - f + 1) / 3);
+            const h = (19 * a + b - d - g + 15) % 30;
+            const i = Math.floor(c / 4), k = c % 4;
+            const l = (32 + 2 * e + 2 * i - h - k) % 7;
+            const m = Math.floor((a + 11 * h + 22 * l) / 451);
+            const month = Math.floor((h + l - 7 * m + 114) / 31);
+            const day = ((h + l - 7 * m + 114) % 31) + 1;
+            return new Date(year, month - 1, day);
+        }
+
+        const fixedFeasts = [
+            { m: 1, d: 1, name: 'Solemnitas Santa Maria, Bunda Allah', color: 'white', rank: 'Solemnitas' },
+            { m: 1, d: 6, name: 'Hari Raya Epifani', color: 'white', rank: 'Hari Raya' },
+            { m: 3, d: 25, name: 'Kabar Sukacita', color: 'white', rank: 'Pesta' },
+            { m: 8, d: 15, name: 'Maria Diangkat ke Surga', color: 'white', rank: 'Solemnitas' },
+            { m: 11, d: 1, name: 'Semua Orang Kudus', color: 'white', rank: 'Solemnitas' },
+            { m: 12, d: 8, name: 'Maria Dikandung Tanpa Noda', color: 'white', rank: 'Solemnitas' },
+            { m: 12, d: 25, name: 'Hari Raya Natal', color: 'white', rank: 'Solemnitas' }
+        ];
+
+        function movableFeastsForYear(year) {
+            const E = easterDate(year);
+            const map = [];
+            const push = (offset, name, color, rank) => map.push({ date: addDays(E, offset), name, color, rank });
+            push(0, 'Paskah', 'white', 'Solemnitas');
+            push(-46, 'Rabu Abu', 'purple', 'Prapaskah');
+            push(-7, 'Minggu Palma', 'red', 'Minggu');
+            push(-3, 'Kamis Putih', 'white', 'Peringatan Khusus');
+            push(-2, 'Jumat Agung', 'red', 'Hari Peringatan');
+            push(-1, 'Sabtu Suci', 'purple', 'Prapaskah');
+            push(39, 'Kenaikan Tuhan', 'white', 'Solemnitas');
+            push(49, 'Pentakosta', 'red', 'Solemnitas');
+            push(56, 'Trinitas', 'white', 'Minggu');
+            push(60, 'Corpus Christi', 'white', 'Pesta');
+
+            const epiphany = new Date(year, 0, 6);
+            const daysToSunday = (7 - epiphany.getDay()) % 7;
+            const baptism = addDays(epiphany, daysToSunday + 7);
+            map.push({ date: baptism, name: 'Pembaptisan Tuhan', color: 'white', rank: 'Pesta' });
+
+            return map;
+        }
+
+        function buildLiturgicalMap(year) {
+            const map = {};
+            fixedFeasts.forEach(f => {
+                const k = fmtDateISO(new Date(year, f.m - 1, f.d));
+                (map[k] ||= []).push({ name: f.name, color: f.color, rank: f.rank });
+            });
+            movableFeastsForYear(year).forEach(f => {
+                const k = fmtDateISO(f.date);
+                (map[k] ||= []).push({ name: f.name, color: f.color, rank: f.rank });
+            });
+            return map;
+        }
+
+        let currentYear = 2025, currentMonth = 0;
+        let liturgyMap = buildLiturgicalMap(currentYear);
+
+        function renderMonth(year, month) {
+            currentYear = year;
+            currentMonth = month;
+            el('monthYear').textContent = `${monthNames[month]} ${year}`;
+            el('monthLabel').textContent = `Tampilan: ${monthNames[month]} ${year}`;
+            const grid = el('calendarGrid');
+            grid.innerHTML = '';
+            weekdayNames.forEach(wd => {
+                const w = document.createElement('div');
+                w.className = 'weekday';
+                w.textContent = wd;
+                grid.appendChild(w);
+            });
+
+            const firstDay = new Date(year, month, 1);
+            const startDay = firstDay.getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const prevMonthDays = (startDay + 7) % 7;
+            const prevLastDate = new Date(year, month, 0).getDate();
+
+            for (let i = prevMonthDays - 1; i >= 0; i--)
+                grid.appendChild(createDayBox(new Date(year, month - 1, prevLastDate - i), true));
+            for (let d = 1; d <= daysInMonth; d++)
+                grid.appendChild(createDayBox(new Date(year, month, d), false));
+            while (grid.children.length < 7 * 6)
+                grid.appendChild(createDayBox(new Date(year, month + 1, grid.children.length - (daysInMonth + prevMonthDays) + 1), true));
+        }
+
+        function createDayBox(date, dim = false) {
+            const k = fmtDateISO(date);
+            const box = document.createElement('div');
+            box.className = 'day' + (dim ? ' dim' : '');
+            if (!dim && date.getFullYear() === currentYear && date.getMonth() === currentMonth)
+                box.classList.add('highlight');
+
+            box.innerHTML = `<div class="num">${date.getDate()}</div>`;
+            const events = liturgyMap[k] || [];
+            if (events.length) {
+                const dots = document.createElement('div');
+                dots.className = 'dots';
+                events.slice(0, 3).forEach(ev => {
+                    const d = document.createElement('span');
+                    d.className = 'dot ' + (ev.color || 'green');
+                    d.title = ev.name;
+                    dots.appendChild(d);
+                });
+                box.appendChild(dots);
+            }
+            box.addEventListener('click', () => selectDate(date, events));
+            return box;
+        }
+
+        function selectDate(date, events) {
+            const info = el('selectedInfo');
+            let html = `<strong>${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}</strong><br>`;
+            if (!events.length) {
+                html += '<div class="event small">Tidak ada peringatan liturgi utama pada hari ini.</div>';
+            } else {
+                events.forEach(ev => {
+                    html += `<div class="event small" style="border-left-color:transparent">
+                 <div class="title">${ev.name}</div>
+                 <div class="small">Warna: ${ev.color.toUpperCase()} — Tingkat: ${ev.rank}</div>
+               </div>`;
+                });
+            }
+            html += `<div style="margin-top:8px"><button class='btn' id='icsOneBtn'>Unduh .ics (Tanggal ini)</button></div>`;
+            info.innerHTML = html;
+            el('downloadDayIcs').disabled = false;
+            el('downloadDayIcs').onclick = () => downloadIcsForDay(date, events);
+            document.getElementById('icsOneBtn').onclick = () => downloadIcsForDay(date, events);
+        }
+
+        function makeIcsEventsForMap(year) {
+            const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Kalender Liturgi//ID'];
+            Object.keys(liturgyMap).sort().forEach(k => {
+                if (k.startsWith(String(year))) {
+                    liturgyMap[k].forEach(ev => {
+                        lines.push('BEGIN:VEVENT');
+                        lines.push(`DTSTART;VALUE=DATE:${k}`);
+                        lines.push(`DTEND;VALUE=DATE:${k}`);
+                        lines.push(`SUMMARY:${escapeIcsText(ev.name)}`);
+                        lines.push('TRANSP:TRANSPARENT');
+                        lines.push('END:VEVENT');
+                    });
+                }
+            });
+            lines.push('END:VCALENDAR');
+            return lines.join('\r\n');
+        }
+
+        function downloadIcsForYear(year) {
+            const ics = makeIcsEventsForMap(year);
+            const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `kalender_liturgi_${year}.ics`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadIcsForDay(date, events) {
+            const k = fmtDateISO(date);
+            const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Kalender Liturgi//ID'];
+            (events.length ? events : [{ name: `Tanggal ${k}` }]).forEach(ev => {
+                lines.push('BEGIN:VEVENT');
+                lines.push(`DTSTART;VALUE=DATE:${k}`);
+                lines.push(`DTEND;VALUE=DATE:${k}`);
+                lines.push(`SUMMARY:${escapeIcsText(ev.name)}`);
+                lines.push('TRANSP:TRANSPARENT');
+                lines.push('END:VEVENT');
+            });
+            lines.push('END:VCALENDAR');
+            const blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `kalender_liturgi_${k}.ics`; a.click();
+            document.body.appendChild(a);
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        function escapeIcsText(str) {
+            if (!str) return '';
+            return String(str).replace(/\r\n/g, '\\n').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+        }
+
+        // Inisialisasi kontrol (dropdown, tombol)
+        function initControls() {
+            const ms = el('monthSelect');
+            const ys = el('yearSelect');
+            // isi bulan
+            monthNames.forEach((nm, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx;
+                opt.textContent = nm;
+                ms.appendChild(opt);
+            });
+            // isi tahun (buat lebih fleksibel: 2024..2026)
+            const startY = 2024, endY = 2026;
+            for (let y = startY; y <= endY; y++) {
+                const opt = document.createElement('option');
+                opt.value = y;
+                opt.textContent = y;
+                ys.appendChild(opt);
+            }
+
+            // navigasi prev / next
+            el('prev').addEventListener('click', () => {
+                let m = currentMonth - 1;
+                let y = currentYear;
+                if (m < 0) { m = 11; y--; }
+                liturgyMap = buildLiturgicalMap(y);
+                renderMonth(y, m);
+                ms.value = m;
+                ys.value = y;
+            });
+            el('next').addEventListener('click', () => {
+                let m = currentMonth + 1;
+                let y = currentYear;
+                if (m > 11) { m = 0; y++; }
+                liturgyMap = buildLiturgicalMap(y);
+                renderMonth(y, m);
+                ms.value = m;
+                ys.value = y;
+            });
+
+            ms.addEventListener('change', () => {
+                const m = parseInt(ms.value, 10);
+                const y = parseInt(ys.value, 10);
+                liturgyMap = buildLiturgicalMap(y);
+                renderMonth(y, m);
+            });
+            ys.addEventListener('change', () => {
+                const m = parseInt(ms.value, 10);
+                const y = parseInt(ys.value, 10);
+                liturgyMap = buildLiturgicalMap(y);
+                renderMonth(y, m);
+            });
+
+            el('downloadYearIcs').addEventListener('click', () => {
+                downloadIcsForYear(currentYear);
+            });
+
+            // tombol download untuk hari tertentu; diaktifkan saat ada pemilihan tanggal
+            el('downloadDayIcs').addEventListener('click', () => {
+                // noop — handler di-set saat selectDate dipanggil
+            });
+
+            el('resetToday').addEventListener('click', () => {
+                const now = new Date();
+                let y = now.getFullYear();
+                let m = now.getMonth();
+                // jika bukan tahun yang ada pada daftar, default ke 2025 Jan
+                if (y < parseInt(ys.options[0].value, 10) || y > parseInt(ys.options[ys.options.length - 1].value, 10)) {
+                    y = 2025; m = 0;
+                }
+                liturgyMap = buildLiturgicalMap(y);
+                renderMonth(y, m);
+                ms.value = m;
+                ys.value = y;
+                el('selectedInfo').textContent = 'Klik sebuah tanggal pada kalender untuk melihat informasi liturgi di sini.';
+                el('downloadDayIcs').disabled = true;
+            });
+
+            // inisialisasi nilai dropdown sesuai state awal
+            ms.value = currentMonth;
+            ys.value = currentYear;
+        }
+
+        // Inisialisasi awal & render default
+        (function init() {
+            initControls();
+            const today = new Date();
+            // logika awal mirip: jika sekarang 2025 dan setelah Juli -> buka Agustus, else buka Januari 2025
+            if (today.getFullYear() === 2025 && today.getMonth() > 6) {
+                renderMonth(2025, 7); // Agustus
+                el('monthSelect').value = 7;
+                el('yearSelect').value = 2025;
+            } else {
+                renderMonth(2025, 0); // Januari
+                el('monthSelect').value = 0;
+                el('yearSelect').value = 2025;
+            }
+            el('downloadDayIcs').disabled = true;
+        })();
+    </script>
+</body>
+
+</html>
