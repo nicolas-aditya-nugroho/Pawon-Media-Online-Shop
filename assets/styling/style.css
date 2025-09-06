@@ -207,6 +207,38 @@ h1 {
     margin-bottom: 50px;
 }
 
+.product-title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+.product-author {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--nav-text);
+    margin: 4px 0 12px;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.pamed-btn .price-button {
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -552,7 +584,9 @@ main {
     color: var(--primary-color);
 }
 
-.jam-operasional, h6, p {
+.jam-operasional,
+h6,
+p {
     font-size: 1.5rem;
     color: var(--text-color);
     font-weight: bold;
@@ -571,7 +605,8 @@ main {
     text-align: center;
 }
 
-.footer-bottom small, a {
+.footer-bottom small,
+a {
     text-decoration: none;
     font-size: 1rem;
     color: var(--text-color);
