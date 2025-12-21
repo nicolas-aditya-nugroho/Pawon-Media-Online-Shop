@@ -28,8 +28,9 @@
     <!-- HEADER -->
     <header>
         <a href="/index.html" class="nav-brand">
+            <!-- Gunakan placeholder atau logo lokal Anda -->
             <img src="/assets/LOGO-1-transparent.png" alt="" class="nav-logo"
-                onerror="this.src='https://via.placeholder.com/40'">
+                onerror="this.src='https://via.placeholder.com/40/5c4033/ffffff?text=PM'">
             Pawon Media
         </a>
         <ul>
@@ -38,183 +39,216 @@
             <li><a href="#contactUs">Kontak</a></li>
         </ul>
         <div class="header-buttons">
-            <!-- New Login Button -->
-            <button class="login-btn-header" id="headerLoginBtn" onclick="openLogin()">
-                <i class="fa-solid fa-user"></i> Masuk
-            </button>
-
-            <button class="cart-btn" id="cartBtn">
+            <button class="cart-btn" id="cartBtn" title="Lihat Keranjang">
                 <i class="fa-solid fa-cart-shopping"></i> <span class="cart-count" id="cartCount">0</span>
             </button>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
-        <h1>Our Products</h1>
-        <div class="products" id="products"></div>
-    </main>
-
+    <!-- CAROUSEL -->
     <div class="carousel-container" id="carousel">
-        <!-- Area Slide Gambar -->
         <div class="carousel-slide">
-            <!-- Gambar 1 -->
-            <img src="/assets/Latar Belakang Nama Pawon Media.png" alt="Latar Belakang Nama Pawon Media" id="lastClone">
-            <!-- Gambar 2 -->
-            <img src="/assets/Visi Pawon Media.png" alt="Visi Pawon Media">
-            <!-- Gambar 3 -->
-            <img src="/assets/Misi Pawon Media.png" alt="Misi Pawon Media">
+            <!-- Gambar Placeholder digunakan agar tampilan tetap rapi jika aset lokal tidak ada -->
+            <img src="/assets/Latar Belakang Nama Pawon Media.png"
+                onerror="this.src='https://via.placeholder.com/1200x500/5c4033/ffffff?text=Latar+Belakang+Pawon+Media'"
+                alt="Latar Belakang">
+            <img src="/assets/Visi Pawon Media.png"
+                onerror="this.src='https://via.placeholder.com/1200x500/d2b48c/ffffff?text=Visi+Pawon+Media'"
+                alt="Visi">
+            <img src="/assets/Misi Pawon Media.png"
+                onerror="this.src='https://via.placeholder.com/1200x500/8b4513/ffffff?text=Misi+Pawon+Media'"
+                alt="Misi">
         </div>
 
-        <!-- Tombol Navigasi -->
         <button id="prevBtn" class="carousel-btn"><i class="fas fa-chevron-left"></i></button>
         <button id="nextBtn" class="carousel-btn"><i class="fas fa-chevron-right"></i></button>
-
-        <!-- Indikator Dots -->
         <div class="carousel-dots" id="dotsContainer"></div>
+
         <script>
-            /* --- JAVASCRIPT LOGIC --- */
+            /* --- LOGIKA CAROUSEL --- */
+            document.addEventListener('DOMContentLoaded', () => {
+                const carouselSlide = document.querySelector('.carousel-slide');
+                const images = document.querySelectorAll('.carousel-slide img');
+                const prevBtn = document.querySelector('#prevBtn');
+                const nextBtn = document.querySelector('#nextBtn');
+                const dotsContainer = document.querySelector('#dotsContainer');
 
-            // Seleksi Elemen
-            const carouselSlide = document.querySelector('.carousel-slide');
-            const images = document.querySelectorAll('.carousel-slide img');
+                let counter = 0;
+                const totalImages = images.length;
+                let autoPlayInterval;
 
-            const prevBtn = document.querySelector('#prevBtn');
-            const nextBtn = document.querySelector('#nextBtn');
-            const dotsContainer = document.querySelector('#dotsContainer');
-            const carouselContainer = document.querySelector('.carousel-container');
-
-            // State
-            let counter = 0;
-            const totalImages = images.length;
-            let slideWidth = images[0].clientWidth;
-            let autoPlayInterval;
-
-            // 1. Membuat Dots secara dinamis sesuai jumlah gambar
-            function createDots() {
+                // Create Dots
+                dotsContainer.innerHTML = '';
                 for (let i = 0; i < totalImages; i++) {
                     const dot = document.createElement('div');
                     dot.classList.add('dot');
-                    if (i === 0) dot.classList.add('active'); // Set aktif pertama
-                    dot.setAttribute('data-index', i);
-
-                    // Event click pada dot
+                    if (i === 0) dot.classList.add('active');
                     dot.addEventListener('click', () => {
                         counter = i;
                         updateCarousel();
                         resetTimer();
                     });
-
                     dotsContainer.appendChild(dot);
                 }
-            }
 
-            // 2. Fungsi Utama Update Posisi Carousel
-            function updateCarousel() {
-                // Geser slide menggunakan transform CSS
-                carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+                function updateCarousel() {
+                    const width = document.querySelector('.carousel-container').clientWidth;
+                    carouselSlide.style.transform = `translateX(${-width * counter}px)`;
 
-                // Update warna Dots
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[counter].classList.add('active');
-            }
-
-            // 3. Event Listener Tombol Next
-            nextBtn.addEventListener('click', () => {
-                counter++;
-                if (counter >= totalImages) {
-                    counter = 0; // Kembali ke awal jika sudah di akhir
+                    document.querySelectorAll('.dot').forEach((dot, index) => {
+                        if (index === counter) dot.classList.add('active');
+                        else dot.classList.remove('active');
+                    });
                 }
-                updateCarousel();
-                resetTimer(); // Reset timer autoplay saat diklik
-            });
 
-            // 4. Event Listener Tombol Prev
-            prevBtn.addEventListener('click', () => {
-                counter--;
-                if (counter < 0) {
-                    counter = totalImages - 1; // Lompat ke akhir jika di awal
-                }
-                updateCarousel();
-                resetTimer();
-            });
-
-            // 5. Autoplay Logic
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(() => {
+                function nextSlide() {
                     counter++;
-                    if (counter >= totalImages) {
-                        counter = 0;
-                    }
+                    if (counter >= totalImages) counter = 0;
                     updateCarousel();
-                }, 3000); // Ganti gambar setiap 3 detik
-            }
+                }
 
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
+                function prevSlide() {
+                    counter--;
+                    if (counter < 0) counter = totalImages - 1;
+                    updateCarousel();
+                }
 
-            function resetTimer() {
-                stopAutoPlay();
+                nextBtn.addEventListener('click', () => { nextSlide(); resetTimer(); });
+                prevBtn.addEventListener('click', () => { prevSlide(); resetTimer(); });
+
+                function startAutoPlay() {
+                    autoPlayInterval = setInterval(nextSlide, 3500);
+                }
+
+                function resetTimer() {
+                    clearInterval(autoPlayInterval);
+                    startAutoPlay();
+                }
+
+                // Responsif saat resize window
+                window.addEventListener('resize', updateCarousel);
+
+                // Start
                 startAutoPlay();
-            }
-
-            // 6. Pause saat mouse di atas carousel
-            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-            carouselContainer.addEventListener('mouseleave', startAutoPlay);
-
-            // 7. Responsif: Update lebar slide saat window di-resize
-            window.addEventListener('resize', () => {
-                slideWidth = images[0].clientWidth;
-                updateCarousel();
             });
-
-            // Inisialisasi
-            createDots();
-            startAutoPlay();
-
         </script>
     </div>
 
-    <!-- NEW LOGIN MODAL -->
-    <div class="login-modal" id="loginModal">
-        <div class="login-content">
-            <button class="close-login" onclick="closeLogin()">&times;</button>
-            <h2>Masuk ke Pawon Media</h2>
-            <p style="color: #5c4033; margin-bottom: 20px;">Pilih metode masuk:</p>
-
-            <button class="login-option-btn btn-instagram" onclick="handleLogin('Instagram')">
-                <i class="fa-brands fa-instagram" style="font-size: 1.2rem;"></i>
-                Masuk dengan Instagram
-            </button>
-
-            <button class="login-option-btn btn-google" onclick="handleLogin('Google')">
-                <i class="fa-brands fa-google" alt="Google"></i>
-                Masuk dengan Google
-            </button>
+    <!-- MAIN CONTENT -->
+    <main>
+        <h1>Daftar Produk</h1>
+        <div class="products" id="productsContainer">
+            <!-- Produk akan di-generate oleh JavaScript -->
         </div>
-    </div>
+    </main>
 
-
-    <!-- CART MODAL (Original) -->
+    <!-- CART MODAL -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <button class="close-cart" id="closeCart">&times;</button>
-            <h2>Your Cart</h2>
-            <div class="cart-items" id="cartItems"></div>
-            <div class="cart-total" id="cartTotal"></div>
-            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
-            <a class="wa-btn" id="waBtn" href="#" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-                Order via WhatsApp
+            <div class="cart-header">
+                <h2>Keranjang Belanja</h2>
+            </div>
+
+            <div id="cartItems" class="cart-items-container">
+                <p id="details">Keranjang Anda masih kosong.</p>
+            </div>
+
+            <div class="cart-total" id="cartTotal">Total: Rp 0</div>
+
+            <!-- WhatsApp Checkout Button -->
+            <a class="wa-btn-checkout" id="waCheckoutBtn" href="#" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-lg"></i> Pesan via WhatsApp
             </a>
         </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Tentang Pawon Media -->
+                <div id="aboutUs">
+                    <h3 class="footer-section-title">Tentang Pawon Media</h3>
+                    <p class="footer-text">"Pawon" dalam bahasa Jawa berarti "dapur", yang simbolis untuk tempat di mana
+                        kehangatan dan kreativitas dimulai, sama halnya dengan proses belajar dan bekerja.</p>
+                    <p class="footer-text">"Media" menunjukkan bahwa toko ini merupakan sarana untuk mendukung aktivitas
+                        belajar dan komunikasi.</p>
+                </div>
+                <!-- Visi & Misi -->
+                <div>
+                    <h3 class="footer-section-title">Visi &amp; Misi</h3>
+                    <div style="margin-bottom: 16px;">
+                        <h4 style="font-size:1rem; color:var(--accent-color);">VISI</h4>
+                        <p class="footer-text">Menjadi penyedia peralatan alat tulis sekolah dan kantor yang terpercaya,
+                            inovatif, dan berkualitas tinggi.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size:1rem; color:var(--accent-color);">MISI</h4>
+                        <ul style="padding-left: 20px;">
+                            <li>Menyediakan peralatan berkualitas dengan harga terjangkau</li>
+                            <li>Menawarkan layanan desain profesional</li>
+                            <li>Memastikan kualitas dan keandalan produk</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Jam Operasional & Lokasi -->
+                <div>
+                    <h3 class="footer-section-title">Jam Operasional</h3>
+                    <div class="footer-schedule">
+                        <p><i class="fas fa-clock"></i> Senin - Jum'at: 08.00 - 20.00 WIB</p>
+                        <p><i class="fas fa-clock"></i> Sabtu: 08.00 - 15.00 WIB</p>
+                    </div>
+                    <h4 class="footer-section-title" style="font-size: 16px; margin-top: 20px; margin-bottom: 12px;">
+                        Lokasi Toko</h4>
+                    <p class="footer-text"><i class="fas fa-map-marker-alt"></i> Jl. Kota Baru V No 224, Kota Salatiga -
+                        Indonesia</p>
+                    <a href="https://maps.app.goo.gl/AV8uNZSQpFyPwuDx9" target="_blank" class="btn-maps"> <i
+                            class="fas fa-map"></i> Lihat di Maps </a>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-copyright" id="contactUs">
+                <p>© <span id="currentYear">2025</span>. Semua Hak Cipta Dilindungi | Pawon Media • Toko Alat Tulis •
+                    Jasa Desain • Foto Copy</p>
+                <div class="footer-links" style="margin-top:10px;">
+                    <a href="https://www.tiktok.com/@pawonmedia.010924" target="_blank"><i class="fab fa-tiktok"></i>
+                        TikTok</a> |
+                    <a href="https://instagram.com/pawonmedia.010924" target="_blank"><i class="fab fa-instagram"></i>
+                        Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Floating Buttons -->
+    <div class="wa-button">
+        <button id="waFloatingBtn" title="Chat CS">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+        </button>
+        <div id="waChatBox" class="wa-chatbox">
+            <div class="wa-chat-header">
+                <span>CS Pawon Media</span>
+                <button id="waCloseBtn">&times;</button>
+            </div>
+            <div class="wa-chat-body">
+                <p style="margin-bottom:10px; font-size:0.9rem;">Halo! Ada yang bisa kami bantu?</p>
+                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya ingin bertanya tentang stok produk.">Tanya
+                    Stok Produk</button>
+                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya ingin bertanya tentang jasa desain.">Tanya
+                    Jasa Desain</button>
+                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya ingin melakukan pemesanan manual.">Pemesanan
+                    Manual</button>
+                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya butuh bantuan.">Butuh Bantuan Lain</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Kembali ke atas"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <!-- SCRIPT UTAMA -->
     <script>
-        // --- DATA PRODUK ORIGINAL ---
+        // --- DATA PRODUK LENGKAP (Digabung dari Part 1 & Part 2) ---
         const products = [
             { id: 1, name: "SIKA Bag Folder AC05", desc: "High-quality bag folder for packaging.", price: 4000, img: "/assets/Products/Bag Folder/SIKA-Bag Folder-AC05.jpeg" },
             { id: 2, name: "Joyko Bag Folder DBG-108", desc: "Durable and stylish bag folder.", price: 5000, img: "/assets/Products/Bag Folder/Joyko-Bag Folder-DBG108.jpeg" },
@@ -251,11 +285,10 @@
             { id: 53, name: "Joyko Index Mark IM-36", desc: "High quality index mark", price: 9000, img: "/assets/Products/Index Mark/Joyko-Index Mark-IM_36.jpg" },
             { id: 54, name: "Joyko Index Mark IM-42", desc: "High quality index mark", price: 11000, img: "/assets/Products/Index Mark/Joyko-Index Mark-IM_42.jpg" },
             { id: 55, name: "Joyko Staples No.3 24/6", desc: "Strong and durable staples.", price: 2500, img: "/assets/Products/Isi Staples/Isi Staples-Joyko-No.3-24~6.jpg" },
-            { id: 55, name: "MAX Staples No.3 1M Fine", desc: "Strong and durable staples.", price: 7000, img: "/assets/Products/Isi Staples/Isi Staples-Max-No.3_1M Fine.jpg" },
-            { id: 56, name: "Kangaro Staples No.23-6H", desc: "Strong and durable staples.", price: 20000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~6H.jpg" },
-            { id: 57, name: "Kangaro Staples No.23-8H", desc: "Strong and durable staples.", price: 24000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~8H.jpg" },
-            { id: 58, name: "Kangaro Staples No.23-10H", desc: "Strong and durable staples.", price: 26000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~10H.jpg" },
-            { id: 59, name: "Kangaro Staples No.23-13H", desc: "Strong and durable staples.", price: 26000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~13H.jpg" },
+            { id: 56, name: "MAX Staples No.3 1M Fine", desc: "Strong and durable staples.", price: 7000, img: "/assets/Products/Isi Staples/Isi Staples-Max-No.3_1M Fine.jpg" },
+            { id: 57, name: "Kangaro Staples No.23-6H", desc: "Strong and durable staples.", price: 20000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~6H.jpg" },
+            { id: 58, name: "Kangaro Staples No.23-8H", desc: "Strong and durable staples.", price: 24000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~8H.jpg" },
+            { id: 59, name: "Kangaro Staples No.23-10H", desc: "Strong and durable staples.", price: 26000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~10H.jpg" },
             { id: 60, name: "Kangaro Staples No.23-13H", desc: "Strong and durable staples.", price: 26000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.23~13H.jpg" },
             { id: 61, name: "Kangaro Staples No.3-24/6", desc: "Strong and durable staples.", price: 6000, img: "/assets/Products/Isi Staples/Isi Staples-Kangaro-No.24~6~No.3.jpg" },
             { id: 62, name: "Joyko Staples N0.10", desc: "Strong and durable staples.", price: 1500, img: "/assets/Products/Isi Staples/Isi Staples-Joyko-No.10.jpg" },
@@ -349,30 +382,30 @@
             { id: 150, name: "Meterai Tempel 10.000 IDR", desc: "Official Indonesian tax stamp for legal documents.", price: 11000, img: "https://meterai.posindonesia.co.id/image/produk/176.jpg" },
             { id: 151, name: "Gelatik Kembar Buku Folio 100 Lembar", desc: "High-quality gelatik for binding books.", price: 20000, img: "/assets/Products/Buku Besar/Gelatik Kembar-Buku_Folio-100_lembar.jpg" },
             { id: 152, name: "Gelatik Kembar Buku Kas Folio 50 Lembar", desc: "High-quality gelatik for binding books.", price: 16000, img: "/assets/Products/Buku Besar/Gelatik Kembar-Buku Kas_Folio-50_lembar.jpg" },
-            { id: 153, name: " Pulsa Indosat Ooredoo 5.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 8225, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 154, name: " Pulsa Indosat Ooredoo 10.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 13075, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 155, name: " Pulsa Indosat Ooredoo 20.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 21905, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 156, name: " Pulsa Indosat Ooredoo 25.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 27045, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 157, name: " Pulsa Indosat Ooredoo 50.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 51565, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 158, name: " Pulsa Indosat Ooredoo 100.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 100590, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
-            { id: 159, name: " Pulsa Indosat Smartfren 5.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 6430, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 160, name: " Pulsa Indosat Smartfren 10.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 11260, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 161, name: " Pulsa Indosat Smartfren 20.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 21105, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 162, name: " Pulsa Indosat Smartfren 25.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 25865, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 163, name: " Pulsa Indosat Smartfren 50.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 49800, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 164, name: " Pulsa Indosat Smartfren 100.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 97660, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
-            { id: 165, name: " Pulsa Telkomsel 5.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 6790, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 166, name: " Pulsa Telkomsel 10.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 11750, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 167, name: " Pulsa Telkomsel 20.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 21281, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 168, name: " Pulsa Telkomsel 25.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 26210, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 169, name: " Pulsa Telkomsel 50.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 51260, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 170, name: " Pulsa Telkomsel 100.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 99925, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
-            { id: 171, name: " Pulsa XL Axiata 5.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 7260, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
-            { id: 172, name: " Pulsa XL Axiata 10.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 12315, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
-            { id: 173, name: " Pulsa XL Axiata 25.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 26550, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
-            { id: 174, name: " Pulsa XL Axiata 30.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 31670, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
-            { id: 175, name: " Pulsa XL Axiata 50.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 51300, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
-            { id: 176, name: " Pulsa XL Axiata 100.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda. (Harga berubah sewaktu-waktu)", price: 100925, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 153, name: " Pulsa Indosat Ooredoo 5.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 8225, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 154, name: " Pulsa Indosat Ooredoo 10.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 13075, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 155, name: " Pulsa Indosat Ooredoo 20.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 21905, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 156, name: " Pulsa Indosat Ooredoo 25.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 27045, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 157, name: " Pulsa Indosat Ooredoo 50.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 51565, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 158, name: " Pulsa Indosat Ooredoo 100.000", desc: "Pulsa Indosat Ooredoo untuk kebutuhan telekomunikasi Anda.", price: 100590, img: "/assets/New_Flyer_Harga_Pulsa_Indosat.png" },
+            { id: 159, name: " Pulsa Indosat Smartfren 5.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 6430, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 160, name: " Pulsa Indosat Smartfren 10.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 11260, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 161, name: " Pulsa Indosat Smartfren 20.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 21105, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 162, name: " Pulsa Indosat Smartfren 25.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 25865, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 163, name: " Pulsa Indosat Smartfren 50.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 49800, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 164, name: " Pulsa Indosat Smartfren 100.000", desc: "Pulsa Smartfren untuk kebutuhan telekomunikasi Anda.", price: 97660, img: "/assets/New_Flyer_Harga_Pulsa_Smartfren.png" },
+            { id: 165, name: " Pulsa Telkomsel 5.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 6790, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 166, name: " Pulsa Telkomsel 10.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 11750, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 167, name: " Pulsa Telkomsel 20.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 21281, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 168, name: " Pulsa Telkomsel 25.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 26210, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 169, name: " Pulsa Telkomsel 50.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 51260, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 170, name: " Pulsa Telkomsel 100.000", desc: "Pulsa Telkomsel untuk kebutuhan telekomunikasi Anda.", price: 99925, img: "/assets/New_Flyer_Harga_Pulsa_Telkomsel.png" },
+            { id: 171, name: " Pulsa XL Axiata 5.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 7260, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 172, name: " Pulsa XL Axiata 10.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 12315, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 173, name: " Pulsa XL Axiata 25.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 26550, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 174, name: " Pulsa XL Axiata 30.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 31670, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 175, name: " Pulsa XL Axiata 50.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 51300, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
+            { id: 176, name: " Pulsa XL Axiata 100.000", desc: "Pulsa XL Axiata untuk kebutuhan telekomunikasi Anda.", price: 100925, img: "/assets/New_Flyer_Harga_Pulsa_XL.png" },
             { id: 177, name: " Desain Banner / Spanduk", desc: "Layanan desain banner atau spanduk sesuai kebutuhan Anda.", price: 3000, img: "/assets/Catalogue/Banner/BANNER SPANDUK-6 (Page 2).png" },
             { id: 178, name: " Desain Sampul Buku", desc: "Layanan desain sampul buku profesional untuk keperluan bisnis Anda.", price: 3500, img: "/assets/Catalogue/Cover Book/COVER-4.png" },
             { id: 179, name: " Desain Food Menu", desc: "Layanan desain food menu untuk berbagai acara spesial Anda.", price: 4000, img: "/assets/Catalogue/Food Menu/Daftar Menu (Page 3).png" },
@@ -381,89 +414,129 @@
             { id: 182, name: " Desain Kartu Nama", desc: "Layanan desain kartu nama profesional untuk keperluan bisnis Anda.", price: 5500, img: "/assets/Catalogue/Name Card/Kartu Nama (Page 1).png" }
         ];
 
-        const productsContainer = document.getElementById('products');
+        // --- DOM Elements ---
+        const productsContainer = document.getElementById('productsContainer');
         const cartBtn = document.getElementById('cartBtn');
         const cartModal = document.getElementById('cartModal');
         const closeCart = document.getElementById('closeCart');
         const cartItemsContainer = document.getElementById('cartItems');
         const cartTotal = document.getElementById('cartTotal');
         const cartCount = document.getElementById('cartCount');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const waBtn = document.getElementById('waBtn');
+        const waCheckoutBtn = document.getElementById('waCheckoutBtn');
 
+        // --- STATE ---
         let cart = [];
-        let isLoggedIn = false;
 
-        // Render products
-        products.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            // Menambahkan Error Handler jika gambar tidak ditemukan
-            productElement.innerHTML = `
-                <img src="${product.img}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/150/5c4033/ebb866?text=${encodeURIComponent(product.name)}'">
-                <h3>${product.name}</h3>
-                <p>${product.desc}</p>
-                <div class="price">Rp ${product.price.toLocaleString()}</div>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
-            `;
-            productsContainer.appendChild(productElement);
-        });
+        // --- RENDER PRODUCTS ---
+        function renderProducts() {
+            productsContainer.innerHTML = '';
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
 
-        // Add to cart function
+                // Menggunakan placeholder jika gambar error
+                const imgSrc = product.img;
+                const fallbackImg = `https://via.placeholder.com/200x200/5c4033/ffffff?text=${encodeURIComponent(product.name)}`;
+
+                card.innerHTML = `
+                    <img src="${imgSrc}" alt="${product.name}" onerror="this.src='${fallbackImg}'">
+                    <div>
+                        <div class="product-title">${product.name}</div>
+                        <div class="product-desc">${product.desc}</div>
+                        <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                        <i class="fas fa-plus"></i> Tambah ke Keranjang
+                    </button>
+                `;
+                productsContainer.appendChild(card);
+            });
+        }
+
+        // --- CART LOGIC ---
         function addToCart(id) {
             const product = products.find(p => p.id === id);
-            const cartItem = cart.find(item => item.id === id);
-            if (cartItem) {
-                cartItem.quantity++;
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity++;
             } else {
                 cart.push({ ...product, quantity: 1 });
             }
-            updateCart();
+
+            updateCartUI();
+
+            // Efek visual kecil pada tombol cart
+            cartBtn.classList.add('bump');
+            setTimeout(() => cartBtn.classList.remove('bump'), 300);
         }
 
-        // Update cart function
-        function updateCart() {
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
-            let count = 0;
-            cart.forEach(item => {
-                total += item.price * item.quantity;
-                count += item.quantity;
-                const cartItemElement = document.createElement('div');
-                cartItemElement.classList.add('cart-item');
-                cartItemElement.innerHTML = `
-                    <span>${item.name} (x${item.quantity})</span>
-                    <span>Rp ${(item.price * item.quantity).toLocaleString()}</span>
-                    <button onclick="removeFromCart(${item.id})">Remove</button>
-                `;
-                cartItemsContainer.appendChild(cartItemElement);
-            });
-            cartTotal.innerText = `Total: Rp ${total.toLocaleString()}`;
-            cartCount.innerText = count;
-
-            // Update WA Link
-            const phone = "628123456789";
-            let message = "Halo Pawon Media, saya ingin memesan:\n";
-            cart.forEach(item => {
-                message += `- ${item.name} (${item.quantity} pcs)\n`;
-            });
-            message += `\nTotal: Rp ${total.toLocaleString()}`;
-            const encodedMsg = encodeURIComponent(message);
-            waBtn.href = `https://wa.me/${phone}?text=${encodedMsg}`;
-        }
-
-        // Remove from cart function
         function removeFromCart(id) {
-            const cartItem = cart.find(item => item.id === id);
-            if (cartItem.quantity > 1) {
-                cartItem.quantity--;
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem.quantity > 1) {
+                existingItem.quantity--;
             } else {
                 cart = cart.filter(item => item.id !== id);
             }
-            updateCart();
+            updateCartUI();
         }
 
-        // Cart Modal logic
+        function updateCartUI() {
+            // Update Count Badge
+            const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+            cartCount.innerText = totalCount;
+
+            // Update List Item di Modal
+            cartItemsContainer.innerHTML = '';
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align:center; margin-top:20px; color:#777;">Keranjang Anda masih kosong.</p>';
+                waCheckoutBtn.style.display = 'none'; // Sembunyikan tombol WA jika kosong
+            } else {
+                waCheckoutBtn.style.display = 'flex'; // Tampilkan tombol WA
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    totalPrice += itemTotal;
+
+                    const itemEl = document.createElement('div');
+                    itemEl.classList.add('cart-item');
+                    itemEl.innerHTML = `
+                        <div class="cart-item-details">
+                            <span class="cart-item-name">${item.name}</span>
+                            <span class="cart-item-price">${item.quantity} x Rp ${item.price.toLocaleString('id-ID')}</span>
+                        </div>
+                        <div style="font-weight:bold;">Rp ${itemTotal.toLocaleString('id-ID')}</div>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Hapus</button>
+                    `;
+                    cartItemsContainer.appendChild(itemEl);
+                });
+            }
+
+            // Update Total Harga
+            cartTotal.innerText = `Total: Rp ${totalPrice.toLocaleString('id-ID')}`;
+
+            // Update Link WhatsApp untuk Checkout
+            updateWhatsAppLink(totalPrice);
+        }
+
+        function updateWhatsAppLink(totalPrice) {
+            const phoneNumber = "62895360074499"; // Nomor tujuan
+            let message = "Halo Pawon Media, saya ingin memesan:\n\n";
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} (${item.quantity} pcs) - Rp ${(item.price * item.quantity).toLocaleString('id-ID')}\n`;
+            });
+
+            message += `\n*Total Tagihan: Rp ${totalPrice.toLocaleString('id-ID')}*`;
+            message += `\n\nMohon konfirmasi pesanan saya. Terima kasih.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            waCheckoutBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        }
+
+        // --- EVENT LISTENERS ---
         cartBtn.addEventListener('click', () => {
             cartModal.style.display = 'flex';
         });
@@ -473,203 +546,52 @@
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target == cartModal) {
+            if (e.target === cartModal) {
                 cartModal.style.display = 'none';
             }
         });
 
-        checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                alert('Keranjang belanja kosong!');
-            } else if (!isLoggedIn) {
-                alert('Silakan Login terlebih dahulu untuk melanjutkan pesanan.');
-                openLogin();
+        // --- FLOATING WA LOGIC ---
+        const waFloatingBtn = document.getElementById('waFloatingBtn');
+        const waChatBox = document.getElementById('waChatBox');
+        const waCloseBtn = document.getElementById('waCloseBtn');
+        const waMsgBtns = document.querySelectorAll('.wa-msg-btn');
+        const waCSNumber = "62895360074499";
+
+        waFloatingBtn.addEventListener('click', () => {
+            waChatBox.style.display = waChatBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        waCloseBtn.addEventListener('click', () => {
+            waChatBox.style.display = 'none';
+        });
+
+        waMsgBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const msg = encodeURIComponent(btn.getAttribute('data-msg'));
+                window.open(`https://wa.me/${waCSNumber}?text=${msg}`, '_blank');
+                waChatBox.style.display = 'none';
+            });
+        });
+
+        // --- BACK TO TOP LOGIC ---
+        const backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
             } else {
-                alert('Terima kasih! Silakan lanjutkan pesanan via WhatsApp.');
-                waBtn.click();
+                backToTopBtn.classList.remove('show');
             }
         });
 
-        /* --- FUNGSI LOGIN (BARU) --- */
-        const loginModal = document.getElementById('loginModal');
-        const headerLoginBtn = document.getElementById('headerLoginBtn');
-
-        function openLogin() {
-            loginModal.style.display = 'flex';
-        }
-
-        function closeLogin() {
-            loginModal.style.display = 'none';
-        }
-
-        function handleSocialLogin(provider) {
-            // Simulasi Login
-            isLoggedIn = true;
-            headerLoginBtn.innerHTML = `<i class="fa-solid fa-user-check"></i> ${provider} User`;
-            headerLoginBtn.style.backgroundColor = '#018a33';
-            headerLoginBtn.style.color = 'white';
-            headerLoginBtn.style.border = 'none';
-
-            closeLogin();
-            alert(`Berhasil masuk menggunakan akun ${provider}!`);
-        }
-
-        // Tutup modal login jika klik di luar
-        window.addEventListener('click', (e) => {
-            if (e.target == loginModal) {
-                closeLogin();
-            }
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // --- INITIALIZE ---
+        renderProducts();
+
     </script>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid"><!-- Tentang Pawon Media -->
-                <div id="aboutUs">
-                    <h3 class="footer-section-title">Tentang Pawon Media</h3>
-                    <p class="footer-text">"Pawon" dalam bahasa Jawa berarti "dapur", yang simbolis untuk tempat di mana
-                        kehangatan dan kreativitas dimulai, sama halnya dengan proses belajar dan bekerja.</p>
-                    <p class="footer-text">"Media" menunjukkan bahwa toko ini merupakan sarana untuk mendukung aktivitas
-                        belajar dan komunikasi.</p>
-                </div><!-- Visi & Misi -->
-                <div>
-                    <h3 class="footer-section-title">Visi &amp; Misi</h3>
-                    <div style="margin-bottom: 16px;">
-                        <h4 class="footer-subtitle">VISI</h4>
-                        <p class="footer-text">Menjadi penyedia peralatan alat tulis sekolah dan kantor yang terpercaya,
-                            inovatif, dan berkualitas tinggi.</p>
-                    </div>
-                    <div>
-                        <h4 class="footer-subtitle">MISI</h4>
-                        <ul class="footer-list">
-                            <li>Menyediakan peralatan berkualitas dengan harga terjangkau</li>
-                            <li>Menawarkan layanan desain profesional</li>
-                            <li>Memastikan kualitas dan keandalan produk</li>
-                            <li>Membangun komunitas peduli pendidikan</li>
-                        </ul>
-                    </div>
-                </div><!-- Jam Operasional & Lokasi -->
-                <div>
-                    <h3 class="footer-section-title">Jam Operasional</h3>
-                    <div class="footer-schedule">
-                        <p class="footer-schedule-item"><i class="fas fa-clock icon-clock"></i> Senin - Jum'at: 08.00 -
-                            20.00 WIB</p>
-                        <p class="footer-schedule-item"><i class="fas fa-clock icon-clock"></i> Sabtu: 08.00 - 15.00 WIB
-                        </p>
-                    </div>
-                    <h4 class="footer-section-title" style="font-size: 16px; margin-bottom: 12px;">Lokasi Toko</h4>
-                    <p class="footer-text"><i class="fas fa-map-marker-alt icon-location"></i> Jl. Kota Baru V No 224,
-                        Kota Salatiga - Indonesia</p><a href="https://maps.app.goo.gl/AV8uNZSQpFyPwuDx9" target="_blank"
-                        rel="noopener noreferrer" class="btn-maps"> <i class="fas fa-map"></i> Lihat di Maps </a>
-                </div><!-- Kurir Pengiriman -->
-                <div>
-                    <h3 class="footer-section-title">Kurir Pengiriman</h3>
-                    <p class="footer-text">Kami bekerja sama dengan layanan pengiriman terpercaya:</p>
-                    <div class="courier-list">
-                        <div class="courier-item"><i class="fas fa-shipping-fast courier-icon primary"></i> <span
-                                class="courier-name"><a href="http://www.wahana.com" target="_blank"
-                                    id="courier-link">Wahana</a></span>
-                        </div>
-                        <div class="courier-item"><i class="fas fa-truck courier-icon danger"></i> <span
-                                class="courier-name"><a href="https://jet.co.id/track" target="_blank"
-                                    id="courier-link">J&amp;T Express</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Copyright -->
-            <div class="footer-copyright" id="contactUs">
-                <p id="footer-text" class="footer-copyright-text">© <span id="currentYear">2025</span>. Semua Hak Cipta
-                    Dilindungi | <a href="index.html" class="Copyright">Pawon Media • Foto Kopi • Alat-alat Tulis
-                        Kantor &amp; Sekolah <br> • Desain • Pulsa</a></p>
-                <div class="footer-links"><a href="https://www.tiktok.com/@pawonmedia.010924" target="_blank"
-                        rel="noopener noreferrer" class="footer-link"> <i class="fab fa-tiktok"></i> TikTok
-                    </a> <span class="footer-separator">|</span> <a href="https://instagram.com/pawonmedia.010924"
-                        target="_blank" rel="noopener noreferrer" class="footer-link"> <i class="fab fa-instagram"></i>
-                        Instagram
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <div class="wa-button">
-        <button id="waFloatingBtn" title="Butuh Bantuan?">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
-        </button>
-        <div id="waChatBox" class="wa-chatbox">
-            <div class="wa-chat-header">
-                <span>Customer Service Pawon Media</span>
-                <button id="waCloseBtn" title="Tutup">&times;</button>
-            </div>
-            <div class="wa-chat-body">
-                <p>Halo! Ada yang bisa kami bantu?</p>
-                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya ingin bertanya tentang produk.">Tanya
-                    Produk</button>
-                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya ingin bertanya tentang jasa.">Tanya
-                    Jasa</button>
-                <button class="wa-msg-btn"
-                    data-msg="Halo Pawon Media, saya ingin melakukan pemesanan.">Pemesanan</button>
-                <button class="wa-msg-btn" data-msg="Halo Pawon Media, saya mengalami kendala dan butuh bantuan.">Butuh
-                    Bantuan</button>
-            </div>
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const waBtn = document.getElementById('waFloatingBtn');
-                const waBox = document.getElementById('waChatBox');
-                const waClose = document.getElementById('waCloseBtn');
-                const waMsgBtns = document.querySelectorAll('.wa-msg-btn');
-                waBtn.addEventListener('click', function () {
-                    waBox.style.display = waBox.style.display === 'block' ? 'none' : 'block';
-                });
-                waClose.addEventListener('click', function () {
-                    waBox.style.display = 'none';
-                });
-                waMsgBtns.forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        const msg = encodeURIComponent(btn.getAttribute('data-msg'));
-                        window.open(`https://wa.me/62895360074499?text=${msg}`, '_blank');
-                        waBox.style.display = 'none';
-                    });
-                });
-                // Optional: Hide chatbox if clicked outside
-                document.addEventListener('click', function (e) {
-                    if (!waBox.contains(e.target) && !waBtn.contains(e.target)) {
-                        waBox.style.display = 'none';
-                    }
-                });
-            });
-        </script>
-    </div>
-
-    <!-- Tombol Kembali ke Atas -->
-    <div class="back-to-home">
-        <button class="back-to-top" aria-label="Kembali ke atas">
-            <i class="fa-solid fa-chevron-up"></i>
-        </button>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const backToTopButton = document.querySelector('.back-to-top');
-
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 100) {
-                        backToTopButton.classList.add('show');
-                    } else {
-                        backToTopButton.classList.remove('show');
-                    }
-                });
-
-                backToTopButton.addEventListener('click', () => {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        </script>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
