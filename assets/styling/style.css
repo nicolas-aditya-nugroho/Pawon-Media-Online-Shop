@@ -33,8 +33,13 @@ header {
     align-items: center;
     font-weight: bold;
     font-size: 1.2rem;
+    text-shadow: whitesmoke 1px 1px 2px;
     color: var(--secondary-color);
     text-decoration: none;
+}
+
+.nav-brand:hover {
+    color: #ff0000;
 }
 
 .nav-logo {
