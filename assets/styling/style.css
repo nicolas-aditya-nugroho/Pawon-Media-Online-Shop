@@ -424,6 +424,23 @@ footer {
     display: inline-block;
 }
 
+.footer-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.footer-subtitle ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.footer-subtitle li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
 .footer-links a {
     color: var(--primary-color);
     text-decoration: none;
