@@ -27,20 +27,30 @@
 <body>
     <!-- HEADER -->
     <header>
+        <!-- Logo Brand -->
         <a href="/index.html" class="nav-brand">
-            <!-- Gunakan placeholder atau logo lokal Anda -->
-            <img src="/assets/LOGO-1-transparent.png" alt="" class="nav-logo"
+            <img src="/assets/LOGO-1-transparent.png" alt="Logo" class="nav-logo"
                 onerror="this.src='https://via.placeholder.com/40/5c4033/ffffff?text=PM'">
             Pawon Media
         </a>
-        <ul>
-            <li><a href="#aboutUs">Tentang Kami</a></li>
-            <li><a href="#products">Produk</a></li>
-            <li><a href="#contactUs">Kontak</a></li>
+
+        <!-- Menu Navigasi -->
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#aboutUs" class="nav-link">Tentang Kami</a></li>
+            <li><a href="#productsContainer" class="nav-link">Produk</a></li>
+            <li><a href="#contactUs" class="nav-link">Kontak</a></li>
         </ul>
-        <div class="header-buttons">
+
+        <!-- Bagian Kanan (Cart & Hamburger) -->
+        <div class="header-right">
             <button class="cart-btn" id="cartBtn" title="Lihat Keranjang">
-                <i class="fa-solid fa-cart-shopping"></i> <span class="cart-count" id="cartCount">0</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+            <!-- Tombol Hamburger (Hanya muncul di mobile) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </header>
@@ -248,6 +258,35 @@
 
     <!-- SCRIPT UTAMA -->
     <script>
+        // Mengambil elemen
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+        const icon = hamburgerBtn.querySelector('i');
+
+        // Fungsi Toggle Menu
+        hamburgerBtn.addEventListener('click', () => {
+            // Toggle class 'active' pada menu
+            navMenu.classList.toggle('active');
+
+            // Ubah icon hamburger menjadi X (silang) saat aktif
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Menutup menu saat salah satu link diklik (UX yang baik untuk one-page scroll)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
         // --- DATA PRODUK LENGKAP (Digabung dari Part 1 & Part 2) ---
         const products = [
             { id: 1, name: "SIKA Bag Folder AC05", desc: "High-quality bag folder for packaging.", price: 4000, img: "/assets/Products/Bag Folder/SIKA-Bag Folder-AC05.jpeg" },
@@ -414,7 +453,7 @@
             { id: 182, name: " Desain Kartu Nama", desc: "Layanan desain kartu nama profesional untuk keperluan bisnis Anda.", price: 5500, img: "/assets/Catalogue/Name Card/Kartu Nama (Page 1).png" },
             { id: 183, name: " Joyko Correction Pen JK-01", desc: "Correction pen for fixing writing errors.", price: 5000, img: "/assets/Products/Correction Pen/Joyko-Correction Pen-JK_01.png" },
             { id: 184, name: " Joyko Correction Pen CFS-205PT", desc: "Correction pen for fixing writing errors.", price: 6000, img: "/assets/Products/Correction Pen/Joyko-Correction Pen-CF_S205PT.png" },
-            { id: 185, name: " Joyko Correction Pen CF_S209A", desc: "Correction pen for fixing writing errors.", price: 5000, img: "/assets/Products/Correction Pen/Joyko-Correction Pen-CF_S209A.png" },
+            { id: 185, name: " Joyko Correction Pen CFS-209A", desc: "Correction pen for fixing writing errors.", price: 5000, img: "/assets/Products/Correction Pen/Joyko-Correction Pen-CF_S209A.png" },
         ];
 
         // --- DOM Elements ---

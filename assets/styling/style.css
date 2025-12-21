@@ -15,7 +15,7 @@ body {
     color: var(--primary-color);
 }
 
-/* HEADER */
+/* HEADER UTAMA */
 header {
     background-color: var(--primary-color);
     padding: 15px 5%;
@@ -28,51 +28,82 @@ header {
     z-index: 1000;
 }
 
+/* BRAND / LOGO */
 .nav-brand {
     display: flex;
     align-items: center;
     font-weight: bold;
     font-size: 1.2rem;
-    text-shadow: whitesmoke 1px 1px 2px;
     color: var(--secondary-color);
     text-decoration: none;
+    /* text-shadow dihapus agar terlihat lebih bersih, opsional */
 }
 
 .nav-brand:hover {
-    color: #ff0000;
+    color: var(--accent-color);
+    /* Menggunakan variabel agar konsisten */
 }
 
 .nav-logo {
     width: 40px;
+    height: auto;
     margin-right: 10px;
 }
 
-header ul {
+/* NAV MENU (UL) */
+.nav-menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
-header ul li a {
+/* LINK NAVIGASI */
+.nav-link {
+    color: var(--secondary-color);
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
     color: var(--accent-color);
-    font-weight: 500;
 }
 
-/* Mobile Menu Fix */
-@media (max-width: 768px) {
-    header ul {
-        display: none;
-        /* Sembunyikan menu link di mobile agar rapi */
-    }
+/* Efek garis bawah saat hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
 }
 
-.header-buttons {
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* BAGIAN KANAN (CART + HAMBURGER) */
+.header-right {
     display: flex;
-    gap: 15px;
     align-items: center;
+    gap: 15px;
+}
+
+/* HAMBURGER MENU (Default Hidden di Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    background: none;
+    border: none;
 }
 
 .cart-btn {
@@ -403,8 +434,8 @@ h1 {
 
 /* FOOTER */
 footer {
-    background: var(--secondary-color);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
     padding: 40px 5% 20px;
     margin-top: 40px;
 }
@@ -417,7 +448,7 @@ footer {
 }
 
 .footer-section-title {
-    color: var(--primary-color);
+    color: var(--accent-color);
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -442,7 +473,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -454,8 +485,8 @@ footer {
 .btn-maps {
     display: inline-block;
     margin-top: 10px;
-    background: var(--primary-color);
-    color: white;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     padding: 5px 10px;
     border-radius: 4px;
     text-decoration: none;
@@ -464,7 +495,7 @@ footer {
 
 .footer-copyright {
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--secondary-color);
     padding-top: 20px;
     font-size: 0.9rem;
 }
@@ -593,4 +624,276 @@ footer {
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        display: block;
+        /* Munculkan hamburger di layar kecil */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        /* Tepat di bawah header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        /* Susun vertikal */
+        align-items: center;
+        gap: 0;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
+        /* Animasi Slide */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Class .active ditambahkan lewat JS saat menu dibuka */
+    .nav-menu.active {
+        max-height: 300px;
+        /* Cukup tinggi untuk menampung menu */
+        padding-bottom: 20px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* Hapus efek hover garis bawah di mobile agar lebih rapi */
+    .nav-link::after {
+        display: none;
+    }
+
+    main {
+        padding: 15px 3%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 120px;
+    }
+
+    .product-title {
+        font-size: 0.9rem;
+        height: 2.7rem;
+    }
+
+    .product-desc {
+        font-size: 0.7rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .carousel-container {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .carousel-btn {
+        padding: 10px;
+        font-size: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-dots {
+        bottom: 15px;
+    }
+
+    .carousel-slide {
+        height: auto;
+    }
+
+    .carousel-slide img {
+        height: auto;
+    }
+
+    .prevBtn,
+    .nextBtn {
+        top: 80%;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .dot.active {
+        transform: scale(1);
+    }
+
+    .cart-modal {
+        align-items: flex-start;
+        padding-top: 50px;
+    }
+
+    .cart-content {
+        width: 95%;
+        max-width: none;
+        max-height: 90vh;
+    }
+
+    .cart-header {
+        font-size: 1.2rem;
+    }
+
+    .cart-count {
+        font-size: 0.5rem;
+        padding: 1px 4px;
+    }
+
+    .cart-items-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item-details {
+        margin-bottom: 10px;
+    }
+
+    .cart-item-name {
+        font-size: 0.9rem;
+    }
+
+    .cart-item-price {
+        font-size: 0.8rem;
+    }
+
+    .remove-btn {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    .wa-btn-checkout {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .cart-total {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        padding: 30px 3% 15px;
+    }
+
+    .footer-grid {
+        gap: 20px;
+    }
+
+    .footer-section-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .footer-subtitle ul {
+        padding-left: 15px;
+    }
+
+    .footer-subtitle li {
+        margin-bottom: 6px;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .btn-maps {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+
+    .wa-button {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #waFloatingBtn {
+        width: 50px;
+        height: 50px;
+    }
+
+    #waFloatingBtn img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .wa-chatbox {
+        width: 250px;
+        bottom: 70px;
+    }
+
+    .wa-chat-header {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .wa-chat-header button {
+        font-size: 1rem;
+    }
+
+    .wa-chat-body {
+        padding: 10px;
+    }
+
+    .wa-msg-btn {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .back-to-top {
+        bottom: 80px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
 }
