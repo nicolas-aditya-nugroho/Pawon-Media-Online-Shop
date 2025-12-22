@@ -27,15 +27,24 @@
 <body>
     <!-- HEADER -->
     <header>
-        <!-- Logo Brand -->
-        <a href="/index.html" class="nav-brand">
-            <img src="/assets/LOGO-1-transparent.png" alt="Logo" class="nav-logo"
-                onerror="this.src='https://via.placeholder.com/40/5c4033/ffffff?text=PM'">
-            Pawon Media
-        </a>
+        <div class="header-left">
+            <!-- Logo Brand -->
+            <a href="/index.html" class="nav-brand">
+                <img src="/assets/LOGO-1-transparent.png" alt="Logo" class="nav-logo"
+                    onerror="this.src='https://via.placeholder.com/40/5c4033/ffffff?text=PM'">
+                Pawon Media
+            </a>
+            <ul class="nav-menu" id="navMenuLeft">
+                <li><a href="https://www.instagram.com/pawonmedia.010924" class="nav-link" target="_blank"><i
+                            class="fa-solid fa-brands fa-instagram"></i> Pawon Media</a></li>
+                <li><a href="https://www.tiktok.com/@pawonmedia.010924" class="nav-link" target="_blank"><i
+                            class="fa-solid fa-brands fa-tiktok"></i> Pawon Media</a></li>
+            </ul>
+        </div>
 
         <!-- Menu Navigasi -->
         <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Beranda</a></li>
             <li><a href="#aboutUs" class="nav-link">Tentang Kami</a></li>
             <li><a href="#productsContainer" class="nav-link">Produk</a></li>
             <li><a href="#contactUs" class="nav-link">Kontak</a></li>
@@ -48,7 +57,7 @@
                 <span class="cart-count" id="cartCount">0</span>
             </button>
 
-            <!-- Tombol Hamburger (Hanya muncul di mobile) -->
+            <!-- Tombol Hamburger -->
             <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -264,7 +273,10 @@
         const icon = hamburgerBtn.querySelector('i');
 
         // Fungsi Toggle Menu
-        hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.addEventListener('click', (e) => {
+            // Mencegah event bubbling (opsional, tapi bagus untuk keamanan klik)
+            e.stopPropagation();
+
             // Toggle class 'active' pada menu
             navMenu.classList.toggle('active');
 
@@ -278,8 +290,18 @@
             }
         });
 
-        // Menutup menu saat salah satu link diklik (UX yang baik untuk one-page scroll)
-        document.querySelectorAll('.nav-link').forEach(link => {
+        // FITUR TAMBAHAN: Menutup menu saat mengklik di luar menu
+        document.addEventListener('click', (e) => {
+            // Jika menu sedang terbuka, DAN yang diklik BUKAN tombol hamburger DAN BUKAN bagian dari menu
+            if (navMenu.classList.contains('active') && !hamburgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // FITUR TAMBAHAN: Menutup menu saat salah satu link diklik
+        navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 icon.classList.remove('fa-times');
